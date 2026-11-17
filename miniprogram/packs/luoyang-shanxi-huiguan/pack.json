@@ -1,0 +1,104 @@
+{
+  "id": "luoyang-shanxi-huiguan",
+  "schemaVersion": 2,
+  "version": 2,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "洛阳山陕会馆",
+  "subtitle": "清代秦晋商帮的诚信殿堂与建筑瑰宝",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-17T14:22:20.832Z",
+  "summary": "位于洛阳老城区，始建于清康熙雍正年间，是第六批全国重点文物保护单位及万里茶道申遗点，展现晋商以义取利的精神。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "全国重点文物",
+    "清代建筑",
+    "万里茶道",
+    "晋商文化"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "yi-men-zhao-bi",
+      "title": "仪门照壁",
+      "subtitle": "凸字琉璃映古韵",
+      "image": "01-yi-men-zhao-bi.jpg",
+      "imageAlt": "洛阳山陕会馆凸字形琉璃照壁与两侧仪门全景",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/01-yi-men-zhao-bi.md",
+      "audio": {
+        "durSec": 35,
+        "bytes": 284048,
+        "sha256": "94459bb08124499f3a680b97b8bfaa3e4e1e88195dc5f512faac47e7e05d0204"
+      }
+    },
+    {
+      "id": "shan-men-wu-lou",
+      "title": "山门舞楼",
+      "subtitle": "河东夫子鉴诚信",
+      "image": "02-shan-men-wu-lou.jpg",
+      "imageAlt": "洛阳山陕会馆山门匾额及后方舞楼屋脊细节",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/02-shan-men-wu-lou.md",
+      "audio": {
+        "durSec": 37,
+        "bytes": 293661,
+        "sha256": "0701c27b8db9908824304602b3a71097eeb55b80b76d94be4913b7c702b1795e"
+      }
+    },
+    {
+      "id": "bai-dian-cai-hua",
+      "title": "拜殿彩画",
+      "subtitle": "点金彩绘诉沧桑",
+      "image": "03-bai-dian-cai-hua.jpg",
+      "imageAlt": "洛阳山陕会馆拜殿正面及殿前月台石碑",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-bai-dian-cai-hua.md",
+      "audio": {
+        "durSec": 38,
+        "bytes": 302856,
+        "sha256": "a9219306a9ff6e382195f9c11727a5512e2d98a4a9d9f6257f7033dbd93eaa42"
+      }
+    },
+    {
+      "id": "zheng-dian-diao-ke",
+      "title": "正殿木雕",
+      "subtitle": "牡丹龙纹显匠心",
+      "image": "04-zheng-dian-diao-ke.jpg",
+      "imageAlt": "洛阳山陕会馆正殿檐下木雕与斗拱特写",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/04-zheng-dian-diao-ke.md",
+      "audio": {
+        "durSec": 37,
+        "bytes": 293661,
+        "sha256": "533358f9fe858db23cee97f628adffd6cb3559b2f8c0804f0e4a2ada54b8bbc6"
+      }
+    },
+    {
+      "id": "wen-wu-bao-hu",
+      "title": "国保石碑",
+      "subtitle": "万里茶道遗产点",
+      "image": "05-wen-wu-bao-hu.jpg",
+      "imageAlt": "洛阳山陕会馆全国重点文物保护单位石碑",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/05-wen-wu-bao-hu.md",
+      "audio": {
+        "durSec": 34,
+        "bytes": 274435,
+        "sha256": "4863a36471789e62165c0e525b8990e966b821e3aefac552da5490e0ce538f5c"
+      }
+    }
+  ]
+}

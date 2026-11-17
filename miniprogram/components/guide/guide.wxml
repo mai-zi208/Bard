@@ -1,0 +1,74 @@
+<view class="guide">
+  <view
+    class="guide-fab"
+    style="top: {{top + 10}}px"
+    bindtap="onOpen"
+    hover-class="none"
+    aria-role="button"
+    aria-label="打开问答与指引"
+  >
+    <text class="guide-fab-ico">问</text>
+  </view>
+
+  <view wx:if="{{open}}" class="guide-layer">
+    <view class="guide-mask" bindtap="onClose"></view>
+    <view class="guide-sheet">
+      <view class="guide-head">
+        <view class="guide-head-text">
+          <text class="guide-title">向导</text>
+          <text class="guide-sub">第 {{current + 1}} / {{scenes.length}} 幕 · 只答本包内容</text>
+        </view>
+        <view class="guide-close" bindtap="onClose" hover-class="none" aria-role="button" aria-label="关闭">×</view>
+      </view>
+
+      <scroll-view
+        class="guide-list"
+        scroll-y
+        scroll-into-view="{{anchor}}"
+        scroll-with-animation
+        enhanced
+        show-scrollbar="{{false}}"
+      >
+        <view wx:for="{{messages}}" wx:key="id" id="m-{{item.id}}" class="msg msg--{{item.role}}">
+          <view class="msg-bubble">{{item.text}}</view>
+          <view
+            wx:if="{{item.action}}"
+            class="msg-action"
+            data-index="{{item.action.index}}"
+            bindtap="onJump"
+            hover-class="none"
+            aria-role="button"
+          >
+            {{item.action.label}}
+          </view>
+        </view>
+        <view id="m-tail" class="msg-tail"></view>
+      </scroll-view>
+
+      <view class="guide-quick">
+        <view
+          wx:for="{{quick}}"
+          wx:key="*this"
+          class="chip"
+          data-q="{{item}}"
+          bindtap="onQuick"
+          hover-class="none"
+        >{{item}}</view>
+      </view>
+
+      <view class="guide-input">
+        <input
+          class="guide-field"
+          value="{{draft}}"
+          maxlength="60"
+          placeholder="问点什么，比如「大雄殿的造像」"
+          placeholder-class="guide-ph"
+          confirm-type="send"
+          bindinput="onInput"
+          bindconfirm="onSend"
+        />
+        <view class="guide-send {{draft ? '' : 'is-off'}}" bindtap="onSend" hover-class="none">发送</view>
+      </view>
+    </view>
+  </view>
+</view>

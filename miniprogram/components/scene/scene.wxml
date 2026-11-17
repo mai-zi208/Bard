@@ -1,0 +1,66 @@
+<wxs module="drag" src="./scene.wxs" />
+
+<view
+  class="scene t-{{scene.transition}} {{active ? 'is-on' : ''}} {{seen ? 'is-seen' : ''}} {{lite ? 'is-lite' : ''}} {{raised ? 'is-raised' : ''}}"
+  data-dir="{{direction}}"
+>
+  <image wx:if="{{near}}" class="scene-bg" src="{{scene.imageUrl}}" mode="aspectFill" />
+  <view wx:else class="scene-bg scene-bg--empty"></view>
+  <view class="scene-scrim"></view>
+
+  <view
+    class="scene-body"
+    data-lift="{{lift}}"
+    data-max="{{maxLift}}"
+    data-lock="{{mdPullable}}"
+    style="transform: translateY(-{{lift}}px); transition: {{dragging ? 'none' : 'transform 0.46s cubic-bezier(0.22, 1, 0.36, 1)'}}"
+    bindtouchstart="{{drag.touchStart}}"
+    bindtouchmove="{{drag.touchMove}}"
+    bindtouchend="{{drag.touchEnd}}"
+    bindtouchcancel="{{drag.touchEnd}}"
+  >
+    <view
+      wx:if="{{scene.portraitUrl}}"
+      class="figure"
+      style="top: {{figureTop}}px; height: {{figureH}}px"
+    >
+      <image
+        wx:if="{{near}}"
+        class="figure-img {{scene.portraitFit ? 'is-illus' : ''}} {{scene.portraitMask ? 'has-mask' : ''}}"
+        src="{{scene.portraitUrl}}"
+        mode="{{scene.portraitFit ? 'aspectFit' : 'aspectFill'}}"
+      />
+    </view>
+
+    <view class="copy {{scene.portraitUrl ? 'has-figure' : 'no-figure'}}">
+      <view class="scene-idx">
+        <text class="idx-num">{{scene.indexLabel}}</text>
+        <text class="idx-of">/ {{scene.totalLabel}}</text>
+      </view>
+      <view class="scene-title">{{scene.title}}</view>
+      <view class="scene-sub">{{scene.subtitle}}</view>
+
+      <markdown
+        wx:if="{{scene.body}}"
+        class="scene-md"
+        source="{{scene.body}}"
+        base="{{scene.bodyBase}}"
+        top="{{mdTop}}"
+        wrap="{{wrapBase}}"
+        bind:pullable="onMdPullable"
+        bind:state="onMdState"
+      />
+      <view wx:else class="paras">
+        <text wx:for="{{paras}}" wx:key="*this" class="para">{{item}}</text>
+      </view>
+
+      <view
+        class="listen {{scene.audio ? (playing ? 'is-playing' : '') : 'is-disabled'}}"
+        bindtap="onAudioTap"
+      >
+        <view class="listen-ico"></view>
+        <text class="listen-label">{{scene.audio ? (playing ? '停止讲解' : '收听讲解') : '暂无讲解'}}</text>
+      </view>
+    </view>
+  </view>
+</view>

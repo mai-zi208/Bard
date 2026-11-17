@@ -1,0 +1,229 @@
+.guide,
+.guide view,
+.guide text,
+.guide scroll-view,
+.guide input {
+  box-sizing: border-box;
+}
+
+/* 入口与左上角返回键同高，落在照片区，不压正文与讲解按钮 */
+.guide-fab {
+  position: fixed;
+  right: 32rpx;
+  z-index: 35;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 62rpx;
+  height: 62rpx;
+  border-radius: 50%;
+  border: 1rpx solid rgba(242, 235, 221, 0.18);
+  background: rgba(10, 9, 7, 0.42);
+}
+
+.guide-fab-ico {
+  font-family: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+  font-size: 27rpx;
+  line-height: 1;
+  color: #e3c766;
+}
+
+.guide-layer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.guide-mask {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.42);
+}
+
+.guide-sheet {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  max-height: 58vh;
+  padding: 26rpx 32rpx 24rpx;
+  padding-bottom: calc(24rpx + env(safe-area-inset-bottom));
+  border-radius: 36rpx 36rpx 0 0;
+  border-top: 1rpx solid rgba(201, 162, 39, 0.28);
+  background: #17130e;
+  animation: sheetIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.guide-head {
+  flex: none;
+  display: flex;
+  align-items: center;
+}
+
+.guide-head-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.guide-title {
+  display: block;
+  font-family: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+  font-size: 31rpx;
+  letter-spacing: 0.16em;
+  color: #f2ebdd;
+}
+
+.guide-sub {
+  display: block;
+  margin-top: 6rpx;
+  font-size: 18rpx;
+  letter-spacing: 0.06em;
+  color: rgba(242, 235, 221, 0.4);
+}
+
+.guide-close {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56rpx;
+  height: 56rpx;
+  margin-left: 16rpx;
+  border-radius: 50%;
+  border: 1rpx solid rgba(242, 235, 221, 0.14);
+  font-size: 32rpx;
+  line-height: 1;
+  color: rgba(242, 235, 221, 0.66);
+}
+
+.guide-list {
+  flex: none;
+  height: 32vh;
+  margin-top: 18rpx;
+}
+
+.msg {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18rpx;
+}
+
+.msg--user {
+  align-items: flex-end;
+}
+
+.msg--guide {
+  align-items: flex-start;
+}
+
+.msg-bubble {
+  max-width: 86%;
+  padding: 18rpx 24rpx;
+  border-radius: 22rpx;
+  font-size: 24rpx;
+  line-height: 1.72;
+  letter-spacing: 0.01em;
+  color: rgba(242, 235, 221, 0.88);
+  background: rgba(242, 235, 221, 0.06);
+  border: 1rpx solid rgba(242, 235, 221, 0.07);
+}
+
+.msg--user .msg-bubble {
+  color: #f4e9c9;
+  background: rgba(201, 162, 39, 0.16);
+  border-color: rgba(201, 162, 39, 0.3);
+}
+
+.msg-action {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 12rpx;
+  padding: 12rpx 24rpx;
+  border-radius: 100rpx;
+  border: 1rpx solid rgba(201, 162, 39, 0.55);
+  font-size: 21rpx;
+  letter-spacing: 0.04em;
+  color: #e3c766;
+}
+
+.msg-tail {
+  height: 2rpx;
+}
+
+.guide-quick {
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 6rpx;
+}
+
+.chip {
+  margin: 0 12rpx 8rpx 0;
+  padding: 10rpx 20rpx;
+  border-radius: 100rpx;
+  border: 1rpx solid rgba(242, 235, 221, 0.14);
+  font-size: 21rpx;
+  letter-spacing: 0.03em;
+  color: rgba(242, 235, 221, 0.68);
+}
+
+.guide-input {
+  flex: none;
+  display: flex;
+  align-items: center;
+  margin-top: 10rpx;
+}
+
+.guide-field {
+  flex: 1;
+  min-width: 0;
+  height: 76rpx;
+  padding: 0 26rpx;
+  border-radius: 100rpx;
+  background: rgba(242, 235, 221, 0.07);
+  font-size: 24rpx;
+  color: #f2ebdd;
+}
+
+.guide-ph {
+  color: rgba(242, 235, 221, 0.3);
+}
+
+.guide-send {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 112rpx;
+  height: 66rpx;
+  margin-left: 14rpx;
+  border-radius: 100rpx;
+  background: linear-gradient(180deg, #ddbe57 0%, #b79320 100%);
+  font-size: 22rpx;
+  letter-spacing: 0.08em;
+  color: #1a1408;
+}
+
+.guide-send.is-off {
+  opacity: 0.42;
+}
+
+@keyframes sheetIn {
+  0% {
+    opacity: 0;
+    transform: translateY(36rpx);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

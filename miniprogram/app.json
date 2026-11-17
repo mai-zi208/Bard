@@ -1,0 +1,69 @@
+{
+  "pages": [
+    "pages/launch/launch",
+    "pages/packs/packs",
+    "pages/tour/tour"
+  ],
+  "subPackages": [
+    {
+      "root": "packs/baimasi",
+      "name": "pack-baimasi",
+      "pages": []
+    },
+    {
+      "root": "packs/guanlin",
+      "name": "pack-guanlin",
+      "pages": []
+    },
+    {
+      "root": "packs/laojunshan",
+      "name": "pack-laojunshan",
+      "pages": []
+    },
+    {
+      "root": "packs/lijingmen",
+      "name": "pack-lijingmen",
+      "pages": []
+    },
+    {
+      "root": "packs/longmen",
+      "name": "pack-longmen",
+      "pages": []
+    },
+    {
+      "root": "packs/luoyang-museum",
+      "name": "pack-luoyang-museum",
+      "pages": []
+    },
+    {
+      "root": "packs/luoyang-shanxi-huiguan",
+      "name": "pack-luoyang-shanxi-huiguan",
+      "pages": []
+    },
+    {
+      "root": "packs/luoyi-gucheng",
+      "name": "pack-luoyi-gucheng",
+      "pages": []
+    },
+    {
+      "root": "packs/shaolin",
+      "name": "pack-shaolin",
+      "pages": []
+    },
+    {
+      "root": "packs/yingtianmen",
+      "name": "pack-yingtianmen",
+      "pages": []
+    }
+  ],
+  "window": {
+    "navigationStyle": "custom",
+    "backgroundColor": "#F7FAFF",
+    "backgroundTextStyle": "dark",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#F7FAFF"
+  },
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents",
+  "sitemapLocation": "sitemap.json"
+}

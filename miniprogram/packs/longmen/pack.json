@@ -1,0 +1,157 @@
+{
+  "id": "longmen",
+  "schemaVersion": 2,
+  "version": 2,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "洛阳龙门石窟",
+  "subtitle": "伊阙峡谷两岸的世界石刻艺术宝库",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-17T14:21:16.979Z",
+  "summary": "从禹凿龙门到北魏开窟，再到盛唐大佛，沿伊河两岸逐幕走近十万尊造像与两千余座窟龛。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "世界文化遗产",
+    "石窟艺术",
+    "北魏造像",
+    "唐代石刻"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "yique",
+      "title": "伊阙",
+      "subtitle": "两山对峙伊水中流",
+      "image": "01-yique.jpg",
+      "imageAlt": "伊河穿流于东西两山之间，远望如天然门阙",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/01-yique.md",
+      "narration": "伊水从两山之间穿流而过，远望像一座天然门阙。（停顿一秒）这里古称伊阙，两山相对，望之若阙，伊水历其间。北魏孝文帝迁都洛阳，公元四百九十三年，石窟开始凿建。（放慢）两山对峙，水从中流，名字就这样来的。",
+      "audio": {
+        "durSec": 39,
+        "bytes": 309543,
+        "sha256": "63c468bfe97e0f3e46da54535d8c0f22bba7e1b5cc99545f290cc2e7b543aa09"
+      }
+    },
+    {
+      "id": "yuwangchi",
+      "title": "禹王池",
+      "subtitle": "石笋相传大禹治水",
+      "image": "02-yuwangchi.jpg",
+      "imageAlt": "池水清澈，中立一柱造型奇特的石笋，锦鲤游弋",
+      "transition": "zoom-out",
+      "holdMs": 8500,
+      "body": "body/02-yuwangchi.md",
+      "narration": "禹王池上方立着一柱造型奇特的石笋。相传这石笋是大禹治水时所用，池因此得名。（停顿一秒）龙门溪流山泉众多，禹王池水势最盛，景色最美。水里还有锦鲤嬉戏。",
+      "audio": {
+        "durSec": 36,
+        "bytes": 285720,
+        "sha256": "a4c51aec065dee9b3364b3c68f8c2baacfdc29d15e39eaaaf2e66293b55e8498"
+      }
+    },
+    {
+      "id": "bin-yang-san-dong",
+      "title": "宾阳三洞",
+      "subtitle": "北魏皇家祈福巨构",
+      "image": "03-bin-yang-san-dong.jpg",
+      "imageAlt": "并排三座大型洞窟，中洞窟顶华盖与壁面浮雕清晰可见",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/03-bin-yang-san-dong.md",
+      "narration": "三座洞窟并列开凿，中洞的窟顶做成华盖的样子。北魏宣武帝为父母孝文帝和文昭皇后祈福营造。（停顿一秒）中洞有三世佛造像，岩壁上布满彩绘浮雕。仅记载可查的用工就达八十多万个。",
+      "audio": {
+        "durSec": 37,
+        "bytes": 294497,
+        "sha256": "2b96dae584681cf17fcb1a503aa91447706b001bca1345c55a72d3421722d67e"
+      }
+    },
+    {
+      "id": "lianhuadong",
+      "title": "莲花洞",
+      "subtitle": "窟顶高浮雕大莲花",
+      "image": "04-lianhuadong.jpg",
+      "imageAlt": "洞窟顶部一朵高浮雕大莲花，周围飞天环绕",
+      "transition": "slide",
+      "holdMs": 8500,
+      "body": "body/04-lianhuadong.md",
+      "narration": "窟顶雕着一朵大莲花，是高浮雕，花瓣层层凸起。莲花洞因此得名，大约开凿于北魏年间。（放慢）南壁上方有一排小千佛，最小者仅两厘米高。两厘米，指甲盖那么点。",
+      "audio": {
+        "durSec": 35,
+        "bytes": 283839,
+        "sha256": "5268dc91bd073128ae9f8e076ade825c6d2bc9c3a1610a727ad4d03f5012c0d1"
+      }
+    },
+    {
+      "id": "wanfodong",
+      "title": "万佛洞",
+      "subtitle": "一万五千尊小佛列壁",
+      "image": "05-wanfodong.jpg",
+      "imageAlt": "洞窟南北两壁整齐排列密密麻麻的小佛像",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/05-wanfodong.md",
+      "narration": "洞内南北两壁排满小佛，整齐排列，一共一万五千尊。完工于唐高宗永隆元年，即公元六百八十年。（停顿一秒）主持开凿的是宫中二品女官姚神表和智运禅师。每尊小佛只有四厘米高。",
+      "audio": {
+        "durSec": 38,
+        "bytes": 301602,
+        "sha256": "4b71e97e7423bedf4d122e5e52f7f69ab1cea1518d7dd969c7d0e35798fa0d21"
+      }
+    },
+    {
+      "id": "fengxiansi",
+      "title": "奉先寺",
+      "subtitle": "卢舍那大佛依山凿成",
+      "image": "06-fengxiansi.jpg",
+      "imageAlt": "九尊大型雕像依山而凿，居中卢舍那大佛高达十七米余",
+      "transition": "zoom-out",
+      "holdMs": 10000,
+      "body": "body/06-fengxiansi.md",
+      "narration": "九尊大像依山凿石而成，山崖本身就是佛殿。这是龙门石窟中规模最大的一组摩崖群雕。（加重）居中的卢舍那大佛高达十七米多，仅头部就有四米。耳长一点九米，比人还高。",
+      "audio": {
+        "durSec": 36,
+        "bytes": 288436,
+        "sha256": "bb6645b87ea5f14e9d19765b3c8db3b1d3b221b871dcca3fdca732c376e49971"
+      }
+    },
+    {
+      "id": "guyangdong",
+      "title": "古阳洞",
+      "subtitle": "龙门开窟第一洞",
+      "image": "07-guyangdong.jpg",
+      "imageAlt": "洞窟内壁布满各式佛龛与碑刻题记",
+      "transition": "rise",
+      "holdMs": 9500,
+      "body": "body/07-guyangdong.md",
+      "narration": "洞内四壁和窟顶布满各式佛龛，密密麻麻。这是龙门开凿最早的洞窟，北魏孝文帝为祖母冯太后营造。（停顿一秒）两千八百块碑刻题记中，这里占八百多块。龙门二十品，有十九品在此。",
+      "audio": {
+        "durSec": 36,
+        "bytes": 287182,
+        "sha256": "a4a3b8cbd511671baa88aa5ebc8f0d6d5262dc23196b16fcc10f22b1a2c0886f"
+      }
+    },
+    {
+      "id": "yaofangdong",
+      "title": "药方洞",
+      "subtitle": "中国最早石刻药方",
+      "image": "08-yaofangdong.jpg",
+      "imageAlt": "洞窟门侧甬道石壁上刻满唐代药方文字",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/08-yaofangdong.md",
+      "narration": "窟门两侧的甬道上刻着密密麻麻的字。那是唐代药方，一共一百四十余种。（放慢）记录病名四十例，针灸疗法二十种，涉及药物一百七十三种。失音、霍乱，都记在这里。",
+      "audio": {
+        "durSec": 36,
+        "bytes": 286973,
+        "sha256": "51904afd9f9d2fca0515f595d84ed6cf22ae39361872f6191f98d6f50d2f94a0"
+      }
+    }
+  ]
+}

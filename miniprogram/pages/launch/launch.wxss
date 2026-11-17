@@ -1,0 +1,148 @@
+.launch {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #dfe9f4;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.05);
+  animation: photoIn 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+      118deg,
+      rgba(9, 16, 14, 0.62) 0%,
+      rgba(9, 16, 14, 0.42) 34%,
+      rgba(9, 16, 14, 0.12) 58%,
+      rgba(9, 16, 14, 0) 76%
+    ),
+    linear-gradient(180deg, rgba(9, 16, 14, 0.36) 0%, rgba(9, 16, 14, 0) 34%);
+}
+
+.content {
+  position: absolute;
+  top: calc(env(safe-area-inset-top) + 200rpx);
+  left: 56rpx;
+  right: 56rpx;
+  max-width: 560rpx;
+}
+
+.brand {
+  font-size: 22rpx;
+  letter-spacing: 0.34em;
+  color: rgba(250, 252, 255, 0.86);
+  text-shadow: 0 1rpx 10rpx rgba(9, 16, 14, 0.4);
+  opacity: 0;
+  animation: fadeIn 0.9s ease-out 0.2s forwards;
+}
+
+.signpost {
+  display: block;
+  width: 48rpx;
+  height: 48rpx;
+  margin-top: 18rpx;
+  opacity: 0;
+  transform: translateY(10rpx);
+  animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.32s forwards;
+}
+
+.eyebrow {
+  margin-top: 40rpx;
+  font-size: 23rpx;
+  letter-spacing: 0.26em;
+  color: #f0ce8a;
+  text-shadow: 0 1rpx 10rpx rgba(9, 16, 14, 0.35);
+  opacity: 0;
+  transform: translateY(16rpx);
+  animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+}
+
+.title {
+  margin-top: 18rpx;
+  font-family: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+  font-size: 66rpx;
+  line-height: 1.28;
+  letter-spacing: 0.03em;
+  color: #fbfdff;
+  text-shadow: 0 2rpx 24rpx rgba(9, 16, 14, 0.42);
+  opacity: 0;
+  transform: translateY(20rpx);
+  animation: rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+}
+
+.desc {
+  margin-top: 20rpx;
+  font-size: 25rpx;
+  line-height: 1.65;
+  letter-spacing: 0.04em;
+  color: rgba(250, 252, 255, 0.76);
+  text-shadow: 0 1rpx 12rpx rgba(9, 16, 14, 0.35);
+  opacity: 0;
+  transform: translateY(20rpx);
+  animation: rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+}
+
+@keyframes photoIn {
+  0% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rise {
+  0% {
+    opacity: 0;
+    transform: translateY(20rpx);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-height: 720px) {
+  .content {
+    top: calc(env(safe-area-inset-top) + 152rpx);
+  }
+
+  .signpost {
+    width: 44rpx;
+    height: 44rpx;
+  }
+
+  .eyebrow {
+    margin-top: 24rpx;
+  }
+
+  .title {
+    font-size: 58rpx;
+  }
+
+  .desc {
+    margin-top: 14rpx;
+  }
+}

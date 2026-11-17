@@ -1,0 +1,10 @@
+{
+  "navigationStyle": "custom",
+  "disableScroll": true,
+  "backgroundColor": "#0B0908",
+  "usingComponents": {
+    "scene": "/components/scene/scene",
+    "route-bar": "/components/route-bar/route-bar",
+    "guide": "/components/guide/guide"
+  }
+}

@@ -1,0 +1,315 @@
+.tour {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #0b0908;
+}
+
+.deck {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.topbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  padding-left: 32rpx;
+  padding-right: 32rpx;
+  padding-bottom: 12rpx;
+  animation: chromeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+}
+
+.back {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 62rpx;
+  height: 62rpx;
+  border-radius: 50%;
+  border: 1rpx solid rgba(242, 235, 221, 0.18);
+  background: rgba(10, 9, 7, 0.42);
+}
+
+.back-arrow {
+  margin-top: -4rpx;
+  font-size: 40rpx;
+  line-height: 1;
+  color: #f2ebdd;
+}
+
+.route-wrap {
+  display: flex;
+  align-items: center;
+  margin-left: 22rpx;
+}
+
+.ai-tag {
+  margin-left: auto;
+  padding: 8rpx 18rpx;
+  border-radius: 100rpx;
+  border: 1rpx solid rgba(201, 162, 39, 0.45);
+  background: rgba(10, 9, 7, 0.42);
+  font-size: 18rpx;
+  letter-spacing: 0.1em;
+  color: #e3c766;
+}
+
+.swipe {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 38rpx;
+  bottom: calc(38rpx + env(safe-area-inset-bottom));
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* 进入第二幕之后收起手势提示，避免与正文争夺注意力 */
+.swipe.is-out {
+  opacity: 0;
+  transform: translateY(10rpx);
+  pointer-events: none;
+}
+
+.swipe-label {
+  font-size: 19rpx;
+  letter-spacing: 0.28em;
+  text-indent: 0.28em;
+  color: rgba(242, 235, 221, 0.36);
+}
+
+.swipe.is-last .swipe-label {
+  color: rgba(227, 199, 102, 0.68);
+}
+
+.swipe-arrow {
+  width: 17rpx;
+  height: 17rpx;
+  margin-top: 14rpx;
+  border-top: 2rpx solid rgba(242, 235, 221, 0.5);
+  border-left: 2rpx solid rgba(242, 235, 221, 0.5);
+  transform: rotate(-45deg);
+  animation: bob 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.finish {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 80;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 176rpx 52rpx 56rpx;
+  padding-bottom: calc(56rpx + env(safe-area-inset-bottom));
+  background: linear-gradient(180deg, #1b1610 0%, #0f0c08 68%, #0b0908 100%);
+  animation: finishIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.seal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 108rpx;
+  height: 108rpx;
+  border-radius: 16rpx;
+  font-family: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+  font-size: 46rpx;
+  color: #e2a08d;
+  background: rgba(168, 64, 47, 0.16);
+  border: 1rpx solid rgba(168, 64, 47, 0.55);
+  animation: finishRise 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.06s both;
+}
+
+.finish .kicker {
+  animation: finishRise 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+}
+
+.finish .quote {
+  animation: finishRise 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
+}
+
+.finish .source {
+  animation: finishRise 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.24s both;
+}
+
+.kicker {
+  margin-top: 44rpx;
+  font-size: 20rpx;
+  letter-spacing: 0.36em;
+  text-indent: 0.36em;
+  color: #c9a227;
+}
+
+.quote {
+  margin-top: 40rpx;
+  font-family: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+  font-size: 40rpx;
+  line-height: 1.95;
+  letter-spacing: 0.07em;
+  text-align: center;
+  color: #f2ebdd;
+}
+
+.source {
+  margin-top: 30rpx;
+  font-size: 20rpx;
+  letter-spacing: 0.14em;
+  color: rgba(242, 235, 221, 0.32);
+}
+
+.ai-note {
+  margin-top: 10rpx;
+  font-size: 19rpx;
+  letter-spacing: 0.08em;
+  color: rgba(201, 162, 39, 0.55);
+}
+
+.share-card {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: auto;
+  padding: 24rpx;
+  border-radius: 32rpx;
+  border: 1rpx solid rgba(242, 235, 221, 0.09);
+  background: rgba(242, 235, 221, 0.032);
+}
+
+.share-cover {
+  flex: none;
+  width: 108rpx;
+  height: 144rpx;
+  border-radius: 12rpx;
+}
+
+.share-body {
+  flex: 1;
+  min-width: 0;
+  margin-left: 24rpx;
+}
+
+.share-title {
+  font-family: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+  font-size: 30rpx;
+  letter-spacing: 0.06em;
+  color: #f2ebdd;
+}
+
+.share-sub {
+  margin-top: 10rpx;
+  font-size: 20rpx;
+  letter-spacing: 0.05em;
+  color: rgba(242, 235, 221, 0.4);
+}
+
+.seal-mini {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72rpx;
+  height: 72rpx;
+  margin-left: 12rpx;
+  border-radius: 12rpx;
+  font-family: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+  font-size: 24rpx;
+  color: #e2a08d;
+  background: rgba(168, 64, 47, 0.16);
+  border: 1rpx solid rgba(168, 64, 47, 0.45);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 28rpx;
+}
+
+.btn {
+  width: 100%;
+  height: 92rpx;
+  line-height: 92rpx;
+  padding: 0;
+  border: 1rpx solid transparent;
+  border-radius: 100rpx;
+  font-size: 25rpx;
+  letter-spacing: 0.12em;
+  text-align: center;
+}
+
+.btn--primary {
+  background: linear-gradient(180deg, #ddbe57 0%, #b79320 100%);
+  color: #1a1408;
+  font-weight: 600;
+  box-shadow: 0 24rpx 52rpx -28rpx rgba(201, 162, 39, 0.85);
+}
+
+.btn--ghost {
+  margin-top: 18rpx;
+  background: transparent;
+  border-color: rgba(242, 235, 221, 0.2);
+  color: rgba(242, 235, 221, 0.72);
+}
+
+.btn--hover {
+  transform: translateY(2rpx);
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+  50% {
+    transform: rotate(-45deg) translate(-6rpx, 6rpx);
+  }
+}
+
+@keyframes chromeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10rpx);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes finishRise {
+  0% {
+    opacity: 0;
+    transform: translateY(16rpx);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes finishIn {
+  0% {
+    opacity: 0;
+    transform: translateY(24rpx);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

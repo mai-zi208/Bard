@@ -1,0 +1,136 @@
+// 长文可视窗口：默认只露出前 3 块；上拉时先撑高窗口，再把正文继续往上推，
+// 剩余文字以同一版式被一起拉上来；下拉按相反顺序回滚，松手吸附到折叠或全开。
+function toNum(v, d) {
+  var n = parseFloat(v);
+  return isNaN(n) ? d : n;
+}
+
+// 绕排占位高度：跟随正文上移同步长高，底边始终对齐立绘底边。
+// 拖动期间按 6px 取整，减少逐帧重排；松手时再落到精确值。
+function wrapHeight(s, exact) {
+  if (!s.wrap) return 0;
+  var h = Math.round(s.wrap + s.off);
+  return exact ? h : Math.round(h / 6) * 6;
+}
+
+function touchStart(e, ins) {
+  var s = ins.getState();
+  var ds = e.currentTarget.dataset;
+  s.lock = ds.lock === true || ds.lock === 'true';
+  s.win = null;
+  s.inner = null;
+  s.wrapEl = null;
+
+  // 正文没有超出折叠块数：手势交回 scene，走上抬阅读
+  if (!s.lock) {
+    s.axis = 'x';
+    s.dragging = false;
+    return;
+  }
+
+  var t = e.touches[0];
+  s.startX = t.clientX;
+  s.startY = t.clientY;
+  s.h0 = toNum(ds.h, 0);
+  s.off0 = toNum(ds.off, 0);
+  s.fold = toNum(ds.fold, 0);
+  s.max = toNum(ds.max, 0);
+  s.maxOff = toNum(ds.maxoff, 0);
+  s.wrap = toNum(ds.wrap, 0);
+  s.h = s.h0;
+  s.off = s.off0;
+  s.axis = '';
+  s.dragging = false;
+
+  s.win = ins.selectComponent('.md-win');
+  s.inner = ins.selectComponent('.md-inner');
+  s.wrapEl = s.wrap > 0 ? ins.selectComponent('.md-wrap') : null;
+  // 跟手期间关掉过渡
+  if (s.win) s.win.setStyle({ transition: 'none' });
+  if (s.inner) s.inner.setStyle({ transition: 'none' });
+  if (s.wrapEl) s.wrapEl.setStyle({ transition: 'none' });
+}
+
+function touchMove(e, ins) {
+  var s = ins.getState();
+  if (!s.lock) return;
+
+  var t = e.touches[0];
+  if (!t) return;
+
+  var dx = t.clientX - s.startX;
+  var dy = t.clientY - s.startY;
+
+  if (!s.axis) {
+    if (Math.abs(dx) < 3 && Math.abs(dy) < 3) return;
+    s.axis = Math.abs(dy) > Math.abs(dx) ? 'y' : 'x';
+    if (s.axis !== 'y') return;
+  }
+  if (s.axis !== 'y') return;
+
+  // 向上拉为正
+  var pull = -dy;
+  var h = s.h0;
+  var off = s.off0;
+
+  if (pull > 0) {
+    // 先把窗口撑高，撑满后再把正文继续上推
+    h = Math.min(s.max, s.h0 + pull);
+    var extra = pull - (h - s.h0);
+    off = Math.min(s.maxOff, s.off0 + extra);
+  } else {
+    // 先把正文推回去，推到顶后再缩小窗口
+    var down = -pull;
+    var back = Math.min(down, s.off0);
+    off = s.off0 - back;
+    h = Math.max(s.fold, s.h0 - (down - back));
+  }
+
+  s.dragging = true;
+  s.h = h;
+  s.off = off;
+
+  if (s.win) s.win.setStyle({ height: Math.round(h) + 'px' });
+  if (s.inner) s.inner.setStyle({ transform: 'translateY(-' + Math.round(off) + 'px)' });
+  if (s.wrapEl) s.wrapEl.setStyle({ height: wrapHeight(s) + 'px' });
+}
+
+function touchEnd(e, ins) {
+  var s = ins.getState();
+  if (!s.lock || !s.dragging) {
+    s.axis = '';
+    s.dragging = false;
+    if (s.wrapEl) s.wrapEl.setStyle({ transition: 'height 0.34s cubic-bezier(0.22, 1, 0.36, 1)' });
+    return;
+  }
+
+  s.dragging = false;
+  s.axis = '';
+
+  var mid = (s.fold + s.max) / 2;
+  var snapH = s.h >= mid ? s.max : s.fold;
+  var snapOff = snapH === s.fold ? 0 : s.off;
+  s.h = snapH;
+  s.off = snapOff;
+
+  if (s.win) {
+    s.win.setStyle({ transition: 'height 0.34s cubic-bezier(0.22, 1, 0.36, 1)' });
+    s.win.setStyle({ height: Math.round(snapH) + 'px' });
+  }
+  if (s.inner) {
+    s.inner.setStyle({ transition: 'transform 0.34s cubic-bezier(0.22, 1, 0.36, 1)' });
+    s.inner.setStyle({ transform: 'translateY(-' + Math.round(snapOff) + 'px)' });
+  }
+  if (s.wrapEl) {
+    s.wrapEl.setStyle({ transition: 'height 0.34s cubic-bezier(0.22, 1, 0.36, 1)' });
+    s.wrapEl.setStyle({ height: wrapHeight(s, true) + 'px' });
+  }
+
+  ins.callMethod('onPullEnd', { height: snapH, offset: snapOff });
+}
+
+module.exports = {
+  touchStart: touchStart,
+  touchMove: touchMove,
+  touchEnd: touchEnd
+};

@@ -1,0 +1,119 @@
+{
+  "id": "luoyi-gucheng",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "洛邑古城",
+  "subtitle": "周公营建，千年文脉",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-16T13:24:55.831Z",
+  "summary": "位于洛阳老城区，西周初年由周公主持扩建，集唐至民国建筑风格于一体，是国家级旅游休闲街区。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "历史古迹",
+    "汉服打卡",
+    "非遗文化",
+    "免费景区"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "cheng-quan-mao",
+      "title": "古城全貌",
+      "subtitle": "里坊遗韵新颜",
+      "image": "01-cheng-quan-mao.jpg",
+      "imageAlt": "洛邑古城街景与身着汉服的游客",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-cheng-quan-mao.md",
+      "audio": {
+        "durSec": 26,
+        "bytes": 207770,
+        "sha256": "f312300df716231229d74bb2d5f9b7253908179940c19e9b8d0302b575335990"
+      }
+    },
+    {
+      "id": "si-yan-jing",
+      "title": "四眼古井",
+      "subtitle": "三千年前水源",
+      "image": "02-si-yan-jing.jpg",
+      "imageAlt": "洛邑古城四眼古井复原实景",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-si-yan-jing.md",
+      "audio": {
+        "durSec": 27,
+        "bytes": 212577,
+        "sha256": "1204d7b6a18841cc7f0d25a6ab040c33a0355e8ba04780f9e8d1d4daa07941ff"
+      }
+    },
+    {
+      "id": "tuo-ling-gong",
+      "title": "妥灵宫",
+      "subtitle": "曹操祭关圣地",
+      "image": "03-tuo-ling-gong.jpg",
+      "imageAlt": "洛邑古城妥灵宫正门外观",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-tuo-ling-gong.md",
+      "audio": {
+        "durSec": 25,
+        "bytes": 198575,
+        "sha256": "433a8ea2cf323e1a0a79784e95687ed45e3aca02b24b8135e143a4d58a26f85a"
+      }
+    },
+    {
+      "id": "wen-miao",
+      "title": "河南文庙",
+      "subtitle": "金元府学遗存",
+      "image": "04-wen-miao.jpg",
+      "imageAlt": "洛邑古城河南府文庙大成殿",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-wen-miao.md",
+      "audio": {
+        "durSec": 26,
+        "bytes": 209651,
+        "sha256": "81a0a95e4af844acc5aabd01dbc1d103d2895ea6a2e89bb2c0c563c3468fb6ad"
+      }
+    },
+    {
+      "id": "xin-tan",
+      "title": "新潭遗址",
+      "subtitle": "武则天通济渠",
+      "image": "05-xin-tan.jpg",
+      "imageAlt": "洛邑古城新潭遗址水域景观",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-xin-tan.md",
+      "audio": {
+        "durSec": 25,
+        "bytes": 197321,
+        "sha256": "581c6c93fd15ce3fa7ae1560f8729e7a24821f09eab7c822da0d0dcf3ed59e7f"
+      }
+    },
+    {
+      "id": "wen-feng-ta",
+      "title": "文峰塔",
+      "subtitle": "魁星点斗祈愿",
+      "image": "06-wen-feng-ta.jpg",
+      "imageAlt": "洛邑古城文峰塔全景仰视",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/06-wen-feng-ta.md",
+      "audio": {
+        "durSec": 26,
+        "bytes": 208397,
+        "sha256": "dffd27e49d3df11e30f504d93399935800c9510317874ac440b406de7802135c"
+      }
+    }
+  ]
+}

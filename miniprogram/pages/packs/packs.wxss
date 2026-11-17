@@ -1,0 +1,410 @@
+.packs {
+  min-height: 100vh;
+  padding: 0 40rpx 100rpx;
+  background: linear-gradient(180deg, #fbfdff 0%, #f3f8fe 58%, #e9f1fb 100%);
+}
+
+.head {
+  margin-bottom: 36rpx;
+}
+
+.brand {
+  font-size: 20rpx;
+  letter-spacing: 0.34em;
+  color: #8a6b2f;
+  margin-bottom: 18rpx;
+}
+
+.head-title {
+  font-family: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+  font-size: 52rpx;
+  letter-spacing: 0.1em;
+  color: #1c2733;
+}
+
+.head-sub {
+  margin-top: 16rpx;
+  font-size: 23rpx;
+  letter-spacing: 0.06em;
+  color: rgba(28, 39, 51, 0.5);
+}
+
+.hero-wrap {
+  position: relative;
+}
+
+.hero {
+  width: 100%;
+  height: 620rpx;
+  border-radius: 40rpx;
+  overflow: hidden;
+}
+
+.hero-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 40rpx;
+  border: 1rpx solid rgba(28, 39, 51, 0.08);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-card--hover {
+  transform: scale(0.985);
+}
+
+.hero-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18rpx;
+}
+
+.hero-dot {
+  width: 12rpx;
+  height: 12rpx;
+  margin-left: 10rpx;
+  border-radius: 100rpx;
+  background: rgba(250, 252, 255, 0.42);
+  transition: width 0.3s, background 0.3s;
+}
+
+.hero-dot.is-active {
+  width: 32rpx;
+  background: #e3c766;
+}
+
+.hero-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-scrim {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    to top,
+    rgba(12, 18, 24, 0.92) 0%,
+    rgba(12, 18, 24, 0.54) 34%,
+    rgba(12, 18, 24, 0.06) 64%,
+    rgba(12, 18, 24, 0.26) 100%
+  );
+}
+
+.badge {
+  position: absolute;
+  top: 24rpx;
+  left: 24rpx;
+  display: flex;
+  align-items: center;
+  padding: 10rpx 20rpx;
+  border-radius: 100rpx;
+  background: rgba(12, 18, 24, 0.5);
+  border: 1rpx solid rgba(227, 199, 102, 0.45);
+}
+
+.badge-dot {
+  width: 10rpx;
+  height: 10rpx;
+  margin-right: 10rpx;
+  border-radius: 50%;
+  background: #86ae8f;
+  box-shadow: 0 0 8rpx rgba(134, 174, 143, 0.8);
+}
+
+.badge-text {
+  font-size: 20rpx;
+  letter-spacing: 0.08em;
+  color: #e3c766;
+}
+
+.hero-meta {
+  position: absolute;
+  left: 36rpx;
+  right: 36rpx;
+  bottom: 30rpx;
+}
+
+.hero-title {
+  font-family: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+  font-size: 48rpx;
+  letter-spacing: 0.07em;
+  color: #fbfdff;
+}
+
+.hero-sub {
+  margin-top: 10rpx;
+  font-size: 23rpx;
+  letter-spacing: 0.1em;
+  color: rgba(250, 252, 255, 0.62);
+}
+
+.facts {
+  display: flex;
+  align-items: center;
+  margin-top: 22rpx;
+  font-size: 21rpx;
+  letter-spacing: 0.05em;
+  color: rgba(250, 252, 255, 0.5);
+}
+
+.fact-sep {
+  margin: 0 12rpx;
+  opacity: 0.55;
+}
+
+.tags {
+  display: flex;
+  margin-top: 20rpx;
+}
+
+/* 轮播卡上的存音频入口：深色照片上用半透明底保证可读 */
+.hero-audio {
+  display: inline-block;
+  margin-top: 20rpx;
+  padding: 8rpx 24rpx;
+  border-radius: 100rpx;
+  font-size: 20rpx;
+  letter-spacing: 0.06em;
+  color: rgba(250, 252, 255, 0.86);
+  background: rgba(0, 0, 0, 0.28);
+  border: 1rpx solid rgba(250, 252, 255, 0.3);
+}
+
+.hero-audio.is-on {
+  color: #f0d78c;
+  border-color: rgba(227, 199, 102, 0.62);
+  background: rgba(0, 0, 0, 0.34);
+}
+
+.tag {
+  margin-right: 12rpx;
+  padding: 6rpx 16rpx;
+  border-radius: 8rpx;
+  border: 1rpx solid rgba(250, 252, 255, 0.22);
+  font-size: 19rpx;
+  letter-spacing: 0.1em;
+  color: rgba(250, 252, 255, 0.62);
+}
+
+.ai-inline {
+  font-size: 19rpx;
+  letter-spacing: 0.06em;
+  color: rgba(227, 199, 102, 0.82);
+}
+
+.section-label {
+  margin: 44rpx 0 20rpx;
+  font-size: 20rpx;
+  letter-spacing: 0.26em;
+  color: rgba(28, 39, 51, 0.4);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 20rpx 24rpx;
+  margin-bottom: 20rpx;
+  border-radius: 28rpx;
+  border: 1rpx solid rgba(28, 39, 51, 0.07);
+  background: rgba(255, 255, 255, 0.72);
+  transition: background 0.25s, border-color 0.25s;
+}
+
+.row--hover {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(28, 39, 51, 0.14);
+}
+
+.thumb {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 128rpx;
+  height: 128rpx;
+  margin-right: 24rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.thumb-img {
+  display: block;
+  background: rgba(28, 39, 51, 0.05);
+}
+
+.thumb-glyph {
+  font-family: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+  font-size: 40rpx;
+  color: rgba(138, 107, 47, 0.66);
+}
+
+.row-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.row-title {
+  font-family: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+  font-size: 30rpx;
+  letter-spacing: 0.06em;
+  color: #1c2733;
+}
+
+/* 右上角删除：卡片在深色图上用半透明底，列表行用浅底 */
+.card-del,
+.row-del {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  line-height: 1;
+}
+
+.card-del {
+  top: 24rpx;
+  right: 24rpx;
+  width: 56rpx;
+  height: 56rpx;
+  font-size: 34rpx;
+  color: rgba(250, 252, 255, 0.92);
+  background: rgba(12, 18, 24, 0.42);
+  border: 1rpx solid rgba(250, 252, 255, 0.35);
+}
+
+.row-del {
+  top: 8rpx;
+  right: 10rpx;
+  width: 48rpx;
+  height: 48rpx;
+  font-size: 30rpx;
+  color: rgba(28, 39, 51, 0.5);
+  background: rgba(28, 39, 51, 0.06);
+  border: 1rpx solid rgba(28, 39, 51, 0.1);
+}
+
+.row-body--del {
+  padding-right: 56rpx;
+}
+
+.row-sub {
+  margin-top: 8rpx;
+  font-size: 21rpx;
+  letter-spacing: 0.02em;
+  color: rgba(28, 39, 51, 0.46);
+}
+
+.row-state {
+  margin-top: 12rpx;
+  font-size: 20rpx;
+  letter-spacing: 0.04em;
+  color: #3f6b58;
+}
+
+.audio-chip {
+  margin-left: 16rpx;
+  padding: 4rpx 18rpx;
+  border-radius: 100rpx;
+  font-size: 19rpx;
+  color: rgba(28, 39, 51, 0.55);
+  background: rgba(28, 39, 51, 0.06);
+  border: 1rpx solid rgba(28, 39, 51, 0.12);
+}
+
+.audio-chip.is-on {
+  color: #8a6d1f;
+  background: rgba(227, 199, 102, 0.16);
+  border-color: rgba(227, 199, 102, 0.5);
+}
+
+.note {
+  margin-top: 30rpx;
+  text-align: center;
+  font-size: 19rpx;
+  letter-spacing: 0.26em;
+  color: rgba(28, 39, 51, 0.3);
+}
+
+.ask {
+  display: flex;
+  align-items: center;
+  margin-top: 30rpx;
+  height: 92rpx;
+  padding-left: 28rpx;
+  border-radius: 100rpx;
+  border: 1rpx solid rgba(28, 39, 51, 0.1);
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.ask-input {
+  flex: 1;
+  min-width: 0;
+  font-size: 25rpx;
+  letter-spacing: 0.03em;
+  color: #1c2733;
+}
+
+.ask-ph {
+  color: rgba(28, 39, 51, 0.35);
+}
+
+.ask-go {
+  flex: none;
+  margin-left: 16rpx;
+  height: 68rpx;
+  padding: 0 30rpx;
+  line-height: 68rpx;
+  border-radius: 100rpx;
+  font-size: 23rpx;
+  letter-spacing: 0.12em;
+  color: rgba(28, 39, 51, 0.4);
+  border: 1rpx solid rgba(28, 39, 51, 0.12);
+  transition: opacity 0.25s;
+}
+
+.ask-go.is-ready {
+  color: #f7faff;
+  background: #2f5a4a;
+  border-color: #2f5a4a;
+}
+
+.thumb--pending {
+  background: linear-gradient(140deg, #e9f0f8 0%, #dfe9f4 62%, #d5e2f0 100%);
+}
+
+.row-state.is-live {
+  animation: livePulse 1.8s ease-in-out infinite;
+}
+
+.row--failed {
+  border-color: rgba(169, 83, 63, 0.3);
+  background: rgba(169, 83, 63, 0.04);
+}
+
+.row-state.is-failed {
+  color: #a9533f;
+}
+
+@keyframes livePulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}

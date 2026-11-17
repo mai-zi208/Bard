@@ -1,0 +1,138 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.md {
+  position: relative;
+  color: rgba(242, 235, 221, 0.88);
+  /* 常态轻投影：文字可能落在照片亮部，先把底子压住 */
+  text-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.42);
+  padding-bottom: 2rpx;
+}
+
+/* 可视窗口：高度随上拉增长，超出部分裁掉 */
+.md-win {
+  overflow: hidden;
+  transition: height 0.34s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* 正文整体：窗口撑满后继续上移，剩余文字随之被拉上来 */
+.md-inner {
+  will-change: transform;
+  transition: transform 0.34s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.md.is-no-anim .md-win,
+.md.is-no-anim .md-inner {
+  transition: none;
+}
+
+/* 绕排占位：左侧留出立绘宽度，前几行窄栏，越过立绘底边后自动通栏。
+   高度由 JS/WXS 驱动，跟随窗口展开一起长高 */
+.md-wrap {
+  float: left;
+  width: 270rpx;
+  height: 0;
+  transition: height 0.34s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.md.is-no-anim .md-wrap {
+  transition: none;
+}
+
+.md-h {
+  margin: 26rpx 0 12rpx;
+  font-family: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+  font-size: 32rpx;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  color: #f2ebdd;
+}
+
+.md-h1 {
+  font-size: 40rpx;
+}
+
+.md-h2 {
+  font-size: 34rpx;
+}
+
+.md-block:first-child .md-h {
+  margin-top: 0;
+}
+
+.md-p {
+  margin-bottom: 18rpx;
+  font-size: 25rpx;
+  line-height: 1.85;
+  letter-spacing: 0.02em;
+}
+
+.md-b {
+  font-weight: 600;
+  color: #f2ebdd;
+}
+
+.md-quote {
+  margin: 8rpx 0 18rpx;
+  padding-left: 18rpx;
+  border-left: 3rpx solid rgba(201, 162, 39, 0.6);
+  font-size: 24rpx;
+  line-height: 1.8;
+  color: rgba(242, 235, 221, 0.7);
+}
+
+.md-li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10rpx;
+  font-size: 24rpx;
+  line-height: 1.8;
+}
+
+.md-dot {
+  flex: none;
+  width: 8rpx;
+  height: 8rpx;
+  margin: 16rpx 14rpx 0 4rpx;
+  border-radius: 50%;
+  background: rgba(201, 162, 39, 0.8);
+}
+
+.md-li-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.md-img {
+  width: 100%;
+  margin: 14rpx 0 18rpx;
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+
+.md-hr {
+  height: 1rpx;
+  margin: 24rpx 0;
+  background: rgba(242, 235, 221, 0.16);
+}
+
+/* 全开后正文上移，会压在照片亮部：加深文字并加强投影 */
+.md.is-open .md-p,
+.md.is-open .md-quote,
+.md.is-open .md-li {
+  color: rgba(242, 235, 221, 0.96);
+  text-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.66);
+}
+
+/* 窗口底部渐隐：暗示下面还有内容，可继续上拉 */
+.md-fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 64rpx;
+  background: linear-gradient(to bottom, rgba(9, 8, 6, 0), rgba(9, 8, 6, 0.86));
+}

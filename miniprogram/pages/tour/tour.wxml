@@ -1,0 +1,72 @@
+<view class="tour">
+  <swiper
+    class="deck"
+    circular="{{false}}"
+    duration="{{lite ? 420 : 600}}"
+    current="{{current}}"
+    disable-touch="{{guideOpen}}"
+    bindchange="onChange"
+  >
+    <swiper-item wx:for="{{scenes}}" wx:key="id">
+      <scene
+        scene="{{item}}"
+        active="{{index === current}}"
+        near="{{index >= current - 1 && index <= current + 1}}"
+        direction="{{direction}}"
+        lite="{{lite}}"
+      />
+    </swiper-item>
+  </swiper>
+
+  <view class="topbar" style="padding-top: {{statusBarHeight + 10}}px">
+    <view class="back" bindtap="back" hover-class="none" aria-role="button" aria-label="返回资源包列表">
+      <text class="back-arrow">‹</text>
+    </view>
+    <view class="route-wrap">
+      <route-bar index="{{current}}" total="{{total}}" bind:select="onTick" />
+    </view>
+  </view>
+
+  <guide
+    scenes="{{scenes}}"
+    current="{{current}}"
+    top="{{statusBarHeight}}"
+    narrator-name="{{pack.narratorName}}"
+    pack-title="{{pack.title}}"
+    pois="{{pack.pois}}"
+    bind:toggle="onGuideToggle"
+    bind:jump="onGuideJump"
+  />
+
+  <view
+    wx:if="{{!guideOpen}}"
+    class="swipe {{isLast ? 'is-last' : ''}} {{current > 0 && !isLast ? 'is-out' : ''}}"
+    bindtap="onHint"
+    hover-class="none"
+  >
+    <text class="swipe-label">{{isLast ? '完成游览' : '左滑继续'}}</text>
+    <view wx:if="{{!isLast}}" class="swipe-arrow"></view>
+  </view>
+
+  <view wx:if="{{finished}}" class="finish">
+    <view class="seal">{{pack.sealChar}}</view>
+    <view class="kicker">{{pack.shortTitle}} · {{pack.totalLabelPlain}}幕已尽</view>
+    <view class="quote">{{pack.quote}}</view>
+    <view class="source">讲述人 · {{pack.narratorName}}</view>
+    <view wx:if="{{pack.aiGenerated}}" class="ai-note">内容由 AI 生成，仅供游览参考</view>
+
+    <view class="share-card">
+      <image class="share-cover" src="{{pack.coverUrl}}" mode="aspectFill" />
+      <view class="share-body">
+        <view class="share-title">{{pack.title}}</view>
+        <view class="share-sub">{{pack.subtitle}} · {{total}} 幕</view>
+      </view>
+      <view class="seal-mini">{{pack.sealChar}}</view>
+    </view>
+
+    <view class="actions">
+      <button class="btn btn--primary" open-type="share" hover-class="btn--hover">分享给朋友</button>
+      <button class="btn btn--ghost" bindtap="backToPacks" hover-class="none">返回资源包</button>
+    </view>
+  </view>
+</view>

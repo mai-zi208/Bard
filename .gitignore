@@ -1,0 +1,31 @@
+# 依赖
+node_modules/
+__pycache__/
+*.pyc
+
+# 本地环境与密钥
+.env
+.env.*
+!.env.example
+
+# 运行期数据与日志
+server/data/
+*.log
+npm-debug.log*
+
+# 生成源原图（体积大，按需本地保留）
+packs-src/
+
+# 设计与素材源文件
+assets/
+design/
+
+# 发布备份与临时目录
+cdn/.backup/
+cdn/.tmp/
+.tmp/
+.preview/
+.screenshots/
+
+# 微信开发者工具个人配置
+project.private.config.json

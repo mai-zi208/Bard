@@ -1,0 +1,145 @@
+<view class="packs">
+  <view class="head" style="padding-top: {{statusBarHeight + 44}}px">
+    <view class="brand">TOUR GUIDE</view>
+    <view class="head-title">游览向导</view>
+    <view class="head-sub">选一处地方，听一段讲述</view>
+  </view>
+
+  <view wx:if="{{heroList.length}}" class="hero-wrap">
+    <swiper
+      class="hero"
+      autoplay="{{heroList.length > 1}}"
+      circular="{{heroList.length > 1}}"
+      interval="3200"
+      duration="450"
+      current="{{heroIndex}}"
+      bindchange="onHeroChange"
+    >
+      <swiper-item wx:for="{{heroList}}" wx:key="id">
+        <view
+          class="hero-card"
+          data-id="{{item.id}}"
+          bindtap="openHeroItem"
+          hover-class="hero-card--hover"
+        >
+          <image class="hero-img" src="{{item.coverUrl}}" mode="aspectFill" />
+          <view class="hero-scrim"></view>
+          <view
+            wx:if="{{item.removable}}"
+            class="card-del"
+            data-id="{{item.id}}"
+            data-title="{{item.title}}"
+            catchtap="deletePack"
+          >×</view>
+          <view class="badge">
+            <view class="badge-dot"></view>
+            <text class="badge-text">{{item.statusText}}</text>
+          </view>
+          <view class="hero-meta">
+            <view class="hero-title">{{item.title}}</view>
+            <view class="hero-sub">
+              {{item.subtitle}}<text wx:if="{{item.aiGenerated}}" class="ai-inline"> · AI 生成</text>
+            </view>
+            <view class="facts">
+              <block wx:for="{{item.facts}}" wx:for-item="fact" wx:key="*this">
+                <text wx:if="{{index > 0}}" class="fact-sep">·</text>
+                <text class="fact">{{fact}}</text>
+              </block>
+            </view>
+            <view class="tags">
+              <text wx:for="{{item.tags}}" wx:for-item="tag" wx:key="*this" class="tag">{{tag}}</text>
+            </view>
+            <view
+              wx:if="{{item.audioCount}}"
+              class="hero-audio {{item.audioDownloaded ? 'is-on' : ''}}"
+              data-id="{{item.id}}"
+              catchtap="toggleAudio"
+              >{{item.audioDownloaded ? '音频已存 · 离线可听' : '存音频，离线可听'}}</view
+            >
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+    <view wx:if="{{heroList.length > 1}}" class="hero-dots">
+      <view
+        wx:for="{{heroList}}"
+        wx:key="id"
+        class="hero-dot {{index === heroIndex ? 'is-active' : ''}}"
+      ></view>
+    </view>
+  </view>
+
+  <view class="ask">
+    <input
+      class="ask-input"
+      value="{{topic}}"
+      placeholder="景点-人物，如 白马寺-武则天"
+      placeholder-class="ask-ph"
+      confirm-type="send"
+      bindinput="onInput"
+      bindconfirm="onSubmit"
+    />
+    <view class="ask-go {{topic ? 'is-ready' : ''}}" bindtap="onSubmit">生成</view>
+  </view>
+
+  <view class="section-label">更多资源包</view>
+
+  <view class="list">
+    <view
+      wx:for="{{tasks}}"
+      wx:key="taskId"
+      class="row {{item.failed ? 'row--failed' : ''}}"
+      data-taskid="{{item.taskId}}"
+      bindtap="retryTask"
+      hover-class="row--hover"
+    >
+      <view class="thumb thumb--pending"><text class="thumb-glyph">{{item.glyph}}</text></view>
+      <view class="row-body {{item.failed ? 'row-body--del' : ''}}">
+        <view class="row-title">{{item.topic}}</view>
+        <view class="row-sub">检索资料 · 编排文稿 · 配图打包</view>
+        <view class="row-state {{item.failed ? 'is-failed' : 'is-live'}}">{{item.statusText}}</view>
+      </view>
+      <view
+        wx:if="{{item.failed}}"
+        class="row-del"
+        data-taskid="{{item.taskId}}"
+        data-title="{{item.topic}}"
+        catchtap="deleteTask"
+      >×</view>
+    </view>
+    <view
+      wx:for="{{more}}"
+      wx:key="id"
+      class="row"
+      data-id="{{item.id}}"
+      bindtap="openPack"
+      hover-class="row--hover"
+    >
+      <image class="thumb thumb-img" src="{{item.coverUrl}}" mode="aspectFill" />
+      <view class="row-body {{item.removable ? 'row-body--del' : ''}}">
+        <view class="row-title">{{item.title}}</view>
+        <view class="row-sub">
+          {{item.subtitle}}<text wx:if="{{item.aiGenerated}}" class="ai-inline"> · AI 生成</text>
+        </view>
+        <view class="row-state">
+          {{item.total}} 幕 · {{item.statusText}}<text
+            wx:if="{{item.audioCount}}"
+            class="audio-chip {{item.audioDownloaded ? 'is-on' : ''}}"
+            data-id="{{item.id}}"
+            catchtap="toggleAudio"
+            >{{item.audioDownloaded ? '音频已存' : '存音频'}}</text
+          >
+        </view>
+      </view>
+      <view
+        wx:if="{{item.removable}}"
+        class="row-del"
+        data-id="{{item.id}}"
+        data-title="{{item.title}}"
+        catchtap="deletePack"
+      >×</view>
+    </view>
+  </view>
+
+  <view class="note">内容持续增加中</view>
+</view>

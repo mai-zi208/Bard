@@ -1,0 +1,433 @@
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.scene,
+.scene view,
+.scene text,
+.scene image {
+  box-sizing: border-box;
+}
+
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0b0908;
+}
+
+.scene-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.12);
+}
+
+.scene-bg--empty {
+  background: #0b0908;
+}
+
+.scene.is-on .scene-bg {
+  animation: bgIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.scene-scrim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(9, 8, 6, 0.62) 0%,
+    rgba(9, 8, 6, 0.3) 12%,
+    rgba(9, 8, 6, 0.08) 26%,
+    rgba(9, 8, 6, 0.24) 44%,
+    rgba(9, 8, 6, 0.84) 72%,
+    rgba(9, 8, 6, 0.97) 100%
+  );
+  transition: background 0.3s ease;
+}
+
+/* 抬起后上方照片露出更多，文字与立绘所在的下半部继续压深，
+   避免立绘深色画面压在照片上出现明显色块 */
+.scene.is-raised .scene-scrim {
+  background: linear-gradient(
+    to bottom,
+    rgba(9, 8, 6, 0.3) 0%,
+    rgba(9, 8, 6, 0.14) 14%,
+    rgba(9, 8, 6, 0.52) 32%,
+    rgba(9, 8, 6, 0.74) 55%,
+    rgba(9, 8, 6, 0.9) 80%,
+    rgba(9, 8, 6, 0.96) 100%
+  );
+}
+
+/* 抬起阅读态：文字加投影，避免压在亮部照片上看不清 */
+.scene.is-raised .scene-title {
+  text-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.5);
+}
+
+.scene.is-raised .para {
+  color: rgba(242, 235, 221, 0.92);
+  text-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.55);
+}
+
+/* 默认贴底；上拉后抬起至顶部 30% */
+.scene-body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 150rpx;
+  z-index: 10;
+  padding: 0 40rpx;
+  will-change: transform;
+}
+
+/* 立绘顶边与标题顶边对齐，高度由 JS 按 3:4 与文字块底部夹取 */
+.figure {
+  position: absolute;
+  left: 40rpx;
+  top: 42rpx;
+  width: 240rpx;
+  height: 320rpx;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.figure-img {
+  flex: none;
+  width: 280rpx;
+  height: 100%;
+  opacity: 0;
+}
+
+/* 3:4 完整画面（按幕插画 / 完整立绘）：铺满立绘框，不裁切 */
+.figure-img.is-illus {
+  width: 100%;
+  height: 100%;
+}
+
+/* 生成的不透明按幕插画：四边羽化溶进背景照片，避免出现生硬矩形边 */
+.figure-img.is-illus.has-mask {
+  border-radius: 16rpx;
+  -webkit-mask-image: radial-gradient(
+    ellipse 100% 100% at 50% 50%,
+    #000 62%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 100% 100% at 50% 50%,
+    #000 62%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.copy {
+  padding-bottom: 2rpx;
+}
+
+/* 标题区让开立绘，正文由 markdown 内的浮动占位绕排，越过立绘底边后自动通栏 */
+.copy.has-figure .scene-idx,
+.copy.has-figure .scene-title,
+.copy.has-figure .scene-sub {
+  padding-left: 270rpx;
+}
+
+.copy.no-figure {
+  margin-left: 0;
+}
+
+.scene-md {
+  min-height: 0;
+  opacity: 0;
+}
+
+.scene.is-on .scene-md {
+  animation: riseY 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.24s both;
+}
+
+.scene.is-seen .scene-md {
+  opacity: 1;
+  transform: none;
+}
+
+.scene.is-lite.is-on .scene-md {
+  animation: fadeIn 0.2s linear both;
+}
+
+
+.scene-idx {
+  display: flex;
+  align-items: baseline;
+}
+
+.idx-num {
+  font-family: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+  font-size: 24rpx;
+  letter-spacing: 0.18em;
+  color: #c9a227;
+}
+
+.idx-of {
+  margin-left: 10rpx;
+  font-size: 18rpx;
+  letter-spacing: 0.1em;
+  color: rgba(242, 235, 221, 0.45);
+  text-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.4);
+}
+
+.scene-title {
+  margin-top: 8rpx;
+  font-family: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+  font-size: 54rpx;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+  color: #f2ebdd;
+  text-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.5);
+  opacity: 0;
+}
+
+.scene-sub {
+  margin-top: 16rpx;
+  font-size: 22rpx;
+  letter-spacing: 0.16em;
+  color: rgba(242, 235, 221, 0.64);
+  text-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.45);
+  opacity: 0;
+}
+
+.paras {
+  margin-top: 24rpx;
+  opacity: 0;
+}
+
+.para {
+  display: block;
+  margin-bottom: 16rpx;
+  font-size: 25rpx;
+  line-height: 1.85;
+  letter-spacing: 0.02em;
+  color: rgba(242, 235, 221, 0.88);
+  text-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.42);
+}
+
+.para:last-child {
+  margin-bottom: 0;
+}
+
+.listen {
+  display: inline-flex;
+  align-items: center;
+  height: 68rpx;
+  margin-top: 26rpx;
+  padding: 0 28rpx;
+  border-radius: 100rpx;
+  border: 1rpx solid rgba(201, 162, 39, 0.42);
+  background: rgba(10, 9, 7, 0.52);
+  opacity: 0;
+}
+
+.listen-ico {
+  width: 0;
+  height: 0;
+  margin-right: 14rpx;
+  border-left: 14rpx solid #e3c766;
+  border-top: 9rpx solid transparent;
+  border-bottom: 9rpx solid transparent;
+}
+
+.listen-label {
+  font-size: 22rpx;
+  letter-spacing: 0.1em;
+  color: #f2ebdd;
+}
+
+.listen.is-disabled {
+  border-color: rgba(242, 235, 221, 0.2);
+}
+
+.listen.is-playing {
+  border-color: rgba(227, 199, 102, 0.9);
+}
+
+.listen.is-playing .listen-ico {
+  border-left-color: #fff3cf;
+}
+
+.listen.is-disabled .listen-ico {
+  border-left-color: rgba(227, 199, 102, 0.5);
+}
+
+.listen.is-disabled .listen-label {
+  color: rgba(242, 235, 221, 0.5);
+}
+
+/* 入场：六层错峰（背景、标题、副标题、立绘、正文、按钮） */
+.scene.is-on .scene-title {
+  animation: riseY 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+}
+
+.scene.is-on .scene-sub {
+  animation: riseY 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
+}
+
+.scene.is-on .figure-img {
+  animation: figIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.scene.is-on .paras {
+  animation: riseY 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.24s both;
+}
+
+.scene.is-on .listen {
+  animation: btnIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) 0.56s both;
+}
+
+/* 离场后保持可见，避免滑出时突然空白 */
+.scene.is-seen .scene-bg {
+  transform: scale(1.02);
+}
+
+.scene.is-seen .scene-title,
+.scene.is-seen .scene-sub,
+.scene.is-seen .paras,
+.scene.is-seen .figure-img,
+.scene.is-seen .listen {
+  opacity: 1;
+  transform: none;
+}
+
+/* 分幕转场变体 */
+.t-slide.is-on .scene-title,
+.t-slide.is-on .scene-sub,
+.t-slide.is-on .paras {
+  animation-name: riseX;
+}
+
+.scene[data-dir="prev"].t-slide.is-on .scene-title,
+.scene[data-dir="prev"].t-slide.is-on .scene-sub,
+.scene[data-dir="prev"].t-slide.is-on .paras {
+  animation-name: riseXLeft;
+}
+
+.t-fade.is-on .scene-title,
+.t-fade.is-on .scene-sub,
+.t-fade.is-on .paras,
+.t-fade.is-on .listen {
+  animation-name: fadeIn;
+}
+
+/* 低端机：去掉背景缩放与逐层错峰，五层合并为一次 0.2s 淡入 */
+.scene.is-lite.is-on .scene-bg {
+  animation: none;
+  transform: scale(1.02);
+}
+
+.scene.is-lite.is-on .scene-title,
+.scene.is-lite.is-on .scene-sub,
+.scene.is-lite.is-on .paras,
+.scene.is-lite.is-on .figure-img,
+.scene.is-lite.is-on .listen {
+  animation: fadeIn 0.2s linear both;
+}
+
+@keyframes bgIn {
+  0% {
+    transform: scale(1.12);
+  }
+  100% {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes riseY {
+  0% {
+    opacity: 0;
+    transform: translateY(24rpx);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes riseX {
+  0% {
+    opacity: 0;
+    transform: translateX(26rpx);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes riseXLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-26rpx);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes figIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-24rpx);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes btnIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-height: 700px) {
+  .scene-body {
+    bottom: 118rpx;
+  }
+
+  .scene-title {
+    font-size: 48rpx;
+  }
+
+  .para {
+    font-size: 23rpx;
+    line-height: 1.78;
+    margin-bottom: 12rpx;
+  }
+
+  .listen {
+    margin-top: 20rpx;
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "id": "lijingmen",
+  "schemaVersion": 2,
+  "version": 2,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "洛阳丽景门",
+  "subtitle": "金明洛阳城西大门，重现古都风貌",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-17T14:23:36.058Z",
+  "summary": "位于洛阳老城区，始建于1217年，2002年原址重建。集城门、瓮城、箭楼于一体，被誉为“中原第一楼”。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "历史建筑",
+    "洛阳八景",
+    "河洛文化",
+    "古城遗址"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "wei-zhi-yuan-liu",
+      "title": "地理位置",
+      "subtitle": "老城西门，历史交汇",
+      "image": "01-wei-zhi-yuan-liu.jpg",
+      "imageAlt": "丽景门城楼远景与周边街道交叉口",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/01-wei-zhi-yuan-liu.md",
+      "audio": {
+        "durSec": 25,
+        "bytes": 202337,
+        "sha256": "2d744ff0dd8289027a9c07ace182b3e09196c7cf694beda29ae08753d701bfa8"
+      }
+    },
+    {
+      "id": "li-jing-qiao",
+      "title": "丽景桥畔",
+      "subtitle": "汉白玉狮，护城河水",
+      "image": "02-li-jing-qiao.jpg",
+      "imageAlt": "丽景桥上的汉白玉石狮子与桥下河水",
+      "transition": "zoom-out",
+      "holdMs": 9500,
+      "body": "body/02-li-jing-qiao.md",
+      "audio": {
+        "durSec": 27,
+        "bytes": 219473,
+        "sha256": "857b07197145344e4958300be0ff8c2806f932bedf35450483fa625716cead2e"
+      }
+    },
+    {
+      "id": "weng-cheng-jian-lou",
+      "title": "瓮城箭楼",
+      "subtitle": "重门叠关，气势磅礴",
+      "image": "03-weng-cheng-jian-lou.jpg",
+      "imageAlt": "瓮城内部视角仰视箭楼与古庙",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/03-weng-cheng-jian-lou.md",
+      "audio": {
+        "durSec": 27,
+        "bytes": 213622,
+        "sha256": "d423d8a247c749aa66a92b5c58afc3cce204498d8b9e0a935650fa2764a327d5"
+      }
+    },
+    {
+      "id": "shi-san-long-zhu",
+      "title": "十三龙柱",
+      "subtitle": "象征古都，守卫城楼",
+      "image": "04-shi-san-long-zhu.jpg",
+      "imageAlt": "城楼顶层排列整齐的十三根描金龙柱",
+      "transition": "slide",
+      "holdMs": 10000,
+      "body": "body/04-shi-san-long-zhu.md",
+      "audio": {
+        "durSec": 26,
+        "bytes": 205053,
+        "sha256": "98fa8e2d747e236c6c0300000db5c6b7d191b28513a5a1f86f5a932e0c1eac2a"
+      }
+    },
+    {
+      "id": "di-wang-shi-guan",
+      "title": "帝王史馆",
+      "subtitle": "百位帝王，建都史料",
+      "image": "05-di-wang-shi-guan.jpg",
+      "imageAlt": "帝王史馆内展示的皇帝画像或文物展板",
+      "transition": "fade",
+      "holdMs": 9500,
+      "body": "body/05-di-wang-shi-guan.md",
+      "audio": {
+        "durSec": 25,
+        "bytes": 200665,
+        "sha256": "752f339da79a2202cef4d1c6c4866470ab9266e41684b2e95a5c43ff39ae6ae8"
+      }
+    }
+  ]
+}

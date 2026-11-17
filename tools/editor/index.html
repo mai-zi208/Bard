@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>资源包编辑器</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">资源包编辑器</div>
+    <select id="pack-select" title="切换资源包"></select>
+    <span id="pack-meta" class="pack-meta"></span>
+    <div class="spacer"></div>
+    <span id="dirty-flag" class="dirty-flag">未改动</span>
+    <button id="btn-settings" class="ghost">包设置</button>
+    <button id="btn-save" class="ghost">保存</button>
+    <button id="btn-check">校验</button>
+    <button id="btn-publish" disabled>发布</button>
+  </header>
+
+  <div id="status" class="status hidden"></div>
+
+  <main class="layout">
+    <aside class="scenes">
+      <div class="panel-title">分镜 <span id="scene-count" class="muted"></span></div>
+      <ol id="scene-list" class="scene-list"></ol>
+      <div class="scene-tip muted">顺序即路线，上下箭头调整</div>
+    </aside>
+
+    <section id="editor" class="editor"></section>
+
+    <aside class="preview">
+      <div class="panel-title">分镜预览</div>
+      <div class="phone" id="phone"></div>
+      <div id="preview-note" class="preview-note muted"></div>
+    </aside>
+  </main>
+
+  <div id="drawer" class="drawer hidden">
+    <div class="drawer-panel">
+      <div class="drawer-head">
+        <strong>包设置</strong>
+        <button id="btn-close-drawer" class="ghost">关闭</button>
+      </div>
+      <div id="drawer-body" class="drawer-body"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

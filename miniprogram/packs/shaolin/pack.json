@@ -1,0 +1,164 @@
+{
+  "id": "shaolin",
+  "schemaVersion": 2,
+  "version": 3,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "少林寺",
+  "subtitle": "嵩山少室山下的禅宗祖庭与功夫圣地",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-17T14:23:19.034Z",
+  "summary": "从山门到塔林，沿中轴线走一遍，看康熙御匾、唐碑战功、面壁石洞与历代高僧墓塔。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "世界文化遗产",
+    "禅宗祖庭",
+    "少林功夫",
+    "古塔建筑群"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "shanmen",
+      "title": "山门",
+      "subtitle": "御笔匾额",
+      "image": "01-shanmen.jpg",
+      "imageAlt": "山门悬黑底金字「少林寺」匾，匾上刻康熙御书之宝印",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/01-shanmen.md",
+      "audio": {
+        "durSec": 34,
+        "bytes": 272345,
+        "sha256": "0f9591f2f0645be059f30479706478f177431cde64aecf08ee3c2cd1ff7ed1af"
+      }
+    },
+    {
+      "id": "yongdao",
+      "title": "甬道",
+      "subtitle": "唐碑记功",
+      "image": "02-yongdao.jpg",
+      "imageAlt": "甬道东侧碑廊，历代石碑排列于廊下",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/02-yongdao.md",
+      "audio": {
+        "durSec": 35,
+        "bytes": 277987,
+        "sha256": "f0ebdd4c465dcfa2009920e29266a35a8307d1bd59ace3f2e76bd33aef17f8aa"
+      }
+    },
+    {
+      "id": "tianwangdian",
+      "title": "天王殿",
+      "subtitle": "风调雨顺",
+      "image": "03-tianwangdian.jpg",
+      "imageAlt": "天王殿门内两尊金刚握杵而立",
+      "transition": "zoom-out",
+      "holdMs": 8500,
+      "body": "body/03-tianwangdian.md",
+      "audio": {
+        "durSec": 35,
+        "bytes": 283839,
+        "sha256": "69b515f339928721c251c3cbc1f4491e054fc5249b1dfbee65434dd9ffcb9279"
+      }
+    },
+    {
+      "id": "daxiongbaodian",
+      "title": "大雄宝殿",
+      "subtitle": "三世佛殿",
+      "image": "04-daxiongbaodian.jpg",
+      "imageAlt": "大雄宝殿内供三世佛，两侧十八罗汉侍立",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/04-daxiongbaodian.md",
+      "audio": {
+        "durSec": 34,
+        "bytes": 275689,
+        "sha256": "411bf786fb750920b83a7f6d3c5fda052f2757143dde0b46c84ed2bd6e5ed111"
+      }
+    },
+    {
+      "id": "cangjingge",
+      "title": "藏经阁",
+      "subtitle": "明代大锅",
+      "image": "05-cangjingge.jpg",
+      "imageAlt": "藏经阁前月台下明代大铁锅，锅沿铸字",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/05-cangjingge.md",
+      "audio": {
+        "durSec": 37,
+        "bytes": 294706,
+        "sha256": "2dcd8b9b45b213f2feaf737a6969c468bd972042c1c1cfa3792bf6a7c5bad87e"
+      }
+    },
+    {
+      "id": "lixueting",
+      "title": "立雪亭",
+      "subtitle": "雪中断臂",
+      "image": "06-lixueting.jpg",
+      "imageAlt": "立雪亭一带青瓦屋檐覆雪，檐下挂红灯笼",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/06-lixueting.md",
+      "audio": {
+        "durSec": 38,
+        "bytes": 306200,
+        "sha256": "d4a0fb1f25603d6711f2ce44e517639643828999f92ff1b257753ac540397b21"
+      }
+    },
+    {
+      "id": "qianfodian",
+      "title": "千佛殿",
+      "subtitle": "罗汉壁画",
+      "image": "07-qianfodian.jpg",
+      "imageAlt": "千佛殿内五百罗汉朝毗卢壁画，地面有练功脚坑",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/07-qianfodian.md",
+      "audio": {
+        "durSec": 34,
+        "bytes": 269210,
+        "sha256": "246abfef72a09904508cde6118b16a13d59c76812ae11540e61191c1fa21bf92"
+      }
+    },
+    {
+      "id": "damodong",
+      "title": "达摩洞",
+      "subtitle": "面壁九年",
+      "image": "08-damodong.jpg",
+      "imageAlt": "五乳峰中峰上部天然石洞，洞口青石拱门",
+      "transition": "rise",
+      "holdMs": 9500,
+      "body": "body/08-damodong.md",
+      "audio": {
+        "durSec": 34,
+        "bytes": 274435,
+        "sha256": "75c58f559f8933f333e049f4b24536e7b9243f8c919efae09a10bb6003078b3d"
+      }
+    },
+    {
+      "id": "talin",
+      "title": "塔林",
+      "subtitle": "高僧墓塔",
+      "image": "09-talin.jpg",
+      "imageAlt": "少室山脚下历代砖石墓塔密集成林",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/09-talin.md",
+      "audio": {
+        "durSec": 36,
+        "bytes": 285093,
+        "sha256": "1cad40cbe7541686c4dbff32ee9bfa265924775d189f5d6fb47f6df90d454591"
+      }
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+// 上拉手势：拖动阶段直接用 setStyle 改 transform，避免 setData 往返造成迟滞
+var state = {};
+
+function touchStart(e, ins) {
+  var s = ins.getState();
+  var ds = e.currentTarget.dataset;
+  // 正文可继续上拉 / 浮窗打开：纵向手势交给正文窗口或浮窗，这里不再抬整块
+  if (ds.lock) {
+    s.axis = 'x';
+    s.dragging = false;
+    return;
+  }
+  var t = e.touches[0];
+  s.startX = t.clientX;
+  s.startY = t.clientY;
+  s.lastY = t.clientY;
+  s.lift = parseFloat(ds.lift) || 0;
+  s.max = parseFloat(ds.max) || 0;
+  s.current = s.lift;
+  s.axis = '';
+  s.dragging = false;
+  // 先关闭过渡，保证跟手
+  ins.callMethod('onDragStart');
+}
+
+function touchMove(e, ins) {
+  var s = ins.getState();
+  var t = e.touches[0];
+  if (!t) return;
+  var dx = t.clientX - s.startX;
+  var dy = t.clientY - s.startY;
+
+  if (!s.axis) {
+    if (Math.abs(dx) < 2 && Math.abs(dy) < 2) return;
+    s.axis = Math.abs(dy) >= Math.abs(dx) ? 'y' : 'x';
+  }
+  if (s.axis !== 'y') {
+    // 横向交给外层 swiper
+    return;
+  }
+  s.lastY = t.clientY;
+
+  s.dragging = true;
+
+  var next = s.lift - dy;
+  if (next < 0) next = next * 0.3;
+  if (s.max > 0 && next > s.max) next = s.max + (next - s.max) * 0.3;
+  if (next < 0) next = 0;
+  s.current = next;
+
+  var body = ins.selectComponent('.scene-body');
+  if (body) {
+    body.setStyle({ transform: 'translateY(-' + Math.round(next) + 'px)' });
+  }
+}
+
+function touchEnd(e, ins) {
+  var s = ins.getState();
+
+  var dragging = s.dragging;
+  var lift = s.current || 0;
+  var max = s.max || 0;
+  s.dragging = false;
+  s.axis = '';
+
+  if (!dragging) {
+    ins.callMethod('onDragEnd', { changed: false });
+    return;
+  }
+
+  var threshold = max > 0 ? Math.max(24, max * 0.3) : 56;
+  ins.callMethod('onDragEnd', {
+    changed: true,
+    raise: lift > threshold,
+    lift: lift
+  });
+}
+
+module.exports = {
+  touchStart: touchStart,
+  touchMove: touchMove,
+  touchEnd: touchEnd
+};

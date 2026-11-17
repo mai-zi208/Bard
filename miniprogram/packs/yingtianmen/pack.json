@@ -1,0 +1,104 @@
+{
+  "id": "yingtianmen",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "应天门遗址博物馆",
+  "subtitle": "隋唐洛阳城宫城正门，天下第一门",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-17T13:41:02.436Z",
+  "summary": "始建于605年，是隋唐洛阳城紫微城的正南门。武则天在此登基，唐高宗在此受俘，见证万国来朝与皇权更迭。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "世界文化遗产",
+    "皇家建筑",
+    "历史遗址",
+    "洛阳地标"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "wei-zhi-lai-li",
+      "title": "紫微南门",
+      "subtitle": "帝国中枢的正南门户",
+      "image": "01-wei-zhi-lai-li.jpg",
+      "imageAlt": "应天门遗址博物馆全景与前方开阔广场",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/01-wei-zhi-lai-li.md",
+      "audio": {
+        "durSec": 26,
+        "bytes": 211741,
+        "sha256": "cbe296be69a006871bb96dc88aa777c6fcc887a5107fdecf460dbba8cf427eb4"
+      }
+    },
+    {
+      "id": "ri-ben-bei-ting",
+      "title": "遣使碑亭",
+      "subtitle": "中日交流的历史见证",
+      "image": "02-ri-ben-bei-ting.jpg",
+      "imageAlt": "应天门遗址东侧的石质纪念碑与碑亭",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/02-ri-ben-bei-ting.md",
+      "audio": {
+        "durSec": 27,
+        "bytes": 216547,
+        "sha256": "862461292f8fb575e68f3cdf285ed5f744d8a7ae4e238e0dcb7e3fa1408d5824"
+      }
+    },
+    {
+      "id": "shuang-xiang-san-que",
+      "title": "双向三阙",
+      "subtitle": "古代城门最高礼制",
+      "image": "03-shuang-xiang-san-que.jpg",
+      "imageAlt": "应天门两侧高耸的阙楼基座与复原结构",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/03-shuang-xiang-san-que.md",
+      "audio": {
+        "durSec": 26,
+        "bytes": 211741,
+        "sha256": "d6268821d981c4a28ce4fb49e968831a0e8707719c663643e0b54de0a1e982af"
+      }
+    },
+    {
+      "id": "wu-feng-lou",
+      "title": "五凤楼形",
+      "subtitle": "凹字形宏大建筑群",
+      "image": "04-wu-feng-lou.jpg",
+      "imageAlt": "应天门主体城楼与两侧朵楼连接的空中视角",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/04-wu-feng-lou.md",
+      "audio": {
+        "durSec": 27,
+        "bytes": 219682,
+        "sha256": "15be30ad2d7c8dfc8f0489c6dc884850142bc7b9f01e27386443047699dc7cfd"
+      }
+    },
+    {
+      "id": "ze-tian-deng-ji",
+      "title": "武后登基",
+      "subtitle": "改唐为周的历史瞬间",
+      "image": "05-ze-tian-deng-ji.jpg",
+      "imageAlt": "应天门城楼内部展示区与帝王登基场景复原",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/05-ze-tian-deng-ji.md",
+      "audio": {
+        "durSec": 25,
+        "bytes": 201919,
+        "sha256": "6d9413c46831a43cb938b1ac5c017a3e0b22cb422d900eaca61e6c56ecd8cc88"
+      }
+    }
+  ]
+}

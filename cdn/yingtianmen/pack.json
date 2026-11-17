@@ -1,0 +1,104 @@
+{
+  "id": "yingtianmen",
+  "schemaVersion": 2,
+  "version": 2,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "应天门遗址博物馆",
+  "subtitle": "隋唐洛阳城宫城正门，天下第一门",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-17T15:29:31.758Z",
+  "summary": "隋唐洛阳城紫微城正南门，始建于605年，是武则天登基及万国来朝之地，被誉为“隋唐第一门”。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "皇家宫阙",
+    "历史遗址",
+    "建筑奇迹",
+    "AAAA景区"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "wei-zhi-lai-li",
+      "title": "宫城正南",
+      "subtitle": "紫微城之门，对应天上天门",
+      "image": "01-wei-zhi-lai-li.jpg",
+      "imageAlt": "隋唐洛阳城应天门遗址博物馆主体建筑群正面全景",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-wei-zhi-lai-li.md",
+      "audio": {
+        "durSec": 34,
+        "bytes": 270882,
+        "sha256": "c1b3cfbb73cb9d163c0b4d10f37064b9783f5340a6a267b0916e72ea20fae761"
+      }
+    },
+    {
+      "id": "san-chu-que",
+      "title": "双向三出阙",
+      "subtitle": "古代城门最高等级礼制",
+      "image": "02-san-chu-que.jpg",
+      "imageAlt": "应天门遗址博物馆前的双向三出阙楼群全景",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-san-chu-que.md",
+      "audio": {
+        "durSec": 29,
+        "bytes": 235773,
+        "sha256": "d9553f4064e430245dfd8001b9f710319218492afe91cfcc60d8f706c2e4237f"
+      }
+    },
+    {
+      "id": "wu-feng-lou",
+      "title": "五凤楼形",
+      "subtitle": "崇楼五座，宛如凤凰展翅",
+      "image": "03-wu-feng-lou.jpg",
+      "imageAlt": "应天门遗址博物馆外观，五座崇楼与连接廊庑构成的凹字形建筑群全景",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-wu-feng-lou.md",
+      "audio": {
+        "durSec": 35,
+        "bytes": 282167,
+        "sha256": "1703d34ac347d4934bb84960f39e97c839179014e1f16bfdf804602cf16b5fe4"
+      }
+    },
+    {
+      "id": "ri-ben-bei",
+      "title": "遣唐使碑",
+      "subtitle": "中日交流的历史见证",
+      "image": "04-ri-ben-bei.jpg",
+      "imageAlt": "应天门遗址东侧的日本遣隋使遣唐使访都之地纪念碑亭全景",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-ri-ben-bei.md",
+      "audio": {
+        "durSec": 30,
+        "bytes": 239326,
+        "sha256": "2e6054c364ed0371a5dec0fca9df1f04d43a8d601f43a0a64a25a46b0a8ead9c"
+      }
+    },
+    {
+      "id": "ze-tian-deng-ji",
+      "title": "武后登基",
+      "subtitle": "改唐为周，开创女帝时代",
+      "image": "05-ze-tian-deng-ji.jpg",
+      "imageAlt": "应天门遗址博物馆主体建筑外观，展现城楼与阙楼结构",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-ze-tian-deng-ji.md",
+      "audio": {
+        "durSec": 28,
+        "bytes": 226160,
+        "sha256": "a181ccca30861c714c13cf8af7805f9aaf352f63bee106fece676995091f9e09"
+      }
+    }
+  ]
+}

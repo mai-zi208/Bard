@@ -1,0 +1,43 @@
+page {
+  --ink: #1c2733;
+  --ink-2: #0f1822;
+  --paper: #f7faff;
+  --paper-2: #edf4fc;
+  --sky: #e6f0fb;
+  --jade: #3f6b58;
+  --jade-dk: #2f5a4a;
+  --clay: #a9533f;
+  --sun: #e9a23b;
+  --gold: #b58a33;
+  --gold-lt: #cfa85c;
+
+  height: 100%;
+  background: linear-gradient(180deg, #fbfdff 0%, #f3f8fe 52%, #e9f1fb 100%);
+  color: var(--ink);
+  font-family: "PingFang SC", "HarmonyOS Sans SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+page,
+view,
+text,
+image,
+button,
+scroll-view,
+swiper,
+swiper-item {
+  box-sizing: border-box;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  line-height: normal;
+  font-family: inherit;
+}
+
+button::after {
+  border: none;
+}

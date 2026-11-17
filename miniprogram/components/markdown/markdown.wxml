@@ -1,0 +1,63 @@
+<wxs module="pull" src="./markdown.wxs" />
+
+<template name="mdBlock">
+  <view wx:if="{{type === 'h'}}" class="md-h md-h{{level}}">
+    <text wx:for="{{spans}}" wx:key="id" class="{{item.bold ? 'md-b' : ''}}">{{item.text}}</text>
+  </view>
+
+  <view wx:elif="{{type === 'p'}}" class="md-p">
+    <text wx:for="{{spans}}" wx:key="id" class="{{item.bold ? 'md-b' : ''}}">{{item.text}}</text>
+  </view>
+
+  <view wx:elif="{{type === 'quote'}}" class="md-quote">
+    <text wx:for="{{spans}}" wx:key="id" class="{{item.bold ? 'md-b' : ''}}">{{item.text}}</text>
+  </view>
+
+  <view wx:elif="{{type === 'li'}}" class="md-li">
+    <view class="md-dot"></view>
+    <view class="md-li-text">
+      <text wx:for="{{spans}}" wx:key="id" class="{{item.bold ? 'md-b' : ''}}">{{item.text}}</text>
+    </view>
+  </view>
+
+  <image
+    wx:elif="{{type === 'img'}}"
+    class="md-img"
+    src="{{src}}"
+    mode="widthFix"
+    data-src="{{src}}"
+    bindtap="onPreview"
+    bindload="onImgLoad"
+  />
+
+  <view wx:elif="{{type === 'hr'}}" class="md-hr"></view>
+</template>
+
+<view
+  class="md {{noAnim ? 'is-no-anim' : ''}} {{winH > foldH ? 'is-open' : ''}}"
+  data-lock="{{pullable}}"
+  data-h="{{winH}}"
+  data-off="{{offset}}"
+  data-fold="{{foldH}}"
+  data-max="{{maxH}}"
+  data-maxoff="{{maxOff}}"
+  data-wrap="{{wrapBase}}"
+  bindtouchstart="{{pull.touchStart}}"
+  bindtouchmove="{{pull.touchMove}}"
+  bindtouchend="{{pull.touchEnd}}"
+  bindtouchcancel="{{pull.touchEnd}}"
+>
+  <view class="md-win" style="height: {{winH ? winH + 'px' : 'auto'}}">
+    <view class="md-inner" style="transform: translateY(-{{offset}}px)">
+      <!-- 浮动占位：首几行让开左侧立绘，越过立绘底边后自动通栏 -->
+      <view wx:if="{{wrapBase > 0}}" class="md-wrap" style="height: {{wrapH}}px"></view>
+      <block wx:for="{{blocks}}" wx:key="id">
+        <view class="md-block">
+          <template is="mdBlock" data="{{...item}}" />
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view wx:if="{{faded}}" class="md-fade"></view>
+</view>

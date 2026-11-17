@@ -1,0 +1,12 @@
+<view class="launch" bindtap="skip">
+  <image class="bg" src="/assets/welcome.jpg" mode="aspectFill" />
+  <view class="shade"></view>
+
+  <view class="content">
+    <view class="brand">游览向导</view>
+    <image class="signpost" src="/assets/signpost.png" mode="aspectFit" />
+    <view class="eyebrow">一处一世界</view>
+    <view class="title">跟着指引，慢慢逛</view>
+    <view class="desc">任何一处地方，边走边看、边听边问</view>
+  </view>
+</view>

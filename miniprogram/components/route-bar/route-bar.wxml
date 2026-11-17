@@ -1,0 +1,21 @@
+<view class="route">
+  <text class="now">{{currentLabel}}</text>
+  <text class="total">/ {{totalLabel}}</text>
+  <view class="ticks">
+    <view class="rail">
+      <view class="rail-fill" style="transform: scaleX({{fill}})"></view>
+    </view>
+    <view
+      wx:for="{{ticks}}"
+      wx:for-index="i"
+      wx:key="*this"
+      class="tick {{i < index ? 'is-on' : ''}} {{i === index ? 'is-cur' : ''}}"
+      data-index="{{i}}"
+      bindtap="onTap"
+      aria-role="button"
+      aria-label="第 {{i + 1}} 幕"
+    >
+      <view class="tick-line"></view>
+    </view>
+  </view>
+</view>

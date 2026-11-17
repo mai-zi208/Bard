@@ -1,0 +1,104 @@
+{
+  "id": "luoyang-museum",
+  "schemaVersion": 2,
+  "version": 2,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "洛阳博物馆",
+  "subtitle": "鼎立天下的河洛文明宝库",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-17T14:21:46.179Z",
+  "summary": "位于洛龙区，建筑寓意“鼎立天下”，藏有2万余件文物，展示十三朝古都辉煌历史。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "国家一级博物馆",
+    "河洛文明",
+    "唐三彩",
+    "免费参观"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "tian-shu-ta",
+      "title": "天枢观光塔",
+      "subtitle": "武周盛世的世界中枢",
+      "image": "01-tian-shu-ta.jpg",
+      "imageAlt": "蓝天背景下的高耸八棱柱观光塔，顶部有铜龙托火珠雕塑，下方是红墙黄瓦建筑与石阶",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/01-tian-shu-ta.md",
+      "audio": {
+        "durSec": 27,
+        "bytes": 220100,
+        "sha256": "74c6f0a6eee1d86d6a75dea5a76de9a6c80b5194ab61ab5409520267d253447a"
+      }
+    },
+    {
+      "id": "museum-exterior",
+      "title": "博物馆外观",
+      "subtitle": "方鼎屹立定鼎洛邑",
+      "image": "02-museum-exterior.jpg",
+      "imageAlt": "米黄色方形主楼外观，正面有大玻璃窗和馆名石刻，前方有白色栏杆与水池",
+      "transition": "slide",
+      "holdMs": 8500,
+      "body": "body/02-museum-exterior.md",
+      "audio": {
+        "durSec": 28,
+        "bytes": 223444,
+        "sha256": "2216d2f9ceab1db4ef305066c855ca87d517c2016365db88443691a9dee7045f"
+      }
+    },
+    {
+      "id": "heluo-civilization",
+      "title": "河洛文明展",
+      "subtitle": "五大都城的历史主线",
+      "image": "03-heluo-civilization.jpg",
+      "imageAlt": "玻璃展柜内的青铜圆鼎，背景有其他陶器和展柜",
+      "transition": "zoom-out",
+      "holdMs": 9500,
+      "body": "body/03-heluo-civilization.md",
+      "audio": {
+        "durSec": 29,
+        "bytes": 231176,
+        "sha256": "ae1964b38c342084f9f85eb233d19eead4cdef050ea51b237f7a7afaf70c5155"
+      }
+    },
+    {
+      "id": "tang-sancai",
+      "title": "唐三彩展",
+      "subtitle": "盛唐气象的绚丽缩影",
+      "image": "04-tang-sancai.jpg",
+      "imageAlt": "展柜内的唐三彩组合，中间是一匹棕黄色马，两侧站立着穿铠甲的武士和穿长袍的文吏",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-tang-sancai.md",
+      "audio": {
+        "durSec": 31,
+        "bytes": 245596,
+        "sha256": "30375454a68303c042fda866d0234f9c05418828209f3e127ab693f4e126775a"
+      }
+    },
+    {
+      "id": "stone-bixie",
+      "title": "东汉石辟邪",
+      "subtitle": "镇馆之宝威严守护",
+      "image": "05-stone-bixie.jpg",
+      "imageAlt": "石雕辟邪正面特写，双角竖立，双眼圆睁，胸前有卷云纹，蹲踞在石座上",
+      "transition": "slide",
+      "holdMs": 8000,
+      "body": "body/05-stone-bixie.md",
+      "audio": {
+        "durSec": 28,
+        "bytes": 225951,
+        "sha256": "917ddaf841f4fb441cd03725d9f2a624ee4a1d1dfb247fbd7295ccfd34e7a558"
+      }
+    }
+  ]
+}

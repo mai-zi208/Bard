@@ -1,0 +1,104 @@
+{
+  "id": "bai-ma-si",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "洛阳白马寺",
+  "subtitle": "中国第一古刹与国际化佛教圣地",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-17T15:28:25.687Z",
+  "summary": "始建于东汉永平十一年，为纪念白马驮经而建。现拥有中、印、缅、泰四国风格佛殿，见证佛教中国化进程。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "全国重点文保",
+    "释源祖庭",
+    "国际佛殿",
+    "洛阳八大景"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "shan-men",
+      "title": "山门石马",
+      "subtitle": "白马驮经的历史见证",
+      "image": "01-shan-men.jpg",
+      "imageAlt": "白马寺山门前左右相对的两匹宋代石马特写",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-shan-men.md",
+      "audio": {
+        "durSec": 31,
+        "bytes": 252074,
+        "sha256": "a6dfaa3e89683744fecd6a27087c07f50f79b03a8c548bd40deae49bbc8be952"
+      }
+    },
+    {
+      "id": "zhong-gu-dian",
+      "title": "中国古建",
+      "subtitle": "明清重修的中轴格局",
+      "image": "02-zhong-gu-dian.jpg",
+      "imageAlt": "白马寺中国古建区中轴线上的五重大殿全景",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-zhong-gu-dian.md",
+      "audio": {
+        "durSec": 31,
+        "bytes": 249984,
+        "sha256": "44d0f01386137c735a678fa9dbc9fdb23dd8346627bbdd7ecdd8adf1c10d2216"
+      }
+    },
+    {
+      "id": "qi-yun-ta",
+      "title": "齐云塔院",
+      "subtitle": "亚洲最高古塔的遗韵",
+      "image": "03-qi-yun-ta.jpg",
+      "imageAlt": "白马寺齐云塔院内的金代十三层密檐式砖塔全景",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-qi-yun-ta.md",
+      "audio": {
+        "durSec": 32,
+        "bytes": 257716,
+        "sha256": "ef4d3d96c50874ff8b92bb787aabc4fece86b42f593ec286b9a19f280b3e897a"
+      }
+    },
+    {
+      "id": "guo-ji-fodian",
+      "title": "国际佛殿",
+      "subtitle": "四国风格的融合共存",
+      "image": "04-guo-ji-fodian.jpg",
+      "imageAlt": "白马寺国际佛殿区，泰式金顶与印缅风格建筑同框",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-guo-ji-fodian.md",
+      "audio": {
+        "durSec": 28,
+        "bytes": 226160,
+        "sha256": "3842c8fce160113dd42bfa52097f49b45424ee617f24915963fed9fa6492436c"
+      }
+    },
+    {
+      "id": "qing-liang-tai",
+      "title": "清凉毗卢",
+      "subtitle": "译经道场的精神高地",
+      "image": "05-qing-liang-tai.jpg",
+      "imageAlt": "白马寺清凉台及台上的毗卢阁全景",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-qing-liang-tai.md",
+      "audio": {
+        "durSec": 29,
+        "bytes": 232639,
+        "sha256": "8848259a0e061b6d2e29d486dedc49c3393105a4a39f8fab9dfb24ec06ce5a8f"
+      }
+    }
+  ]
+}

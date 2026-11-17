@@ -1,0 +1,173 @@
+{
+  "id": "baimasi",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "洛阳白马寺",
+  "subtitle": "中国第一古刹",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-15T05:00:32.150Z",
+  "summary": "沿寺院中轴线，走完近两千年的佛教东传史。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "古建",
+    "宗教"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "narrator": {
+    "id": "wu-zetian",
+    "name": "武则天",
+    "title": "大周圣神皇帝",
+    "portraitFit": true,
+    "portraits": {
+      "default": "narrator/wu-zetian-default.png",
+      "point": "narrator/wu-zetian-point.png"
+    }
+  },
+  "scenes": [
+    {
+      "id": "shanmen",
+      "title": "山门",
+      "subtitle": "白马寺的起点",
+      "image": "imgs/01-shanmen.jpg",
+      "imageAlt": "白马寺山门，三座拱门与门前石马",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/01-shanmen.md",
+      "narration": "这里是白马寺的山门。正中的「白马寺」匾，由中国佛教协会原会长赵朴初题写。\n\n山门开三个门洞，象征佛教的「三解脱门」：空门、无相门、无愿门。跨过这道门，就是把执念放下。\n\n山门前那两匹石马，传说是汉代驮经之马。其实是北宋太师魏咸信墓前的石像，民国二十四年被移到寺前。\n\n白马寺始建于东汉永平十一年，公元六十八年，是佛教传入中国后兴建的第一座官办寺院。",
+      "narratorPose": "point",
+      "audio": {
+        "durSec": 39,
+        "bytes": 309125,
+        "sha256": "8ae74d754b3deca3ac457a60400b14311baf9af4e48b94cdefb9201de48c9b7c"
+      }
+    },
+    {
+      "id": "tianwangdian",
+      "title": "天王殿",
+      "subtitle": "入寺第一殿",
+      "image": "imgs/02-tianwangdian.jpg",
+      "imageAlt": "天王殿，檐下旧匾与殿内弥勒像",
+      "transition": "zoom-out",
+      "holdMs": 8500,
+      "body": "body/02-tianwangdian.md",
+      "narration": "进了山门，第一座殿就是天王殿。殿里的佛龛是从故宫运来的，雕龙贴金，里面供着一尊明代的大肚弥勒。\n\n弥勒笑口常开，两旁分立四大天王与韦驮天将。一进殿，先看见的是笑脸，不是威严。\n\n院子两侧的柏树丛里，有两座青石围砌的坟冢，叫「二僧墓」，葬的是东汉来华译经的两位天竺高僧。\n\n摄摩腾与竺法兰。相传最早的汉文佛经《四十二章经》，就译在这座寺院里。",
+      "narratorPose": "default",
+      "audio": {
+        "durSec": 37,
+        "bytes": 296587,
+        "sha256": "2b174996a44d962faf6b93c1e82583d4bf9299aa5e5d9c358ec4fbe2c3f0725f"
+      }
+    },
+    {
+      "id": "dafodian",
+      "title": "大佛殿",
+      "subtitle": "佛事活动的中心",
+      "image": "imgs/03-dafodian.jpg",
+      "imageAlt": "大佛殿月台与香炉，青烟向东飘去",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/03-dafodian.md",
+      "narration": "再往里是大佛殿。这里不是陈列佛像的展厅，而是僧人早晚课诵、寺院做佛事的地方。\n\n正中释迦佛，两旁文殊、普贤二位菩萨，一个主智慧，一个主行愿。只悟不行，走不远。\n\n殿里还有迦叶、阿难两位弟子，以及供养天人和观世音菩萨，一殿之内，把修行的次第排得清楚。\n\n东南角那口大钟铸于明代嘉靖三十四年。「马寺钟声」曾是洛阳八景之一，晨钟一响，声闻全城。",
+      "narratorPose": "default",
+      "audio": {
+        "durSec": 38,
+        "bytes": 305155,
+        "sha256": "1d934dd11ec835bc06d6f42f2dfe52c37efc0c3d6437c8de86f4195bbd06ef98"
+      }
+    },
+    {
+      "id": "daxiong",
+      "title": "大雄殿",
+      "subtitle": "二十三尊元代造像",
+      "image": "imgs/04-daxiong.jpg",
+      "imageAlt": "大雄殿内三世佛与沿壁而坐的十八罗汉",
+      "transition": "slide",
+      "holdMs": 8500,
+      "body": "body/04-daxiong.md",
+      "narration": "大雄殿里最珍贵的，是二十三尊元代夹纻造像。所谓夹纻，是用漆和麻布一层层裱出来的。\n\n这种工艺轻、韧、不怕潮，却极费工夫，一件往往要做上几年，能留到今天的已经不多。\n\n殿中供着释迦、阿弥陀、药师三世佛，两旁是韦驮、韦力二天将，沿壁而坐的是十八罗汉。\n\n七百年前的工匠大概没想到，他们手里的漆与麻，会成了今天白马寺的镇寺之宝。",
+      "narratorPose": "default",
+      "audio": {
+        "durSec": 37,
+        "bytes": 294915,
+        "sha256": "50e885dd07db0d5ac8111adcac08804c7fd7e3f01acc53507c4546931ef6d1a1"
+      }
+    },
+    {
+      "id": "jieyindian",
+      "title": "接引殿",
+      "subtitle": "烧过一回的殿",
+      "image": "imgs/05-jieyindian.jpg",
+      "imageAlt": "接引殿，剥落的墙皮与门前湿亮的青石",
+      "transition": "fade",
+      "holdMs": 8000,
+      "body": "body/05-jieyindian.md",
+      "narration": "接引殿是白马寺现存规模最小的一座殿，也是全寺重建最晚的一座。它不气派，却很有故事。\n\n「接引」是接引众生往生西方的意思。殿内供阿弥陀佛，两旁是观世音和大势至，合称西方三圣。\n\n清同治元年，这里被一场大火烧毁，直到光绪九年才重新建起。此后百年，它安静地立在寺院后部。\n\n小殿也有小殿的命数：被烧过一回，重修过一回，然后安安静静地接着守香火。",
+      "narratorPose": "default",
+      "audio": {
+        "durSec": 38,
+        "bytes": 306409,
+        "sha256": "ca2b78bba2ffe83e37cfd63ed24027a85a237c0af4f3f5fb4c44ce3d6a86b078"
+      }
+    },
+    {
+      "id": "qingliangtai",
+      "title": "清凉台",
+      "subtitle": "译经台",
+      "image": "imgs/06-qingliangtai.jpg",
+      "imageAlt": "清凉台砖砌高台与陡直石阶",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/06-qingliangtai.md",
+      "narration": "从接引殿往北，登上一段砖阶，就是清凉台。相传这里是汉明帝刘庄年少时读书避暑的地方。\n\n后来，两位天竺高僧摄摩腾、竺法兰就在台上译经。中国最早的汉文佛经，不少是从这里流出去的。\n\n台上建有毗卢阁，是白马寺最后一座大殿，里面供着毗卢佛与文殊、普贤二菩萨。\n\n所谓「清凉」，既是台高风凉，也是当年译经时那份安静。站在这里，寺院的中轴线一览无余。",
+      "narratorPose": "point",
+      "audio": {
+        "durSec": 38,
+        "bytes": 303483,
+        "sha256": "2d467837dfdf569f715f0c105fc42819d5ff0299fbf0d5a1c18da29bf2712033"
+      }
+    },
+    {
+      "id": "qiyunta",
+      "title": "齐云塔",
+      "subtitle": "寺东的金代砖塔",
+      "image": "imgs/07-qiyunta.jpg",
+      "imageAlt": "齐云塔十三层密檐砖塔，塔身被夕照染暖",
+      "transition": "rise",
+      "holdMs": 8500,
+      "body": "body/07-qiyunta.md",
+      "narration": "寺东南还有一院，院里立着一座塔。这里被称作「洛阳东白马寺」，也是河南唯一一所比丘尼道场。\n\n塔始建于东汉明帝时，本名「释迦舍利塔」，是佛教东来之后最早的一批佛塔之一。\n\n千百年间它屡毁于战火，金代大定十五年重修，如今是洛阳一带现存最早的金代地面建筑之一。\n\n清代住持如琇依据汉明帝建塔的旧记，给它改名为「齐云塔」。一个名字，接上了一千年的来历。",
+      "narratorPose": "point",
+      "audio": {
+        "durSec": 36,
+        "bytes": 287182,
+        "sha256": "e3a994d75d4b737a7221611e7b4d22858076bf8744f9d3c5f6b6265e9895108b"
+      }
+    },
+    {
+      "id": "guojifodianyuan",
+      "title": "国际佛殿苑",
+      "subtitle": "后来者的佛殿",
+      "image": "imgs/08-guojifodianyuan.jpg",
+      "imageAlt": "国际佛殿苑，金顶塔与青瓦殿同院而立",
+      "transition": "slide",
+      "holdMs": 10000,
+      "body": "body/08-guojifodianyuan.md",
+      "narration": "往寺东走，是后来者的佛殿。二十世纪末起，泰国、印度、缅甸的佛殿陆续在这里落成。\n\n白马寺因此成了全世界唯一一座同时拥有中、印、缅、泰四国风格佛殿的寺院。\n\n一九九二年，泰国信众敬赠一尊铜质镀金大佛；印度佛殿二零一零年落成，缅甸佛塔二零一四年竣工。\n\n从东汉的白马驮经，到今天四国佛殿同院而立，这座寺院一千九百多年里，一直没有停止过接纳。",
+      "narratorPose": "point",
+      "audio": {
+        "durSec": 37,
+        "bytes": 296796,
+        "sha256": "22c978a0f0660e5a84a453dea0cea82a9adaff708b09c47b9beb1651cfb6815f"
+      }
+    }
+  ]
+}

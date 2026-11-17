@@ -1,0 +1,179 @@
+{
+  "id": "guanlin",
+  "schemaVersion": 2,
+  "version": 8,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "洛阳关林",
+  "subtitle": "冢庙林三祀合一的关公圣域",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-17T14:20:21.070Z",
+  "summary": "从舞楼到关冢，沿中轴线走进埋葬关羽首级之地，看明清宫殿式建筑与千年信俗。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "关公信俗",
+    "古建筑群",
+    "三国遗迹",
+    "全国重点文保"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "wulou",
+      "title": "舞楼",
+      "subtitle": "千秋鉴上话兴亡",
+      "image": "01-wulou.jpg",
+      "imageAlt": "重檐楼阁式舞楼立于广场，前台歇山与后台硬山相接。",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/01-wulou.md",
+      "audio": {
+        "durSec": 38,
+        "bytes": 304946,
+        "sha256": "55acfdeed79d11eeced121c30e74a489644a6752080cdab672f33922d1b7c043"
+      }
+    },
+    {
+      "id": "damen",
+      "title": "大门",
+      "subtitle": "八十一钉见等级",
+      "image": "02-damen.jpg",
+      "imageAlt": "大门嵌金色门钉，两侧八字墙分别篆写忠义、仁勇。",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-damen.md",
+      "audio": {
+        "durSec": 36,
+        "bytes": 289899,
+        "sha256": "fa3c86ddc0001407afbec84b2f30a3d9e0ecdf64df2582b9aee8e0831766411b"
+      }
+    },
+    {
+      "id": "yimen",
+      "title": "仪门",
+      "subtitle": "威扬六合下轿马",
+      "image": "03-yimen.jpg",
+      "imageAlt": "仪门门额悬威扬六合匾，两侧隔墙嵌有关圣帝君像与诗竹刻石。",
+      "transition": "slide",
+      "holdMs": 9500,
+      "body": "body/03-yimen.md",
+      "audio": {
+        "durSec": 36,
+        "bytes": 289690,
+        "sha256": "6c28f5605292aa28631d112f0264a12c2c6a2ae13aa3804e8ab239d1c108e91c"
+      }
+    },
+    {
+      "id": "shishi-yudao",
+      "title": "石狮御道",
+      "subtitle": "百狮百态生财道",
+      "image": "04-shishi-yudao.jpg",
+      "imageAlt": "甬道两侧石栏望柱上雕满石狮，柱栏间可见铜钱纹饰。",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-shishi-yudao.md",
+      "audio": {
+        "durSec": 35,
+        "bytes": 282167,
+        "sha256": "942efbc47d5e26ffe6287b80b95dea656b4a71c7f9eba37d62e1fd582d2143ca"
+      }
+    },
+    {
+      "id": "dadian",
+      "title": "大殿",
+      "subtitle": "庑殿琉璃奉帝君",
+      "image": "05-dadian.jpg",
+      "imageAlt": "大殿前檐彩绘斗拱层叠，朱红廊柱间悬挂匾额，门内关帝像端坐。",
+      "transition": "rise",
+      "holdMs": 9500,
+      "body": "body/05-dadian.md",
+      "audio": {
+        "durSec": 38,
+        "bytes": 304319,
+        "sha256": "830468f22edb7e2d55668ba34075f7a3a86dd690a4573011526814949ceb13b8"
+      }
+    },
+    {
+      "id": "erdian",
+      "title": "二殿",
+      "subtitle": "光昭日月武财神",
+      "image": "06-erdian.jpg",
+      "imageAlt": "二殿门悬光昭日月匾，阶前石栏望柱环列，香炉烟火不断。",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/06-erdian.md",
+      "audio": {
+        "durSec": 35,
+        "bytes": 278823,
+        "sha256": "90f252a9097fddfcde8cba269b2d0de30993a12e5a1fc3bc929d694400603e87"
+      }
+    },
+    {
+      "id": "sandian",
+      "title": "三殿",
+      "subtitle": "夜读春秋寝殿中",
+      "image": "07-sandian.jpg",
+      "imageAlt": "春秋殿内关公坐像捧卷夜读，龛前木雕彩绘繁复。",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/07-sandian.md",
+      "audio": {
+        "durSec": 36,
+        "bytes": 291780,
+        "sha256": "02b21bb1591139020cadedf55934453e6a50e0d7bc8375645d04aeacb858e4b1"
+      }
+    },
+    {
+      "id": "shifang",
+      "title": "石坊",
+      "subtitle": "汉寿亭侯墓前坊",
+      "image": "08-shifang.jpg",
+      "imageAlt": "三门道石坊横立墓前，正额题汉寿亭侯墓五字，坊上题联甚多。",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/08-shifang.md",
+      "audio": {
+        "durSec": 35,
+        "bytes": 277569,
+        "sha256": "23b3cba3ea5b8c719bb0191fb9b1b6fdaa31bdcabc79ce384fd78080fadc3ba2"
+      }
+    },
+    {
+      "id": "bajiaoting",
+      "title": "八角亭",
+      "subtitle": "敕封碑记木榫巧",
+      "image": "09-bajiaoting.jpg",
+      "imageAlt": "八角亭木榫结构彩饰华繁，亭内立龟趺座石碑，碑头雕龙。",
+      "transition": "slide",
+      "holdMs": 9500,
+      "body": "body/09-bajiaoting.md",
+      "audio": {
+        "durSec": 37,
+        "bytes": 294288,
+        "sha256": "b025535338da6404556ee2d1b543b150404035a4ab132f3a895b047180b90523"
+      }
+    },
+    {
+      "id": "guanzhong",
+      "title": "关冢",
+      "subtitle": "钟灵处葬首级",
+      "image": "10-guanzhong.jpg",
+      "imageAlt": "关冢南墙石墓门，拱门石额上题钟灵处三字。",
+      "transition": "fade",
+      "holdMs": 10000,
+      "body": "body/10-guanzhong.md",
+      "audio": {
+        "durSec": 40,
+        "bytes": 323754,
+        "sha256": "d723fcf557a0edd63afb2e7b0037f48a26eddef715a9a21ad72e184f38d72835"
+      }
+    }
+  ]
+}

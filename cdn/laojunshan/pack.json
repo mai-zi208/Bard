@@ -1,0 +1,119 @@
+{
+  "id": "laojunshan",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "老君山",
+  "subtitle": "秦岭支脉伏牛山主峰，道教祖庭",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-17T14:05:16.624Z",
+  "summary": "位于河南洛阳栾川，海拔2217米。老子曾在此归隐，唐太宗赐名，明神宗封为天下名山。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "道教名山",
+    "世界地质公园",
+    "5A景区",
+    "老子文化"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "laozi-wenhuayuan",
+      "title": "老子文化苑",
+      "subtitle": "大道行天下，和谐兴中华",
+      "image": "01-laozi-wenhuayuan.jpg",
+      "imageAlt": "老子文化苑内高大的老子铜像手持经书伫立",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-laozi-wenhuayuan.md",
+      "audio": {
+        "durSec": 32,
+        "bytes": 256462,
+        "sha256": "611f1e291bd0c00dd84a6c5918ab5d4d79ed599872955ea3efa0a6affe9d233d"
+      }
+    },
+    {
+      "id": "zhongtianmen",
+      "title": "中天门",
+      "subtitle": "海拔一千八百六十六米中转",
+      "image": "02-zhongtianmen.jpg",
+      "imageAlt": "老君山中天门全景，可见老子骑牛石像及往来游客",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-zhongtianmen.md",
+      "audio": {
+        "durSec": 35,
+        "bytes": 278614,
+        "sha256": "175859a77c50db2b4fde04518de7b2b7fbcc1dce6428f8bfb6966fe292a1ca84"
+      }
+    },
+    {
+      "id": "shili-huaping",
+      "title": "十里画屏",
+      "subtitle": "花岗岩峰林扩大的盆景",
+      "image": "03-shili-huaping.jpg",
+      "imageAlt": "十里画屏花岗岩峰林全景，奇峰林立云雾缭绕",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-shili-huaping.md",
+      "audio": {
+        "durSec": 25,
+        "bytes": 203382,
+        "sha256": "5d8618074872a0259f5d4ac51b8596570bab088c13e9eb16d48fc4922eed47d1"
+      }
+    },
+    {
+      "id": "wudao-feng",
+      "title": "悟道峰",
+      "subtitle": "天然石壁似老子传经",
+      "image": "04-wudao-feng.jpg",
+      "imageAlt": "老君山悟道峰，石峰形态酷似老子侧脸，顶端灌木如发髻",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-wudao-feng.md",
+      "audio": {
+        "durSec": 33,
+        "bytes": 268165,
+        "sha256": "afddc46d28c6d4bb2f653e7d76f3ce0bfd5d3900927e5b0f4fcb1669f7da9243"
+      }
+    },
+    {
+      "id": "nantianmen",
+      "title": "南天门",
+      "subtitle": "双峰对峙自然形成天阙",
+      "image": "05-nantianmen.jpg",
+      "imageAlt": "老君山南天门双峰对峙形成的自然天阙景观",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-nantianmen.md",
+      "audio": {
+        "durSec": 28,
+        "bytes": 224280,
+        "sha256": "b6dcf98c9569063e5871480c9c22ee7bb005898efcdf5844331eac857da3ae3d"
+      }
+    },
+    {
+      "id": "jinding-daoqun",
+      "title": "金顶道观群",
+      "subtitle": "皇家宫殿式全铜建筑巅峰",
+      "image": "06-jinding-daoqun.jpg",
+      "imageAlt": "老君山金顶道观群全铜建筑全景",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/06-jinding-daoqun.md",
+      "audio": {
+        "durSec": 28,
+        "bytes": 221145,
+        "sha256": "d87ad70c0ad9d206d6f094a719de2ede221fb6841f3a04f3ee1d237e4bfe3738"
+      }
+    }
+  ]
+}
