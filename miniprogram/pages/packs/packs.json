@@ -2,5 +2,7 @@
   "navigationStyle": "custom",
   "backgroundColor": "#FBFDFF",
   "backgroundTextStyle": "dark",
-  "usingComponents": {}
+  "usingComponents": {
+    "tab-bar": "/components/tab-bar/tab-bar"
+  }
 }

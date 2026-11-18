@@ -1,0 +1,65 @@
+.tabbar {
+  position: fixed;
+  z-index: 30;
+  left: 56rpx;
+  right: 56rpx;
+  bottom: calc(48rpx + env(safe-area-inset-bottom));
+  height: 124rpx;
+  padding: 10rpx;
+  display: flex;
+  border-radius: 44rpx;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1rpx solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 20rpx 34rpx -26rpx rgba(24, 46, 72, 0.7), 0 4rpx 12rpx rgba(24, 46, 72, 0.05);
+}
+
+.tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 34rpx;
+  transition: background 0.25s;
+}
+
+.tab-ico {
+  width: 34rpx;
+  height: 34rpx;
+  margin-right: 12rpx;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+/* 规划：路线 + 两个节点（描边色与预览稿一致） */
+.tab-ico--plan {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18' fill='none' stroke='%231c2733' stroke-opacity='0.42' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.6 14.4c0-3.1 4.6-2.6 4.6-5.8S4.6 6 4.6 3.4'/%3E%3Ccircle cx='4.6' cy='14.9' r='1.5' fill='%231c2733' fill-opacity='0.42' stroke='none'/%3E%3Ccircle cx='13.4' cy='3.2' r='1.6' fill='%231c2733' fill-opacity='0.42' stroke='none'/%3E%3Cpath d='M9.4 8.6h3.2'/%3E%3C/svg%3E");
+}
+
+.tab.is-active .tab-ico--plan {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18' fill='none' stroke='%23e3c766' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.6 14.4c0-3.1 4.6-2.6 4.6-5.8S4.6 6 4.6 3.4'/%3E%3Ccircle cx='4.6' cy='14.9' r='1.5' fill='%23e3c766' stroke='none'/%3E%3Ccircle cx='13.4' cy='3.2' r='1.6' fill='%23e3c766' stroke='none'/%3E%3Cpath d='M9.4 8.6h3.2'/%3E%3C/svg%3E");
+}
+
+/* 资源包：三层堆叠 */
+.tab-ico--packs {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18' fill='none' stroke='%231c2733' stroke-opacity='0.42' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 2.2 15.8 5.8 9 9.4 2.2 5.8z'/%3E%3Cpath d='m2.2 9.5 6.8 3.6 6.8-3.6'/%3E%3Cpath d='m2.2 13 6.8 3.6 6.8-3.6'/%3E%3C/svg%3E");
+}
+
+.tab.is-active .tab-ico--packs {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18' fill='none' stroke='%23e3c766' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 2.2 15.8 5.8 9 9.4 2.2 5.8z'/%3E%3Cpath d='m2.2 9.5 6.8 3.6 6.8-3.6'/%3E%3Cpath d='m2.2 13 6.8 3.6 6.8-3.6'/%3E%3C/svg%3E");
+}
+
+.tab-label {
+  font-size: 23rpx;
+  letter-spacing: 0.08em;
+  color: rgba(28, 39, 51, 0.42);
+}
+
+.tab.is-active {
+  background: linear-gradient(135deg, #2f5a4a 0%, #3a6a55 100%);
+  box-shadow: 0 10rpx 18rpx -12rpx rgba(47, 90, 74, 0.9);
+}
+
+.tab.is-active .tab-label {
+  color: #f5f9fc;
+}

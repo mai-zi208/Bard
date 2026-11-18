@@ -1,0 +1,24 @@
+<view class="tabbar">
+  <view
+    class="tab {{active === 'plan' ? 'is-active' : ''}}"
+    data-key="plan"
+    bindtap="onTab"
+    hover-class="none"
+    aria-role="button"
+    aria-label="路线规划"
+  >
+    <view class="tab-ico tab-ico--plan"></view>
+    <text class="tab-label">规划</text>
+  </view>
+  <view
+    class="tab {{active === 'packs' ? 'is-active' : ''}}"
+    data-key="packs"
+    bindtap="onTab"
+    hover-class="none"
+    aria-role="button"
+    aria-label="资源包列表"
+  >
+    <view class="tab-ico tab-ico--packs"></view>
+    <text class="tab-label">资源包</text>
+  </view>
+</view>

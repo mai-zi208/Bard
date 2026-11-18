@@ -11,6 +11,7 @@ import { ContentGenerationPipeline } from './infra/pipeline/generation-pipeline.
 import { ImageGenerationProvider } from './infra/providers/image-provider.ts';
 import { BaiduResearchProvider } from './infra/providers/research-provider.ts';
 import { QwenScriptWriter } from './infra/providers/script-provider.ts';
+import { QwenRoutePlanner } from './infra/providers/plan-provider.ts';
 import { DoubaoProvider } from './infra/providers/doubao-provider.ts';
 import { PackRepository } from './infra/repositories/pack-repository.ts';
 import { RefreshCooldownRepository } from './infra/repositories/refresh-cooldown-repository.ts';
@@ -76,7 +77,12 @@ const tasks = new TaskService(
 catalog.reindex();
 tasks.start();
 
-const app = await buildServer({ cdnDir: config.cdnDir, catalog, tasks });
+const app = await buildServer({
+  cdnDir: config.cdnDir,
+  catalog,
+  tasks,
+  planner: new QwenRoutePlanner(llmConfig)
+});
 
 async function shutdown(signal: string): Promise<void> {
   app.log.info('收到 ' + signal + '，正在关闭');

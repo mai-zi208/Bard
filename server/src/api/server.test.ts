@@ -5,6 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import type { CatalogService } from '../domain/services/catalog-service.ts';
 import type { TaskService } from '../domain/services/task-service.ts';
+import type { RoutePlanner } from '../domain/ports.ts';
 import { buildServer } from './server.ts';
 
 test('/health 暴露发布目录可读性、磁盘剩余与队列长度', async () => {
@@ -12,7 +13,8 @@ test('/health 暴露发布目录可读性、磁盘剩余与队列长度', async 
   const app = await buildServer({
     cdnDir,
     catalog: { listPacks: () => [], listSources: () => [] } as unknown as CatalogService,
-    tasks: { queueLength: () => 3 } as unknown as TaskService
+    tasks: { queueLength: () => 3 } as unknown as TaskService,
+    planner: { plan: async () => ({ tags: [], persona: '', stops: [] }) } as unknown as RoutePlanner
   });
 
   const res = await app.inject({ method: 'GET', url: '/health' });

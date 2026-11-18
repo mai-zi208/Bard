@@ -1,0 +1,1617 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>路线规划 · 前端预览</title>
+<style>
+  :root {
+    --ink: #1c2733;
+    --ink-70: rgba(28, 39, 51, 0.7);
+    --ink-50: rgba(28, 39, 51, 0.5);
+    --ink-38: rgba(28, 39, 51, 0.38);
+    --ink-26: rgba(28, 39, 51, 0.26);
+    --gold: #e3c766;
+    --gold-deep: #8a6b2f;
+    --green: #2f5a4a;
+    --green-soft: #3c6b58;
+    --line: rgba(28, 39, 51, 0.09);
+    --card: rgba(255, 255, 255, 0.78);
+    --serif: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+    --sans: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    min-height: 100vh;
+    background:
+      radial-gradient(900px 600px at 12% -6%, rgba(227, 199, 102, 0.16), transparent 62%),
+      radial-gradient(1000px 700px at 92% 8%, rgba(122, 166, 205, 0.2), transparent 60%),
+      linear-gradient(180deg, #eef4fa 0%, #e6eef7 52%, #dfe9f4 100%);
+    color: var(--ink);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .stage {
+    max-width: 1420px;
+    margin: 0 auto;
+    padding: 64px 48px 96px;
+  }
+
+  .stage-head {
+    max-width: 760px;
+    margin-bottom: 52px;
+  }
+
+  .eyebrow {
+    margin: 0 0 16px;
+    font-size: 11px;
+    letter-spacing: 0.36em;
+    color: var(--gold-deep);
+  }
+
+  .stage-head h1 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: 46px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: #16212c;
+  }
+
+  .lede {
+    margin: 18px 0 0;
+    max-width: 620px;
+    font-size: 14px;
+    line-height: 1.9;
+    letter-spacing: 0.02em;
+    color: var(--ink-70);
+  }
+
+  .lede b { font-weight: 600; color: var(--green); }
+  .lede i { font-style: normal; color: var(--gold-deep); }
+
+  .screens {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 44px 56px;
+  }
+
+  .screen { margin: 0; }
+
+  .screen figcaption {
+    margin-top: 26px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-size: 12.5px;
+    letter-spacing: 0.08em;
+    color: var(--ink-50);
+  }
+
+  .screen figcaption span {
+    font-family: var(--serif);
+    font-size: 13px;
+    color: var(--gold-deep);
+    letter-spacing: 0.1em;
+  }
+
+  /* ---------- 手机壳 ---------- */
+  .phone {
+    position: relative;
+    width: 375px;
+    height: 812px;
+    border-radius: 48px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #fbfdff 0%, #f3f8fe 58%, #e9f1fb 100%);
+    box-shadow:
+      0 0 0 11px #10161d,
+      0 0 0 12px #33404d,
+      0 0 0 13px rgba(255, 255, 255, 0.06),
+      0 48px 80px -34px rgba(16, 30, 46, 0.55),
+      0 14px 30px -18px rgba(16, 30, 46, 0.4);
+  }
+
+  .phone::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 108px;
+    height: 28px;
+    transform: translateX(-50%);
+    background: #10161d;
+    border-radius: 0 0 18px 18px;
+    z-index: 50;
+  }
+
+  .statusbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 52px;
+    padding: 16px 26px 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    z-index: 40;
+    pointer-events: none;
+  }
+
+  .statusbar .sys {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    opacity: 0.9;
+  }
+
+  .statusbar svg { display: block; }
+
+  /* ---------- 页面骨架 ---------- */
+  .page {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 64px 22px 104px;
+  }
+
+  .brand {
+    margin: 0 0 10px;
+    font-size: 9.5px;
+    letter-spacing: 0.34em;
+    color: var(--gold-deep);
+  }
+
+  .page-title {
+    margin: 0;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 27px;
+    letter-spacing: 0.1em;
+    color: var(--ink);
+  }
+
+  .page-sub {
+    margin: 8px 0 0;
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    color: var(--ink-50);
+  }
+
+  .section-label {
+    margin: 0;
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    color: var(--ink-38);
+  }
+
+  /* ---------- 屏幕一：输入 ---------- */
+  .composer {
+    margin-top: 30px;
+    padding: 18px 18px 14px;
+    border-radius: 26px;
+    border: 1px solid var(--line);
+    background: linear-gradient(165deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.66));
+    box-shadow: 0 26px 44px -38px rgba(24, 46, 72, 0.55);
+  }
+
+  .composer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .composer-hint {
+    font-size: 9.5px;
+    letter-spacing: 0.06em;
+    color: var(--ink-26);
+  }
+
+  .composer-text {
+    margin: 14px 0 0;
+    font-size: 14.5px;
+    line-height: 1.85;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+  }
+
+  .caret {
+    display: inline-block;
+    width: 1.5px;
+    height: 15px;
+    margin-left: 2px;
+    vertical-align: -2px;
+    background: var(--green);
+    animation: blink 1.15s steps(1) infinite;
+  }
+
+  .composer-foot {
+    margin-top: 16px;
+    padding-top: 13px;
+    border-top: 1px dashed rgba(28, 39, 51, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .composer-src {
+    font-size: 9.5px;
+    letter-spacing: 0.06em;
+    color: var(--ink-38);
+  }
+
+  .composer-src b {
+    font-weight: 600;
+    color: var(--green);
+  }
+
+  .send {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    height: 36px;
+    padding: 0 18px;
+    border: 0;
+    border-radius: 100px;
+    background: var(--green);
+    color: #f7faff;
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    box-shadow: 0 12px 20px -14px rgba(47, 90, 74, 0.9);
+  }
+
+  .send svg { display: block; }
+
+  .quick { margin-top: 26px; }
+
+  .chips {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .chip {
+    padding: 8px 13px;
+    border-radius: 100px;
+    font-size: 10.5px;
+    letter-spacing: 0.03em;
+    color: var(--ink-70);
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid var(--line);
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .chip:hover {
+    color: var(--green);
+    border-color: rgba(47, 90, 74, 0.35);
+  }
+
+  .chip:first-child {
+    color: var(--gold-deep);
+    background: rgba(227, 199, 102, 0.1);
+    border-color: rgba(227, 199, 102, 0.45);
+  }
+
+  .library { margin-top: 28px; }
+
+  .library-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  .library-more {
+    font-size: 9.5px;
+    letter-spacing: 0.1em;
+    color: var(--gold-deep);
+  }
+
+  .library-row {
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .lib-item {
+    width: 58px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+  }
+
+  .lib-item:hover .pic {
+    transform: scale(1.07);
+  }
+
+  .lib-item .pic {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.95);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 8px 16px -10px rgba(24, 46, 72, 0.55);
+  }
+
+  .lib-item span {
+    font-size: 9.5px;
+    letter-spacing: 0.02em;
+    color: var(--ink-50);
+    white-space: nowrap;
+  }
+
+  /* ---------- 图片容器（加载失败回退衬线字） ---------- */
+  .pic {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #e2ebf4 0%, #d3e0ed 55%, #c6d5e4 100%);
+    flex: none;
+  }
+
+  .pic > span {
+    font-family: var(--serif);
+    color: rgba(47, 90, 74, 0.45);
+  }
+
+  .pic > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* ---------- 屏幕二：资源包检测 ---------- */
+  .mini-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 34px;
+  }
+
+  .icon-btn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.7);
+    color: var(--ink-70);
+    font-size: 17px;
+    line-height: 1;
+  }
+
+  .mini-title {
+    font-size: 12.5px;
+    letter-spacing: 0.14em;
+    color: var(--ink-70);
+  }
+
+  .mini-step {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--gold-deep);
+  }
+
+  .intent {
+    margin-top: 18px;
+    padding: 16px 17px;
+    border-radius: 20px;
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.64);
+  }
+
+  .intent-quote {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: 13.5px;
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+    color: #25313d;
+  }
+
+  .intent-quote::before { content: "“"; color: var(--gold); }
+  .intent-quote::after { content: "”"; color: var(--gold); }
+
+  .intent-top {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .intent-label {
+    font-size: 9.5px;
+    letter-spacing: 0.2em;
+    color: var(--ink-38);
+  }
+
+  .intent-lock {
+    padding: 3px 9px;
+    border-radius: 100px;
+    font-size: 9px;
+    letter-spacing: 0.06em;
+    color: var(--ink-38);
+    background: rgba(28, 39, 51, 0.05);
+    border: 1px solid rgba(28, 39, 51, 0.1);
+  }
+
+  .intent-tags {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .intent-tags span {
+    padding: 4px 9px;
+    border-radius: 6px;
+    font-size: 9.5px;
+    letter-spacing: 0.06em;
+    color: var(--green);
+    background: rgba(47, 90, 74, 0.07);
+    border: 1px solid rgba(47, 90, 74, 0.14);
+  }
+
+  .stops-label {
+    margin: 22px 0 10px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  .stops-label em {
+    font-style: normal;
+    font-size: 9.5px;
+    letter-spacing: 0.06em;
+    color: var(--ink-38);
+  }
+
+  .stop {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 9px;
+    padding: 11px 12px;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.74);
+  }
+
+  .stop-idx {
+    flex: none;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-family: var(--serif);
+    font-size: 10px;
+    color: var(--gold-deep);
+    border: 1px solid rgba(227, 199, 102, 0.65);
+    background: rgba(227, 199, 102, 0.1);
+  }
+
+  .stop .pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    font-size: 16px;
+  }
+
+  .stop-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .stop-name {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: 13.5px;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+  }
+
+  .stop-meta {
+    margin: 3px 0 0;
+    font-size: 9.5px;
+    letter-spacing: 0.03em;
+    color: var(--ink-38);
+  }
+
+  .state {
+    flex: none;
+    padding: 4px 9px;
+    border-radius: 100px;
+    font-size: 9px;
+    letter-spacing: 0.06em;
+  }
+
+  .state--ok {
+    color: var(--green);
+    background: rgba(47, 90, 74, 0.08);
+    border: 1px solid rgba(47, 90, 74, 0.18);
+  }
+
+  .state--ok::before {
+    content: "✓ ";
+    color: var(--gold-deep);
+  }
+
+  .state--gen {
+    color: var(--gold-deep);
+    background: rgba(227, 199, 102, 0.16);
+    border: 1px solid rgba(227, 199, 102, 0.55);
+    animation: genPulse 1.9s ease-in-out infinite;
+  }
+
+  .state--queue {
+    color: var(--ink-38);
+    background: rgba(28, 39, 51, 0.05);
+    border: 1px solid rgba(28, 39, 51, 0.1);
+  }
+
+  .stop.is-generating {
+    border-color: rgba(227, 199, 102, 0.5);
+    background: rgba(255, 253, 245, 0.9);
+  }
+
+  .stop-bar {
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 5px;
+    height: 2px;
+    border-radius: 10px;
+    background: rgba(227, 199, 102, 0.22);
+    overflow: hidden;
+  }
+
+  .stop-bar i {
+    display: block;
+    height: 100%;
+    width: 62%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, rgba(200, 160, 63, 0.55), #c8a03f);
+    animation: barBreath 2.4s ease-in-out infinite;
+  }
+
+  .gen-card {
+    margin-top: 16px;
+    padding: 14px 16px 15px;
+    border-radius: 18px;
+    background: linear-gradient(150deg, #2f5a4a 0%, #38664f 60%, #2c5545 100%);
+    color: #f4f8fb;
+    box-shadow: 0 18px 30px -24px rgba(28, 64, 50, 0.9);
+  }
+
+  .gen-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+  }
+
+  .gen-top span:last-child {
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    color: rgba(244, 248, 251, 0.55);
+  }
+
+  .gen-bar {
+    margin-top: 11px;
+    height: 3px;
+    border-radius: 10px;
+    background: rgba(244, 248, 251, 0.18);
+    overflow: hidden;
+  }
+
+  .gen-bar i {
+    display: block;
+    height: 100%;
+    width: 68%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, rgba(227, 199, 102, 0.6), var(--gold));
+  }
+
+  .gen-note {
+    margin: 10px 0 0;
+    font-size: 9.5px;
+    letter-spacing: 0.04em;
+    color: rgba(244, 248, 251, 0.6);
+  }
+
+  .gen-note b { color: var(--gold); font-weight: 500; }
+
+  /* ---------- 屏幕三：地图 ---------- */
+  .page--map { padding: 0; }
+
+  .map {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    background: #f6f3ea;
+  }
+
+  .map-art {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .water-label {
+    font-family: var(--serif);
+    font-size: 9px;
+    letter-spacing: 0.32em;
+    fill: #8fb3c1;
+  }
+
+  .zone-label {
+    font-family: var(--serif);
+    font-size: 9px;
+    letter-spacing: 0.34em;
+    fill: #a7a99f;
+  }
+
+  .route-line {
+    stroke-dasharray: 2 9;
+    animation: dash 26s linear infinite;
+  }
+
+  .map-top {
+    position: absolute;
+    top: 56px;
+    left: 16px;
+    right: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .map-card {
+    flex: 1;
+    padding: 13px 16px 14px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 18px 34px -26px rgba(30, 52, 78, 0.55);
+    backdrop-filter: blur(14px);
+  }
+
+  .map-kicker {
+    margin: 0;
+    font-size: 8.5px;
+    letter-spacing: 0.26em;
+    color: var(--gold-deep);
+  }
+
+  .map-card h3 {
+    margin: 7px 0 0;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 17px;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+  }
+
+  .map-meta {
+    margin: 6px 0 0;
+    font-size: 9.5px;
+    letter-spacing: 0.05em;
+    color: var(--ink-50);
+  }
+
+  .map-ready {
+    margin: 9px 0 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 9px;
+    letter-spacing: 0.06em;
+    color: var(--green);
+  }
+
+  .map-ready i {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #5f9a78;
+    box-shadow: 0 0 7px rgba(95, 154, 120, 0.9);
+  }
+
+  .map-round {
+    flex: none;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 14px 24px -18px rgba(30, 52, 78, 0.6);
+    color: var(--green);
+  }
+
+  .node {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    z-index: 6;
+    cursor: pointer;
+  }
+
+  .node:hover .node-label {
+    color: var(--green);
+    border-color: rgba(47, 90, 74, 0.35);
+  }
+
+  .node-pic {
+    position: relative;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2.5px solid #ffffff;
+    box-shadow:
+      0 0 0 1.5px rgba(200, 160, 63, 0.9),
+      0 12px 22px -10px rgba(28, 39, 51, 0.6);
+    animation: nodeIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .node-pic .pic {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    font-size: 18px;
+  }
+
+  .node-badge {
+    position: absolute;
+    top: -3px;
+    right: -4px;
+    width: 19px;
+    height: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 9.5px;
+    font-weight: 600;
+    color: #f8fbfe;
+    background: var(--green);
+    border: 1.5px solid #fdfefe;
+    box-shadow: 0 4px 10px -4px rgba(20, 40, 30, 0.7);
+  }
+
+  .node-label {
+    padding: 4px 9px;
+    border-radius: 100px;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    color: #26332d;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(28, 39, 51, 0.07);
+    box-shadow: 0 8px 14px -12px rgba(28, 39, 51, 0.8);
+    white-space: nowrap;
+  }
+
+  .node:nth-of-type(2) .node-pic { animation-delay: 0.12s; }
+  .node:nth-of-type(3) .node-pic { animation-delay: 0.24s; }
+  .node:nth-of-type(4) .node-pic { animation-delay: 0.36s; }
+
+  .map-controls {
+    position: absolute;
+    right: 16px;
+    bottom: 306px;
+    z-index: 8;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .map-ctrl {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    border: 1px solid rgba(28, 39, 51, 0.08);
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 10px 18px -14px rgba(28, 39, 51, 0.7);
+    color: var(--ink-70);
+    font-size: 15px;
+    line-height: 1;
+  }
+
+  .sheet {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 88px;
+    z-index: 20;
+    padding: 10px 20px 18px;
+    border-radius: 30px 30px 0 0;
+    background: rgba(255, 255, 255, 0.95);
+    border-top: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 -18px 40px -30px rgba(24, 46, 72, 0.6);
+    backdrop-filter: blur(18px);
+  }
+
+  .sheet-grab {
+    width: 34px;
+    height: 3px;
+    margin: 0 auto 12px;
+    border-radius: 10px;
+    background: rgba(28, 39, 51, 0.14);
+  }
+
+  .sheet-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  .sheet-head b {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+  }
+
+  .sheet-link {
+    font-size: 9.5px;
+    letter-spacing: 0.08em;
+    color: var(--gold-deep);
+    border-bottom: 1px solid rgba(138, 107, 47, 0.3);
+    padding-bottom: 1px;
+  }
+
+  .sheet-row {
+    margin-top: 13px;
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+  }
+
+  .sheet-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+    cursor: pointer;
+  }
+
+  .sheet-item .pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid #fff;
+    box-shadow: 0 0 0 1px rgba(227, 199, 102, 0.55);
+    font-size: 15px;
+  }
+
+  .sheet-item span {
+    font-size: 9px;
+    letter-spacing: 0.02em;
+    color: var(--ink-50);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
+  .cta {
+    margin-top: 16px;
+    width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 0;
+    border-radius: 16px;
+    background: linear-gradient(120deg, #2f5a4a 0%, #38664f 100%);
+    color: #f7faff;
+    font-family: var(--sans);
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    box-shadow: 0 18px 26px -20px rgba(47, 90, 74, 0.95);
+  }
+
+  /* ---------- 底部栏（左 规划 / 右 资源包） ---------- */
+  .tabbar {
+    position: absolute;
+    left: 28px;
+    right: 28px;
+    bottom: 24px;
+    z-index: 30;
+    height: 62px;
+    padding: 5px;
+    display: flex;
+    gap: 4px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow:
+      0 20px 34px -26px rgba(24, 46, 72, 0.7),
+      0 2px 6px rgba(24, 46, 72, 0.05);
+    backdrop-filter: blur(18px);
+  }
+
+  .tab {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border-radius: 17px;
+    color: rgba(28, 39, 51, 0.42);
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+  }
+
+  .tab svg { display: block; opacity: 0.9; }
+
+  .tab.is-active {
+    color: #f5f9fc;
+    background: linear-gradient(135deg, #2f5a4a 0%, #3a6a55 100%);
+    box-shadow: 0 10px 18px -12px rgba(47, 90, 74, 0.9);
+  }
+
+  .tab.is-active svg { color: var(--gold); }
+
+  /* ---------- 连续游览浮层 ---------- */
+  .tour-ov {
+    position: absolute;
+    inset: 0;
+    z-index: 45;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background: rgba(12, 18, 24, 0.52);
+  }
+
+  .tour-ov[hidden] { display: none; }
+
+  .tour-card {
+    width: 100%;
+    padding: 26px 24px 20px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 34px 64px -32px rgba(12, 18, 24, 0.75);
+  }
+
+  .tour-kicker {
+    margin: 0;
+    font-size: 9px;
+    letter-spacing: 0.26em;
+    color: var(--gold-deep);
+  }
+
+  .tour-title {
+    margin: 12px 0 0;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 23px;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+  }
+
+  .tour-sub {
+    margin: 8px 0 0;
+    font-size: 10.5px;
+    letter-spacing: 0.03em;
+    color: var(--ink-50);
+  }
+
+  .tour-dots {
+    margin: 18px 0 0;
+    display: flex;
+    gap: 6px;
+  }
+
+  .tour-dots i {
+    flex: 1;
+    height: 3px;
+    border-radius: 10px;
+    background: rgba(28, 39, 51, 0.12);
+    transition: background 0.3s;
+  }
+
+  .tour-dots i.on { background: var(--gold); }
+
+  .tour-next {
+    margin-top: 20px;
+    width: 100%;
+    height: 46px;
+    border: 0;
+    border-radius: 15px;
+    background: linear-gradient(120deg, #2f5a4a 0%, #38664f 100%);
+    color: #f7faff;
+    font-family: var(--sans);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+  }
+
+  .tour-exit {
+    margin-top: 8px;
+    width: 100%;
+    height: 36px;
+    border: 0;
+    background: none;
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--ink-38);
+  }
+
+  /* ---------- 预览用轻提示 ---------- */
+  #toast {
+    position: fixed;
+    left: 50%;
+    bottom: 42px;
+    transform: translateX(-50%) translateY(12px);
+    padding: 11px 20px;
+    border-radius: 100px;
+    background: rgba(28, 39, 51, 0.92);
+    color: #f7faff;
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s, transform 0.25s;
+    z-index: 100;
+  }
+
+  #toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* ---------- 动效 ---------- */
+  @keyframes blink {
+    0%, 48% { opacity: 1; }
+    49%, 100% { opacity: 0; }
+  }
+
+  @keyframes dash {
+    to { stroke-dashoffset: -320; }
+  }
+
+  @keyframes nodeIn {
+    from { opacity: 0; transform: translateY(10px) scale(0.86); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  @keyframes genPulse {
+    0%, 100% { opacity: 0.62; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes barBreath {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; }
+  }
+
+  @media (max-width: 1280px) {
+    .stage { padding: 48px 24px 80px; }
+    .stage-head h1 { font-size: 38px; }
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+  <header class="stage-head">
+    <p class="eyebrow">TOUR GUIDE · FRONTEND PREVIEW</p>
+    <h1>路线规划</h1>
+    <p class="lede">
+      一句话说出想去哪、怎么玩，AI 排一条可行路线：<b>已在资源包列表里的景点直接复用</b>，缺失的现场走生成流程并自动入库，
+      齐了以后调用地图服务把路线铺开，每一站浮出对应资源包的小圆图，<i>点节点直达资源包</i>，整条线可连续游览。底部栏<b>左侧「规划」</b>、<b>右侧「资源包」</b>，与列表页同级切换。
+    </p>
+  </header>
+
+  <div class="screens">
+    <!-- ============ 01 输入 ============ -->
+    <figure class="screen">
+      <div class="phone">
+        <div class="statusbar">
+          <span>9:41</span>
+          <span class="sys">
+            <svg width="15" height="10" viewBox="0 0 15 10" fill="currentColor"><rect x="0" y="6" width="2.4" height="4" rx="1"/><rect x="4" y="4" width="2.4" height="6" rx="1"/><rect x="8" y="2" width="2.4" height="8" rx="1"/><rect x="12" y="0" width="2.4" height="10" rx="1"/></svg>
+            <svg width="15" height="10" viewBox="0 0 15 10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M1 3.4a9 9 0 0 1 13 0"/><path d="M3.6 6a5.4 5.4 0 0 1 7.8 0"/><circle cx="7.5" cy="8.6" r="0.9" fill="currentColor" stroke="none"/></svg>
+            <svg width="20" height="10" viewBox="0 0 20 10" fill="none"><rect x="0.6" y="0.8" width="16" height="8.4" rx="2.6" stroke="currentColor" stroke-opacity="0.4"/><rect x="2.2" y="2.4" width="12" height="5.2" rx="1.4" fill="currentColor"/><path d="M18.4 3.6v2.8a1.7 1.7 0 0 0 0-2.8z" fill="currentColor" fill-opacity="0.5"/></svg>
+          </span>
+        </div>
+
+        <div class="page">
+          <header>
+            <p class="brand">TOUR GUIDE</p>
+            <h2 class="page-title">路线规划</h2>
+            <p class="page-sub">说一句想去哪、怎么玩，帮你排成一条线</p>
+          </header>
+
+          <section class="composer">
+            <div class="composer-top">
+              <span class="composer-hint" style="margin-left: auto">最多 60 字</span>
+            </div>
+            <p class="composer-text"><span id="composerValue">带爸妈两天逛洛阳，想看石窟和古寺，别太赶。</span><span class="caret"></span></p>
+            <div class="composer-foot">
+              <span class="composer-src">已接入 <b>10</b> 个资源包</span>
+              <button class="send">
+                生成路线
+                <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 7h9"/><path d="M8 3.5 11.5 7 8 10.5"/></svg>
+              </button>
+            </div>
+          </section>
+
+          <section class="quick">
+            <p class="section-label">试试这样说</p>
+            <div class="chips">
+              <span class="chip" data-fill="一天看尽洛阳石刻">一天看尽洛阳石刻</span>
+              <span class="chip" data-fill="雨天两日 · 只走室内线">雨天 · 室内线</span>
+              <span class="chip" data-fill="老城慢走半天，晚上逛夜市">老城慢走 + 夜市</span>
+            </div>
+          </section>
+
+          <section class="library">
+            <div class="library-head">
+              <p class="section-label">可直接串联的景点</p>
+              <span class="library-more">10 个</span>
+            </div>
+            <div class="library-row">
+              <div class="lib-item" data-name="白马寺">
+                <div class="pic"><span>白</span><img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=White%20Horse%20Temple%20Luoyang%2C%20ancient%20Chinese%20Buddhist%20temple%20gate%2C%20red%20walls%2C%20grey%20tile%20roof%2C%20incense%20smoke%2C%20soft%20morning%20light%2C%20realistic%20photo&image_size=square" alt="白马寺" onerror="this.style.display='none'" /></div>
+                <span>白马寺</span>
+              </div>
+              <div class="lib-item" data-name="龙门石窟">
+                <div class="pic"><span>龙</span><img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Longmen%20Grottoes%20Luoyang%20China%2C%20ancient%20Buddhist%20statues%20carved%20into%20limestone%20cliff%2C%20golden%20afternoon%20light%2C%20realistic%20travel%20photography&image_size=square" alt="龙门石窟" onerror="this.style.display='none'" /></div>
+                <span>龙门石窟</span>
+              </div>
+              <div class="lib-item" data-name="洛邑古城">
+                <div class="pic"><span>洛</span><img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Luoyi%20ancient%20town%20Luoyang%20China%20at%20dusk%2C%20traditional%20Chinese%20timber%20buildings%2C%20warm%20lantern%20light%2C%20canal%20reflection%2C%20realistic%20travel%20photo&image_size=square" alt="洛邑古城" onerror="this.style.display='none'" /></div>
+                <span>洛邑古城</span>
+              </div>
+              <div class="lib-item" data-name="洛阳博物馆">
+                <div class="pic"><span>博</span><img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Luoyang%20Museum%20China%2C%20modern%20architecture%20with%20bronze%20ding%20shaped%20roof%2C%20clear%20blue%20sky%2C%20architectural%20photography&image_size=square" alt="洛阳博物馆" onerror="this.style.display='none'" /></div>
+                <span>博物馆</span>
+              </div>
+              <div class="lib-item" data-name="关林">
+                <div class="pic"><span>关</span><img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Guanlin%20Temple%20Luoyang%2C%20ancient%20Chinese%20temple%20courtyard%2C%20green%20cypress%20trees%2C%20red%20columns%2C%20realistic%20photo&image_size=square" alt="关林" onerror="this.style.display='none'" /></div>
+                <span>关林</span>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <nav class="tabbar">
+          <div class="tab is-active">
+            <svg width="17" height="17" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4.6 14.4c0-3.1 4.6-2.6 4.6-5.8S4.6 6 4.6 3.4"/>
+              <circle cx="4.6" cy="14.9" r="1.5" fill="currentColor" stroke="none"/>
+              <circle cx="13.4" cy="3.2" r="1.6" fill="currentColor" stroke="none"/>
+              <path d="M9.4 8.6h3.2"/>
+            </svg>
+            规划
+          </div>
+          <div class="tab">
+            <svg width="17" height="17" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 2.2 15.8 5.8 9 9.4 2.2 5.8z"/>
+              <path d="m2.2 9.5 6.8 3.6 6.8-3.6"/>
+              <path d="m2.2 13 6.8 3.6 6.8-3.6"/>
+            </svg>
+            资源包
+          </div>
+        </nav>
+      </div>
+      <figcaption><span>01</span>一句话说清行程，或直接点示例</figcaption>
+    </figure>
+
+    <!-- ============ 02 资源包检测 ============ -->
+    <figure class="screen">
+      <div class="phone">
+        <div class="statusbar">
+          <span>9:41</span>
+          <span class="sys">
+            <svg width="15" height="10" viewBox="0 0 15 10" fill="currentColor"><rect x="0" y="6" width="2.4" height="4" rx="1"/><rect x="4" y="4" width="2.4" height="6" rx="1"/><rect x="8" y="2" width="2.4" height="8" rx="1"/><rect x="12" y="0" width="2.4" height="10" rx="1"/></svg>
+            <svg width="15" height="10" viewBox="0 0 15 10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M1 3.4a9 9 0 0 1 13 0"/><path d="M3.6 6a5.4 5.4 0 0 1 7.8 0"/><circle cx="7.5" cy="8.6" r="0.9" fill="currentColor" stroke="none"/></svg>
+            <svg width="20" height="10" viewBox="0 0 20 10" fill="none"><rect x="0.6" y="0.8" width="16" height="8.4" rx="2.6" stroke="currentColor" stroke-opacity="0.4"/><rect x="2.2" y="2.4" width="12" height="5.2" rx="1.4" fill="currentColor"/><path d="M18.4 3.6v2.8a1.7 1.7 0 0 0 0-2.8z" fill="currentColor" fill-opacity="0.5"/></svg>
+          </span>
+        </div>
+
+        <div class="page">
+          <div class="mini-head">
+            <span class="icon-btn">‹</span>
+            <span class="mini-title">正在规划</span>
+            <span class="mini-step">2 / 3</span>
+          </div>
+
+          <section class="intent">
+            <div class="intent-top">
+              <span class="intent-label">原始需求</span>
+              <span class="intent-lock">规划中 · 不可修改</span>
+            </div>
+            <p class="intent-quote">带爸妈两天逛洛阳，想看石窟和古寺，别太赶。</p>
+            <div class="intent-tags">
+              <span>2 天</span>
+              <span>洛阳</span>
+              <span>人文古迹</span>
+              <span>节奏舒缓</span>
+            </div>
+          </section>
+
+          <div class="stops-label">
+            <p class="section-label">路线 · 4 站</p>
+            <em>按动线排序</em>
+          </div>
+
+          <div class="stop">
+            <span class="stop-idx">1</span>
+            <div class="pic"><span>白</span><img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=White%20Horse%20Temple%20Luoyang%2C%20ancient%20Chinese%20Buddhist%20temple%20gate%2C%20red%20walls%2C%20grey%20tile%20roof%2C%20incense%20smoke%2C%20soft%20morning%20light%2C%20realistic%20photo&image_size=square" alt="白马寺" onerror="this.style.display='none'" /></div>
+            <div class="stop-body">
+              <p class="stop-name">白马寺</p>
+              <p class="stop-meta">8 幕 · 武则天讲述</p>
+            </div>
+            <span class="state state--ok">已入库</span>
+          </div>
+
+          <div class="stop">
+            <span class="stop-idx">2</span>
+            <div class="pic"><span>博</span><img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Luoyang%20Museum%20China%2C%20modern%20architecture%20with%20bronze%20ding%20shaped%20roof%2C%20clear%20blue%20sky%2C%20architectural%20photography&image_size=square" alt="洛阳博物馆" onerror="this.style.display='none'" /></div>
+            <div class="stop-body">
+              <p class="stop-name">洛阳博物馆</p>
+              <p class="stop-meta">5 幕 · 河洛文明</p>
+            </div>
+            <span class="state state--ok">已入库</span>
+          </div>
+
+          <div class="stop is-generating">
+            <span class="stop-idx">3</span>
+            <div class="pic"><span>洛</span><img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Luoyi%20ancient%20town%20Luoyang%20China%20at%20dusk%2C%20traditional%20Chinese%20timber%20buildings%2C%20warm%20lantern%20light%2C%20canal%20reflection%2C%20realistic%20travel%20photo&image_size=square" alt="洛邑古城" onerror="this.style.display='none'" /></div>
+            <div class="stop-body">
+              <p class="stop-name">洛邑古城</p>
+              <p class="stop-meta">检索资料 · 撰写文稿</p>
+            </div>
+            <span class="state state--gen">生成 62%</span>
+            <span class="stop-bar"><i></i></span>
+          </div>
+
+          <div class="stop">
+            <span class="stop-idx">4</span>
+            <div class="pic"><span>龙</span><img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Longmen%20Grottoes%20Luoyang%20China%2C%20ancient%20Buddhist%20statues%20carved%20into%20limestone%20cliff%2C%20golden%20afternoon%20light%2C%20realistic%20travel%20photography&image_size=square" alt="龙门石窟" onerror="this.style.display='none'" /></div>
+            <div class="stop-body">
+              <p class="stop-name">龙门石窟</p>
+              <p class="stop-meta">排队等待生成</p>
+            </div>
+            <span class="state state--queue">排队中</span>
+          </div>
+
+          <section class="gen-card">
+            <div class="gen-top">
+              <span>资源包 3 / 4 就绪</span>
+              <span>边生成边铺图</span>
+            </div>
+            <div class="gen-bar"><i></i></div>
+            <p class="gen-note"><b>洛邑古城</b> 正在编排文稿，完成后自动加入资源包列表</p>
+          </section>
+        </div>
+
+        <nav class="tabbar">
+          <div class="tab is-active">
+            <svg width="17" height="17" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4.6 14.4c0-3.1 4.6-2.6 4.6-5.8S4.6 6 4.6 3.4"/>
+              <circle cx="4.6" cy="14.9" r="1.5" fill="currentColor" stroke="none"/>
+              <circle cx="13.4" cy="3.2" r="1.6" fill="currentColor" stroke="none"/>
+              <path d="M9.4 8.6h3.2"/>
+            </svg>
+            规划
+          </div>
+          <div class="tab">
+            <svg width="17" height="17" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 2.2 15.8 5.8 9 9.4 2.2 5.8z"/>
+              <path d="m2.2 9.5 6.8 3.6 6.8-3.6"/>
+              <path d="m2.2 13 6.8 3.6 6.8-3.6"/>
+            </svg>
+            资源包
+          </div>
+        </nav>
+      </div>
+      <figcaption><span>02</span>逐站比对资源包，缺的现场生成</figcaption>
+    </figure>
+
+    <!-- ============ 03 地图 ============ -->
+    <figure class="screen">
+      <div class="phone">
+        <div class="statusbar">
+          <span>9:41</span>
+          <span class="sys">
+            <svg width="15" height="10" viewBox="0 0 15 10" fill="currentColor"><rect x="0" y="6" width="2.4" height="4" rx="1"/><rect x="4" y="4" width="2.4" height="6" rx="1"/><rect x="8" y="2" width="2.4" height="8" rx="1"/><rect x="12" y="0" width="2.4" height="10" rx="1"/></svg>
+            <svg width="15" height="10" viewBox="0 0 15 10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M1 3.4a9 9 0 0 1 13 0"/><path d="M3.6 6a5.4 5.4 0 0 1 7.8 0"/><circle cx="7.5" cy="8.6" r="0.9" fill="currentColor" stroke="none"/></svg>
+            <svg width="20" height="10" viewBox="0 0 20 10" fill="none"><rect x="0.6" y="0.8" width="16" height="8.4" rx="2.6" stroke="currentColor" stroke-opacity="0.4"/><rect x="2.2" y="2.4" width="12" height="5.2" rx="1.4" fill="currentColor"/><path d="M18.4 3.6v2.8a1.7 1.7 0 0 0 0-2.8z" fill="currentColor" fill-opacity="0.5"/></svg>
+          </span>
+        </div>
+
+        <div class="map">
+          <svg class="map-art" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="375" height="812" fill="#f6f3ea" />
+
+            <!-- 绿地 / 山体 -->
+            <path d="M-20 660 C 70 620 150 672 240 632 C 314 600 356 622 400 600 L 400 830 L -20 830 Z" fill="#e7efdf" />
+            <path d="M252 -20 C 322 30 344 92 300 132 C 262 168 306 210 372 198 L 400 198 L 400 -20 Z" fill="#eaf0e2" opacity="0.75" />
+            <ellipse cx="86" cy="238" rx="58" ry="40" fill="#e9f0e1" opacity="0.8" />
+
+            <!-- 街区 -->
+            <g fill="#efe9db" opacity="0.75">
+              <rect x="26" y="196" width="62" height="40" rx="5" />
+              <rect x="112" y="168" width="54" height="34" rx="5" />
+              <rect x="186" y="206" width="70" height="42" rx="5" />
+              <rect x="46" y="284" width="66" height="38" rx="5" />
+              <rect x="150" y="292" width="58" height="46" rx="5" />
+              <rect x="246" y="180" width="52" height="60" rx="5" />
+              <rect x="262" y="272" width="64" height="40" rx="5" />
+              <rect x="30" y="378" width="58" height="44" rx="5" />
+              <rect x="132" y="386" width="62" height="38" rx="5" />
+              <rect x="232" y="392" width="76" height="44" rx="5" />
+            </g>
+
+            <!-- 道路 -->
+            <g fill="none" stroke="#fffdf7" stroke-width="8" stroke-linecap="round">
+              <path d="M-16 152 C 110 142 244 172 392 120" />
+              <path d="M64 24 C 92 160 68 300 112 424 C 142 522 122 630 160 792" />
+              <path d="M344 48 C 302 158 332 262 300 362 C 274 448 292 540 264 640" />
+              <path d="M-16 336 C 120 326 262 356 392 306" />
+              <path d="M-16 486 C 110 464 262 508 392 452" />
+            </g>
+            <g fill="none" stroke="#eee8d7" stroke-width="1">
+              <path d="M-16 152 C 110 142 244 172 392 120" />
+              <path d="M64 24 C 92 160 68 300 112 424 C 142 522 122 630 160 792" />
+              <path d="M344 48 C 302 158 332 262 300 362 C 274 448 292 540 264 640" />
+              <path d="M-16 336 C 120 326 262 356 392 306" />
+              <path d="M-16 486 C 110 464 262 508 392 452" />
+            </g>
+
+            <!-- 洛河 -->
+            <path d="M-24 580 C 56 552 138 604 218 578 C 290 556 342 592 400 570" fill="none" stroke="#d6e8ee" stroke-width="38" stroke-linecap="round" />
+            <path d="M-24 580 C 56 552 138 604 218 578 C 290 556 342 592 400 570" fill="none" stroke="#c2dbe5" stroke-width="1.5" opacity="0.9" />
+            <text class="water-label" x="150" y="586">洛 河</text>
+
+            <!-- 地名 -->
+            <text class="zone-label" x="44" y="86">邙 山</text>
+            <text class="zone-label" x="40" y="348">西 工</text>
+            <text class="zone-label" x="286" y="352">老 城</text>
+            <text class="zone-label" x="272" y="716">洛 龙</text>
+
+            <!-- 路线：白马寺 → 博物馆 → 洛邑古城 → 龙门石窟 -->
+            <path d="M285 180 C 250 226 186 256 130 300 C 112 336 172 352 210 385 C 212 418 158 440 100 470"
+                  fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" opacity="0.55" />
+            <path class="route-line"
+                  d="M285 180 C 250 226 186 256 130 300 C 112 336 172 352 210 385 C 212 418 158 440 100 470"
+                  fill="none" stroke="#c8a03f" stroke-width="3" stroke-linecap="round" />
+          </svg>
+
+          <div class="map-top">
+            <div class="map-card">
+              <p class="map-kicker">AI 路线</p>
+              <h3>洛阳两日 · 石窟与古寺</h3>
+              <p class="map-meta">4 站 · 26.4 km · 约 2 天 · 缓节奏</p>
+              <p class="map-ready"><i></i>4 个资源包已就绪</p>
+            </div>
+            <div class="map-round">
+              <svg width="17" height="17" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 2.2 15.8 5.8 9 9.4 2.2 5.8z"/>
+                <path d="m2.2 9.5 6.8 3.6 6.8-3.6"/>
+                <path d="m2.2 13 6.8 3.6 6.8-3.6"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 节点 -->
+          <div class="node" data-name="白马寺" style="left: 76%; top: 22.2%">
+            <div class="node-pic">
+              <div class="pic"><span>白</span><img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=White%20Horse%20Temple%20Luoyang%2C%20ancient%20Chinese%20Buddhist%20temple%20gate%2C%20red%20walls%2C%20grey%20tile%20roof%2C%20incense%20smoke%2C%20soft%20morning%20light%2C%20realistic%20photo&image_size=square" alt="白马寺" onerror="this.style.display='none'" /></div>
+              <span class="node-badge">1</span>
+            </div>
+            <span class="node-label">白马寺</span>
+          </div>
+
+          <div class="node" data-name="洛阳博物馆" style="left: 34.7%; top: 36.9%">
+            <div class="node-pic">
+              <div class="pic"><span>博</span><img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Luoyang%20Museum%20China%2C%20modern%20architecture%20with%20bronze%20ding%20shaped%20roof%2C%20clear%20blue%20sky%2C%20architectural%20photography&image_size=square" alt="洛阳博物馆" onerror="this.style.display='none'" /></div>
+              <span class="node-badge">2</span>
+            </div>
+            <span class="node-label">洛阳博物馆</span>
+          </div>
+
+          <div class="node" data-name="洛邑古城" style="left: 56%; top: 47.4%">
+            <div class="node-pic">
+              <div class="pic"><span>洛</span><img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Luoyi%20ancient%20town%20Luoyang%20China%20at%20dusk%2C%20traditional%20Chinese%20timber%20buildings%2C%20warm%20lantern%20light%2C%20canal%20reflection%2C%20realistic%20travel%20photo&image_size=square" alt="洛邑古城" onerror="this.style.display='none'" /></div>
+              <span class="node-badge">3</span>
+            </div>
+            <span class="node-label">洛邑古城</span>
+          </div>
+
+          <div class="node" data-name="龙门石窟" style="left: 26.7%; top: 57.9%">
+            <div class="node-pic">
+              <div class="pic"><span>龙</span><img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Longmen%20Grottoes%20Luoyang%20China%2C%20ancient%20Buddhist%20statues%20carved%20into%20limestone%20cliff%2C%20golden%20afternoon%20light%2C%20realistic%20travel%20photography&image_size=square" alt="龙门石窟" onerror="this.style.display='none'" /></div>
+              <span class="node-badge">4</span>
+            </div>
+            <span class="node-label">龙门石窟</span>
+          </div>
+
+          <div class="map-controls">
+            <div class="map-ctrl">＋</div>
+            <div class="map-ctrl">－</div>
+            <div class="map-ctrl">
+              <svg width="15" height="15" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M9 2.5v3M9 12.5v3M2.5 9h3M12.5 9h3"/><circle cx="9" cy="9" r="3.2"/></svg>
+            </div>
+          </div>
+
+          <section class="sheet">
+            <div class="sheet-grab"></div>
+            <div class="sheet-head">
+              <b>沿途 4 站</b>
+              <span class="sheet-link">调整路线</span>
+            </div>
+            <div class="sheet-row">
+              <div class="sheet-item" data-name="白马寺">
+                <div class="pic"><span>白</span><img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=White%20Horse%20Temple%20Luoyang%2C%20ancient%20Chinese%20Buddhist%20temple%20gate%2C%20red%20walls%2C%20grey%20tile%20roof%2C%20incense%20smoke%2C%20soft%20morning%20light%2C%20realistic%20photo&image_size=square" alt="白马寺" onerror="this.style.display='none'" /></div>
+                <span>白马寺</span>
+              </div>
+              <div class="sheet-item" data-name="洛阳博物馆">
+                <div class="pic"><span>博</span><img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Luoyang%20Museum%20China%2C%20modern%20architecture%20with%20bronze%20ding%20shaped%20roof%2C%20clear%20blue%20sky%2C%20architectural%20photography&image_size=square" alt="洛阳博物馆" onerror="this.style.display='none'" /></div>
+                <span>博物馆</span>
+              </div>
+              <div class="sheet-item" data-name="洛邑古城">
+                <div class="pic"><span>洛</span><img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Luoyi%20ancient%20town%20Luoyang%20China%20at%20dusk%2C%20traditional%20Chinese%20timber%20buildings%2C%20warm%20lantern%20light%2C%20canal%20reflection%2C%20realistic%20travel%20photo&image_size=square" alt="洛邑古城" onerror="this.style.display='none'" /></div>
+                <span>洛邑古城</span>
+              </div>
+              <div class="sheet-item" data-name="龙门石窟">
+                <div class="pic"><span>龙</span><img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Longmen%20Grottoes%20Luoyang%20China%2C%20ancient%20Buddhist%20statues%20carved%20into%20limestone%20cliff%2C%20golden%20afternoon%20light%2C%20realistic%20travel%20photography&image_size=square" alt="龙门石窟" onerror="this.style.display='none'" /></div>
+                <span>龙门石窟</span>
+              </div>
+            </div>
+            <button class="cta" id="startTour">
+              沿路线开始游览
+              <svg width="15" height="15" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 7h9"/><path d="M8 3.5 11.5 7 8 10.5"/></svg>
+            </button>
+          </section>
+        </div>
+
+        <nav class="tabbar">
+          <div class="tab is-active">
+            <svg width="17" height="17" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4.6 14.4c0-3.1 4.6-2.6 4.6-5.8S4.6 6 4.6 3.4"/>
+              <circle cx="4.6" cy="14.9" r="1.5" fill="currentColor" stroke="none"/>
+              <circle cx="13.4" cy="3.2" r="1.6" fill="currentColor" stroke="none"/>
+              <path d="M9.4 8.6h3.2"/>
+            </svg>
+            规划
+          </div>
+          <div class="tab">
+            <svg width="17" height="17" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 2.2 15.8 5.8 9 9.4 2.2 5.8z"/>
+              <path d="m2.2 9.5 6.8 3.6 6.8-3.6"/>
+              <path d="m2.2 13 6.8 3.6 6.8-3.6"/>
+            </svg>
+            资源包
+          </div>
+        </nav>
+
+        <div class="tour-ov" id="tourOv" hidden>
+          <div class="tour-card">
+            <p class="tour-kicker">连续游览 · 不退出</p>
+            <h4 class="tour-title" id="tourTitle">第 1 站 · 白马寺</h4>
+            <p class="tour-sub" id="tourSub">8 幕 · 武则天讲述 · 看完自动衔接下一站</p>
+            <div class="tour-dots" id="tourDots"><i class="on"></i><i></i><i></i><i></i></div>
+            <button class="tour-next" id="tourNext">看完，进入下一站</button>
+            <button class="tour-exit" id="tourExit">退出游览</button>
+          </div>
+        </div>
+      </div>
+      <figcaption><span>03</span>地图铺开路线，每站浮出资源包小圆图</figcaption>
+    </figure>
+  </div>
+</div>
+
+<script>
+(function () {
+  function $(s) { return document.querySelector(s); }
+  function $$(s) { return Array.prototype.slice.call(document.querySelectorAll(s)); }
+
+  var toastEl;
+  function toast(msg) {
+    if (!toastEl) {
+      toastEl = document.createElement('div');
+      toastEl.id = 'toast';
+      document.body.appendChild(toastEl);
+    }
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastEl._t);
+    toastEl._t = setTimeout(function () { toastEl.classList.remove('show'); }, 1800);
+  }
+
+  // 「试试这样说」→ 覆盖输入框
+  $$('.chip[data-fill]').forEach(function (c) {
+    c.addEventListener('click', function () {
+      $('#composerValue').textContent = c.getAttribute('data-fill');
+      toast('已填入示例，可直接生成路线');
+    });
+  });
+
+  // 景点圆图 → 跳转资源包
+  function bindOpen(selector) {
+    $$(selector).forEach(function (el) {
+      el.addEventListener('click', function () {
+        toast('进入《' + el.getAttribute('data-name') + '》资源包');
+      });
+    });
+  }
+  bindOpen('.lib-item[data-name]');
+  bindOpen('.node[data-name]');
+  bindOpen('.sheet-item[data-name]');
+
+  // 沿路线连续游览
+  var stops = [
+    ['白马寺', '8 幕 · 武则天讲述'],
+    ['洛阳博物馆', '5 幕 · 河洛文明'],
+    ['洛邑古城', '6 幕 · 夜色灯影'],
+    ['龙门石窟', '8 幕 · 卢舍那大佛']
+  ];
+  var ov = $('#tourOv');
+  var idx = 0;
+  function render() {
+    $('#tourTitle').textContent = '第 ' + (idx + 1) + ' 站 · ' + stops[idx][0];
+    $('#tourSub').textContent = stops[idx][1] + ' · 看完自动衔接下一站';
+    $$('#tourDots i').forEach(function (d, i) { d.classList.toggle('on', i <= idx); });
+    $('#tourNext').textContent = idx === stops.length - 1 ? '看完最后一站 · 重新游览' : '看完，进入下一站';
+  }
+  $('#startTour').addEventListener('click', function () {
+    idx = 0;
+    render();
+    ov.hidden = false;
+  });
+  $('#tourNext').addEventListener('click', function () {
+    idx = (idx + 1) % stops.length;
+    render();
+  });
+  $('#tourExit').addEventListener('click', function () { ov.hidden = true; });
+})();
+</script>
+</body>
+</html>

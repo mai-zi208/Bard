@@ -1,0 +1,104 @@
+{
+  "id": "lujiazui-central-green",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "陆家嘴中心绿地",
+  "subtitle": "镶嵌在金融中心的都市绿肺与历史印记",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T04:42:16.714Z",
+  "summary": "从棚户区到五星级公园，漫步于高楼间的草坪、人工湖与百年老宅，感受浦东开发的沧桑巨变。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "城市花园",
+    "历史建筑",
+    "休闲公园",
+    "浦东地标"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "ru-kou-diao-su",
+      "title": "入口春雕",
+      "subtitle": "钢结构蘑菇灯绽放生机",
+      "image": "01-ru-kou-diao-su.jpg",
+      "imageAlt": "陆家嘴中心绿地入口处的钢结构蘑菇灯群雕",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-ru-kou-diao-su.md",
+      "audio": {
+        "durSec": 33,
+        "bytes": 268165,
+        "sha256": "5e7f0928fc3097d463b6b909fd9d084f0081b428b532fe82dc660fd4463d221f"
+      }
+    },
+    {
+      "id": "zhong-xin-cao-ping",
+      "title": "核心草坪",
+      "subtitle": "万平米德系草种四季常绿",
+      "image": "02-zhong-xin-cao-ping.jpg",
+      "imageAlt": "陆家嘴中心绿地核心草坪，绿色草地镶嵌于摩天大楼之间",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-zhong-xin-cao-ping.md",
+      "audio": {
+        "durSec": 30,
+        "bytes": 239117,
+        "sha256": "d1ab46850837d3dce98ab9ad518248951aa96729cfd1e1d19cd5381fd62d732b"
+      }
+    },
+    {
+      "id": "ren-gong-hu",
+      "title": "版图湖景",
+      "subtitle": "浦东新区形状的人工湖泊",
+      "image": "03-ren-gong-hu.jpg",
+      "imageAlt": "陆家嘴中心绿地人工湖全景，湖面呈浦东新区版图形状",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-ren-gong-hu.md",
+      "audio": {
+        "durSec": 31,
+        "bytes": 246640,
+        "sha256": "b2cc3fccbfe051ea8ec497590b985cd644cad5c32dd6fa3c96709346256680c8"
+      }
+    },
+    {
+      "id": "qin-shui-ping-tai",
+      "title": "亲水凉棚",
+      "subtitle": "中西合璧的田园休憩地",
+      "image": "04-qin-shui-ping-tai.jpg",
+      "imageAlt": "陆家嘴中心绿地亲水平台上的白色欧式凉棚与石头桌椅",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-qin-shui-ping-tai.md",
+      "audio": {
+        "durSec": 28,
+        "bytes": 221354,
+        "sha256": "2fcb1ae766dde42778cf6c75800938a97df90a5fec5086f17843d6a2d4364623"
+      }
+    },
+    {
+      "id": "ying-chuan-xiao-zhu",
+      "title": "颍川小筑",
+      "subtitle": "绞花房子里的海派艺术魂",
+      "image": "05-ying-chuan-xiao-zhu.jpg",
+      "imageAlt": "陆家嘴中心绿地南面的颍川小筑，红砖青砖相间的二层老宅静立于绿茵中",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-ying-chuan-xiao-zhu.md",
+      "audio": {
+        "durSec": 36,
+        "bytes": 285302,
+        "sha256": "49071662e49c4b78b30599f8f027c488878866471a771a1a6a2c447788d52e8c"
+      }
+    }
+  ]
+}

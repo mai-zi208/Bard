@@ -1,0 +1,119 @@
+{
+  "id": "waitan",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "上海外滩",
+  "subtitle": "万国建筑博览与百年金融传奇",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T04:38:43.584Z",
+  "summary": "沿黄浦江畔漫步，从南端延安东路至北端外白渡桥，解读52幢古典复兴大楼背后的租界历史与金融变迁。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "历史街区",
+    "建筑艺术",
+    "金融中心",
+    "城市地标"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "qi-yuan",
+      "title": "纤道起源",
+      "subtitle": "从拉纤小道到十里洋场",
+      "image": "01-qi-yuan.jpg",
+      "imageAlt": "外滩黄浦江畔的早期自然滩地与纤夫踩踏出的曲折小径",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-qi-yuan.md",
+      "audio": {
+        "durSec": 29,
+        "bytes": 229713,
+        "sha256": "74a82397322cabc3c337ff3dfe555ff6fa87f3f592b9a6695efeb358f9ef2ba8"
+      }
+    },
+    {
+      "id": "chen-yi",
+      "title": "陈毅广场",
+      "subtitle": "市长塑像见证新旧交替",
+      "image": "02-chen-yi.jpg",
+      "imageAlt": "陈毅广场中央的陈毅青铜塑像与红色花岗岩底座",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-chen-yi.md",
+      "audio": {
+        "durSec": 26,
+        "bytes": 207979,
+        "sha256": "0f980d1d0347e5ebed999df2dc38a60f8bafaea9b1fb2c8e0783ab69075558a5"
+      }
+    },
+    {
+      "id": "hui-feng",
+      "title": "汇丰大楼",
+      "subtitle": "远东最考究的建筑杰作",
+      "image": "03-hui-feng.jpg",
+      "imageAlt": "外滩原汇丰银行大楼正立面及门厅入口特写",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-hui-feng.md",
+      "audio": {
+        "durSec": 35,
+        "bytes": 278405,
+        "sha256": "84531dc08ed70bc5140698c8bf013adc908433d40188320af3cc5967e1d4a669"
+      }
+    },
+    {
+      "id": "hai-guan",
+      "title": "海关大钟",
+      "subtitle": "亚洲第一大钟报时百年",
+      "image": "04-hai-guan.jpg",
+      "imageAlt": "外滩江海关大楼钟楼特写，展现巨大的钟面和顶部结构",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-hai-guan.md",
+      "audio": {
+        "durSec": 26,
+        "bytes": 208606,
+        "sha256": "15f20d04e1e96a6d27e88a6029651cfda72a20312847ae6e92e30eac78dadab9"
+      }
+    },
+    {
+      "id": "he-ping",
+      "title": "和平饭店",
+      "subtitle": "远东第一楼的绿色穹顶",
+      "image": "05-he-ping.jpg",
+      "imageAlt": "外滩和平饭店北楼，绿色穹隆顶与装饰艺术风格立面特写",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-he-ping.md",
+      "audio": {
+        "durSec": 29,
+        "bytes": 229713,
+        "sha256": "547bec91fe08428f857667865a9672cfe92eea83ed3be105a3a6d2d63d5ac722"
+      }
+    },
+    {
+      "id": "wai-bai",
+      "title": "外白渡桥",
+      "subtitle": "苏州河口的钢铁彩虹",
+      "image": "06-wai-bai.jpg",
+      "imageAlt": "外白渡桥全钢结构桥身横跨苏州河口，背景为黄浦江与陆家嘴天际线",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/06-wai-bai.md",
+      "audio": {
+        "durSec": 30,
+        "bytes": 239117,
+        "sha256": "20c116ecc1472ac4e3eebb9a2587168753cc2d62d55ba7d2141bc025df72d943"
+      }
+    }
+  ]
+}

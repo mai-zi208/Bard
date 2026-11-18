@@ -1,0 +1,119 @@
+{
+  "id": "nanjing-road-walkway",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "南京路步行街",
+  "subtitle": "中华商业第一街的百年变迁与新生",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T04:40:04.080Z",
+  "summary": "从1848年辟筑的“花园弄”到1999年建成的全天候步行街，再到2020年东拓连接外滩，见证上海商业百年繁华。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "历史街区",
+    "商业地标",
+    "城市漫步",
+    "海派建筑"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "ru-kou-ti-zi-bei",
+      "title": "入口题字",
+      "subtitle": "金带起点铭记街名",
+      "image": "01-ru-kou-ti-zi-bei.jpg",
+      "imageAlt": "南京路步行街河南路入口处的红色花岗岩题字碑特写",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-ru-kou-ti-zi-bei.md",
+      "audio": {
+        "durSec": 32,
+        "bytes": 253328,
+        "sha256": "4ba9f5fd3a7e7531ac19216529e455512e0449cc67fa644e660198778df1f396"
+      }
+    },
+    {
+      "id": "shi-ji-guang-chang",
+      "title": "世纪广场",
+      "subtitle": "人流集散的都市客厅",
+      "image": "02-shi-ji-guang-chang.jpg",
+      "imageAlt": "南京路步行街世纪广场全景，可见东侧时鸣钟与开阔的步行区域",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-shi-ji-guang-chang.md",
+      "audio": {
+        "durSec": 32,
+        "bytes": 259388,
+        "sha256": "dc8ce4e8b746a1760559d6e7fca8b8758840c984a32a95921b7f5ac203a7c81c"
+      }
+    },
+    {
+      "id": "yong-an-bai-huo",
+      "title": "永安百货",
+      "subtitle": "折衷主义建筑典范",
+      "image": "03-yong-an-bai-huo.jpg",
+      "imageAlt": "南京路浙江路口永安百货大楼及顶部绮云阁塔楼全景",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-yong-an-bai-huo.md",
+      "audio": {
+        "durSec": 30,
+        "bytes": 240371,
+        "sha256": "09b99a040985c7a604f0b01f460403e4031cdcc12376401bab7a8c65315000f0"
+      }
+    },
+    {
+      "id": "xian-shi-da-lou",
+      "title": "先施大楼",
+      "subtitle": "首创屋顶花园商厦",
+      "image": "04-xian-shi-da-lou.jpg",
+      "imageAlt": "南京路步行街先施大楼转角处的三层塔楼与骑楼外观",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-xian-shi-da-lou.md",
+      "audio": {
+        "durSec": 39,
+        "bytes": 309334,
+        "sha256": "4e7e1d948ef3c799dd2b43c68fd0e1efe0b1267c9c3b69faac283c6929340150"
+      }
+    },
+    {
+      "id": "jin-dai-sculpture",
+      "title": "金带雕塑",
+      "subtitle": "街头生活的写实定格",
+      "image": "05-jin-dai-sculpture.jpg",
+      "imageAlt": "南京路步行街金带上的铸铜雕塑特写",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-jin-dai-sculpture.md",
+      "audio": {
+        "durSec": 30,
+        "bytes": 242461,
+        "sha256": "8cfb5a8151a97794a5a7b084926078c4932afc3ed6953d70bea81c3c808a3924"
+      }
+    },
+    {
+      "id": "dong-tuo-jie-qu",
+      "title": "东拓新段",
+      "subtitle": "无缝连接外滩风情",
+      "image": "06-dong-tuo-jie-qu.jpg",
+      "imageAlt": "南京路步行街东拓段宽敞的步行街道，远处可见外滩建筑群轮廓",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/06-dong-tuo-jie-qu.md",
+      "audio": {
+        "durSec": 33,
+        "bytes": 266285,
+        "sha256": "647776b6d1aed412c389735fb7fb57298c85a9eb0d2bb7483b198854b8356c93"
+      }
+    }
+  ]
+}

@@ -84,6 +84,30 @@ export interface AssembleOptions {
   sceneMaxKb?: number;
 }
 
+/* ---------- 行程规划 ---------- */
+
+export interface PlanStop {
+  name: string;
+  /** GCJ-02 纬度（小程序地图 gcj02 坐标系） */
+  lat: number;
+  /** GCJ-02 经度 */
+  lng: number;
+}
+
+export interface PlanResult {
+  /** 2–4 个意图短标签：天数/城市/主题/节奏 */
+  tags: string[];
+  /** 愿望里指定的讲述人（如「武则天」），未指定为空串；生成时按人物音色配音 */
+  persona: string;
+  /** 3–6 个按顺路顺序排列的景点 */
+  stops: PlanStop[];
+}
+
+/** 一句话旅行愿望 → 标签与顺路景点坐标；失败抛错，由路由转成 5xx */
+export interface RoutePlanner {
+  plan(text: string): Promise<PlanResult>;
+}
+
 /* ---------- 真实生成编排 ---------- */
 
 export interface GenerationInput {

@@ -5,13 +5,16 @@ import cors from '@fastify/cors';
 import fastifyStatic from '@fastify/static';
 import type { CatalogService } from '../domain/services/catalog-service.ts';
 import type { TaskService } from '../domain/services/task-service.ts';
+import type { RoutePlanner } from '../domain/ports.ts';
 import { registerCatalogRoutes } from './routes/catalog.ts';
+import { registerPlanRoutes } from './routes/plan.ts';
 import { registerTaskRoutes, type SubmitGuard } from './routes/tasks.ts';
 
 export interface ServerDeps {
   cdnDir: string;
   catalog: CatalogService;
   tasks: TaskService;
+  planner: RoutePlanner;
   submitGuard?: SubmitGuard;
 }
 
@@ -69,6 +72,7 @@ export async function buildServer(deps: ServerDeps): Promise<FastifyInstance> {
 
   registerTaskRoutes(app, deps.tasks, deps.submitGuard);
   registerCatalogRoutes(app, deps.catalog);
+  registerPlanRoutes(app, deps.planner, deps.submitGuard);
 
   return app;
 }

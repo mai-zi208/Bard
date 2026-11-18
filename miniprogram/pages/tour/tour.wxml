@@ -50,12 +50,20 @@
 
   <view wx:if="{{finished}}" class="finish">
     <view class="seal">{{pack.sealChar}}</view>
-    <view class="kicker">{{pack.shortTitle}} · {{pack.totalLabelPlain}}幕已尽</view>
+    <view class="kicker">{{routeDone ? '全程游览完成 · 全线走完' : pack.shortTitle + ' · ' + pack.totalLabelPlain + '幕已尽'}}</view>
     <view class="quote">{{pack.quote}}</view>
     <view class="source">讲述人 · {{pack.narratorName}}</view>
     <view wx:if="{{pack.aiGenerated}}" class="ai-note">内容由 AI 生成，仅供游览参考</view>
 
-    <view class="share-card">
+    <view wx:if="{{routeDone}}" class="share-card">
+      <image class="share-cover" src="{{routeCover || pack.coverUrl}}" mode="aspectFill" />
+      <view class="share-body">
+        <view class="share-title">{{routeTitle}}</view>
+        <view class="share-sub">{{routeCount}} 站完整路线 · 点开从头连着看</view>
+      </view>
+      <view class="seal-mini">{{pack.sealChar}}</view>
+    </view>
+    <view wx:else class="share-card">
       <image class="share-cover" src="{{pack.coverUrl}}" mode="aspectFill" />
       <view class="share-body">
         <view class="share-title">{{pack.title}}</view>
@@ -66,7 +74,7 @@
 
     <view class="actions">
       <button class="btn btn--primary" open-type="share" hover-class="btn--hover">分享给朋友</button>
-      <button class="btn btn--ghost" bindtap="backToPacks" hover-class="none">返回资源包</button>
+      <button class="btn btn--ghost" bindtap="backToPacks" hover-class="none">{{routeDone ? '返回路线图' : '返回资源包'}}</button>
     </view>
   </view>
 </view>

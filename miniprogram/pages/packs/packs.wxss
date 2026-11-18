@@ -1,6 +1,6 @@
 .packs {
   min-height: 100vh;
-  padding: 0 40rpx 100rpx;
+  padding: 0 40rpx 240rpx;
   background: linear-gradient(180deg, #fbfdff 0%, #f3f8fe 58%, #e9f1fb 100%);
 }
 

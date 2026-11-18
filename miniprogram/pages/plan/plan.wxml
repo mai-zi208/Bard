@@ -1,0 +1,200 @@
+<view class="plan">
+  <!-- ============ 阶段一：输入 ============ -->
+  <block wx:if="{{stage === 'input'}}">
+    <view class="head" style="padding-top: {{statusBarHeight + 44}}px">
+      <view class="brand">TOUR GUIDE</view>
+      <view class="head-title">路线规划</view>
+      <view class="head-sub">说一句想去哪、怎么玩，帮你排成一条线</view>
+    </view>
+
+    <view class="composer">
+      <view class="composer-top">
+        <text class="composer-hint">最多 60 字</text>
+      </view>
+      <textarea
+        class="composer-text"
+        value="{{textValue}}"
+        maxlength="60"
+        placeholder="如：带爸妈两天逛洛阳，想看石窟和古寺，别太赶。"
+        placeholder-class="composer-ph"
+        show-confirm-bar="{{false}}"
+        cursor-spacing="30"
+        adjust-position
+        bindinput="onInput"
+        bindconfirm="onGenerate"
+      />
+      <view class="composer-foot">
+        <view class="composer-src">已接入 <text class="composer-src-num">{{packCount}}</text> 个资源包</view>
+        <view class="send {{text ? '' : 'send--off'}}" bindtap="onGenerate" hover-class="none">生成路线 →</view>
+      </view>
+    </view>
+
+    <view class="quick">
+      <view class="section-label">试试这样说</view>
+      <view class="chips">
+        <view
+          wx:for="{{examples}}"
+          wx:key="value"
+          class="chip {{index === 0 ? 'chip--gold' : ''}}"
+          data-value="{{item.value}}"
+          bindtap="onExample"
+          hover-class="none"
+        >{{item.label}}</view>
+      </view>
+    </view>
+
+    <view class="library">
+      <view class="library-head">
+        <view class="section-label">可直接串联的景点</view>
+        <view class="library-count">{{library.length}} 个</view>
+      </view>
+      <scroll-view class="lib-scroll" scroll-x enable-flex>
+        <view class="lib-row">
+          <view
+            wx:for="{{library}}"
+            wx:key="id"
+            class="lib-item"
+            data-id="{{item.id}}"
+            bindtap="openPack"
+            hover-class="none"
+          >
+            <view class="pic pic--round">
+              <text class="pic-glyph">{{item.glyph}}</text>
+              <image class="pic-img" src="{{item.coverUrl}}" mode="aspectFill" />
+            </view>
+            <text class="lib-name">{{item.name}}</text>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+
+    <view wx:if="{{savedRoutes.length}}" class="saved-route">
+      <view class="section-label">生成的路线</view>
+      <view wx:for="{{savedRoutes}}" wx:key="id" class="route-card">
+        <view class="route-card-main" data-id="{{item.id}}" bindtap="onViewRoute" hover-class="none">
+          <view class="route-card-title">{{item.title}}</view>
+          <view class="route-card-meta">{{item.stops.length}} 站 · {{item.createdLabel}} · 点击查看地图</view>
+        </view>
+        <view class="route-del" data-id="{{item.id}}" bindtap="onDeleteRoute" hover-class="none">删除</view>
+      </view>
+    </view>
+  </block>
+
+  <!-- ============ 阶段二：规划中 ============ -->
+  <block wx:elif="{{stage === 'planning'}}">
+    <view class="mini-head" style="padding-top: {{statusBarHeight + 44}}px">
+      <view class="icon-btn" bindtap="onBackToInput" hover-class="none" aria-role="button" aria-label="返回">‹</view>
+      <view class="mini-title">正在规划</view>
+      <view class="mini-step">{{step}} / 3</view>
+    </view>
+
+    <view class="intent">
+      <view class="intent-top">
+        <text class="intent-label">原始需求</text>
+        <text class="intent-lock">规划中 · 不可修改</text>
+      </view>
+      <view class="intent-quote">“{{intentText}}”</view>
+      <view wx:if="{{tags.length}}" class="intent-tags">
+        <text wx:for="{{tags}}" wx:key="*this" class="intent-tag">{{item}}</text>
+      </view>
+    </view>
+
+    <view class="stops-label">
+      <view class="section-label">路线 · {{stops.length}} 站</view>
+      <text class="stops-note">按动线排序</text>
+    </view>
+
+    <view class="stops">
+      <view
+        wx:for="{{stops}}"
+        wx:key="index"
+        class="stop {{item.state === 'gen' ? 'is-generating' : ''}} {{item.state === 'skip' ? 'is-skipped' : ''}}"
+      >
+        <view class="stop-idx">{{index + 1}}</view>
+        <view class="pic pic--stop">
+          <text class="pic-glyph">{{item.glyph}}</text>
+          <image wx:if="{{item.coverUrl}}" class="pic-img" src="{{item.coverUrl}}" mode="aspectFill" />
+        </view>
+        <view class="stop-body">
+          <view class="stop-name">{{item.name}}</view>
+          <view class="stop-meta">{{item.meta || '检索资料 · 编排文稿 · 配图打包'}}</view>
+        </view>
+        <view
+          class="state {{item.state === 'ok' ? 'state--ok' : item.state === 'gen' ? 'state--gen' : item.state === 'skip' ? 'state--skip' : 'state--queue'}}"
+        >{{item.state === 'ok' ? '已入库' : item.statusText}}</view>
+        <view wx:if="{{item.state === 'gen'}}" class="stop-bar">
+          <view class="stop-bar-fill" style="width: {{item.percent || 8}}%"></view>
+        </view>
+      </view>
+    </view>
+
+    <view class="gen-card">
+      <view class="gen-top">
+        <text>资源包 {{readyCount}} / {{stops.length}} 就绪</text>
+        <text>边生成边铺图</text>
+      </view>
+      <view class="gen-bar">
+        <view class="gen-bar-fill" style="width: {{stops.length ? readyCount * 100 / stops.length : 0}}%"></view>
+      </view>
+      <view class="gen-note">
+        <text wx:if="{{genName}}"><text class="gen-note-b">{{genName}}</text> 正在编排文稿，完成后自动加入资源包列表</text>
+        <text wx:else>全部资源包就绪后自动铺开路线</text>
+      </view>
+    </view>
+  </block>
+
+  <!-- ============ 阶段三：地图 ============ -->
+  <block wx:else>
+    <map
+      class="map"
+      latitude="{{center.latitude}}"
+      longitude="{{center.longitude}}"
+      scale="12"
+      markers="{{markers}}"
+      polyline="{{polyline}}"
+      include-points="{{includePoints}}"
+      bindmarkertap="onMarkerTap"
+    />
+
+    <cover-view class="map-top" style="top: {{statusBarHeight + 10}}px">
+      <cover-view class="map-back" bindtap="onReplan">
+        <cover-view class="map-back-arrow">‹</cover-view>
+      </cover-view>
+      <cover-view class="map-round" bindtap="onReplan">
+        <cover-view class="map-round-text">重新规划</cover-view>
+      </cover-view>
+    </cover-view>
+
+    <cover-view class="sheet">
+      <cover-view class="sheet-grab"></cover-view>
+      <cover-view class="map-card">
+        <cover-view class="map-kicker">AI 路线</cover-view>
+        <cover-view class="map-title">{{routeTitle}}</cover-view>
+        <cover-view class="map-meta">{{routeMeta}}</cover-view>
+      </cover-view>
+      <cover-view class="sheet-head">
+        <cover-view class="sheet-title">沿途 {{sheetStops.length}} 站</cover-view>
+        <cover-view class="sheet-link" bindtap="onReplan">调整路线</cover-view>
+      </cover-view>
+      <cover-view class="sheet-row">
+        <cover-view
+          wx:for="{{sheetStops}}"
+          wx:key="index"
+          class="sheet-item"
+          data-index="{{item.index}}"
+          bindtap="onSheetTap"
+        >
+          <cover-view class="sheet-pic">
+            <cover-image wx:if="{{item.coverUrl}}" class="sheet-pic-img" src="{{item.coverUrl}}" />
+            <cover-view wx:else class="sheet-pic-glyph">{{item.glyph}}</cover-view>
+          </cover-view>
+          <cover-view class="sheet-name">{{item.name}}</cover-view>
+        </cover-view>
+      </cover-view>
+      <cover-view class="cta" bindtap="onStartTour">沿路线开始游览 →</cover-view>
+    </cover-view>
+  </block>
+
+  <!-- 地图阶段是原生组件，普通 view 盖不上去，只在输入/规划阶段显示 -->
+  <tab-bar wx:if="{{stage !== 'map'}}" active="plan" />
+</view>

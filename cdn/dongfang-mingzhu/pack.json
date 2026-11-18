@@ -1,0 +1,119 @@
+{
+  "id": "dongfang-mingzhu",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "东方明珠广播电视塔",
+  "subtitle": "浦江畔的上海地标与城市记忆",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T04:44:48.091Z",
+  "summary": "位于浦东陆家嘴，1994年建成，集观光、餐饮、发射于一体，2024年迎来第一亿名游客。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "上海地标",
+    "AAAAA景区",
+    "陆家嘴",
+    "城市历史"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "wai-guan-wei-zhi",
+      "title": "浦江伫立",
+      "subtitle": "陆家嘴世纪大道一号",
+      "image": "01-wai-guan-wei-zhi.jpg",
+      "imageAlt": "东方明珠广播电视塔全景，塔身矗立于黄浦江畔，背景为陆家嘴现代建筑",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-wai-guan-wei-zhi.md",
+      "audio": {
+        "durSec": 30,
+        "bytes": 243506,
+        "sha256": "48f220bb689b7113064d5c1ee854a85f5bf53e24a9b361d7f34f372af9a81c39"
+      }
+    },
+    {
+      "id": "ta-zuo-chen-lie",
+      "title": "塔座寻踪",
+      "subtitle": "上海城市历史陈列馆",
+      "image": "02-ta-zuo-chen-lie.jpg",
+      "imageAlt": "东方明珠塔座内部，上海城市历史发展陈列馆展区与高仿蜡像场景",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-ta-zuo-chen-lie.md",
+      "audio": {
+        "durSec": 27,
+        "bytes": 216547,
+        "sha256": "59cf650437eb4ce9a803575319380e2de4f83249b8f588a180ee48cf0b2c51f9"
+      }
+    },
+    {
+      "id": "xia-qiu-ti",
+      "title": "下球俯瞰",
+      "subtitle": "九十米高空观光廊",
+      "image": "03-xia-qiu-ti.jpg",
+      "imageAlt": "东方明珠下球体观光廊内游客俯瞰上海城市全景",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-xia-qiu-ti.md",
+      "audio": {
+        "durSec": 34,
+        "bytes": 270882,
+        "sha256": "a7b1ef18f5aadd662fecf2a03b601a49b67158468aeced6f26c02ccfcfa56ba0"
+      }
+    },
+    {
+      "id": "shang-qiu-can-yin",
+      "title": "云端盛宴",
+      "subtitle": "亚洲最高旋转餐厅",
+      "image": "04-shang-qiu-can-yin.jpg",
+      "imageAlt": "东方明珠广播电视塔上球体旋转餐厅内部全景",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-shang-qiu-can-yin.md",
+      "audio": {
+        "durSec": 33,
+        "bytes": 267747,
+        "sha256": "5bc60d26ccbb4a96b6fc2a0cbafec145109bbf033f6b18a0b25e426e88d64c53"
+      }
+    },
+    {
+      "id": "tai-kong-cang",
+      "title": "太空漫步",
+      "subtitle": "三百四十二米顶球",
+      "image": "05-tai-kong-cang.jpg",
+      "imageAlt": "东方明珠广播电视塔顶部的太空舱球体特写",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-tai-kong-cang.md",
+      "audio": {
+        "durSec": 31,
+        "bytes": 245596,
+        "sha256": "30c05d40f9a2be1584315c22becd427b73c55243fbb1507f1826d5ebee13eeb1"
+      }
+    },
+    {
+      "id": "yi-yi-you-ke",
+      "title": "亿客里程碑",
+      "subtitle": "二〇二四年的新故事",
+      "image": "06-yi-yi-you-ke.jpg",
+      "imageAlt": "东方明珠广播电视塔前广场上的游客与塔身全景",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/06-yi-yi-you-ke.md",
+      "audio": {
+        "durSec": 26,
+        "bytes": 210069,
+        "sha256": "ab3e63edddfd46a7707b3c41177064b443baae9d949e9924df23235be9caa3e8"
+      }
+    }
+  ]
+}

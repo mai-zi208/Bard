@@ -1,0 +1,746 @@
+.plan {
+  min-height: 100vh;
+  padding: 0 40rpx 240rpx;
+  background: linear-gradient(180deg, #fbfdff 0%, #f3f8fe 58%, #e9f1fb 100%);
+}
+
+.head {
+  margin-bottom: 36rpx;
+}
+
+.brand {
+  font-size: 20rpx;
+  letter-spacing: 0.34em;
+  color: #8a6b2f;
+  margin-bottom: 18rpx;
+}
+
+.head-title {
+  font-family: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+  font-size: 52rpx;
+  letter-spacing: 0.1em;
+  color: #1c2733;
+}
+
+.head-sub {
+  margin-top: 16rpx;
+  font-size: 23rpx;
+  letter-spacing: 0.06em;
+  color: rgba(28, 39, 51, 0.5);
+}
+
+.section-label {
+  font-size: 20rpx;
+  letter-spacing: 0.26em;
+  color: rgba(28, 39, 51, 0.4);
+}
+
+/* ---------- 输入卡 ---------- */
+.composer {
+  padding: 26rpx 28rpx 20rpx;
+  border-radius: 40rpx;
+  border: 1rpx solid rgba(28, 39, 51, 0.09);
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.66));
+  box-shadow: 0 26rpx 44rpx -38rpx rgba(24, 46, 72, 0.55);
+}
+
+.composer-top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.composer-hint {
+  font-size: 19rpx;
+  letter-spacing: 0.06em;
+  color: rgba(28, 39, 51, 0.26);
+}
+
+.composer-text {
+  width: 100%;
+  height: 150rpx;
+  margin-top: 14rpx;
+  font-size: 27rpx;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  color: #1c2733;
+}
+
+.composer-ph {
+  color: rgba(28, 39, 51, 0.35);
+}
+
+.composer-foot {
+  margin-top: 18rpx;
+  padding-top: 22rpx;
+  border-top: 1rpx dashed rgba(28, 39, 51, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.composer-src {
+  font-size: 19rpx;
+  letter-spacing: 0.06em;
+  color: rgba(28, 39, 51, 0.38);
+}
+
+.composer-src-num {
+  color: #2f5a4a;
+  font-weight: 600;
+}
+
+.send {
+  height: 72rpx;
+  padding: 0 36rpx;
+  display: flex;
+  align-items: center;
+  border-radius: 100rpx;
+  background: #2f5a4a;
+  color: #f7faff;
+  font-size: 24rpx;
+  letter-spacing: 0.1em;
+  box-shadow: 0 12rpx 20rpx -14rpx rgba(47, 90, 74, 0.9);
+  transition: opacity 0.25s;
+}
+
+.send--off {
+  opacity: 0.4;
+}
+
+/* ---------- 示例 chips ---------- */
+.quick {
+  margin-top: 44rpx;
+}
+
+.chips {
+  margin-top: 22rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.chip {
+  margin: 0 16rpx 16rpx 0;
+  padding: 14rpx 24rpx;
+  border-radius: 100rpx;
+  font-size: 21rpx;
+  letter-spacing: 0.03em;
+  color: rgba(28, 39, 51, 0.7);
+  background: rgba(255, 255, 255, 0.6);
+  border: 1rpx solid rgba(28, 39, 51, 0.09);
+}
+
+.chip--gold {
+  color: #8a6b2f;
+  background: rgba(227, 199, 102, 0.1);
+  border-color: rgba(227, 199, 102, 0.45);
+}
+
+/* ---------- 景点圆图 ---------- */
+.library {
+  margin-top: 30rpx;
+}
+
+.library-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.library-count {
+  font-size: 19rpx;
+  letter-spacing: 0.1em;
+  color: #8a6b2f;
+}
+
+.lib-scroll {
+  margin-top: 26rpx;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.lib-row {
+  display: inline-flex;
+}
+
+.lib-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 116rpx;
+  margin-right: 24rpx;
+}
+
+.pic {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #e2ebf4 0%, #d3e0ed 55%, #c6d5e4 100%);
+  flex: none;
+}
+
+.pic-glyph {
+  font-family: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+  color: rgba(47, 90, 74, 0.45);
+}
+
+.pic-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.pic--round {
+  width: 108rpx;
+  height: 108rpx;
+  border-radius: 50%;
+  border: 4rpx solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8rpx 16rpx -10rpx rgba(24, 46, 72, 0.55);
+}
+
+.pic--round .pic-glyph {
+  font-size: 36rpx;
+}
+
+.lib-name {
+  margin-top: 12rpx;
+  font-size: 19rpx;
+  letter-spacing: 0.02em;
+  color: rgba(28, 39, 51, 0.5);
+  max-width: 116rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* ---------- 规划中 ---------- */
+.mini-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68rpx;
+  margin-bottom: 26rpx;
+}
+
+.icon-btn {
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1rpx solid rgba(28, 39, 51, 0.09);
+  background: rgba(255, 255, 255, 0.7);
+  color: rgba(28, 39, 51, 0.7);
+  font-size: 34rpx;
+  line-height: 1;
+}
+
+.mini-title {
+  font-size: 25rpx;
+  letter-spacing: 0.14em;
+  color: rgba(28, 39, 51, 0.7);
+}
+
+.mini-step {
+  width: 60rpx;
+  text-align: right;
+  font-size: 20rpx;
+  letter-spacing: 0.14em;
+  color: #8a6b2f;
+}
+
+.intent {
+  padding: 28rpx 30rpx;
+  border-radius: 34rpx;
+  border: 1rpx solid rgba(28, 39, 51, 0.09);
+  background: rgba(255, 255, 255, 0.64);
+}
+
+.intent-top {
+  margin-bottom: 18rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.intent-label {
+  font-size: 19rpx;
+  letter-spacing: 0.2em;
+  color: rgba(28, 39, 51, 0.38);
+}
+
+.intent-lock {
+  padding: 6rpx 18rpx;
+  border-radius: 100rpx;
+  font-size: 18rpx;
+  letter-spacing: 0.06em;
+  color: rgba(28, 39, 51, 0.38);
+  background: rgba(28, 39, 51, 0.05);
+  border: 1rpx solid rgba(28, 39, 51, 0.1);
+}
+
+.intent-quote {
+  font-family: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+  font-size: 27rpx;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  color: #25313d;
+}
+
+.intent-tags {
+  margin-top: 22rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.intent-tag {
+  margin: 0 12rpx 12rpx 0;
+  padding: 8rpx 18rpx;
+  border-radius: 12rpx;
+  font-size: 19rpx;
+  letter-spacing: 0.06em;
+  color: #2f5a4a;
+  background: rgba(47, 90, 74, 0.07);
+  border: 1rpx solid rgba(47, 90, 74, 0.14);
+}
+
+.stops-label {
+  margin: 38rpx 0 18rpx;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.stops-note {
+  font-size: 19rpx;
+  letter-spacing: 0.06em;
+  color: rgba(28, 39, 51, 0.38);
+}
+
+.stop {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 18rpx;
+  padding: 22rpx 24rpx 26rpx;
+  border-radius: 28rpx;
+  border: 1rpx solid rgba(28, 39, 51, 0.09);
+  background: rgba(255, 255, 255, 0.74);
+  transition: border-color 0.25s, background 0.25s;
+}
+
+.stop.is-generating {
+  border-color: rgba(227, 199, 102, 0.5);
+  background: rgba(255, 253, 245, 0.9);
+}
+
+.stop-idx {
+  flex: none;
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 18rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-family: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+  font-size: 20rpx;
+  color: #8a6b2f;
+  border: 1rpx solid rgba(227, 199, 102, 0.65);
+  background: rgba(227, 199, 102, 0.1);
+}
+
+.pic--stop {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 24rpx;
+  margin-right: 22rpx;
+}
+
+.pic--stop .pic-glyph {
+  font-size: 32rpx;
+}
+
+.stop-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.stop-name {
+  font-family: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+  font-size: 27rpx;
+  letter-spacing: 0.05em;
+  color: #1c2733;
+}
+
+.stop-meta {
+  margin-top: 6rpx;
+  font-size: 19rpx;
+  letter-spacing: 0.03em;
+  color: rgba(28, 39, 51, 0.38);
+}
+
+.state {
+  flex: none;
+  padding: 8rpx 18rpx;
+  border-radius: 100rpx;
+  font-size: 18rpx;
+  letter-spacing: 0.06em;
+}
+
+.state--ok {
+  color: #2f5a4a;
+  background: rgba(47, 90, 74, 0.08);
+  border: 1rpx solid rgba(47, 90, 74, 0.18);
+}
+
+.state--gen {
+  color: #8a6b2f;
+  background: rgba(227, 199, 102, 0.16);
+  border: 1rpx solid rgba(227, 199, 102, 0.55);
+  animation: genPulse 1.9s ease-in-out infinite;
+}
+
+.state--queue {
+  color: rgba(28, 39, 51, 0.38);
+  background: rgba(28, 39, 51, 0.05);
+  border: 1rpx solid rgba(28, 39, 51, 0.1);
+}
+
+.state--skip {
+  color: rgba(150, 60, 50, 0.72);
+  background: rgba(150, 60, 50, 0.06);
+  border: 1rpx solid rgba(150, 60, 50, 0.2);
+}
+
+.stop.is-skipped {
+  opacity: 0.62;
+}
+
+/* ---------- 生成的路线（输入阶段） ---------- */
+.saved-route {
+  margin-top: 40rpx;
+}
+
+.route-card {
+  margin-top: 20rpx;
+  padding: 22rpx 16rpx 22rpx 24rpx;
+  border-radius: 28rpx;
+  border: 1rpx solid rgba(227, 199, 102, 0.45);
+  background: linear-gradient(165deg, rgba(255, 253, 245, 0.95), rgba(255, 255, 255, 0.75));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.route-card-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.route-card-title {
+  font-family: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+  font-size: 28rpx;
+  letter-spacing: 2rpx;
+  color: #1c2733;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.route-card-meta {
+  margin-top: 8rpx;
+  font-size: 20rpx;
+  letter-spacing: 1rpx;
+  color: rgba(28, 39, 51, 0.5);
+}
+
+.route-del {
+  flex: none;
+  margin-left: 20rpx;
+  padding: 10rpx 24rpx;
+  border-radius: 100rpx;
+  font-size: 22rpx;
+  letter-spacing: 2rpx;
+  color: rgba(28, 39, 51, 0.45);
+  border: 1rpx solid rgba(28, 39, 51, 0.14);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.stop-bar {
+  position: absolute;
+  left: 24rpx;
+  right: 24rpx;
+  bottom: 10rpx;
+  height: 4rpx;
+  border-radius: 20rpx;
+  background: rgba(227, 199, 102, 0.22);
+  overflow: hidden;
+}
+
+.stop-bar-fill {
+  height: 100%;
+  border-radius: 20rpx;
+  background: linear-gradient(90deg, rgba(200, 160, 63, 0.55), #c8a03f);
+  transition: width 0.6s ease;
+}
+
+.gen-card {
+  margin-top: 26rpx;
+  padding: 26rpx 30rpx 28rpx;
+  border-radius: 32rpx;
+  background: linear-gradient(150deg, #2f5a4a 0%, #38664f 60%, #2c5545 100%);
+  color: #f4f8fb;
+  box-shadow: 0 18rpx 30rpx -24rpx rgba(28, 64, 50, 0.9);
+}
+
+.gen-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-size: 22rpx;
+  letter-spacing: 0.06em;
+}
+
+.gen-top text:last-child {
+  font-size: 18rpx;
+  letter-spacing: 0.1em;
+  color: rgba(244, 248, 251, 0.55);
+}
+
+.gen-bar {
+  margin-top: 20rpx;
+  height: 6rpx;
+  border-radius: 20rpx;
+  background: rgba(244, 248, 251, 0.18);
+  overflow: hidden;
+}
+
+.gen-bar-fill {
+  height: 100%;
+  border-radius: 20rpx;
+  background: linear-gradient(90deg, rgba(227, 199, 102, 0.6), #e3c766);
+  transition: width 0.6s ease;
+}
+
+.gen-note {
+  margin-top: 18rpx;
+  font-size: 19rpx;
+  letter-spacing: 0.04em;
+  color: rgba(244, 248, 251, 0.6);
+}
+
+.gen-note-b {
+  color: #e3c766;
+}
+
+/* ---------- 地图阶段 ---------- */
+.plan--map {
+  padding: 0;
+}
+
+.map {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.map-top {
+  position: fixed;
+  z-index: 20;
+  left: 32rpx;
+  right: 32rpx;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.map-back {
+  flex: none;
+  width: 76rpx;
+  height: 76rpx;
+  margin-right: 18rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1rpx solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 18rpx 34rpx -26rpx rgba(30, 52, 78, 0.55);
+}
+
+.map-back-arrow {
+  font-size: 52rpx;
+  line-height: 56rpx;
+  color: #2f5a4a;
+}
+
+/* 路线摘要卡：现在位于底部面板顶部 */
+.map-card {
+  margin: 6rpx 0 20rpx;
+  padding: 20rpx 28rpx 22rpx;
+  border-radius: 28rpx;
+  background: linear-gradient(165deg, rgba(255, 253, 245, 0.96), rgba(247, 249, 252, 0.92));
+  border: 1rpx solid rgba(227, 199, 102, 0.4);
+}
+
+.map-kicker {
+  font-size: 17rpx;
+  letter-spacing: 0.26em;
+  color: #8a6b2f;
+}
+
+.map-title {
+  margin-top: 12rpx;
+  font-family: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+  font-size: 34rpx;
+  letter-spacing: 0.05em;
+  color: #1c2733;
+}
+
+.map-meta {
+  margin-top: 10rpx;
+  font-size: 19rpx;
+  letter-spacing: 0.05em;
+  color: rgba(28, 39, 51, 0.5);
+}
+
+.map-round {
+  flex: none;
+  width: 96rpx;
+  height: 96rpx;
+  margin-left: 18rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1rpx solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14rpx 24rpx -18rpx rgba(30, 52, 78, 0.6);
+}
+
+.map-round-text {
+  font-size: 20rpx;
+  letter-spacing: 0.04em;
+  color: #2f5a4a;
+  text-align: center;
+}
+
+.sheet {
+  position: fixed;
+  z-index: 20;
+  left: 0;
+  right: 0;
+  bottom: calc(216rpx + env(safe-area-inset-bottom));
+  padding: 20rpx 40rpx 36rpx;
+  border-radius: 52rpx 52rpx 0 0;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 -18rpx 40rpx -30rpx rgba(24, 46, 72, 0.6);
+}
+
+.sheet-grab {
+  width: 68rpx;
+  height: 6rpx;
+  margin: 0 auto 24rpx;
+  border-radius: 20rpx;
+  background: rgba(28, 39, 51, 0.14);
+}
+
+.sheet-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.sheet-title {
+  font-family: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+  font-size: 28rpx;
+  letter-spacing: 0.08em;
+  color: #1c2733;
+}
+
+.sheet-link {
+  font-size: 19rpx;
+  letter-spacing: 0.08em;
+  color: #8a6b2f;
+}
+
+.sheet-row {
+  margin-top: 24rpx;
+  display: flex;
+}
+
+.sheet-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+}
+
+.sheet-pic {
+  position: relative;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3rpx solid #ffffff;
+  background: linear-gradient(145deg, #e2ebf4 0%, #d3e0ed 55%, #c6d5e4 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sheet-pic-img {
+  width: 100%;
+  height: 100%;
+}
+
+.sheet-pic-glyph {
+  font-family: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+  font-size: 30rpx;
+  color: rgba(47, 90, 74, 0.45);
+}
+
+.sheet-name {
+  margin-top: 12rpx;
+  font-size: 18rpx;
+  color: rgba(28, 39, 51, 0.5);
+  max-width: 130rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.cta {
+  margin-top: 30rpx;
+  height: 92rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 28rpx;
+  background: #2f5a4a;
+  color: #f7faff;
+  font-size: 27rpx;
+  letter-spacing: 0.12em;
+  box-shadow: 0 18rpx 26rpx -20rpx rgba(47, 90, 74, 0.95);
+}
+
+@keyframes genPulse {
+  0%,
+  100% {
+    opacity: 0.62;
+  }
+  50% {
+    opacity: 1;
+  }
+}

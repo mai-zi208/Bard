@@ -2,6 +2,7 @@
   "pages": [
     "pages/launch/launch",
     "pages/packs/packs",
+    "pages/plan/plan",
     "pages/tour/tour"
   ],
   "subPackages": [

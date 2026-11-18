@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-17T16:18:26.656Z",
+  "updatedAt": "2026-11-18T04:46:57.697Z",
   "packs": [
     {
       "id": "bai-ma-si",
@@ -17,9 +17,10 @@
       "total": 5,
       "narratorName": "",
       "cover": "cover.jpg",
-      "bytes": 1335174,
+      "bytes": 1335308,
       "audioCount": 5,
       "aiGenerated": true,
+      "refreshedAt": "2026-11-17T15:28:25.687Z",
       "files": [
         "pack.json",
         "cover.jpg",
@@ -36,8 +37,8 @@
       ],
       "checksums": {
         "pack.json": {
-          "sha256": "72752ab929dfe13205a752d71c5e7f61bd07482672826b885a0c6b1b98f917d1",
-          "size": 3127
+          "sha256": "1beda0812b70bf799d1c6473399e2c53d11f72793b11a6fe1f204c6831273418",
+          "size": 3231
         },
         "cover.jpg": {
           "sha256": "273fbf9084ddf46d9906a1520b875748e11537f0267121fa79dd7f6a146b361e",
@@ -64,157 +65,222 @@
           "size": 194080
         },
         "body/01-shan-men.md": {
-          "sha256": "81f78b533d05fc22d0ab49f1c71de176954d19be8c6eda26b882e9bd0b2d9dfc",
-          "size": 420
+          "sha256": "72cc911ee09db9df652303ca885c71e913ae7252fc2f81798528330aa5fb5cb0",
+          "size": 426
         },
         "body/02-zhong-gu-dian.md": {
-          "sha256": "6e8a52ab8f2ef65b6abd6168d2f2e632b59f793b26b0ae0ec25a466fd32dbf5b",
-          "size": 408
+          "sha256": "04305756c80e7d5cff23a6297225132c93d0c22ebc437688d44850f6a67cc02c",
+          "size": 414
         },
         "body/03-qi-yun-ta.md": {
-          "sha256": "76f103c98f1aa721af4294b79a483d2ea8506fa95388667db0e91d5c67abce31",
-          "size": 441
+          "sha256": "ea1ce703a9dab76f7170e569220b35400cfcb5c45f8eeb21f8396151dde0f976",
+          "size": 447
         },
         "body/04-guo-ji-fodian.md": {
-          "sha256": "0fe9a800e7d6d272a8cb26b33d5c344a8a44b2b97cdc95f0889cd9244750c0fe",
-          "size": 378
+          "sha256": "8af92c11b3981566361bcd5f29fe85253d7b9ebfae28e5e1a66062ac0f054dd4",
+          "size": 384
         },
         "body/05-qing-liang-tai.md": {
-          "sha256": "db94f7a2215883c8d99928ee86c126afe9826a19015e63d66581031ebc4d4cad",
-          "size": 390
+          "sha256": "03dbe966a8f4501f9b615090b73b894f0dcee561a6fa6456d12d43fea0bea536",
+          "size": 396
+        }
+      }
+    },
+    {
+      "id": "dongfang-mingzhu",
+      "version": 1,
+      "title": "东方明珠广播电视塔",
+      "subtitle": "浦江畔的上海地标与城市记忆",
+      "summary": "位于浦东陆家嘴，1994年建成，集观光、餐饮、发射于一体，2024年迎来第一亿名游客。",
+      "tags": [
+        "上海地标",
+        "AAAAA景区",
+        "陆家嘴",
+        "城市历史"
+      ],
+      "total": 6,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1219684,
+      "audioCount": 6,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T04:44:48.091Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-wai-guan-wei-zhi.jpg",
+        "02-ta-zuo-chen-lie.jpg",
+        "03-xia-qiu-ti.jpg",
+        "04-shang-qiu-can-yin.jpg",
+        "05-tai-kong-cang.jpg",
+        "06-yi-yi-you-ke.jpg",
+        "body/01-wai-guan-wei-zhi.md",
+        "body/02-ta-zuo-chen-lie.md",
+        "body/03-xia-qiu-ti.md",
+        "body/04-shang-qiu-can-yin.md",
+        "body/05-tai-kong-cang.md",
+        "body/06-yi-yi-you-ke.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "16902563a5edb8a2f98f2017986b8a90283d0a902ea5a54fb93587a444f848bd",
+          "size": 3702
+        },
+        "cover.jpg": {
+          "sha256": "973caf1bd134945980e6943d097b813649b73308b40aef3ed92503f8b0f8f79a",
+          "size": 137342
+        },
+        "01-wai-guan-wei-zhi.jpg": {
+          "sha256": "de43ba22a5b17d4a6546d83dbbbed0c6d8bd97db0905b066acab51ac4aaa9ebb",
+          "size": 163445
+        },
+        "02-ta-zuo-chen-lie.jpg": {
+          "sha256": "bdb56c313143f09f1e0313e9fdcc7b08f5fb2fc952ec003eaeedb010ac8e6f61",
+          "size": 223474
+        },
+        "03-xia-qiu-ti.jpg": {
+          "sha256": "cc7345be9ab697af2a16959a2f1a5a1b89b71dd273e949bb005ecbae88593d4d",
+          "size": 166083
+        },
+        "04-shang-qiu-can-yin.jpg": {
+          "sha256": "fc6626fd0bb4449efcba5efce48c08109b5d226e880c0f34597ba7b62b0ddab0",
+          "size": 182382
+        },
+        "05-tai-kong-cang.jpg": {
+          "sha256": "48e20aa609d7a1183a4720a08dc4e3ad1d39bbb48aca6c398c57433becbf358a",
+          "size": 181535
+        },
+        "06-yi-yi-you-ke.jpg": {
+          "sha256": "3e6a57a27fc9a7a054907c8b55ba5c3acd6ddbcb32985e7aceed966d0d19d723",
+          "size": 159284
+        },
+        "body/01-wai-guan-wei-zhi.md": {
+          "sha256": "ec31195d014e378ddc87001e2585168b5ad7022291aa42fdbbcc5afd638d4b38",
+          "size": 413
+        },
+        "body/02-ta-zuo-chen-lie.md": {
+          "sha256": "f6e67bf21538933c5da580506fa0cbf5a0f0652466e2695e3ca37051ecd41657",
+          "size": 387
+        },
+        "body/03-xia-qiu-ti.md": {
+          "sha256": "2ac4a96033dc7fc46207cb06d66b0feb60158cb874ea625f8cb8055995e6591a",
+          "size": 426
+        },
+        "body/04-shang-qiu-can-yin.md": {
+          "sha256": "10cf393b0682d14f9a86b702bae7803be16685caed05099d44a3c2630db32104",
+          "size": 444
+        },
+        "body/05-tai-kong-cang.md": {
+          "sha256": "ef625ccff124fb2f9917cb13e0d60e80ab01f7f46713cf771c90d6463ae0a4d7",
+          "size": 399
+        },
+        "body/06-yi-yi-you-ke.md": {
+          "sha256": "fdaf7e32f9e589d5e013decbdaa783dc0d7e3f3c2537d07f29f4db573614ad17",
+          "size": 368
         }
       }
     },
     {
       "id": "guanlin",
-      "version": 8,
+      "version": 1,
       "title": "洛阳关林",
-      "subtitle": "冢庙林三祀合一的关公圣域",
-      "summary": "从舞楼到关冢，沿中轴线走进埋葬关羽首级之地，看明清宫殿式建筑与千年信俗。",
+      "subtitle": "海内外三大关庙之一，冢庙林三祀合一",
+      "summary": "位于河南洛阳，埋葬关羽首级之地。现存明清古建筑群，国家级非遗“关公信俗”遗产地。",
       "tags": [
+        "全国重点文保",
         "关公信俗",
-        "古建筑群",
         "三国遗迹",
-        "全国重点文保"
+        "AAAA景区"
       ],
-      "total": 10,
+      "total": 7,
       "narratorName": "",
       "cover": "cover.jpg",
-      "bytes": 2262382,
-      "audioCount": 10,
+      "bytes": 1724430,
+      "audioCount": 7,
       "aiGenerated": true,
+      "refreshedAt": "2026-11-18T02:29:21.240Z",
       "files": [
         "pack.json",
         "cover.jpg",
-        "01-wulou.jpg",
-        "02-damen.jpg",
-        "03-yimen.jpg",
-        "04-shishi-yudao.jpg",
-        "05-dadian.jpg",
-        "06-erdian.jpg",
-        "07-sandian.jpg",
-        "08-shifang.jpg",
-        "09-bajiaoting.jpg",
-        "10-guanzhong.jpg",
-        "body/01-wulou.md",
-        "body/02-damen.md",
-        "body/03-yimen.md",
-        "body/04-shishi-yudao.md",
-        "body/05-dadian.md",
-        "body/06-erdian.md",
-        "body/07-sandian.md",
-        "body/08-shifang.md",
-        "body/09-bajiaoting.md",
-        "body/10-guanzhong.md"
+        "01-da-men.jpg",
+        "02-yi-men.jpg",
+        "03-shi-shi-yu-dao.jpg",
+        "04-da-dian.jpg",
+        "05-er-dian.jpg",
+        "06-san-dian.jpg",
+        "07-guan-zhong.jpg",
+        "body/01-da-men.md",
+        "body/02-yi-men.md",
+        "body/03-shi-shi-yu-dao.md",
+        "body/04-da-dian.md",
+        "body/05-er-dian.md",
+        "body/06-san-dian.md",
+        "body/07-guan-zhong.md"
       ],
       "checksums": {
         "pack.json": {
-          "sha256": "326398f2d4de04792526f391aeb8925f24709b827d89a9d8845d3fdec92b5a42",
-          "size": 5430
+          "sha256": "0e6a8adf3cdecb94a01f31fb55bb2fcdb8b2d97590d4ef050b26c0130c93df46",
+          "size": 4048
         },
         "cover.jpg": {
-          "sha256": "8e0dcd34984d7d56fba7b99b07bf21e7d45f95feeef3ae16c5cc11c92e1d3eb9",
-          "size": 174291
+          "sha256": "d713121cc52dc8306940c5fb0d31cf89662730ad13ed94a7df084b51bd9f60ed",
+          "size": 179284
         },
-        "01-wulou.jpg": {
-          "sha256": "4aa72540a28ae9bf08b307cdb0dd9dc84d28daba7ef890adbdbe35dbe68bf61c",
-          "size": 194312
+        "01-da-men.jpg": {
+          "sha256": "508b1ce01ac99f062b60ec84e237e063cfbe3535bfa935c0b24f7ab0cfe8b019",
+          "size": 195417
         },
-        "02-damen.jpg": {
-          "sha256": "a70b11aab5942ffbf6b941b35071a07f27aa6e13f34068d19fc2ddf2d6b76ff0",
-          "size": 199147
+        "02-yi-men.jpg": {
+          "sha256": "a95804bcf63fa8791cdd940768231730454cbae959150262dbed5d07207370bf",
+          "size": 193498
         },
-        "03-yimen.jpg": {
-          "sha256": "bc9bc904652516b5e5f70a5146c54ebd98a6b2ba9d46da402e70baa7cbf0dc66",
-          "size": 160949
+        "03-shi-shi-yu-dao.jpg": {
+          "sha256": "ccb42df5e6143a16bec416bb7aadafe0355add8bed82dc0d9d0106c4f75cb185",
+          "size": 263751
         },
-        "04-shishi-yudao.jpg": {
-          "sha256": "a1c9a22007cee7307758d8f81e23338f25d535bf6fcd20bd40cd801928c27de7",
-          "size": 195888
+        "04-da-dian.jpg": {
+          "sha256": "a438e63f6a2042d4b927a7e05a68745d72dd0b9107253d81e5020b0a2d04ea30",
+          "size": 216500
         },
-        "05-dadian.jpg": {
-          "sha256": "f288274105e833c0926bbace0146608c2dee4caaa1a5995229bf1cea6b04553f",
-          "size": 208045
+        "05-er-dian.jpg": {
+          "sha256": "8b86b9d6c6c7522a56054b137f966e2838a02d223abf3963a716ac1ce2e1fb67",
+          "size": 194569
         },
-        "06-erdian.jpg": {
-          "sha256": "000b22377752d4a1ad50b3e4d81cfb5942389b2ce675e3fc89807ba9c55df803",
-          "size": 190540
+        "06-san-dian.jpg": {
+          "sha256": "04af960088b04ace935944f915397d03fb28df83bb1bdcc33ffabd9f55262fd5",
+          "size": 227719
         },
-        "07-sandian.jpg": {
-          "sha256": "f61267f05e4b5762fec139e20973e1ff0641d79f6708308e48e9f49ecf1973bb",
-          "size": 191282
+        "07-guan-zhong.jpg": {
+          "sha256": "3775e944655bb7d8e2e60e047bf39278e8fca9471573eee06d90fe7fa8211576",
+          "size": 246824
         },
-        "08-shifang.jpg": {
-          "sha256": "fb65833ad1aabc1da870879bf690be01bc6419231199e6fb6883b71cdeaacda6",
-          "size": 196891
+        "body/01-da-men.md": {
+          "sha256": "7196dfc87f71072b7df30d9c3ee169a1724fec1df2dc8f8a83ca1037811f55ab",
+          "size": 357
         },
-        "09-bajiaoting.jpg": {
-          "sha256": "7248a036b8f1e32173d2f2be84e0148c3b30a4e83809283e8072b88213291880",
-          "size": 194032
+        "body/02-yi-men.md": {
+          "sha256": "a26d85a01779c5e9776263cc73b6337049c25813a06daf5d4f9f92fb24e17859",
+          "size": 378
         },
-        "10-guanzhong.jpg": {
-          "sha256": "69d897610dfe60582e0214efdc7bb414db08248f057f9937ec5b4ed6e4cdb99b",
-          "size": 346838
+        "body/03-shi-shi-yu-dao.md": {
+          "sha256": "7cb491d8d8dee347e1e0a5e32639d920d0fa9f1393065e25fe08ed250d082d5b",
+          "size": 435
         },
-        "body/01-wulou.md": {
-          "sha256": "f000fd12eff6c00f6cab7f8bd37a3a1ac37398af13cbbce610c9bcd617ad7b95",
-          "size": 480
+        "body/04-da-dian.md": {
+          "sha256": "adf9754303ebd9b1804e8ff8c04a474f653737aab7f258029ef033e8b3558779",
+          "size": 393
         },
-        "body/02-damen.md": {
-          "sha256": "88b59f1589668aaa89ffe5c651f1210eaec9dbc325e1ee8d609fac6268a135fb",
-          "size": 471
+        "body/05-er-dian.md": {
+          "sha256": "cd886a7bc15921b02d4a5f018217335a267dee925391fdc38c98c2244ea8e741",
+          "size": 390
         },
-        "body/03-yimen.md": {
-          "sha256": "a4708fe9ff25c7cca6bb67f9bdaea82ba4e327cb6926155a1f278ce70537da0d",
-          "size": 456
+        "body/06-san-dian.md": {
+          "sha256": "98dba8b3a36dfa1f0e8800731ebb456a38b65cd6d18e2b5342263fe75fa92252",
+          "size": 474
         },
-        "body/04-shishi-yudao.md": {
-          "sha256": "b9a7d9ab9b347a6655a458bada80c8ad015e2c12a659d0ef3250cc23041b0469",
-          "size": 471
-        },
-        "body/05-dadian.md": {
-          "sha256": "a6bb09e114cd9d9b5efecaa532a889111c4654d6d41ddd4507f9f7faab761ffa",
-          "size": 501
-        },
-        "body/06-erdian.md": {
-          "sha256": "75ff14aa27371e218038f14b3808f0272eddd9afa40d87b870c7d48f0b30bc60",
-          "size": 459
-        },
-        "body/07-sandian.md": {
-          "sha256": "4b78d4c87615b12e6470089ccacf0aa8c2f0b2f13cd0937b0af9f6c120ff5ea8",
-          "size": 468
-        },
-        "body/08-shifang.md": {
-          "sha256": "b9360ae941276beb6d307ead4f7aab5034f7d89b7dc22fcdb2b973c3731fc21a",
-          "size": 462
-        },
-        "body/09-bajiaoting.md": {
-          "sha256": "b122b1143706f5246ea44394710fb8d2edd09355d7494995699b24135ccb137d",
-          "size": 471
-        },
-        "body/10-guanzhong.md": {
-          "sha256": "bc854c8bf6cad7d123bfe0509043cd039fd262a5fce5f8ac53cb4b2da0d0f683",
-          "size": 498
+        "body/07-guan-zhong.md": {
+          "sha256": "cfb3a72ec0f954ebd0f3f1a5c92b5a949be3905b5092b08fe965bdf20a984620",
+          "size": 393
         }
       }
     },
@@ -233,9 +299,10 @@
       "total": 6,
       "narratorName": "",
       "cover": "cover.jpg",
-      "bytes": 1294172,
+      "bytes": 1294327,
       "audioCount": 6,
       "aiGenerated": true,
+      "refreshedAt": "2026-11-17T14:05:16.624Z",
       "files": [
         "pack.json",
         "cover.jpg",
@@ -254,8 +321,8 @@
       ],
       "checksums": {
         "pack.json": {
-          "sha256": "60c6157436ccd72611ab80d3fdcb39b417be9e068b705009c982b398b169e05f",
-          "size": 3626
+          "sha256": "c8e2975a91786c70313cf063a637a2d9b807562a042875793358026eef9bbbe5",
+          "size": 3745
         },
         "cover.jpg": {
           "sha256": "3de463f2d99bbd57c69dd9d9d38185a130ca55e064746e0bbb02dbc8a5036a31",
@@ -286,28 +353,28 @@
           "size": 176630
         },
         "body/01-laozi-wenhuayuan.md": {
-          "sha256": "27f0988dc2653d978c85dcdaf9185dde21b7750973a5733344712dbf1d4e0bec",
-          "size": 399
-        },
-        "body/02-zhongtianmen.md": {
-          "sha256": "2738cfb2620fd7f1f99859ecd9b857a3276f02816915b9009bd01499e0fd7085",
-          "size": 447
-        },
-        "body/03-shili-huaping.md": {
-          "sha256": "228ff6a447ce81b5843f95f3ffc0a1898c6b776c188d90ade03d973dede0fa5a",
-          "size": 312
-        },
-        "body/04-wudao-feng.md": {
-          "sha256": "4270b4d7e8aa623afbdb3e544b789d32e8982cabaaba6bebbdc421e5e718eb79",
+          "sha256": "9d10ec4ef381fa46e71f3f0ba1f8f3d63404bced53be18828803b34c341ff9d0",
           "size": 405
         },
+        "body/02-zhongtianmen.md": {
+          "sha256": "4a48ee744efce185f850f730f76a94dbde872cf2c7c2cca543b7ee74bf2989f1",
+          "size": 453
+        },
+        "body/03-shili-huaping.md": {
+          "sha256": "ba58a5bfe5c6424db3e6518b0b8cc9116563bc639eef415b1dcc36090cb28e82",
+          "size": 318
+        },
+        "body/04-wudao-feng.md": {
+          "sha256": "b0d796a1bad2d28f54c7c378987bbb89819cbabb4c1eb8103595c51121402a1c",
+          "size": 411
+        },
         "body/05-nantianmen.md": {
-          "sha256": "7337a133c52370abd2699cec9543f626c5680db0e2d600ea042198e178383d12",
-          "size": 360
+          "sha256": "6d9cba69feaa3c06d15cd90d0335df55ec6b0c572b0134a173ffe805b56ca146",
+          "size": 366
         },
         "body/06-jinding-daoqun.md": {
-          "sha256": "d9878f89169c73730bc722d950d3478176b038bb9ef0f49eef3a25bcc41f5024",
-          "size": 363
+          "sha256": "d286611b07dfd2bf04cdb36ac35d76f736206053ec02d2873bed372073ea5c8a",
+          "size": 369
         }
       }
     },
@@ -326,9 +393,10 @@
       "total": 5,
       "narratorName": "",
       "cover": "cover.jpg",
-      "bytes": 1302318,
+      "bytes": 1302452,
       "audioCount": 5,
       "aiGenerated": true,
+      "refreshedAt": "2026-11-17T14:23:36.058Z",
       "files": [
         "pack.json",
         "cover.jpg",
@@ -345,8 +413,8 @@
       ],
       "checksums": {
         "pack.json": {
-          "sha256": "4920984ae7157585bdf763fb34cf933c590a0542bcba4fb41d9ce461dd323713",
-          "size": 3120
+          "sha256": "a9e0878c917360e5cb986705c72f7df71484492f2bf47d79e7f12055552020b0",
+          "size": 3224
         },
         "cover.jpg": {
           "sha256": "10691f51b415336c50ab5823f806583fe22e8b35a6d0d33af88449370e70a8a6",
@@ -373,24 +441,24 @@
           "size": 166325
         },
         "body/01-wei-zhi-yuan-liu.md": {
-          "sha256": "84273ef875119fe971125445bd87fdb34305bb86c7423de56a0466d44281c950",
-          "size": 363
+          "sha256": "db11bfaabc979eafcc0f2a6ee0dff3efdaf2a101898352c0a780774331ad3768",
+          "size": 369
         },
         "body/02-li-jing-qiao.md": {
-          "sha256": "298ad98509eb1a673d42a3bba8c5a68b28c06046bfa78aec527cf04953f3ddb5",
-          "size": 366
+          "sha256": "83db381a3e1d3da981955d26337a93792fcd40a4274a3acf52887aab4d5d7aca",
+          "size": 372
         },
         "body/03-weng-cheng-jian-lou.md": {
-          "sha256": "804e18c5494fc07ed6e306d23840cabdec1dcd990713c8071c60fb4c2349bc02",
-          "size": 345
+          "sha256": "1e23cd7785d7c53852bebb197c2d6c54276f067ee7174f577016535bbc7a869c",
+          "size": 351
         },
         "body/04-shi-san-long-zhu.md": {
-          "sha256": "482c6b4a1d142d9bb7d6bd694d5675f91c6086e238b645a70643ab6d1e0ce7da",
-          "size": 330
+          "sha256": "b8f85ac13fe93912abd9225bc483242a9dd91c680aa727cd72161524edd9a511",
+          "size": 336
         },
         "body/05-di-wang-shi-guan.md": {
-          "sha256": "8861beb3b19c86cba6385aa5836ea3518f0ad3b95a7e73b463bc2b84aa540166",
-          "size": 342
+          "sha256": "cc096dd4539605d357fc7020a0af08d051a90824eca1e11481800deb3674af6a",
+          "size": 348
         }
       }
     },
@@ -409,9 +477,10 @@
       "total": 8,
       "narratorName": "",
       "cover": "cover.jpg",
-      "bytes": 2121924,
+      "bytes": 2122129,
       "audioCount": 8,
       "aiGenerated": true,
+      "refreshedAt": "2026-11-17T14:21:16.979Z",
       "files": [
         "pack.json",
         "cover.jpg",
@@ -434,8 +503,8 @@
       ],
       "checksums": {
         "pack.json": {
-          "sha256": "eb5f5f4642333fca3d66635e152e9f3ddbd01b7120e7778b9ea0d93ae9b1828b",
-          "size": 6635
+          "sha256": "e9bb7c6f2871037ac9e0a9fccac2c14e7fdf07b3904e7f19c593ded7b8a1e0f4",
+          "size": 6792
         },
         "cover.jpg": {
           "sha256": "e40b90b77e9058582ce8d945017e16657739448a170fe1d197a3325c44c90723",
@@ -474,36 +543,120 @@
           "size": 191065
         },
         "body/01-yique.md": {
-          "sha256": "04abefa798bba7c7dd0a55869566da693220e0209d04a6ec8c068c10da2c0a9f",
-          "size": 492
+          "sha256": "2bdd71f01b730f86c576a4663edeba6909a2e1aaa12e6c2461933f429f81a39a",
+          "size": 498
         },
         "body/02-yuwangchi.md": {
-          "sha256": "021e03b0f3f0c2903bd71bb794828d38f825e520ac93881b56a1a31550555297",
-          "size": 453
+          "sha256": "aaa862aa06afcd61fcbba1a3a243e0099bff378e3e1733eac4bdb35e40b20e2f",
+          "size": 459
         },
         "body/03-bin-yang-san-dong.md": {
-          "sha256": "9c1131a74e49f4b2e60b037b3fa0a3f50f4f1cb6011afa14755088ac39b634e1",
-          "size": 477
+          "sha256": "ee296e74e9880a11beb18bd425b2c6a645c786ea4a74d52eb4afa54a20eaa07a",
+          "size": 483
         },
         "body/04-lianhuadong.md": {
-          "sha256": "1ac0b67ce87ae89fb231f830adc80631476ba286c91dc9006909eb24a65980f5",
-          "size": 471
+          "sha256": "30e103fe9f61ac7578b920decf03eb2bd16feee7b1728ca491a8d2cea2633ff7",
+          "size": 477
         },
         "body/05-wanfodong.md": {
-          "sha256": "4b03a817be1d5d11f1b6f496e8e6e894437072d9cceb325aac027c73b484aef7",
-          "size": 465
+          "sha256": "f64fba3a32be61005c018afde4a9e78441a3b3868ca78d941644ca55e32cd5f9",
+          "size": 471
         },
         "body/06-fengxiansi.md": {
-          "sha256": "adf7912b409faae27a2c8b2a4292e89a2d581381a5609230ab13eab2579680e4",
-          "size": 465
+          "sha256": "f3d225c3bce8a18ef6fcb9e8c3246ef1fc12d1a31007a36ebcd322e6c97ba839",
+          "size": 471
         },
         "body/07-guyangdong.md": {
-          "sha256": "83f51ea0180eef920519f9f910ddd22b3dc2806e654a2eb4bedc0cae394c7aff",
-          "size": 459
+          "sha256": "25d1f2f0113df7c68a82a5f846eeb561a4054f66f9a496822995cd61993f72a6",
+          "size": 465
         },
         "body/08-yaofangdong.md": {
-          "sha256": "00910d10b73438ccc57c4b380322ad646466468d000e4f8bdcc719b53b626524",
-          "size": 459
+          "sha256": "d6a5aeb618146ce4833e41e4a35acfff577c62ba66381042288a5e8382b2c69a",
+          "size": 465
+        }
+      }
+    },
+    {
+      "id": "lujiazui-central-green",
+      "version": 1,
+      "title": "陆家嘴中心绿地",
+      "subtitle": "镶嵌在金融中心的都市绿肺与历史印记",
+      "summary": "从棚户区到五星级公园，漫步于高楼间的草坪、人工湖与百年老宅，感受浦东开发的沧桑巨变。",
+      "tags": [
+        "城市花园",
+        "历史建筑",
+        "休闲公园",
+        "浦东地标"
+      ],
+      "total": 5,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1473342,
+      "audioCount": 5,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T04:42:16.714Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-ru-kou-diao-su.jpg",
+        "02-zhong-xin-cao-ping.jpg",
+        "03-ren-gong-hu.jpg",
+        "04-qin-shui-ping-tai.jpg",
+        "05-ying-chuan-xiao-zhu.jpg",
+        "body/01-ru-kou-diao-su.md",
+        "body/02-zhong-xin-cao-ping.md",
+        "body/03-ren-gong-hu.md",
+        "body/04-qin-shui-ping-tai.md",
+        "body/05-ying-chuan-xiao-zhu.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "185e884871790aae4a3a13917b667824b4c8cc794e75c5f9bcfedb30668357d9",
+          "size": 3302
+        },
+        "cover.jpg": {
+          "sha256": "42190bf09d6cfc4bbbb9af15cb1215605eb86379f9b44c6562b70830dd74ea7b",
+          "size": 147768
+        },
+        "01-ru-kou-diao-su.jpg": {
+          "sha256": "57a36d6f90e03f96d4d55b07e446bda7bb6c398dd883f59b4beedb382f1e430f",
+          "size": 163565
+        },
+        "02-zhong-xin-cao-ping.jpg": {
+          "sha256": "7d3963a1150284df437cbea189b782b499e3dae472a3642f41b3fc899e40d0c0",
+          "size": 209178
+        },
+        "03-ren-gong-hu.jpg": {
+          "sha256": "8bbd8047906a683dc666f9e121b4f83f1d9faafd1cba8be1ebf61046d2099a6b",
+          "size": 289214
+        },
+        "04-qin-shui-ping-tai.jpg": {
+          "sha256": "ef165b0db14d04f790884d6076c5f84fa26e9ef2805c4ce83c343e77bd000a7f",
+          "size": 302377
+        },
+        "05-ying-chuan-xiao-zhu.jpg": {
+          "sha256": "6be4fee28c6d831dbfd1c96d0be5441f74b8c4c6e36d9daa90221f082fdfb1b2",
+          "size": 355865
+        },
+        "body/01-ru-kou-diao-su.md": {
+          "sha256": "4f2a6b39cef000ac9ca5cd98bf457507039fe639f0e6982a66e3b9acb39888a2",
+          "size": 450
+        },
+        "body/02-zhong-xin-cao-ping.md": {
+          "sha256": "6106b697669939f73d7800c708dfbb61147bc6cbf84184645464776b9644d49f",
+          "size": 390
+        },
+        "body/03-ren-gong-hu.md": {
+          "sha256": "94ce01dab89eccaf8cefbbe18b0c79612712b0540a734152160eb28d56a3ce66",
+          "size": 393
+        },
+        "body/04-qin-shui-ping-tai.md": {
+          "sha256": "937cb57512e889c02a9d270a882fe4a743227a16179a5f535cf31770d1e75b4d",
+          "size": 369
+        },
+        "body/05-ying-chuan-xiao-zhu.md": {
+          "sha256": "c2f5213e18a7d86116ae8d7be998445a7397c283f11cb7a68e2c423bb1e804ef",
+          "size": 471
         }
       }
     },
@@ -522,9 +675,10 @@
       "total": 5,
       "narratorName": "",
       "cover": "cover.jpg",
-      "bytes": 961154,
+      "bytes": 961288,
       "audioCount": 5,
       "aiGenerated": true,
+      "refreshedAt": "2026-11-17T14:21:46.179Z",
       "files": [
         "pack.json",
         "cover.jpg",
@@ -541,8 +695,8 @@
       ],
       "checksums": {
         "pack.json": {
-          "sha256": "69badb8f6431a51cccff60d7dbd42855ea6faf3de4d55e2b62e8f8506fd7d325",
-          "size": 3316
+          "sha256": "4777ac606aa6e05d00473aab51fb50d940c48fcccec8757ca5b3fb2cb2cc299c",
+          "size": 3420
         },
         "cover.jpg": {
           "sha256": "b5114e3ed64c593710ba3fdd41e5ba7e0332c89aa8c7bdfd61d016ec21e456e3",
@@ -569,24 +723,24 @@
           "size": 247881
         },
         "body/01-tian-shu-ta.md": {
-          "sha256": "a3c1eaeb1878d89ddb3b99dacb054a2c6c97ea469c63fcc4942fe760027c8822",
-          "size": 372
+          "sha256": "82c3b3a9903d265c920b9f4060369c54fb58c1066d1a0ef8420d681194e91058",
+          "size": 378
         },
         "body/02-museum-exterior.md": {
-          "sha256": "28a588aa03bb8e1ebb2dd9cce1459dcf6a367e8bc6d52fdac4ad8c06ed74ed97",
-          "size": 393
+          "sha256": "e892cf67cba634085fb9a3ec498ac591d26763bef392043576bb4ee1b76c3390",
+          "size": 399
         },
         "body/03-heluo-civilization.md": {
-          "sha256": "6a1b570c1e7e645657e15db540c86ac9a5ce80e6fb58983407bebe2927e14791",
-          "size": 414
+          "sha256": "c65aee508078d06fe84f698fecad44fcffc4b247625ab18110e6dc9306db63f1",
+          "size": 420
         },
         "body/04-tang-sancai.md": {
-          "sha256": "a5b48e46663fc5d5cd966aeae6ad68919c4a204fb571ddc87f858e9b2ce4589f",
-          "size": 423
+          "sha256": "40c18db7ded3fe98092c9aa2346af92ed901f3513ac983e7984bbfe4376f579d",
+          "size": 429
         },
         "body/05-stone-bixie.md": {
-          "sha256": "20f370f66731f304dfd96c88ce926d899d79c80758e6a1842ae91321f7fea9ab",
-          "size": 384
+          "sha256": "fedd88aa8f0e96686060bc0bb4c3cae5e5cc7a874f17dc6e595cbee2d1ddb4d9",
+          "size": 390
         }
       }
     },
@@ -605,9 +759,10 @@
       "total": 5,
       "narratorName": "",
       "cover": "cover.jpg",
-      "bytes": 1376843,
+      "bytes": 1376977,
       "audioCount": 5,
       "aiGenerated": true,
+      "refreshedAt": "2026-11-17T14:22:20.832Z",
       "files": [
         "pack.json",
         "cover.jpg",
@@ -624,8 +779,8 @@
       ],
       "checksums": {
         "pack.json": {
-          "sha256": "e7507bcd03a0014b51c5ea95b77d334caf425b8dc24dd59da6b2a6794af9e6e2",
-          "size": 3172
+          "sha256": "316605705eaed0cea46332a7d4b049ebccdb6a7d1a03a8b49afb2c3ab39d3582",
+          "size": 3276
         },
         "cover.jpg": {
           "sha256": "a926f7051dab9bbd00690844df5e465847c6481bbbde5362e6c6901fde09aa6a",
@@ -652,24 +807,24 @@
           "size": 262525
         },
         "body/01-yi-men-zhao-bi.md": {
-          "sha256": "0e48253375ec5a989346371ceaedd457f6bcf401bc87ee8c557fec6979bd1892",
-          "size": 450
+          "sha256": "740a4d5dc096cf4c776ca8a668759a690bbba8203414fdce35bf30a5cfb21d08",
+          "size": 456
         },
         "body/02-shan-men-wu-lou.md": {
-          "sha256": "bea3511b6b4a064edc0f0b45e47480068edadc85520c96112bb673085545b8e3",
-          "size": 459
+          "sha256": "3dc5853bf2158c1597d6accc9b953545767683f44b979d43bd2a698f1152a4a6",
+          "size": 465
         },
         "body/03-bai-dian-cai-hua.md": {
-          "sha256": "577a8ed02c7383957799fb58396cbdd7fd90222280ce451802b38950a26e89c1",
-          "size": 459
+          "sha256": "338462c428420e57bb3f88c74bb650618601806a114f86295c50fde41063631f",
+          "size": 465
         },
         "body/04-zheng-dian-diao-ke.md": {
-          "sha256": "0bf2928ede1298335eb26303ddfec78f0ecbc0b69b6f53e2d928e8f849431af4",
-          "size": 471
+          "sha256": "b21bac5ad4c22fcdc2e7533fe817d13b47c93976f5bd341f47c89e5e7ab7552c",
+          "size": 477
         },
         "body/05-wen-wu-bao-hu.md": {
-          "sha256": "f7b9aca23835932bd77c25eaed272813d835dbb55b71e7780dde92a18c16595d",
-          "size": 474
+          "sha256": "df88e3215ce06920fbd4422de09d0502f0e9a9696570f76417cc56a51ef80a84",
+          "size": 480
         }
       }
     },
@@ -688,9 +843,10 @@
       "total": 6,
       "narratorName": "",
       "cover": "cover.jpg",
-      "bytes": 1703525,
+      "bytes": 1703680,
       "audioCount": 6,
       "aiGenerated": true,
+      "refreshedAt": "2026-11-16T13:24:55.831Z",
       "files": [
         "pack.json",
         "cover.jpg",
@@ -709,8 +865,8 @@
       ],
       "checksums": {
         "pack.json": {
-          "sha256": "7a679dd3da087e7b0e6aa19f0eaf5002b717554641328e150f3fed997390983a",
-          "size": 3374
+          "sha256": "b653a692f87b2216b351bde6c504c2aa8c200e94e802f4cccc689de5cfb3c458",
+          "size": 3493
         },
         "cover.jpg": {
           "sha256": "d5921c8dffb524a4fa7fb08a0bd3777f4df8da738dd77c0f46ce76c75049ccf7",
@@ -741,111 +897,384 @@
           "size": 208913
         },
         "body/01-cheng-quan-mao.md": {
-          "sha256": "f8496287b9db079068c27ef089031deb8a58f7eb4ee9a2dfa5fe2ab33b825e08",
-          "size": 396
+          "sha256": "0c03c69f53a0bf3af4ec2c011dd994c1165451a054d4c83dc1c69bba4b82314f",
+          "size": 402
         },
         "body/02-si-yan-jing.md": {
-          "sha256": "b859871facb440f58451fea0c7c02cd2ecd132ddff4afb345ed07fdfe8cf573f",
-          "size": 375
+          "sha256": "c58a67ff58b406f694764a33e7009413b4894c6eeffa28612b05fcf6bc9ad950",
+          "size": 381
         },
         "body/03-tuo-ling-gong.md": {
-          "sha256": "f11b3ce93a703724959ec1db01f2901df26a9726bf4c1af5d7de3c235bd3f031",
-          "size": 378
+          "sha256": "ceea4fdabe8037b56bd1b190f3eafa53ef19978eada320a0392af247ebe67e3c",
+          "size": 384
         },
         "body/04-wen-miao.md": {
-          "sha256": "f244f18e99dd971a9e18c3f3ea4e54ce28e0435c474e90ad56ec86d5ab196969",
-          "size": 372
+          "sha256": "79ed89b2c44d8c8c402524ca05b41238bb5168b342f6010a85d1e2d0b45ed74a",
+          "size": 378
         },
         "body/05-xin-tan.md": {
-          "sha256": "0109e10804e531fc061d3b4577f7eff7e5b92f3a26d33039a04bd8c920351aa1",
-          "size": 369
+          "sha256": "5ce310e9d6ae4aea8d57ed3896a590558a5f99ca4fefb9655d0843db2df2e3ce",
+          "size": 375
         },
         "body/06-wen-feng-ta.md": {
-          "sha256": "99da23f78b007adcae77e4fa85f4a32609296fdce53b84ea71a4ba3586875a84",
-          "size": 378
+          "sha256": "794d68e4c574192abc3981f519a07022848cf84bdd997f710caa09fa76a88c43",
+          "size": 384
+        }
+      }
+    },
+    {
+      "id": "nanjing-road-walkway",
+      "version": 1,
+      "title": "南京路步行街",
+      "subtitle": "中华商业第一街的百年变迁与新生",
+      "summary": "从1848年辟筑的“花园弄”到1999年建成的全天候步行街，再到2020年东拓连接外滩，见证上海商业百年繁华。",
+      "tags": [
+        "历史街区",
+        "商业地标",
+        "城市漫步",
+        "海派建筑"
+      ],
+      "total": 6,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1427943,
+      "audioCount": 6,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T04:40:04.080Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-ru-kou-ti-zi-bei.jpg",
+        "02-shi-ji-guang-chang.jpg",
+        "03-yong-an-bai-huo.jpg",
+        "04-xian-shi-da-lou.jpg",
+        "05-jin-dai-sculpture.jpg",
+        "06-dong-tuo-jie-qu.jpg",
+        "body/01-ru-kou-ti-zi-bei.md",
+        "body/02-shi-ji-guang-chang.md",
+        "body/03-yong-an-bai-huo.md",
+        "body/04-xian-shi-da-lou.md",
+        "body/05-jin-dai-sculpture.md",
+        "body/06-dong-tuo-jie-qu.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "c941185e4ed23ba130d660d7f7132f000f206bd9950e7a77683e5d40f987d397",
+          "size": 3765
+        },
+        "cover.jpg": {
+          "sha256": "cbf39df47850183e6184e6a9b61c84a4e4ae5e366936f4844923d85be370d8fb",
+          "size": 191639
+        },
+        "01-ru-kou-ti-zi-bei.jpg": {
+          "sha256": "b75ec7c34e9c5ce6c17f068ab8dac7e9050d176bda925a740c3b4458c22905e4",
+          "size": 215136
+        },
+        "02-shi-ji-guang-chang.jpg": {
+          "sha256": "072fa3d133cbb7bbe0c5b3b37769672b84e773b0123014fd7f953d25d0419fc0",
+          "size": 177585
+        },
+        "03-yong-an-bai-huo.jpg": {
+          "sha256": "36df92402369dd16c15007b8380c8558a7fa61494e72308b58961f5befaea88c",
+          "size": 205367
+        },
+        "04-xian-shi-da-lou.jpg": {
+          "sha256": "80ebe7527c422527dc5ebcd8832ba19ce9ee4d2dfa108aa8fb797568c5764018",
+          "size": 215063
+        },
+        "05-jin-dai-sculpture.jpg": {
+          "sha256": "ccd8b8886cdf03bca10f25d05038d99949cbc440c131f82835b08eb642fe90f8",
+          "size": 217480
+        },
+        "06-dong-tuo-jie-qu.jpg": {
+          "sha256": "4b298cd8570c32024e71c96811f59b8bf7349adc76c4d9262519bf1f54d96aaa",
+          "size": 199223
+        },
+        "body/01-ru-kou-ti-zi-bei.md": {
+          "sha256": "34200797bb9f21cdf527051c916cedc9407df8dace10f9546291f33bf02c2144",
+          "size": 471
+        },
+        "body/02-shi-ji-guang-chang.md": {
+          "sha256": "e58aefcb710d5b8557086118451fca8694b536cf0155e86939b89d6076c59742",
+          "size": 438
+        },
+        "body/03-yong-an-bai-huo.md": {
+          "sha256": "1747b110f9f495e81c0ceeee46c1dcc630c45d6b399c3e487522124bdb8d18b6",
+          "size": 414
+        },
+        "body/04-xian-shi-da-lou.md": {
+          "sha256": "0dd906cc3316ab906ffb100182e3edde6d56de5b9af37654059908abbf91c5eb",
+          "size": 510
+        },
+        "body/05-jin-dai-sculpture.md": {
+          "sha256": "c68dba2858d28e04e475eaab8fd5ad4297fc9b64ee9278d59dd400e154b7c52c",
+          "size": 399
+        },
+        "body/06-dong-tuo-jie-qu.md": {
+          "sha256": "b78bbfba19cb21392beaf779ded67e58e230578ee16401001b3943ca817c3125",
+          "size": 453
+        }
+      }
+    },
+    {
+      "id": "waitan",
+      "version": 1,
+      "title": "上海外滩",
+      "subtitle": "万国建筑博览与百年金融传奇",
+      "summary": "沿黄浦江畔漫步，从南端延安东路至北端外白渡桥，解读52幢古典复兴大楼背后的租界历史与金融变迁。",
+      "tags": [
+        "历史街区",
+        "建筑艺术",
+        "金融中心",
+        "城市地标"
+      ],
+      "total": 6,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1439824,
+      "audioCount": 6,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T04:38:43.584Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-qi-yuan.jpg",
+        "02-chen-yi.jpg",
+        "03-hui-feng.jpg",
+        "04-hai-guan.jpg",
+        "05-he-ping.jpg",
+        "06-wai-bai.jpg",
+        "body/01-qi-yuan.md",
+        "body/02-chen-yi.md",
+        "body/03-hui-feng.md",
+        "body/04-hai-guan.md",
+        "body/05-he-ping.md",
+        "body/06-wai-bai.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "cc95e66552a78ddff5b54b84a6b5945a6369e4fcb5329a799e7e64b0da985c78",
+          "size": 3612
+        },
+        "cover.jpg": {
+          "sha256": "cc4547011e9dcbcc8855207bd73cc7a3cc711f7031618af02adebc2f05834150",
+          "size": 167661
+        },
+        "01-qi-yuan.jpg": {
+          "sha256": "1b17a38c52a93a9c881e580ad5d7de3d460fadea6021f48efb3c60be86bc4de1",
+          "size": 191054
+        },
+        "02-chen-yi.jpg": {
+          "sha256": "f7858fcc9e972446c3644b81bb791d36e930300edcc9a75f16458a1cc4d23ea9",
+          "size": 219840
+        },
+        "03-hui-feng.jpg": {
+          "sha256": "60ee96cf1e0d8176e800d63e8ba0393f491c941cad9d62903b79b0abecbbdf27",
+          "size": 246341
+        },
+        "04-hai-guan.jpg": {
+          "sha256": "5f166d19cda06ec644765bfab24be56916c8ae91e164cb70ebd6c94009809d4c",
+          "size": 202257
+        },
+        "05-he-ping.jpg": {
+          "sha256": "6242f193e1ee25529809b70cf1b2e77d6bff70dab8c9fd54e7171f70a2077675",
+          "size": 215534
+        },
+        "06-wai-bai.jpg": {
+          "sha256": "01b9f1e9eec4fd63a27433275b55588178c833dc16bdeab505bea459e7bb5e5e",
+          "size": 191228
+        },
+        "body/01-qi-yuan.md": {
+          "sha256": "a580a7dd257b382b6b818ae41c8f18b5043712abca72d92e44ba5b82ad6702b1",
+          "size": 360
+        },
+        "body/02-chen-yi.md": {
+          "sha256": "e12009b505e36fb714571a2465fe741c406f8b8cd1b0c7cb6328fb4166789edb",
+          "size": 351
+        },
+        "body/03-hui-feng.md": {
+          "sha256": "4ffaf281520ee58a69623ddf34f644a69c96074b42c4e89e8583b9093f5ba903",
+          "size": 459
+        },
+        "body/04-hai-guan.md": {
+          "sha256": "9e824ba327352e9717853913781b000c8f46bed2555dd976b81cf2133849f744",
+          "size": 354
+        },
+        "body/05-he-ping.md": {
+          "sha256": "6693fda99daceb9997348fdda72ea9bc09c932a48d1b322e45497e884caead81",
+          "size": 389
+        },
+        "body/06-wai-bai.md": {
+          "sha256": "995ca15d384ee3ec2eab59bd2127ae03fbe8c2a8253180fd505e923fbec07b21",
+          "size": 384
         }
       }
     },
     {
       "id": "yingtianmen",
-      "version": 2,
-      "title": "应天门遗址博物馆",
-      "subtitle": "隋唐洛阳城宫城正门，天下第一门",
-      "summary": "隋唐洛阳城紫微城正南门，始建于605年，是武则天登基及万国来朝之地，被誉为“隋唐第一门”。",
+      "version": 1,
+      "title": "应天门遗址",
+      "subtitle": "隋唐洛阳城宫城正南门，天下第一门",
+      "summary": "隋唐洛阳城标志性建筑，存世530余年。2019年遗址博物馆开放，以数字化技术再现盛唐气象。",
       "tags": [
-        "皇家宫阙",
-        "历史遗址",
-        "建筑奇迹",
-        "AAAA景区"
+        "隋唐遗迹",
+        "皇家建筑",
+        "中轴线",
+        "夜景灯光"
       ],
       "total": 5,
       "narratorName": "",
       "cover": "cover.jpg",
-      "bytes": 1041619,
+      "bytes": 1339320,
       "audioCount": 5,
       "aiGenerated": true,
+      "refreshedAt": "2026-11-18T02:30:24.690Z",
       "files": [
         "pack.json",
         "cover.jpg",
-        "01-wei-zhi-lai-li.jpg",
-        "02-san-chu-que.jpg",
-        "03-wu-feng-lou.jpg",
-        "04-ri-ben-bei.jpg",
-        "05-ze-tian-deng-ji.jpg",
-        "body/01-wei-zhi-lai-li.md",
-        "body/02-san-chu-que.md",
-        "body/03-wu-feng-lou.md",
-        "body/04-ri-ben-bei.md",
-        "body/05-ze-tian-deng-ji.md"
+        "01-zhongzhou-nanzhan.jpg",
+        "02-que-tai-jizhi.jpg",
+        "03-wa-dang-goujian.jpg",
+        "04-gang-jie-cheng-tai.jpg",
+        "05-fu-yuan-men-lou.jpg",
+        "body/01-zhongzhou-nanzhan.md",
+        "body/02-que-tai-jizhi.md",
+        "body/03-wa-dang-goujian.md",
+        "body/04-gang-jie-cheng-tai.md",
+        "body/05-fu-yuan-men-lou.md"
       ],
       "checksums": {
         "pack.json": {
-          "sha256": "25395b6eb34ed1883635ed1f3938b04ffceb6acfbac21473dacf98d87acc87ba",
-          "size": 3232
+          "sha256": "73b6628f2cbeba1b1af8a21c9357135a6ad5b4020ab40e7d388f7c0646ac93d7",
+          "size": 3262
         },
         "cover.jpg": {
-          "sha256": "58287f4d390fdc283db5cbc434033420516a9221fdc181cf7621a31da9893d9c",
-          "size": 138316
+          "sha256": "5191b60e950f1ccf0cdf120082ac0809e1281c2510b28ff16aca1d7e8d7f3d9b",
+          "size": 195187
         },
-        "01-wei-zhi-lai-li.jpg": {
-          "sha256": "4d59dd1f2ca3fa1818084a525877c6948459d9e62ede9f63543adc1a9e38180d",
-          "size": 154660
+        "01-zhongzhou-nanzhan.jpg": {
+          "sha256": "4e30a3f94b3847e78ab464d52208333efd31ba8d2fd67637df0c756c032c6708",
+          "size": 226861
         },
-        "02-san-chu-que.jpg": {
-          "sha256": "be3787384cb35716458b8c47eea762b6ac02eec8f267429b848649a9110d676a",
-          "size": 144736
+        "02-que-tai-jizhi.jpg": {
+          "sha256": "1944114d49aafbce2e2879be6f4b20526550c25c49a8c6ba03cac068d1eb556f",
+          "size": 241188
         },
-        "03-wu-feng-lou.jpg": {
-          "sha256": "68d92c0b814f93da23243698fbfe4c205a9ce6c36533863f9cd4bcb0b8b2c0e9",
-          "size": 173261
+        "03-wa-dang-goujian.jpg": {
+          "sha256": "bd0b8137dad21a32777b90127d20fe03e0733f03ec503e9ff0d04843f3d60a94",
+          "size": 250666
         },
-        "04-ri-ben-bei.jpg": {
-          "sha256": "c90660fdb14f4ba6eeef0857cc117456c76cec2a8810cefa23e3145a89366b2e",
-          "size": 194788
+        "04-gang-jie-cheng-tai.jpg": {
+          "sha256": "169ba52bbe3cc750429f7502d7b6608a75eefa1d31481fb636fe378ec8f542df",
+          "size": 245272
         },
-        "05-ze-tian-deng-ji.jpg": {
-          "sha256": "3501ac78830207b1718322a28dea0cab2b3d2e32e751136292ae5e1f55c9dd2b",
-          "size": 230583
+        "05-fu-yuan-men-lou.jpg": {
+          "sha256": "6107d383e3ee007bd9901295221d1cb8f348e6c07d338d9e6353dca74e564f1e",
+          "size": 175036
         },
-        "body/01-wei-zhi-lai-li.md": {
-          "sha256": "9f1a57cf23734a4062ce1e36fbdc38de42c029f846c3c83fd3ec547f2af3c1be",
-          "size": 450
+        "body/01-zhongzhou-nanzhan.md": {
+          "sha256": "eb651f11b66dc8bd400854b9155d9f9f067402c7deba3e5d684d414400f94367",
+          "size": 318
         },
-        "body/02-san-chu-que.md": {
-          "sha256": "409cea799cae31667abc065bc1d85c469cb42727f24fee28749dd452f3d3d96d",
-          "size": 375
+        "body/02-que-tai-jizhi.md": {
+          "sha256": "26fde2c74bafc369b9b5b01eaf1ed261402b82125075180d76d47fcf71d01907",
+          "size": 357
         },
-        "body/03-wu-feng-lou.md": {
-          "sha256": "404e4664ac8cb3ec925be8df5b20cd1ce245f0ff06376442a7ef6c774fa1892b",
-          "size": 435
+        "body/03-wa-dang-goujian.md": {
+          "sha256": "c3327c4dc206689b175f2dda77c16b684bfbaa25d8d8e3dbc0d94de816c5d3e2",
+          "size": 342
         },
-        "body/04-ri-ben-bei.md": {
-          "sha256": "e3f10e35d348d46f52f847dadd0b94af692a40f43b3b614dd4a9db5ab5f292a0",
-          "size": 393
+        "body/04-gang-jie-cheng-tai.md": {
+          "sha256": "d0288d3f39072093685065d53f40baf6ace03694b9b8d0ea0aff46cbbc0dc47b",
+          "size": 453
         },
-        "body/05-ze-tian-deng-ji.md": {
-          "sha256": "d0cf0b77312261527b53c132c42b959e1e841bdfb8d66f96f16a6649b36f6b7f",
+        "body/05-fu-yuan-men-lou.md": {
+          "sha256": "7c76729c64bd2f175fb5c77ac26b9c45254d0c03c0d14fe953c3b8e11d124dc0",
+          "size": 378
+        }
+      }
+    },
+    {
+      "id": "yu-yuan",
+      "version": 1,
+      "title": "上海豫园",
+      "subtitle": "江南古典园林与近代历史见证",
+      "summary": "始建于明嘉靖年间的私家园林，历经战火与公所瓜分，现为国家重点文物保护单位，集山水建筑与红色历史于一体。",
+      "tags": [
+        "全国重点文保",
+        "江南园林",
+        "小刀会遗址",
+        "明代假山"
+      ],
+      "total": 5,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1797139,
+      "audioCount": 5,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T04:41:04.326Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-san-sui-tang.jpg",
+        "02-da-jia-shan.jpg",
+        "03-dian-chun-tang.jpg",
+        "04-he-jing-lou.jpg",
+        "05-yu-ling-long.jpg",
+        "body/01-san-sui-tang.md",
+        "body/02-da-jia-shan.md",
+        "body/03-dian-chun-tang.md",
+        "body/04-he-jing-lou.md",
+        "body/05-yu-ling-long.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "17de24ffda957e28a62fa5f6dad4abb867950891808252b02432b4d80f5ed994",
+          "size": 3146
+        },
+        "cover.jpg": {
+          "sha256": "7a46d5f280a1b52d049a64f8c3d9425c33416ef4f1f5e006a2284de8fea56118",
+          "size": 182037
+        },
+        "01-san-sui-tang.jpg": {
+          "sha256": "65ee3121c54dfdce16cd95370296740a0bacfe5c08e94bfe7567ffee01233c60",
+          "size": 235413
+        },
+        "02-da-jia-shan.jpg": {
+          "sha256": "f1e844c17a345513c6da480b66730a88e460d5d6d70ab52d88b3e2cca7f5fe7d",
+          "size": 365324
+        },
+        "03-dian-chun-tang.jpg": {
+          "sha256": "68ae572a2d43003ebb68be29652449da28c992b77fbffe6def1fbc5be2eb8c38",
+          "size": 388414
+        },
+        "04-he-jing-lou.jpg": {
+          "sha256": "07bf079882ea877dc675ee1c7c7b6aef68dc2427a73c74b5e45c8f99b1edafa4",
+          "size": 232680
+        },
+        "05-yu-ling-long.jpg": {
+          "sha256": "8c6bf8c10f90c06c9c1270b9266eed77aa53b67fc93ffba67657bbd98d1ee3d2",
+          "size": 388244
+        },
+        "body/01-san-sui-tang.md": {
+          "sha256": "71cb5b6d1900335d8bf5453f39695e0c62de00356cb1629b7628db08eb3b07df",
           "size": 390
+        },
+        "body/02-da-jia-shan.md": {
+          "sha256": "2c76384e3533019b044ac95c78924c8469eeabd2466cd3dcdad17755eff0365a",
+          "size": 372
+        },
+        "body/03-dian-chun-tang.md": {
+          "sha256": "3f6631e007c9c0042f0e7c9d091653380fc2de62e248d6b24c17552d12bb0ba8",
+          "size": 417
+        },
+        "body/04-he-jing-lou.md": {
+          "sha256": "92d24fd91c5ad3767215309f3b8da3bdc57194776d80a1113c4f3d04398d0c73",
+          "size": 330
+        },
+        "body/05-yu-ling-long.md": {
+          "sha256": "851ad10f17e1d4aa3cbcdb3cf3c0850e17527b0e791a899382570019930c1ccb",
+          "size": 372
         }
       }
     }

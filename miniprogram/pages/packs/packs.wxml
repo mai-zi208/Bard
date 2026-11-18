@@ -142,4 +142,6 @@
   </view>
 
   <view class="note">内容持续增加中</view>
+
+  <tab-bar active="packs" />
 </view>

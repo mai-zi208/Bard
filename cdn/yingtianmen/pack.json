@@ -1,23 +1,23 @@
 {
   "id": "yingtianmen",
   "schemaVersion": 2,
-  "version": 2,
+  "version": 1,
   "defaultLocale": "zh-CN",
   "locales": [
     "zh-CN"
   ],
-  "title": "应天门遗址博物馆",
-  "subtitle": "隋唐洛阳城宫城正门，天下第一门",
+  "title": "应天门遗址",
+  "subtitle": "隋唐洛阳城宫城正南门，天下第一门",
   "cover": "cover.jpg",
-  "refreshedAt": "2026-11-17T15:29:31.758Z",
-  "summary": "隋唐洛阳城紫微城正南门，始建于605年，是武则天登基及万国来朝之地，被誉为“隋唐第一门”。",
+  "refreshedAt": "2026-11-18T02:30:24.690Z",
+  "summary": "隋唐洛阳城标志性建筑，存世530余年。2019年遗址博物馆开放，以数字化技术再现盛唐气象。",
   "author": "行迹",
   "generated": true,
   "tags": [
-    "皇家宫阙",
-    "历史遗址",
-    "建筑奇迹",
-    "AAAA景区"
+    "隋唐遗迹",
+    "皇家建筑",
+    "中轴线",
+    "夜景灯光"
   ],
   "theme": {
     "bg": "#16130F",
@@ -26,78 +26,78 @@
   },
   "scenes": [
     {
-      "id": "wei-zhi-lai-li",
-      "title": "宫城正南",
-      "subtitle": "紫微城之门，对应天上天门",
-      "image": "01-wei-zhi-lai-li.jpg",
-      "imageAlt": "隋唐洛阳城应天门遗址博物馆主体建筑群正面全景",
+      "id": "zhongzhou-nanzhan",
+      "title": "中轴起点",
+      "subtitle": "定鼎南路穿址而过",
+      "image": "01-zhongzhou-nanzhan.jpg",
+      "imageAlt": "应天门遗址全景，定鼎南路从遗址中部穿过的画面",
       "transition": "zoom-out",
       "holdMs": 9000,
-      "body": "body/01-wei-zhi-lai-li.md",
+      "body": "body/01-zhongzhou-nanzhan.md",
       "audio": {
-        "durSec": 34,
-        "bytes": 270882,
-        "sha256": "c1b3cfbb73cb9d163c0b4d10f37064b9783f5340a6a267b0916e72ea20fae761"
+        "durSec": 23,
+        "bytes": 186036,
+        "sha256": "25be9af10bc696fa35a88b677ae3d387f252dfce6a4ea5e3464b000e801c532d"
       }
     },
     {
-      "id": "san-chu-que",
-      "title": "双向三出阙",
-      "subtitle": "古代城门最高等级礼制",
-      "image": "02-san-chu-que.jpg",
-      "imageAlt": "应天门遗址博物馆前的双向三出阙楼群全景",
+      "id": "que-tai-jizhi",
+      "title": "阙楼台基",
+      "subtitle": "现存四米夯土遗迹",
+      "image": "02-que-tai-jizhi.jpg",
+      "imageAlt": "应天门遗址东西两阙夯土台基实景，土层纹理清晰可见",
       "transition": "rise",
       "holdMs": 9000,
-      "body": "body/02-san-chu-que.md",
+      "body": "body/02-que-tai-jizhi.md",
       "audio": {
-        "durSec": 29,
-        "bytes": 235773,
-        "sha256": "d9553f4064e430245dfd8001b9f710319218492afe91cfcc60d8f706c2e4237f"
+        "durSec": 26,
+        "bytes": 206934,
+        "sha256": "53e72fb79702769d3b33a5a8be18b66afafda3960d5520ff98d47c7dc57b889b"
       }
     },
     {
-      "id": "wu-feng-lou",
-      "title": "五凤楼形",
-      "subtitle": "崇楼五座，宛如凤凰展翅",
-      "image": "03-wu-feng-lou.jpg",
-      "imageAlt": "应天门遗址博物馆外观，五座崇楼与连接廊庑构成的凹字形建筑群全景",
+      "id": "wa-dang-goujian",
+      "title": "皇家构件",
+      "subtitle": "出土莲花纹瓦当",
+      "image": "03-wa-dang-goujian.jpg",
+      "imageAlt": "应天门遗址博物馆内展示的唐代莲花纹瓦当与宋代兽面瓦当特写",
       "transition": "slide",
       "holdMs": 9000,
-      "body": "body/03-wu-feng-lou.md",
+      "body": "body/03-wa-dang-goujian.md",
       "audio": {
-        "durSec": 35,
-        "bytes": 282167,
-        "sha256": "1703d34ac347d4934bb84960f39e97c839179014e1f16bfdf804602cf16b5fe4"
+        "durSec": 24,
+        "bytes": 195440,
+        "sha256": "bf8c25f5aa8b010ca920bf28162203f0615d6a273f0bb88185e7550b74d8a40b"
       }
     },
     {
-      "id": "ri-ben-bei",
-      "title": "遣唐使碑",
-      "subtitle": "中日交流的历史见证",
-      "image": "04-ri-ben-bei.jpg",
-      "imageAlt": "应天门遗址东侧的日本遣隋使遣唐使访都之地纪念碑亭全景",
+      "id": "gang-jie-cheng-tai",
+      "title": "钢构承台",
+      "subtitle": "郭黛南教授设计",
+      "image": "04-gang-jie-cheng-tai.jpg",
+      "imageAlt": "应天门遗址内部，巨大的异型钢结构承台支撑着上方建筑，下方可见考古夯土层",
       "transition": "fade",
       "holdMs": 9000,
-      "body": "body/04-ri-ben-bei.md",
+      "body": "body/04-gang-jie-cheng-tai.md",
       "audio": {
-        "durSec": 30,
-        "bytes": 239326,
-        "sha256": "2e6054c364ed0371a5dec0fca9df1f04d43a8d601f43a0a64a25a46b0a8ead9c"
+        "durSec": 33,
+        "bytes": 264613,
+        "sha256": "288f8aae737d6088d8e2ab615e8aba0e368f6f3d83fae4ac8e0bf9ba63cad9f3"
       }
     },
     {
-      "id": "ze-tian-deng-ji",
-      "title": "武后登基",
-      "subtitle": "改唐为周，开创女帝时代",
-      "image": "05-ze-tian-deng-ji.jpg",
-      "imageAlt": "应天门遗址博物馆主体建筑外观，展现城楼与阙楼结构",
+      "id": "fu-yuan-men-lou",
+      "title": "复原门楼",
+      "subtitle": "五十三米重现盛唐",
+      "image": "05-fu-yuan-men-lou.jpg",
+      "imageAlt": "洛阳应天门遗址公园内复原的应天门全景，红墙黄瓦气势恢宏",
       "transition": "zoom-out",
       "holdMs": 9000,
-      "body": "body/05-ze-tian-deng-ji.md",
+      "body": "body/05-fu-yuan-men-lou.md",
       "audio": {
         "durSec": 28,
-        "bytes": 226160,
-        "sha256": "a181ccca30861c714c13cf8af7805f9aaf352f63bee106fece676995091f9e09"
+        "bytes": 226369,
+        "sha256": "e283229426fc14eeeb9bc2a92664c5b492e5781f5860c397e85577cc0009eba3"
       }
     }
   ]
