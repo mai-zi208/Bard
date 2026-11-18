@@ -1,0 +1,104 @@
+{
+  "id": "nanjing-fuzimiao",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "南京夫子庙",
+  "subtitle": "秦淮河畔的文教圣地与科举中心",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T08:08:08.384Z",
+  "summary": "始建于东晋，由孔庙、学宫、贡院组成。这里曾是古代最高学府与科举考场，见证千年文脉。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "国家5A景区",
+    "中国四大文庙",
+    "江南贡院",
+    "秦淮风光"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "panchi-zhaobi",
+      "title": "泮池照壁",
+      "subtitle": "天然河道作池的独有形制",
+      "image": "01-panchi-zhaobi.jpg",
+      "imageAlt": "南京夫子庙秦淮河南岸明代大照壁与北岸泮池石栏全景",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-panchi-zhaobi.md",
+      "audio": {
+        "durSec": 33,
+        "bytes": 268165,
+        "sha256": "aa1d58f6c458bdbe8247c888b1df75a822ad1318dbe542779024b21ebf8341d4"
+      }
+    },
+    {
+      "id": "lingxing-men",
+      "title": "棂星门",
+      "subtitle": "帝王朝圣祀孔的专用通道",
+      "image": "02-lingxing-men.jpg",
+      "imageAlt": "南京夫子庙棂星门石牌坊，六柱三门结构清晰可见",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-lingxing-men.md",
+      "audio": {
+        "durSec": 32,
+        "bytes": 259388,
+        "sha256": "923646ce3d73a7588adee7c42d9608a2f2363253cf278dde9aa2ef89dbdefaed"
+      }
+    },
+    {
+      "id": "dacheng-dian",
+      "title": "大成殿",
+      "subtitle": "祭祀至圣先师的核心主殿",
+      "image": "03-dacheng-dian.jpg",
+      "imageAlt": "南京夫子庙大成殿全景，重檐歇山顶，殿前露台开阔",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-dacheng-dian.md",
+      "audio": {
+        "durSec": 29,
+        "bytes": 232639,
+        "sha256": "8ad0740cecc8fcf028f2ff20b758e4ba1ec776cdd9710267714b80f7455e7bfe"
+      }
+    },
+    {
+      "id": "mingde-tang",
+      "title": "明德堂",
+      "subtitle": "学宫主体与士子听讲之所",
+      "image": "04-mingde-tang.jpg",
+      "imageAlt": "南京夫子庙明德堂正面全景，红柱青瓦的古建筑矗立在广场中央",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-mingde-tang.md",
+      "audio": {
+        "durSec": 35,
+        "bytes": 279032,
+        "sha256": "85ce07425c978a8e55be7da71855bea1abb38eaaab994821e142b8ad472be7aa"
+      }
+    },
+    {
+      "id": "jiangnan-gongyuan",
+      "title": "江南贡院",
+      "subtitle": "中国古代最大的科举考场",
+      "image": "05-jiangnan-gongyuan.jpg",
+      "imageAlt": "南京夫子庙江南贡院明远楼及周边复建号舍群全景",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-jiangnan-gongyuan.md",
+      "audio": {
+        "durSec": 30,
+        "bytes": 244133,
+        "sha256": "aa279b0b90402e5feb04fdb70699b2f7cade11725cdb701cbdff79544df5d43d"
+      }
+    }
+  ]
+}

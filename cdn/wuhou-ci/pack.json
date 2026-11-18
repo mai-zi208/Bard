@@ -1,0 +1,119 @@
+{
+  "id": "wuhou-ci",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "成都武侯祠",
+  "subtitle": "君臣合祀的蜀汉英雄纪念地",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T08:12:20.160Z",
+  "summary": "位于成都武侯区，由汉昭烈庙、武侯祠、惠陵等组成，是第一批全国重点文物保护单位。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "三国文化",
+    "全国重点文物",
+    "君臣合祀",
+    "成都名胜"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "da-men-bi-ting",
+      "title": "大门碑亭",
+      "subtitle": "明碑静立诉说历史",
+      "image": "01-da-men-bi-ting.jpg",
+      "imageAlt": "武侯祠大门碑亭内，明代石碑矗立于赑屃座上的特写画面",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-da-men-bi-ting.md",
+      "audio": {
+        "durSec": 29,
+        "bytes": 230549,
+        "sha256": "da24f71b024c03ef7622d8ee1e982e4b31cbbb9c2925d009cb17992239dfda1c"
+      }
+    },
+    {
+      "id": "han-zhao-lie-miao",
+      "title": "汉昭烈庙",
+      "subtitle": "朱红大门庄严宏伟",
+      "image": "02-han-zhao-lie-miao.jpg",
+      "imageAlt": "成都武侯祠汉昭烈庙朱红大门与门前明代石狮全景",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-han-zhao-lie-miao.md",
+      "audio": {
+        "durSec": 37,
+        "bytes": 298258,
+        "sha256": "776bf83d860f621806a7eaac055f794aca0e97c66e0d48ed013dd9c6cf80fc92"
+      }
+    },
+    {
+      "id": "wen-wu-lang",
+      "title": "文武两廊",
+      "subtitle": "二十八尊塑像列队",
+      "image": "03-wen-wu-lang.jpg",
+      "imageAlt": "武侯祠文武两廊内排列整齐的清代风格文臣武将彩绘塑像",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-wen-wu-lang.md",
+      "audio": {
+        "durSec": 30,
+        "bytes": 242252,
+        "sha256": "ae5d86d4a181dbeaea714c742caf76e7a49459034359e497177f1a90f6e8efcf"
+      }
+    },
+    {
+      "id": "liu-bei-dian",
+      "title": "刘备殿",
+      "subtitle": "金身坐像尽显君威",
+      "image": "04-liu-bei-dian.jpg",
+      "imageAlt": "成都武侯祠刘备殿内景，正中为刘备贴金坐像，两侧有侍者及偏殿塑像",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-liu-bei-dian.md",
+      "audio": {
+        "durSec": 32,
+        "bytes": 254791,
+        "sha256": "5fc4a14e9d57f87c0c72867d6cbaef2fbd1da1b056f99a96acfed2fa98adaf70"
+      }
+    },
+    {
+      "id": "zhu-ge-liang-dian",
+      "title": "诸葛亮殿",
+      "subtitle": "攻心联语深思治蜀",
+      "image": "05-zhu-ge-liang-dian.jpg",
+      "imageAlt": "成都武侯祠诸葛亮殿内部，正中神龛内的诸葛亮儒雅塑像及殿前悬挂的对联",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-zhu-ge-liang-dian.md",
+      "audio": {
+        "durSec": 30,
+        "bytes": 243506,
+        "sha256": "740992aa693c02937920a47b659371616dd65a0f04876afb5e4bf22393524915"
+      }
+    },
+    {
+      "id": "hui-ling",
+      "title": "惠陵",
+      "subtitle": "红墙夹道环绕墓冢",
+      "image": "06-hui-ling.jpg",
+      "imageAlt": "惠陵红墙夹道与灰色砖墙环绕的墓冢全景",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/06-hui-ling.md",
+      "audio": {
+        "durSec": 31,
+        "bytes": 245805,
+        "sha256": "83eb7c0f395ae4c60448ab309a3b92c828e2700b0e76b265108ec3f113d6db81"
+      }
+    }
+  ]
+}

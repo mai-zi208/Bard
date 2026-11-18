@@ -1,0 +1,119 @@
+{
+  "id": "zhongshanling",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "南京中山陵",
+  "subtitle": "紫金山南麓的民国礼制建筑群",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T08:05:55.180Z",
+  "summary": "孙中山先生陵寝，由建筑师吕彦直设计，融合中西风格，呈警钟形平面，象征唤醒民众。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "全国重点文物保护单位",
+    "孙中山陵寝",
+    "民国建筑",
+    "南京地标"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "bo-ai-fang",
+      "title": "博爱坊",
+      "subtitle": "陵前广场的石牌坊",
+      "image": "01-bo-ai-fang.jpg",
+      "imageAlt": "中山陵陵前广场顶端的三阙门花岗岩博爱坊全景",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-bo-ai-fang.md",
+      "audio": {
+        "durSec": 37,
+        "bytes": 296378,
+        "sha256": "fa77f4f4914af3fa1b3d73c866a8a1dd4c0d63f86d0550201f7d30887b4822cb"
+      }
+    },
+    {
+      "id": "mu-dao",
+      "title": "陵墓道",
+      "subtitle": "松柏夹道的缓坡长路",
+      "image": "02-mu-dao.jpg",
+      "imageAlt": "中山陵墓道，松柏夹道的缓坡长路",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-mu-dao.md",
+      "audio": {
+        "durSec": 26,
+        "bytes": 205053,
+        "sha256": "f1bb513bbb2b7f2f29d1f77db117e0e66ff84b40cbc0712c69d140f6bec9843b"
+      }
+    },
+    {
+      "id": "ling-men",
+      "title": "陵门",
+      "subtitle": "蓝瓦覆盖的三拱石门",
+      "image": "03-ling-men.jpg",
+      "imageAlt": "中山陵陵门，三拱石门与宝蓝色琉璃瓦顶，门额可见天下为公四字",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-ling-men.md",
+      "audio": {
+        "durSec": 30,
+        "bytes": 243715,
+        "sha256": "b55357e45bb59cf008b6be2a8b436d00e415ab418400f738c55b26f9714ecf72"
+      }
+    },
+    {
+      "id": "bei-ting",
+      "title": "碑亭",
+      "subtitle": "重檐歇山顶的石碑亭",
+      "image": "04-bei-ting.jpg",
+      "imageAlt": "中山陵碑亭内部，中央竖立着高大的福建花岗岩石碑",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-bei-ting.md",
+      "audio": {
+        "durSec": 32,
+        "bytes": 258343,
+        "sha256": "9d8bb59a04bf32205caa71c802654e84f8d1ca795e0b5f56a0e9c4379441cc1a"
+      }
+    },
+    {
+      "id": "ji-tang",
+      "title": "祭堂",
+      "subtitle": "中西合璧的主体宫殿",
+      "image": "05-ji-tang.jpg",
+      "imageAlt": "中山陵祭堂内部全景，正中为孙中山石刻坐像，四周护壁可见阴刻文字",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-ji-tang.md",
+      "audio": {
+        "durSec": 35,
+        "bytes": 281540,
+        "sha256": "027409c4e4b5ccc5c01e391e9efbac3ac00c704b7a5c52ae1d6ffd29d54f4667"
+      }
+    },
+    {
+      "id": "mu-shi",
+      "title": "墓室",
+      "subtitle": "半球形封闭式安息地",
+      "image": "06-mu-shi.jpg",
+      "imageAlt": "中山陵墓室内部，中央大理石圆圹及上方的孙中山汉白玉卧像",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/06-mu-shi.md",
+      "audio": {
+        "durSec": 30,
+        "bytes": 241834,
+        "sha256": "d6434020ffbd674872b9f983a940dbb1a95ea1415eab9a9d9a8950e02ec6a321"
+      }
+    }
+  ]
+}

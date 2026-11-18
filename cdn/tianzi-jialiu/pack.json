@@ -1,0 +1,119 @@
+{
+  "id": "tianzi-jialiu",
+  "schemaVersion": 2,
+  "version": 3,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "天子驾六博物馆",
+  "subtitle": "东周王城遗址下的车马遗珍",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T07:47:28.748Z",
+  "summary": "依托2002年重大考古发现，原址展示东周时期大型车马坑，印证“天子驾六”礼制。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "遗址博物馆",
+    "东周文明",
+    "车马坑",
+    "洛阳"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "zhou-wangcheng-guangchang",
+      "title": "周王城广场",
+      "subtitle": "现代都市中的历史坐标",
+      "image": "01-zhou-wangcheng-guangchang.jpg",
+      "imageAlt": "周王城广场全景，现代都市景观与下沉式博物馆入口",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-zhou-wangcheng-guangchang.md",
+      "audio": {
+        "durSec": 33,
+        "bytes": 267956,
+        "sha256": "296f4bb14a1d7b31d6e9751a21e4f1a05289bc6115ab2a5a3121751b52c5d37f"
+      }
+    },
+    {
+      "id": "bowuguan-rukou",
+      "title": "馆舍外观",
+      "subtitle": "下沉式遗址保护建筑",
+      "image": "02-bowuguan-rukou.jpg",
+      "imageAlt": "洛阳周王城天子驾六博物馆下沉式建筑外观，位于周王城广场旁",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-bowuguan-rukou.md",
+      "audio": {
+        "durSec": 26,
+        "bytes": 211532,
+        "sha256": "b9363715f56f9a47a5df00c5109fc1af9939d775870d3bfcc76a5183d70c68da"
+      }
+    },
+    {
+      "id": "wangcheng-xunzong",
+      "title": "王城寻踪",
+      "subtitle": "图解东周都城格局",
+      "image": "03-wangcheng-xunzong.jpg",
+      "imageAlt": "展厅墙面上的洛阳五大都城位置关系图版，展示古今都城地理方位",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-wangcheng-xunzong.md",
+      "audio": {
+        "durSec": 33,
+        "bytes": 267538,
+        "sha256": "337ad63d28a23784af12ee4f8ef866fbc71e7ae780a9b41320e7abe19ec53bc3"
+      }
+    },
+    {
+      "id": "wangling-tanmi",
+      "title": "王陵探秘",
+      "subtitle": "揭开地下墓葬面纱",
+      "image": "04-wangling-tanmi.jpg",
+      "imageAlt": "博物馆展厅内陈列的青铜鼎与编钟特写",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-wangling-tanmi.md",
+      "audio": {
+        "durSec": 26,
+        "bytes": 210487,
+        "sha256": "b715a14c4aedfdfbfbd3308a1dbdbf4664907a1bd60ecb12d091603283b2eb69"
+      }
+    },
+    {
+      "id": "chemakeng-yizhi",
+      "title": "车马坑遗址",
+      "subtitle": "原状陈列的出行阵列",
+      "image": "05-chemakeng-yizhi.jpg",
+      "imageAlt": "天子驾六博物馆内原址保护的车马坑遗址，车马骨骼呈纵向排列",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-chemakeng-yizhi.md",
+      "audio": {
+        "durSec": 29,
+        "bytes": 233684,
+        "sha256": "9b68658f90525ac27559d6bd26fe43808612077e014218250d6c3567143c51ba"
+      }
+    },
+    {
+      "id": "tianzi-jialiu-shiche",
+      "title": "天子驾六",
+      "subtitle": "印证古文献的实物铁证",
+      "image": "06-tianzi-jialiu-shiche.jpg",
+      "imageAlt": "洛阳周王城天子驾六博物馆内，一辆马车旁对称摆放着六匹马骨的遗址现场",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/06-tianzi-jialiu-shiche.md",
+      "audio": {
+        "durSec": 32,
+        "bytes": 256253,
+        "sha256": "f51149678980d0a679a936fbcb724631f39174dd8ea1ba5353da76a264542b37"
+      }
+    }
+  ]
+}

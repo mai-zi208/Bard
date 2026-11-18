@@ -1,0 +1,104 @@
+{
+  "id": "huaqinggong",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "唐华清宫遗址",
+  "subtitle": "骊山脚下的唐代皇家离宫",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T08:00:19.995Z",
+  "summary": "唐代帝王游幸别宫，背山面渭，规模宏大。历经千年变迁，从鼎盛到萧疏，现为全国重点文物保护单位。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "唐代遗址",
+    "皇家园林",
+    "温泉文化",
+    "历史古迹"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "wei-zhi-li-shi",
+      "title": "宫阙初探",
+      "subtitle": "背山面渭的皇家形制",
+      "image": "01-wei-zhi-li-shi.jpg",
+      "imageAlt": "华清宫遗址全景，骊山背景下的宫殿建筑群遗迹与渭水远景",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-wei-zhi-li-shi.md",
+      "audio": {
+        "durSec": 30,
+        "bytes": 240371,
+        "sha256": "a83134ac17d6fc96d3f634738703f4b6049e628022a8c12cc48a11bcbd71041a"
+      }
+    },
+    {
+      "id": "li-yuan-yi-zhi",
+      "title": "梨园遗韵",
+      "subtitle": "皇帝弟子的教习之地",
+      "image": "02-li-yuan-yi-zhi.jpg",
+      "imageAlt": "华清宫梨园遗址全景，绿树掩映下的仿唐建筑院落",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-li-yuan-yi-zhi.md",
+      "audio": {
+        "durSec": 26,
+        "bytes": 208397,
+        "sha256": "acf0f6bc4194b8c50062d7abb9030ed6e76dfd01a6f88ceb45758083122c3675"
+      }
+    },
+    {
+      "id": "fei-shuang-dian",
+      "title": "飞霜寝殿",
+      "subtitle": "帝后居住的主体建筑",
+      "image": "03-fei-shuang-dian.jpg",
+      "imageAlt": "华清宫飞霜殿全景，红柱绿瓦的宫殿建筑群矗立在骊山脚下",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-fei-shuang-dian.md",
+      "audio": {
+        "durSec": 32,
+        "bytes": 259179,
+        "sha256": "8682bc9692f7453f022f4fbcda4331442c06d80096f35753b17c8d8ea5acca53"
+      }
+    },
+    {
+      "id": "hai-tang-tang",
+      "title": "海棠汤迹",
+      "subtitle": "杨贵妃专用的浴池",
+      "image": "04-hai-tang-tang.jpg",
+      "imageAlt": "华清宫海棠汤遗址，石砌浴池呈海棠花形状，池中有莲花状喷水口",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-hai-tang-tang.md",
+      "audio": {
+        "durSec": 33,
+        "bytes": 266285,
+        "sha256": "21a68aee627d535de3bb59a95102f3039ea9ee0af466b5359911d203f6546a91"
+      }
+    },
+    {
+      "id": "chao-yuan-ge",
+      "title": "朝元高阁",
+      "subtitle": "骊山顶峰的祭祀之所",
+      "image": "05-chao-yuan-ge.jpg",
+      "imageAlt": "骊山第三峰顶的朝元阁遗址与周边山势",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-chao-yuan-ge.md",
+      "audio": {
+        "durSec": 25,
+        "bytes": 201919,
+        "sha256": "1f3cc97b05453ed9bd50da8bf1037e4a252857d8434de9e82f42ccaa35564b73"
+      }
+    }
+  ]
+}

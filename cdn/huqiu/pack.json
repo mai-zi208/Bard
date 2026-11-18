@@ -1,0 +1,104 @@
+{
+  "id": "huqiu",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "苏州虎丘",
+  "subtitle": "吴中第一名胜与千年斜塔",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T08:11:12.095Z",
+  "summary": "探访海涌山历史，见证剑池神秘传说，仰望云岩寺塔雄姿，感受生公说法典故。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "世界遗产",
+    "5A景区",
+    "人文古迹",
+    "苏州园林"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "tou-shan-men",
+      "title": "头山门",
+      "subtitle": "海涌流辉印证沧海桑田",
+      "image": "01-tou-shan-men.jpg",
+      "imageAlt": "虎丘头山门黄色照墙及海涌流辉题字全景",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-tou-shan-men.md",
+      "audio": {
+        "durSec": 31,
+        "bytes": 245178,
+        "sha256": "28d2f44ef36f3fab5b3d2b70eb0481b3c3f704d8bfbdf033f0d850a280fc0bf3"
+      }
+    },
+    {
+      "id": "duan-liang-dian",
+      "title": "断梁殿",
+      "subtitle": "元代木构巧用杠杆原理",
+      "image": "02-duan-liang-dian.jpg",
+      "imageAlt": "虎丘断梁殿外观，展示独特的拼接主梁与古朴的木质结构",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-duan-liang-dian.md",
+      "audio": {
+        "durSec": 33,
+        "bytes": 263150,
+        "sha256": "f46e4f16d8df1f18259700ef4dd8fa8620a9ab6186559c0c99bf109fa1304f11"
+      }
+    },
+    {
+      "id": "jian-chi",
+      "title": "剑池",
+      "subtitle": "吴王阖闾墓的神秘入口",
+      "image": "03-jian-chi.jpg",
+      "imageAlt": "虎丘剑池全景，幽深潭水与陡峭岩壁，圆洞门石刻清晰可见",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-jian-chi.md",
+      "audio": {
+        "durSec": 35,
+        "bytes": 282167,
+        "sha256": "d168c3813e4c2147979f5ca72e098e78d326fc8024dd264289db91f43cc51bf5"
+      }
+    },
+    {
+      "id": "qian-ren-shi",
+      "title": "千人石",
+      "subtitle": "生公说法顽石亦点头",
+      "image": "04-qian-ren-shi.jpg",
+      "imageAlt": "虎丘千人石全景，红色岩石平坦开阔",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-qian-ren-shi.md",
+      "audio": {
+        "durSec": 29,
+        "bytes": 230758,
+        "sha256": "21d9d9d3f622bae333eebeb6cb4dbacabe0de3690284b8ae2c7bfd9a37df36cd"
+      }
+    },
+    {
+      "id": "hu-qiu-ta",
+      "title": "虎丘塔",
+      "subtitle": "江南最早砖塔倾斜千年",
+      "image": "05-hu-qiu-ta.jpg",
+      "imageAlt": "虎丘山巅的云岩寺塔全景，塔身略微倾斜，背景是蓝天",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-hu-qiu-ta.md",
+      "audio": {
+        "durSec": 28,
+        "bytes": 227832,
+        "sha256": "dd53db52365f84a3fbce6dc523656baa72cea7c0bc49269af182cdc5b81b1579"
+      }
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "id": "yonghegong",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "雍和宫",
+  "subtitle": "从王府到皇家寺院的传奇变迁",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T07:54:56.044Z",
+  "summary": "位于北京东北角，原为雍亲王府，后改为喇嘛庙。融汉满蒙藏建筑艺术，供奉巨大白檀木弥勒佛，是清代规格最高的佛教寺院。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "皇家寺院",
+    "藏传佛教",
+    "历史建筑",
+    "木雕艺术"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "pai-fang-yuan",
+      "title": "牌楼院",
+      "subtitle": "黄绿琉璃影壁映衬三座牌坊",
+      "image": "01-pai-fang-yuan.jpg",
+      "imageAlt": "雍和宫牌楼院，三座木牌坊与黄绿琉璃影壁并列",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-pai-fang-yuan.md",
+      "audio": {
+        "durSec": 34,
+        "bytes": 274644,
+        "sha256": "1a7d8828b341885225ea55ed804402ec4fc3d9830f63f18379782d7bc0f4d450"
+      }
+    },
+    {
+      "id": "tian-wang-dian",
+      "title": "天王殿",
+      "subtitle": "昔日王府宫门今供弥勒天王",
+      "image": "02-tian-wang-dian.jpg",
+      "imageAlt": "雍和宫天王殿内部，正中弥勒菩萨与两侧四大天王塑像",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-tian-wang-dian.md",
+      "audio": {
+        "durSec": 30,
+        "bytes": 239326,
+        "sha256": "f1e000025ce5db754edaf1cfd2d15f213ac48049c6953531af6bc07fd16e420f"
+      }
+    },
+    {
+      "id": "yong-he-gong-dian",
+      "title": "雍和宫殿",
+      "subtitle": "银安殿变身大雄宝殿供三世佛",
+      "image": "03-yong-he-gong-dian.jpg",
+      "imageAlt": "雍和宫雍和宫殿正立面，黄琉璃瓦红墙，殿前有月台与琉璃花墙",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-yong-he-gong-dian.md",
+      "audio": {
+        "durSec": 37,
+        "bytes": 296378,
+        "sha256": "1ef314cdb8f7956e0e80bb359dc001f8acbdce72fad1198178bf82e9fb37e340"
+      }
+    },
+    {
+      "id": "fa-lun-dian",
+      "title": "法轮殿",
+      "subtitle": "十字平面殿顶矗立五座宝塔",
+      "image": "04-fa-lun-dian.jpg",
+      "imageAlt": "雍和宫法轮殿外观，殿顶五座藏式宝塔清晰可见",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-fa-lun-dian.md",
+      "audio": {
+        "durSec": 33,
+        "bytes": 262732,
+        "sha256": "b9cd4670a4eddd6902e7d98bcb2e10cf52da4b7a90ec420b52accd36e49cfebe"
+      }
+    },
+    {
+      "id": "wan-fu-ge",
+      "title": "万福阁",
+      "subtitle": "巍峨高阁供奉整棵白檀巨佛",
+      "image": "05-wan-fu-ge.jpg",
+      "imageAlt": "雍和宫万福阁及阁内迈达拉佛站像全景",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-wan-fu-ge.md",
+      "audio": {
+        "durSec": 29,
+        "bytes": 233893,
+        "sha256": "07b381fa8c2c8e84736290d1e468cf7421050e968127d1e509fd4fbfe68037cb"
+      }
+    }
+  ]
+}

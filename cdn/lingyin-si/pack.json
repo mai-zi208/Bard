@@ -1,0 +1,119 @@
+{
+  "id": "lingyin-si",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "杭州灵隐寺",
+  "subtitle": "东南佛国，千年禅宗古刹",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T08:04:11.085Z",
+  "summary": "位于西湖区的佛教名刹，始建于东晋，背靠北高峰面朝飞来峰，中轴线上殿宇庄严，现存清代重建格局。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "佛教圣地",
+    "全国重点文保",
+    "杭州十景",
+    "禅宗古刹"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "fei-lai-feng",
+      "title": "飞来峰",
+      "subtitle": "仙灵所隐之地",
+      "image": "01-fei-lai-feng.jpg",
+      "imageAlt": "杭州灵隐寺飞来峰全景，岩壁上布满石刻佛像",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-fei-lai-feng.md",
+      "audio": {
+        "durSec": 29,
+        "bytes": 232639,
+        "sha256": "4fde9d55f1a718f62954731fc49bf4119ea8257628a7a24296a9fd239929f0ea"
+      }
+    },
+    {
+      "id": "tian-wang-dian",
+      "title": "天王殿",
+      "subtitle": "康熙御笔云林",
+      "image": "02-tian-wang-dian.jpg",
+      "imageAlt": "灵隐寺天王殿内部，可见康熙御笔匾额及南宋香樟木韦驮像",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-tian-wang-dian.md",
+      "audio": {
+        "durSec": 37,
+        "bytes": 297840,
+        "sha256": "8b28fa11a20972d21d523771d775262481242469f45076e5e21e5790e7c72098"
+      }
+    },
+    {
+      "id": "shi-ta-jing-chuang",
+      "title": "石塔经幢",
+      "subtitle": "吴越岁月见证",
+      "image": "03-shi-ta-jing-chuang.jpg",
+      "imageAlt": "灵隐寺天王殿前两座八角九层石塔与宋代经幢并立",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-shi-ta-jing-chuang.md",
+      "audio": {
+        "durSec": 28,
+        "bytes": 227623,
+        "sha256": "963230a0990a91055971ba7fee92514fbcff343dae2d96f3094ac873cf0c497f"
+      }
+    },
+    {
+      "id": "da-xiong-bao-dian",
+      "title": "大雄宝殿",
+      "subtitle": "樟木巨佛庄严",
+      "image": "04-da-xiong-bao-dian.jpg",
+      "imageAlt": "灵隐寺大雄宝殿内正中端坐的释迦牟尼樟木坐像",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-da-xiong-bao-dian.md",
+      "audio": {
+        "durSec": 32,
+        "bytes": 259806,
+        "sha256": "fd36f7bb7d888125ef422a5ec8f3a9be97065f469fd32c0701323261f70eaafb"
+      }
+    },
+    {
+      "id": "yao-shi-dian",
+      "title": "药师殿",
+      "subtitle": "东方三圣护佑",
+      "image": "05-yao-shi-dian.jpg",
+      "imageAlt": "灵隐寺药师殿内景，正中供奉药师佛及日光月光菩萨",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-yao-shi-dian.md",
+      "audio": {
+        "durSec": 28,
+        "bytes": 221145,
+        "sha256": "b21ff62f5cc201d2ec51f90e21f3b72b20f81249f0c813e40971d5cfac202320"
+      }
+    },
+    {
+      "id": "wu-bai-luo-han",
+      "title": "五百罗汉堂",
+      "subtitle": "青铜罗汉林立",
+      "image": "06-wu-bai-luo-han.jpg",
+      "imageAlt": "灵隐寺五百罗汉堂内景，中央为金黄色的灵隐铜殿，四周环绕青铜罗汉像",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/06-wu-bai-luo-han.md",
+      "audio": {
+        "durSec": 36,
+        "bytes": 285093,
+        "sha256": "132a4d639bf6394f833b5364aaad359889f201803193846426d6c916c8846a17"
+      }
+    }
+  ]
+}

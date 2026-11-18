@@ -65,12 +65,13 @@ function countChars(value: string): number {
   return value.replace(/\s/g, '').length;
 }
 
-/** 尺寸数据：只描述体量的「多少米」类写法 */
-const SIZE_RE = /(?:[0-9０-９]+(?:\.[0-9]+)?|[一二三四五六七八九十百千两零]+)(?:点[零一二三四五六七八九]+)?(?:平方米|厘米|毫米|米|吨|公斤)/;
+/** 尺寸数据：只描述体量的「多少米」类写法（含中文数字与「平米」简写） */
+const SIZE_RE = /(?:[0-9０-９]+(?:\.[0-9]+)?|[一二三四五六七八九十百千两零]+)(?:余|多|近)?(?:点[零一二三四五六七八九]+)?(?:平方米|平米|厘米|毫米|米|吨|公斤)/;
 /** 数量量词：同块出现两处以上视为清单式罗列 */
 const COUNT_RE = /(?:[0-9０-９]+(?:\.[0-9]+)?|[一二三四五六七八九十百千万两零]+)(?:余|多)?(?:尊|块|种|例|座|件|卷|幅|通|个|处|人)/g;
-/** 套语与营销词 */
-const CLICHE_RE = /巍峨|庄严|精美|震撼|叹为观止|美轮美奂|气势恢宏|雄伟壮观|世界文化遗产|规模最大|艺术宝库|必打卡|令人神往/;
+/** 套语与营销词（含「之最」类最高级表述） */
+const CLICHE_RE =
+  /巍峨|庄严|精美|震撼|叹为观止|美轮美奂|气势恢宏|雄伟壮观|世界文化遗产|规模最大|体量最大|世界之最|史上最大|世界第一|艺术宝库|必打卡|令人神往/;
 /** 「X，比 Y 还 Z」句式 */
 const SIMILE_RE = /比[^。，；]{1,8}还/g;
 
@@ -108,6 +109,14 @@ export function qualityIssues(result: ScriptResult): string[] {
 
 function text(value: unknown): string {
   return typeof value === 'string' ? value.trim() : '';
+}
+
+/** 整包文案字段钳制：模型偶发超 1–2 字时截到上限，优先在句读处断句，避免装配校验把整包打回 */
+function clampText(value: string, max: number): string {
+  if (value.length <= max) return value;
+  const cut = value.slice(0, max);
+  const lastPunct = cut.search(/[。，；、！？][^。，；、！？]*$/);
+  return lastPunct > 10 ? cut.slice(0, lastPunct + 1) : cut;
 }
 
 function slug(value: unknown, fallback: string): string {
@@ -154,7 +163,7 @@ ${material.text.slice(0, MATERIAL_LIMIT)}
 
 每幕字段要求：
 - title：2–4 字；
-- subtitle：4–8 字，不与 title 重复；
+- subtitle：4–8 字，不与 title 重复，不写尺寸数字，不用「最大/最高/之最」这类最高级表述；
 - pose：不超过 20 字，写讲述人站在这一处做的动作，动作要贴合本幕景物（如「登上城楼，扶垛远眺」「在殿上凭几听政」「沿御道缓步前行」），只写动作与姿态，不写景物描述；讲述人是现代导游时写「站在景前讲解，侧身指点」这类动作；
 - brief：1–2 句话，写这一幕能讲成故事的「人事」：谁在这里做了什么、为什么；不要写成数据摘要，最多带一个关键数字；
 - imageAlt：不超过 40 字，写这一幕配图里应当出现的画面主体（如「山门与门前石马」「大殿正立面与月台」），只写看得见的实体与环境，不写尺寸、不写文字与水印；
@@ -166,7 +175,7 @@ ${material.text.slice(0, MATERIAL_LIMIT)}
 - id：景物的通用拼音短名，如 guanlin；
 - title：不超过 20 字；
 - subtitle：不超过 30 字；
-- summary：不超过 60 字；
+- summary：不超过 60 字；title、subtitle、summary 一律不写尺寸数字，不用「世界最大/体量最大/世界之最」这类最高级营销语；
 - tags：2–5 个短标签。
 
 如果资料不足以支撑 5 幕，不要硬编，输出 {"error":"资料不足"}。
@@ -192,11 +201,12 @@ function personaLine(input: GenerationInput): string {
 
 /** 所有幕共用的写作规范：两个参照只学写法，不照搬内容 */
 function writingRules(): string {
-  return `- 正文固定 ${BLOCKS_PER_SCENE} 块（即「2 屏 × 2 块」），块与块之间空一行；单块 ${BLOCK_MIN}–${BLOCK_MAX} 字，按每块 38–42 字控制，同一屏两块合计 ${SCREEN_MIN}–${SCREEN_MAX} 字，全幕必须写满 ${SCENE_MIN}–${SCENE_MAX} 字（字数含标点）；字数不足就是不合格，把人事写具体，不要留白；
+  return `- 正文固定 ${BLOCKS_PER_SCENE} 块（即「2 屏 × 2 块」），块与块之间空一行；单块 ${BLOCK_MIN}–${BLOCK_MAX} 字，按每块 38–42 字控制，同一屏两块合计 ${SCREEN_MIN}–${SCREEN_MAX} 字，全幕必须写满 ${SCENE_MIN}–${SCENE_MAX} 字（字数含标点），按 4 块 × 40 字 ≈ 160 字来写；字数不足就是不合格，第 2、3 块的人事各多写一句，不要用套语凑字；
 - ${BLOCKS_PER_SCENE} 块按「站位与实物 → 来历或象征 → 一条人事 → 短点评或关键事实」推进，每块只讲一件事；第 2、3 块至少一块写「人事」（谁在这里做了什么、为什么）；
 - 第 1 块第一句就落到本幕看得见的东西：可以是独立地标（殿、塔、石坊、造像、碑），也可以是这一处的整体环境；不得从地理概况、「XX 是……」定义句或「规模最大」这类概括起笔；
 - 正文不点名冷僻的小构件（某座小台、某块匾、某个檐角）：这类细节用「眼前」「这一带」「台上」等泛称带过，把可指认的主体留给配图；
-- 不写尺寸（高、宽、进深、通高多少米）与数量清单（多少尊、多少块、多少种、多少例）；年代、门洞数、人数这类支撑叙事的数字可以写，同一件事的一组数字算一处，每块至多一处；能写「谁做了什么」就不要写「现存多少、高多少」；
+- 不写尺寸（高、宽、进深、通高多少米，含「近百米」「三百一十二米」「两千平米」这类中文数字写法）与数量清单（多少尊、多少块、多少种、多少例、多少个）；年代、门洞数、人数这类支撑叙事的数字可以写，同一件事的一组数字算一处，每块至多一处；能写「谁做了什么」就不要写「现存多少、高多少」；
+- 不写「世界之最」「规模最大」「体量最大」「史上最大」「世界第一」这类最高级营销语，即使资料里有也不引用；建筑的壮观交给「谁在这里做过什么」和参观者的反应去写，不交给数字与头衔；
 - 全包「X，比 Y 还 Z」这类比喻最多出现一次，且不得连续两幕用比喻收尾；
 - 客观约八成、主观约两成：主观最多一块；
 - 不写建筑形制术语（歇山、悬山、硬山、斗拱铺作）、不写历代重建年份；年代写成中文读法（「公元六十八年」「民国二十四年」）；
@@ -212,7 +222,8 @@ function writingRules(): string {
 “山门开三个门洞，象征佛教的「三解脱门」：空门、无相门、无愿门。跨过这道门，就是把执念放下。”
 “山门前那两匹石马，传说是汉代驮经之马。其实是北宋太师魏咸信墓前的石像，民国二十四年被移到寺前。”
 “白马寺始建于东汉永平十一年，公元六十八年，是佛教传入中国后兴建的第一座官办寺院。”
-反例（不要这样写）：「九尊大像依山凿石而成，山崖本身就是佛殿。这是龙门石窟中规模最大的一组摩崖群雕。居中的卢舍那大佛高达十七米多，仅头部就有四米。耳长一点九米，比人还高。」——通篇尺度与数字，没有一个人在这里做过什么。`;
+反例（不要这样写）：「九尊大像依山凿石而成，山崖本身就是佛殿。这是龙门石窟中规模最大的一组摩崖群雕。居中的卢舍那大佛高达十七米多，仅头部就有四米。耳长一点九米，比人还高。」——通篇尺度与数字，没有一个人在这里做过什么。
+反例（不要这样写）：「原高近百米，是世界历史上体量最大的木质建筑，曾是世界之最。」——尺寸、头衔全是要禁的东西，换成「武则天在这里接见各国使臣，殿前站满了人」这样的写法。`;
 }
 
 /**
@@ -572,7 +583,17 @@ export class QwenScriptWriter implements ScriptWriter {
               }","body":"…","imageAlt":"…","transition":"${TRANSITIONS[index % TRANSITIONS.length]}","holdMs":9000}]}`
             }
           ]);
-          patch.set(scene.id, this.takeScene(retry, { ...outline, scenes: [scene] }, index));
+          try {
+            patch.set(scene.id, this.takeScene(retry, { ...outline, scenes: [scene] }, index));
+          } catch (lengthError) {
+            // 质量回炉优先于字数：重写稿结构合格但字数略偏时按放宽档收下，
+            // 否则旧稿的尺寸/套语问题会因「保留原稿」原样发布
+            if (!(lengthError instanceof ScriptLengthError)) throw lengthError;
+            patch.set(scene.id, this.takeScene(retry, { ...outline, scenes: [scene] }, index, true, true));
+            console.warn(
+              `[生成] 第「${scene.title}」幕回炉稿字数略偏，按放宽档收下：` + lengthError.message
+            );
+          }
         } catch (error) {
           console.warn(
             `[生成] 第「${scene.title}」幕回炉失败，保留原稿：` +
@@ -904,9 +925,9 @@ function normalizeOutline(pool: unknown, topic: string): PackOutline {
 
   return {
     id: packId,
-    title: text(record.title) || topic,
-    subtitle: text(record.subtitle) || '',
-    summary: text(record.summary) || '',
+    title: clampText(text(record.title) || topic, 20),
+    subtitle: clampText(text(record.subtitle) || '', 30),
+    summary: clampText(text(record.summary) || '', 60),
     tags,
     scenes
   };
@@ -944,12 +965,15 @@ export function normalizeScripts(
     const rawBody = Array.isArray(raw.body)
       ? raw.body.map((part) => text(part)).filter(Boolean).join('\n\n')
       : text(raw.body);
-    // 模型偶尔用单换行分段：统一把所有换行当段落分隔，再以空行重组
-    const paragraphs = rawBody
-      .replace(/\r\n?/g, '\n')
-      .split(/\n+/)
-      .map((part) => part.replace(/[ \t]+/g, ' ').trim())
-      .filter(Boolean);
+    // 块间必须空一行；模型偶尔在块内一句一行——优先按空行分块，
+    // 只有空行切不出多块时才退回按所有换行切，避免「4 块被切成 8 块」
+    const normalized = rawBody.replace(/\r\n?/g, '\n');
+    const tidy = (part: string): string => part.replace(/[ \t]+/g, ' ').trim();
+    const byBlank = normalized.split(/\n{2,}/).map(tidy).filter(Boolean);
+    const paragraphs =
+      byBlank.length >= 2
+        ? byBlank
+        : normalized.split(/\n+/).map(tidy).filter(Boolean);
     const body = paragraphs.join('\n\n');
 
     const transition = text(raw.transition);

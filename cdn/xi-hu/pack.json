@@ -1,0 +1,119 @@
+{
+  "id": "xi-hu",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "杭州西湖",
+  "subtitle": "世界文化景观遗产与江南名湖",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T08:02:54.811Z",
+  "summary": "位于杭州市区西部，由海湾演变为潟湖，经历代治理成为灌溉水库与风景名胜，2011年列入世界遗产名录。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "世界遗产",
+    "江南名湖",
+    "水利奇迹",
+    "人文景观"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "hu-pan-yuan-wang",
+      "title": "湖畔远眺",
+      "subtitle": "三面环山一面临城",
+      "image": "01-hu-pan-yuan-wang.jpg",
+      "imageAlt": "西湖全景，三面群山环绕，东侧可见城市建筑轮廓",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-hu-pan-yuan-wang.md",
+      "audio": {
+        "durSec": 35,
+        "bytes": 280704,
+        "sha256": "132e9d2f44b38f556735c04fbfc8e608e4e22660e3cb07c0fdedaadce1c08307"
+      }
+    },
+    {
+      "id": "bao-shi-yan-dao",
+      "title": "宝石火山",
+      "subtitle": "亿年前火山喷发遗迹",
+      "image": "02-bao-shi-yan-dao.jpg",
+      "imageAlt": "杭州西湖宝石山全景，展示流纹岩山体与植被覆盖的自然风貌",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-bao-shi-yan-dao.md",
+      "audio": {
+        "durSec": 32,
+        "bytes": 255418,
+        "sha256": "09e78b4040c0a1cf8b6be12c2e611e4b33e2172e797fd20e6772819e475938ce"
+      }
+    },
+    {
+      "id": "bai-gong-ti-zhi",
+      "title": "白公堤址",
+      "subtitle": "唐代刺史重修湖堤",
+      "image": "03-bai-gong-ti-zhi.jpg",
+      "imageAlt": "西湖白堤遗址区域，现代堤岸与湖面景观",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-bai-gong-ti-zhi.md",
+      "audio": {
+        "durSec": 31,
+        "bytes": 250402,
+        "sha256": "554b96d0d89548e6650a0be9336c6b7201185629ebf2216e07d4723918e4c4bc"
+      }
+    },
+    {
+      "id": "su-di-chun-xiao",
+      "title": "苏堤春晓",
+      "subtitle": "苏轼疏浚葑草筑堤",
+      "image": "04-su-di-chun-xiao.jpg",
+      "imageAlt": "西湖苏堤全景，长堤横跨湖面，六桥隐约可见，两岸桃柳相间",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-su-di-chun-xiao.md",
+      "audio": {
+        "durSec": 35,
+        "bytes": 278405,
+        "sha256": "48c79bda47c5b909eb369df66154d8a1a9e2eea3f96b29867e0c12f18e9ae0a9"
+      }
+    },
+    {
+      "id": "yin-shui-gong-cheng",
+      "title": "引水清流",
+      "subtitle": "现代科技置换湖水",
+      "image": "05-yin-shui-gong-cheng.jpg",
+      "imageAlt": "西湖岸边引水口，清澈江水正汇入湖面",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-yin-shui-gong-cheng.md",
+      "audio": {
+        "durSec": 29,
+        "bytes": 229295,
+        "sha256": "72a91cecb6f9ad900183af5d9e29207aa925f541c607e4c8ec77b08578e20119"
+      }
+    },
+    {
+      "id": "shi-jie-yi-chan",
+      "title": "文化景观",
+      "subtitle": "列入世界遗产名录",
+      "image": "06-shi-jie-yi-chan.jpg",
+      "imageAlt": "杭州西湖湖畔的世界遗产纪念碑，周围绿树环绕",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/06-shi-jie-yi-chan.md",
+      "audio": {
+        "durSec": 31,
+        "bytes": 249984,
+        "sha256": "6918e29e2b1bf22284e6c56b7fb3586eef052f1ba948848ab2a40595ff5f8fcd"
+      }
+    }
+  ]
+}

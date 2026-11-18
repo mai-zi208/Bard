@@ -1,0 +1,104 @@
+{
+  "id": "bingmayong",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "秦始皇陵兵马俑",
+  "subtitle": "世界第八大奇迹与地下军阵",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T07:57:05.361Z",
+  "summary": "位于西安临潼，1974年农民打井偶然发现。作为秦始皇陵陪葬坑，展现了秦代军事辉煌与雕塑艺术，被誉为世界第八大奇迹。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "世界遗产",
+    "秦代历史",
+    "考古发现",
+    "雕塑艺术"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "fa-xian-yuan-dian",
+      "title": "发现原点",
+      "subtitle": "西杨村打井惊现陶片",
+      "image": "01-fa-xian-yuan-dian.jpg",
+      "imageAlt": "西杨村荒野地面上散落的陶俑残片特写",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-fa-xian-yuan-dian.md",
+      "audio": {
+        "durSec": 28,
+        "bytes": 223444,
+        "sha256": "7b857ff1bae60c8921a094bcd9c776446dd685d378a3ef9a0429c9c3fffb0546"
+      }
+    },
+    {
+      "id": "yi-hao-keng",
+      "title": "一号俑坑",
+      "subtitle": "气势恢宏的步兵方阵",
+      "image": "02-yi-hao-keng.jpg",
+      "imageAlt": "兵马俑一号坑遗址全景，密集的陶俑步兵方阵排列在地下坑道中",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-yi-hao-keng.md",
+      "audio": {
+        "durSec": 34,
+        "bytes": 269419,
+        "sha256": "af03e6a694f3b4f479a70e627ea576c04269553a2749cc7fd0a7b37ddac380eb"
+      }
+    },
+    {
+      "id": "er-hao-keng",
+      "title": "二号俑坑",
+      "subtitle": "多兵种合成的精华",
+      "image": "03-er-hao-keng.jpg",
+      "imageAlt": "秦始皇帝陵博物院二号俑坑遗址，展示跪射俑与骑兵组成的多兵种军阵",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-er-hao-keng.md",
+      "audio": {
+        "durSec": 33,
+        "bytes": 265449,
+        "sha256": "e9fbe65822b941479ef47d6b678d357741e46c7431b15fac0954beba8d528f25"
+      }
+    },
+    {
+      "id": "san-hao-keng",
+      "title": "三号俑坑",
+      "subtitle": "运筹帷幄的指挥部",
+      "image": "04-san-hao-keng.jpg",
+      "imageAlt": "秦始皇帝陵博物院三号俑坑全景，可见凹字形布局及内部战车与军吏俑",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-san-hao-keng.md",
+      "audio": {
+        "durSec": 19,
+        "bytes": 155525,
+        "sha256": "bef85732fdc6b8affe8ce97a212f740c250d30721678d56655454adacd61433f"
+      }
+    },
+    {
+      "id": "kao-gu-xian-chang",
+      "title": "考古前沿",
+      "subtitle": "科技揭示千年指纹",
+      "image": "05-kao-gu-xian-chang.jpg",
+      "imageAlt": "秦始皇帝陵博物院考古现场，显微镜下的陶俑局部特写",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-kao-gu-xian-chang.md",
+      "audio": {
+        "durSec": 32,
+        "bytes": 256671,
+        "sha256": "d5c5c90537bd50d58087b3777fd8c0880813a964e8dd78195071810c59c3b503"
+      }
+    }
+  ]
+}

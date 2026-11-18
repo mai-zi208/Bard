@@ -1,0 +1,99 @@
+{
+  "id": "jiming-si",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "南京鸡鸣寺",
+  "subtitle": "南朝首刹与尼众道场",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T08:53:09.073Z",
+  "summary": "位于南京玄武区鸡笼山东麓，始于西晋，曾是南朝佛教中心。现为尼众道场，依山而建，殿宇层叠。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "南京古迹",
+    "南朝佛教",
+    "尼众道场",
+    "樱花胜地"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "shan-men",
+      "title": "古鸡鸣寺",
+      "subtitle": "黄墙山门迎客入",
+      "image": "01-shan-men.jpg",
+      "imageAlt": "鸡鸣寺老山门，黄色墙体上竖写古鸡鸣寺字样",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-shan-men.md"
+    },
+    {
+      "id": "mi-le-dian",
+      "title": "弥勒殿",
+      "subtitle": "入寺首见欢喜佛",
+      "image": "02-mi-le-dian.jpg",
+      "imageAlt": "鸡鸣寺弥勒殿内部，正中供奉大肚弥勒佛像",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-mi-le-dian.md"
+    },
+    {
+      "id": "da-xiong-bao-dian",
+      "title": "大雄宝殿",
+      "subtitle": "主殿庄严供释迦",
+      "image": "03-da-xiong-bao-dian.jpg",
+      "imageAlt": "鸡鸣寺大雄宝殿外观及殿内佛像",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-da-xiong-bao-dian.md"
+    },
+    {
+      "id": "guan-yin-lou",
+      "title": "观音楼",
+      "subtitle": "倒坐观音叹回头",
+      "image": "04-guan-yin-lou.jpg",
+      "imageAlt": "鸡鸣寺观音楼内，面北而望的倒坐观音像及两侧楹联特写",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-guan-yin-lou.md"
+    },
+    {
+      "id": "huo-meng-lou",
+      "title": "豁蒙楼",
+      "subtitle": "张之洞改建经堂",
+      "image": "05-huo-meng-lou.jpg",
+      "imageAlt": "鸡鸣寺豁蒙楼全景，楼阁依山而建，背景可见玄武湖",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-huo-meng-lou.md"
+    },
+    {
+      "id": "yan-zhi-jing",
+      "title": "胭脂井",
+      "subtitle": "景阳楼旁留古迹",
+      "image": "06-yan-zhi-jing.jpg",
+      "imageAlt": "鸡鸣寺景阳楼旁的胭脂井，古朴的井栏与石碑静立其中",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/06-yan-zhi-jing.md"
+    },
+    {
+      "id": "yao-shi-fo-ta",
+      "title": "药师佛塔",
+      "subtitle": "七级八面镇丛林",
+      "image": "07-yao-shi-fo-ta.jpg",
+      "imageAlt": "鸡鸣寺西侧七级八面药师佛塔全景，塔身挺拔矗立于绿树丛中",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/07-yao-shi-fo-ta.md"
+    }
+  ]
+}

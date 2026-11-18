@@ -1,0 +1,104 @@
+{
+  "id": "beijing-gugong",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "北京故宫",
+  "subtitle": "明清皇家宫殿与紫禁城往事",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T07:50:42.985Z",
+  "summary": "位于北京中轴线中心，明清两代二十四位皇帝的皇宫。以南京故宫为蓝本，现存规模宏大的木质古建筑群，见证六百年历史沧桑。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "世界文化遗产",
+    "明清皇宫",
+    "古建筑群",
+    "北京中轴线"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "wu-men",
+      "title": "午门",
+      "subtitle": "紫禁城正门五凤楼",
+      "image": "01-wu-men.jpg",
+      "imageAlt": "北京故宫午门全景，红色城台呈凹字形展开",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-wu-men.md",
+      "audio": {
+        "durSec": 20,
+        "bytes": 160123,
+        "sha256": "effe88674950e4f1e73adb527c0f6b4928b025db15204977a124d3b048131333"
+      }
+    },
+    {
+      "id": "tai-he-dian",
+      "title": "太和殿",
+      "subtitle": "外朝中心举行大典",
+      "image": "02-tai-he-dian.jpg",
+      "imageAlt": "故宫太和殿全景，三层台基上的大殿与金色屋顶",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-tai-he-dian.md",
+      "audio": {
+        "durSec": 27,
+        "bytes": 218010,
+        "sha256": "9d0946e83b4680f4e87c87535e1332d4daa0e851c55f783ed4e1144668e9a84f"
+      }
+    },
+    {
+      "id": "yang-xin-dian",
+      "title": "养心殿",
+      "subtitle": "雍正后皇帝寝宫",
+      "image": "03-yang-xin-dian.jpg",
+      "imageAlt": "故宫养心殿正殿外观，红墙黄瓦，庭院深邃安静",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-yang-xin-dian.md",
+      "audio": {
+        "durSec": 34,
+        "bytes": 272345,
+        "sha256": "55e189bb6413e35b8a5ba4e5cc5cc8f6d8f91ce5a1ca2b010bd680f88d4b1b4a"
+      }
+    },
+    {
+      "id": "yan-xi-gong",
+      "title": "延禧宫",
+      "subtitle": "东亚首次空袭遗址",
+      "image": "04-yan-xi-gong.jpg",
+      "imageAlt": "延禧宫遗址，残缺的西洋风格建筑骨架矗立在庭院中",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-yan-xi-gong.md",
+      "audio": {
+        "durSec": 32,
+        "bytes": 259388,
+        "sha256": "770ea8865c821e45b6f06cd49ec12f4a0e7c1359ed5448d38639e1a346fd2aa3"
+      }
+    },
+    {
+      "id": "shen-wu-men",
+      "title": "神武门",
+      "subtitle": "故宫博物院成立地",
+      "image": "05-shen-wu-men.jpg",
+      "imageAlt": "神武门城楼全景，背景可见景山，红墙黄瓦庄重肃穆",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-shen-wu-men.md",
+      "audio": {
+        "durSec": 33,
+        "bytes": 264195,
+        "sha256": "510c8b21ad0edc3bedb7c1ac0e497521211fbee2b1e4ccb0487168c0b54633a0"
+      }
+    }
+  ]
+}

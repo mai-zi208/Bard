@@ -47,7 +47,16 @@ export class BaiduResearchProvider implements ResearchProvider {
   }
 
   private async fetchBaike(topic: string): Promise<{ url: string; text: string } | null> {
-    const url = 'https://wapbaike.baidu.com/item/' + encodeURIComponent(topic);
+    // 百科词条名常带景区后缀（如「明堂天堂」的词条是「明堂天堂景区」），原名未命中时按后缀变体重试
+    for (const name of [topic, topic + '景区', topic + '博物馆', topic + '公园']) {
+      const hit = await this.fetchBaikeEntry(name, topic);
+      if (hit) return hit;
+    }
+    return null;
+  }
+
+  private async fetchBaikeEntry(name: string, topic: string): Promise<{ url: string; text: string } | null> {
+    const url = 'https://wapbaike.baidu.com/item/' + encodeURIComponent(name);
     try {
       const res = await fetchText(url, MOBILE_UA, 20000);
       if (res.status !== 200) return null;

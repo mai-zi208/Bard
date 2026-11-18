@@ -1,0 +1,119 @@
+{
+  "id": "ming-xiao-ling",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "南京明孝陵",
+  "subtitle": "明清皇家陵寝的开创之作",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T08:07:08.033Z",
+  "summary": "位于南京紫金山南麓，是明太祖朱元璋与马皇后的合葬陵寝。其首创的前方后圆格局，奠定了明清帝陵五百年的规制范本。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "世界遗产",
+    "明代皇陵",
+    "朱元璋",
+    "建筑典范"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "xia-ma-fang",
+      "title": "下马坊",
+      "subtitle": "诸司官员至此下马",
+      "image": "01-xia-ma-fang.jpg",
+      "imageAlt": "明孝陵下马坊石牌坊及横额特写",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-xia-ma-fang.md",
+      "audio": {
+        "durSec": 32,
+        "bytes": 259597,
+        "sha256": "a740aabe3beb526c26108d0f34235cfecda9e09dda0d8827337686ae2fab6c2b"
+      }
+    },
+    {
+      "id": "si-fang-cheng",
+      "title": "四方城",
+      "subtitle": "铭记太祖一生功德",
+      "image": "02-si-fang-cheng.jpg",
+      "imageAlt": "明孝陵四方城碑楼及内部神功圣德碑全景",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-si-fang-cheng.md",
+      "audio": {
+        "durSec": 31,
+        "bytes": 251447,
+        "sha256": "df6b926ae0a3881c99fafaf6320dd678d4d6468cdd1a0059b36bee78c8eb3b69"
+      }
+    },
+    {
+      "id": "shen-dao-shi-ke",
+      "title": "神道石刻",
+      "subtitle": "蜿蜒曲折的石象路",
+      "image": "03-shen-dao-shi-ke.jpg",
+      "imageAlt": "明孝陵神道石刻区域，石像生沿弯曲道路排列",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-shen-dao-shi-ke.md",
+      "audio": {
+        "durSec": 21,
+        "bytes": 171826,
+        "sha256": "d7e49bfecbbde5e71cc8518f9c3776941531f6fbd9fc07818700c26af6d738fb"
+      }
+    },
+    {
+      "id": "wen-wu-fang-men",
+      "title": "文武方门",
+      "subtitle": "陵宫正门重现原貌",
+      "image": "04-wen-wu-fang-men.jpg",
+      "imageAlt": "明孝陵文武方门正面全景，五座红门并列，门额金字清晰",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-wen-wu-fang-men.md",
+      "audio": {
+        "durSec": 28,
+        "bytes": 227832,
+        "sha256": "c90577ffca9de92bef26ffd4014b6e77f23b02ef893395e6c9fbabdc8c613824"
+      }
+    },
+    {
+      "id": "xiang-dian-yi-zhi",
+      "title": "享殿遗址",
+      "subtitle": "三层台基见证沧桑",
+      "image": "05-xiang-dian-yi-zhi.jpg",
+      "imageAlt": "明孝陵享殿遗址，三层须弥座台基与散落的明代石柱础",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-xiang-dian-yi-zhi.md",
+      "audio": {
+        "durSec": 30,
+        "bytes": 243506,
+        "sha256": "95abc36a41b17dacfd2f5bf5343f1b6f240a42949b2307fe84be48889d243452"
+      }
+    },
+    {
+      "id": "fang-cheng-ming-lou",
+      "title": "方城明楼",
+      "subtitle": "前方后圆的核心制式",
+      "image": "06-fang-cheng-ming-lou.jpg",
+      "imageAlt": "明孝陵方城明楼全景，砖石城台与重檐明楼在绿树掩映中",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/06-fang-cheng-ming-lou.md",
+      "audio": {
+        "durSec": 29,
+        "bytes": 229295,
+        "sha256": "d3926aac8cebda788663238874e7124d6c4f3a25d147c5ef4a7ec33a821f1876"
+      }
+    }
+  ]
+}

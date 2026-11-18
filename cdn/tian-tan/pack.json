@@ -1,0 +1,104 @@
+{
+  "id": "tian-tan",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "北京天坛",
+  "subtitle": "明清皇家祭天祈谷的礼制建筑群",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T07:51:49.377Z",
+  "summary": "位于北京东城区，是明清皇帝祭天、祈谷和祈雨场所。集古代建筑技艺与礼制内涵于一体，展现天圆地方宇宙观。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "世界文化遗产",
+    "皇家祭祀",
+    "古建筑",
+    "北京中轴线"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "zhai-gong",
+      "title": "斋宫",
+      "subtitle": "皇帝祀前清心洁身的居所",
+      "image": "01-zhai-gong.jpg",
+      "imageAlt": "天坛斋宫全景，绿色琉璃瓦建筑群被双重宫墙环绕",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-zhai-gong.md",
+      "audio": {
+        "durSec": 34,
+        "bytes": 269001,
+        "sha256": "cf97c4827566be079c1fd8db7eb41422a5c946675769fa2b47d32eb454af8e7c"
+      }
+    },
+    {
+      "id": "dan-bi-qiao",
+      "title": "丹陛桥",
+      "subtitle": "连接圜丘与祈谷的神圣通道",
+      "image": "02-dan-bi-qiao.jpg",
+      "imageAlt": "天坛丹陛桥全景，展示连接南北坛的宽阔石板大道",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-dan-bi-qiao.md",
+      "audio": {
+        "durSec": 30,
+        "bytes": 242252,
+        "sha256": "e36cfc9f3b305752a9524ffe30176970e91f4395293395e3bac98ebb6a21f93c"
+      }
+    },
+    {
+      "id": "huang-qiong-yu",
+      "title": "皇穹宇",
+      "subtitle": "供奉祀天神版的圆形殿宇",
+      "image": "03-huang-qiong-yu.jpg",
+      "imageAlt": "天坛皇穹宇及其圆形回音壁围墙",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-huang-qiong-yu.md",
+      "audio": {
+        "durSec": 26,
+        "bytes": 208397,
+        "sha256": "f5f57bbdac50d68e836d7efc9a36a22a32017cfcc64e9b0b6e080ba691954a3d"
+      }
+    },
+    {
+      "id": "huan-qiu-tan",
+      "title": "圜丘坛",
+      "subtitle": "冬至日举行祭天大典之地",
+      "image": "04-huan-qiu-tan.jpg",
+      "imageAlt": "天坛圜丘坛全景，汉白玉栏杆环绕三层圆形台面",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-huan-qiu-tan.md",
+      "audio": {
+        "durSec": 28,
+        "bytes": 222608,
+        "sha256": "c6eef1a13b80f7fe8c79084525a81fa110daeeead2c2194d7ef4dd6f473b6b61"
+      }
+    },
+    {
+      "id": "qi-nian-dian",
+      "title": "祈年殿",
+      "subtitle": "孟春正月举行祈谷礼的大殿",
+      "image": "05-qi-nian-dian.jpg",
+      "imageAlt": "天坛祈年殿全景，蓝色琉璃瓦圆殿矗立于白色台基",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-qi-nian-dian.md",
+      "audio": {
+        "durSec": 27,
+        "bytes": 216756,
+        "sha256": "442dd94899db1dfecc85daece49b6e4943c465ce164ea62162f45ab2efcf8646"
+      }
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "id": "yiheyuan",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "颐和园",
+  "subtitle": "清代皇家园林博物馆",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T07:52:50.646Z",
+  "summary": "位于北京西郊，以昆明湖、万寿山为基址，融合江南园林意境，是保存最完整的皇家行宫御苑。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "世界文化遗产",
+    "皇家园林",
+    "清代历史",
+    "北京旅游"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "donggongmen",
+      "title": "东宫门",
+      "subtitle": "皇家园林正门入口",
+      "image": "01-donggongmen.jpg",
+      "imageAlt": "颐和园东宫门正立面，门前广场开阔，红墙黄瓦的宫门主体居中",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-donggongmen.md",
+      "audio": {
+        "durSec": 31,
+        "bytes": 250193,
+        "sha256": "dc5057e444bbcfdbc8f3432d608d61898f776817868b73e27a19656f2a6a0163"
+      }
+    },
+    {
+      "id": "renshoudian",
+      "title": "仁寿殿",
+      "subtitle": "帝后理政核心殿堂",
+      "image": "02-renshoudian.jpg",
+      "imageAlt": "仁寿殿全景，展现其作为宫廷区核心理政殿堂的庄重外观与门前广场",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-renshoudian.md",
+      "audio": {
+        "durSec": 31,
+        "bytes": 246640,
+        "sha256": "dff271f22aa4b7dae3c6fe99000624f3db5a41a13b1c1165d1d4ec646457f91d"
+      }
+    },
+    {
+      "id": "changlang",
+      "title": "长廊",
+      "subtitle": "蜿蜒山脚的画廊",
+      "image": "03-changlang.jpg",
+      "imageAlt": "颐和园长廊沿万寿山脚蜿蜒延伸，梁枋绘有彩色图案",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-changlang.md",
+      "audio": {
+        "durSec": 28,
+        "bytes": 225533,
+        "sha256": "4cfb7d9e5232f581f0139a14bba442c9dc85640716a3b56a0a7f410a7b9c930a"
+      }
+    },
+    {
+      "id": "foxiangge",
+      "title": "佛香阁",
+      "subtitle": "统领全园的主体",
+      "image": "04-foxiangge.jpg",
+      "imageAlt": "颐和园万寿山佛香阁全景，主体建筑居中山顶，俯瞰昆明湖",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-foxiangge.md",
+      "audio": {
+        "durSec": 30,
+        "bytes": 240371,
+        "sha256": "47cca68ce7b748daf64cc0597569b9055ec2779ce38022a2ecfcd5eb8c6352e8"
+      }
+    },
+    {
+      "id": "kunminghu",
+      "title": "昆明湖",
+      "subtitle": "浩瀚开阔的水域",
+      "image": "05-kunminghu.jpg",
+      "imageAlt": "颐和园昆明湖全景，浩瀚水面与远处万寿山相映成趣",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-kunminghu.md",
+      "audio": {
+        "durSec": 28,
+        "bytes": 227832,
+        "sha256": "a046426461f09f01c7435d235ccff6814296c8f1ede0bbcd473db25d79648334"
+      }
+    }
+  ]
+}

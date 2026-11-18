@@ -1,0 +1,104 @@
+{
+  "id": "badaling",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "八达岭长城",
+  "subtitle": "居庸关前哨与明长城精华段",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T07:53:52.107Z",
+  "summary": "位于北京延庆军都山，是明长城重要隘口及居庸关前哨。作为5A级景区与世界文化遗产，这里展示了古代防御工程与深厚历史。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "世界遗产",
+    "明代建筑",
+    "军事防御",
+    "北京旅游"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "wangjing-shi",
+      "title": "望京石",
+      "subtitle": "关外大道南侧天然花岗石",
+      "image": "01-wangjing-shi.jpg",
+      "imageAlt": "八达岭长城关城东门外大道南侧的天然花岗石望京石",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-wangjing-shi.md",
+      "audio": {
+        "durSec": 33,
+        "bytes": 264822,
+        "sha256": "297c2d4d71f2907e02604aaf0165f7646d6d00c9c9b509e800aa5fdd918e8e6d"
+      }
+    },
+    {
+      "id": "tianxian-liuti",
+      "title": "天险留题",
+      "subtitle": "东关门内侧崖壁石刻",
+      "image": "02-tianxian-liuti.jpg",
+      "imageAlt": "八达岭长城东关门内侧崖壁上的天险石刻特写",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-tianxian-liuti.md",
+      "audio": {
+        "durSec": 33,
+        "bytes": 261269,
+        "sha256": "abe56736f220104f9f14538a04d59b855e8db13515bb70023a5f4249efdac93e"
+      }
+    },
+    {
+      "id": "gucheng-guan",
+      "title": "八达岭关城",
+      "subtitle": "东窄西宽梯形砖石关城",
+      "image": "03-gucheng-guan.jpg",
+      "imageAlt": "八达岭关城全景，展示东窄西宽的梯形砖石结构及东西城门",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-gucheng-guan.md",
+      "audio": {
+        "durSec": 31,
+        "bytes": 251656,
+        "sha256": "3a56286c673bc6fa96e1015847f09b82746dc73840e691e96deb54deed07b346"
+      }
+    },
+    {
+      "id": "gu-pao",
+      "title": "神威大炮",
+      "subtitle": "关城内马道旁明代铁炮",
+      "image": "04-gu-pao.jpg",
+      "imageAlt": "八达岭长城关城内马道旁陈列的明代敕赐神威大将军铁炮",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-gu-pao.md",
+      "audio": {
+        "durSec": 35,
+        "bytes": 278614,
+        "sha256": "201a240e478793811d989e56c9fec440cdef6c67f9d3e1ea884bf54ca46c77cd"
+      }
+    },
+    {
+      "id": "beiba-lou",
+      "title": "北八楼",
+      "subtitle": "海拔八百余米敌楼观日台",
+      "image": "05-beiba-lou.jpg",
+      "imageAlt": "八达岭长城北八楼敌楼矗立于山脊最高点，背景为连绵群山与蜿蜒城墙",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-beiba-lou.md",
+      "audio": {
+        "durSec": 30,
+        "bytes": 239117,
+        "sha256": "8360f2b4c7fd7ea176f52452dab017f3ec3572af71e3c39dbaf348289fcbd89e"
+      }
+    }
+  ]
+}

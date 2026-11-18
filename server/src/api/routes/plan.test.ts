@@ -150,10 +150,11 @@ test('parsePlan 丢弃坐标越界或名称为空的景点', () => {
   );
 });
 
-test('parsePlan 对非 JSON 与景点不足抛错', () => {
+test('parsePlan 对非 JSON 与零景点抛错，单景点愿望收下 1 站', () => {
   assert.throws(() => parsePlan('抱歉，我无法规划'), /不是合法 JSON/);
-  assert.throws(
-    () => parsePlan(JSON.stringify({ tags: ['洛阳'], stops: [{ name: '白马寺', lat: 34.7, lng: 112.6 }] })),
-    /可用景点不足/
+  assert.throws(() => parsePlan(JSON.stringify({ tags: ['洛阳'], stops: [] })), /可用景点不足/);
+  const single = parsePlan(
+    JSON.stringify({ tags: ['洛阳'], stops: [{ name: '白马寺', lat: 34.7, lng: 112.6 }] })
   );
+  assert.equal(single.stops.length, 1);
 });

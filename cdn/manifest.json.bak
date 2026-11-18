@@ -1,7 +1,91 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-18T04:46:57.697Z",
+  "updatedAt": "2026-11-18T08:53:11.542Z",
   "packs": [
+    {
+      "id": "badaling",
+      "version": 1,
+      "title": "八达岭长城",
+      "subtitle": "居庸关前哨与明长城精华段",
+      "summary": "位于北京延庆军都山，是明长城重要隘口及居庸关前哨。作为5A级景区与世界文化遗产，这里展示了古代防御工程与深厚历史。",
+      "tags": [
+        "世界遗产",
+        "明代建筑",
+        "军事防御",
+        "北京旅游"
+      ],
+      "total": 5,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1501781,
+      "audioCount": 5,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T07:53:52.107Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-wangjing-shi.jpg",
+        "02-tianxian-liuti.jpg",
+        "03-gucheng-guan.jpg",
+        "04-gu-pao.jpg",
+        "05-beiba-lou.jpg",
+        "body/01-wangjing-shi.md",
+        "body/02-tianxian-liuti.md",
+        "body/03-gucheng-guan.md",
+        "body/04-gu-pao.md",
+        "body/05-beiba-lou.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "8cde80b81bb5dbaeb150e7efdad2bac0a555dfcfb153084a42091f2bae5c0b37",
+          "size": 3224
+        },
+        "cover.jpg": {
+          "sha256": "8a5604b81e78a9eb11f935bf0f0f9f5b7ad2aeca20fc196864e2363156cfcd7a",
+          "size": 199324
+        },
+        "01-wangjing-shi.jpg": {
+          "sha256": "c383e8aca1543dd47c55a867bee6c2dbf4b64aee4fa9dabf00de5511b166d9ae",
+          "size": 295880
+        },
+        "02-tianxian-liuti.jpg": {
+          "sha256": "f7aa8256132d1154bb26ef5017564788438c7f769122f80c26a6450bb36bc9f2",
+          "size": 380337
+        },
+        "03-gucheng-guan.jpg": {
+          "sha256": "9fa525cfabae688a366cb7cdf30f9c76dfeee4167eaff8f2bdc0d082d8a56d27",
+          "size": 214745
+        },
+        "04-gu-pao.jpg": {
+          "sha256": "2e54292554011fe65f8cea878bee336888df5947ccb6a20b78cf194e8e6e9b3c",
+          "size": 182580
+        },
+        "05-beiba-lou.jpg": {
+          "sha256": "3ec2edefa49fc28ca1e4be6dd352cc70366eaf8c9467494bd1c3ae77258613e9",
+          "size": 223525
+        },
+        "body/01-wangjing-shi.md": {
+          "sha256": "3d4727deebca89e93710d32ba80b76a8c65b96941967ca1bbc94aa99b6917503",
+          "size": 441
+        },
+        "body/02-tianxian-liuti.md": {
+          "sha256": "8a7297be7a08d50aad3b541130ae0156ac0876da74a5e33f76acd542147521a5",
+          "size": 438
+        },
+        "body/03-gucheng-guan.md": {
+          "sha256": "553f1c1918468c7fda443f11c3c668bd6d1ea054d2a5aedcdc81c96f57180db3",
+          "size": 420
+        },
+        "body/04-gu-pao.md": {
+          "sha256": "22dca7a04b6a64ab31ac331a38b9798573415cb52e5b9bf6f3840b9ed673a42a",
+          "size": 471
+        },
+        "body/05-beiba-lou.md": {
+          "sha256": "6b43663c47571ae8f08720f29f6abcfc59b21aebcd4aae5fcfe555e8e12e4dac",
+          "size": 396
+        }
+      }
+    },
     {
       "id": "bai-ma-si",
       "version": 1,
@@ -83,6 +167,362 @@
         "body/05-qing-liang-tai.md": {
           "sha256": "03dbe966a8f4501f9b615090b73b894f0dcee561a6fa6456d12d43fea0bea536",
           "size": 396
+        }
+      }
+    },
+    {
+      "id": "beihai-park",
+      "version": 1,
+      "title": "北海公园皇家园林",
+      "subtitle": "北京中心现存最完整皇家御苑",
+      "summary": "位于北京市西城区，距今八百余年历史，依循一池三山规制，曾是紫禁城西面御苑。",
+      "tags": [
+        "皇家园林",
+        "一池三山",
+        "全国重点文物",
+        "北京中轴线"
+      ],
+      "total": 6,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1582921,
+      "audioCount": 6,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T07:56:08.052Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-tuan-cheng.jpg",
+        "02-yong-an-qiao.jpg",
+        "03-bai-ta.jpg",
+        "04-jing-xin-zhai.jpg",
+        "05-jiu-long-bi.jpg",
+        "06-wu-long-ting.jpg",
+        "body/01-tuan-cheng.md",
+        "body/02-yong-an-qiao.md",
+        "body/03-bai-ta.md",
+        "body/04-jing-xin-zhai.md",
+        "body/05-jiu-long-bi.md",
+        "body/06-wu-long-ting.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "54ed5eb50808578eb343876af1bde5c7b5711bbdd72b70a932cff89ef2559a53",
+          "size": 3639
+        },
+        "cover.jpg": {
+          "sha256": "ee27e045c6cdb00abea0af82ad578bf9b7e94a3adf302c471e6b4832f50f1684",
+          "size": 188944
+        },
+        "01-tuan-cheng.jpg": {
+          "sha256": "8098c23f7b291e74dcfca42866dd30cadf40119f27bb3612f41ce5d5eddcb087",
+          "size": 273225
+        },
+        "02-yong-an-qiao.jpg": {
+          "sha256": "7c027f27d38dd908d0b70bd77b8357c169e303ee365c41826dbde3828f60c01c",
+          "size": 189884
+        },
+        "03-bai-ta.jpg": {
+          "sha256": "42cfcdab1af8f242ce167b062d0bd02097c6dae2e13a9c9eb5c40d08dde76f84",
+          "size": 181581
+        },
+        "04-jing-xin-zhai.jpg": {
+          "sha256": "450f079f44e801f5808865425a8b49701fc57edf8b6cbda81317bf498dd86b4a",
+          "size": 235367
+        },
+        "05-jiu-long-bi.jpg": {
+          "sha256": "1caa6f1cc6ffa701c8feb407392f8cf65d27bc0e7288bcd30a371ec99f419e14",
+          "size": 231178
+        },
+        "06-wu-long-ting.jpg": {
+          "sha256": "e1024eb5713b64da9acae3266b13b5173cf10872f854e344e36944044eb806d5",
+          "size": 276787
+        },
+        "body/01-tuan-cheng.md": {
+          "sha256": "b235da20e24cb5c41486d1d66eba26cbb40a08d13cc6b7dbe568ca59fbb9e453",
+          "size": 297
+        },
+        "body/02-yong-an-qiao.md": {
+          "sha256": "ae0e8ab85d103d4946a340a2ad43a13319db65763aa3e8ab1b2ec01bf165baf0",
+          "size": 462
+        },
+        "body/03-bai-ta.md": {
+          "sha256": "a8d55b98dd40d62a8250190270a53af843a80803faa9bf129e4049a44fe7587d",
+          "size": 408
+        },
+        "body/04-jing-xin-zhai.md": {
+          "sha256": "5628b3564aec4ffc75c8f37d59d2380443f071df20768903cc71babf36e65cf3",
+          "size": 366
+        },
+        "body/05-jiu-long-bi.md": {
+          "sha256": "9ace547de2693b0ea6944041786f26ff9f6ffd1f6a83dec09b0776ccc5c76111",
+          "size": 396
+        },
+        "body/06-wu-long-ting.md": {
+          "sha256": "ec126b85b184e49e2ea6c8ce45e41fd4a33e8216278add3c1fc9ede93ada9c13",
+          "size": 387
+        }
+      }
+    },
+    {
+      "id": "beijing-gugong",
+      "version": 1,
+      "title": "北京故宫",
+      "subtitle": "明清皇家宫殿与紫禁城往事",
+      "summary": "位于北京中轴线中心，明清两代二十四位皇帝的皇宫。以南京故宫为蓝本，现存规模宏大的木质古建筑群，见证六百年历史沧桑。",
+      "tags": [
+        "世界文化遗产",
+        "明清皇宫",
+        "古建筑群",
+        "北京中轴线"
+      ],
+      "total": 5,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1192183,
+      "audioCount": 5,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T07:50:42.985Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-wu-men.jpg",
+        "02-tai-he-dian.jpg",
+        "03-yang-xin-dian.jpg",
+        "04-yan-xi-gong.jpg",
+        "05-shen-wu-men.jpg",
+        "body/01-wu-men.md",
+        "body/02-tai-he-dian.md",
+        "body/03-yang-xin-dian.md",
+        "body/04-yan-xi-gong.md",
+        "body/05-shen-wu-men.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "dec6f23b651f4edbed4722f44c0a9a99f79e7c1f763e1d17e014c888a2dab235",
+          "size": 3132
+        },
+        "cover.jpg": {
+          "sha256": "eaa861f838dc20e467445db5374481e30dc6743146fbeb7afb22761e08c22cad",
+          "size": 149594
+        },
+        "01-wu-men.jpg": {
+          "sha256": "4204a7a1f664d8039baad60f5b32c9746d45100a44e76a6ba83553cbfdfe69eb",
+          "size": 167396
+        },
+        "02-tai-he-dian.jpg": {
+          "sha256": "53daffbc13011b0bc35987f576f0b4967379b674405131d7287aa429b34bfeab",
+          "size": 256093
+        },
+        "03-yang-xin-dian.jpg": {
+          "sha256": "13b1c980c513f1829f0dee1b9abceb60823b322cbba60dac404a63218371ece7",
+          "size": 209045
+        },
+        "04-yan-xi-gong.jpg": {
+          "sha256": "6de36187754d1ce4f2930b4d104a60102bd57ab798eca1107cd4fd77d4e29bb4",
+          "size": 245361
+        },
+        "05-shen-wu-men.jpg": {
+          "sha256": "eb3584f6d96e379c774a9f5130dded7de09b1178a3709c91c5d421701e6c41d4",
+          "size": 159669
+        },
+        "body/01-wu-men.md": {
+          "sha256": "858e28c676bf63b7df01dbc1804998fb7387abc8e9da49aef28e8e33e98ec4aa",
+          "size": 243
+        },
+        "body/02-tai-he-dian.md": {
+          "sha256": "e85d3b04e72df4018622ff7caf7bb6636e004aafd65d9e1278e35b42e0abec41",
+          "size": 345
+        },
+        "body/03-yang-xin-dian.md": {
+          "sha256": "877db90a2de272fd713d2ac8df0676a61a85e31bd7ffbc5364bd023958298b45",
+          "size": 435
+        },
+        "body/04-yan-xi-gong.md": {
+          "sha256": "c3bee118940be0ee5acf015254ebfb72b9bff21a430c5821be2e2767718f7984",
+          "size": 441
+        },
+        "body/05-shen-wu-men.md": {
+          "sha256": "e7bffcd9da2e4865b91aa3a35b50c4932a86b3d91c7d1c2af9e704f1cc049361",
+          "size": 429
+        }
+      }
+    },
+    {
+      "id": "bingmayong",
+      "version": 1,
+      "title": "秦始皇陵兵马俑",
+      "subtitle": "世界第八大奇迹与地下军阵",
+      "summary": "位于西安临潼，1974年农民打井偶然发现。作为秦始皇陵陪葬坑，展现了秦代军事辉煌与雕塑艺术，被誉为世界第八大奇迹。",
+      "tags": [
+        "世界遗产",
+        "秦代历史",
+        "考古发现",
+        "雕塑艺术"
+      ],
+      "total": 5,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1321616,
+      "audioCount": 5,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T07:57:05.361Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-fa-xian-yuan-dian.jpg",
+        "02-yi-hao-keng.jpg",
+        "03-er-hao-keng.jpg",
+        "04-san-hao-keng.jpg",
+        "05-kao-gu-xian-chang.jpg",
+        "body/01-fa-xian-yuan-dian.md",
+        "body/02-yi-hao-keng.md",
+        "body/03-er-hao-keng.md",
+        "body/04-san-hao-keng.md",
+        "body/05-kao-gu-xian-chang.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "da8d71dcdc42b55b2cd5c38d1540aa05fd8bd1c20117cc93bc742dbb973ed55b",
+          "size": 3267
+        },
+        "cover.jpg": {
+          "sha256": "a58b9640e3c89a7a255112b0f9c7b818248fe46ad92596780e40174cd2dc5a52",
+          "size": 171331
+        },
+        "01-fa-xian-yuan-dian.jpg": {
+          "sha256": "08417ffd59c2cec8d5f8ea862012fc9e39887b93afb72d4d15a0feaf81b9722d",
+          "size": 195405
+        },
+        "02-yi-hao-keng.jpg": {
+          "sha256": "4be16a178bd07a8ecaeffb3381c6dd472f1f888b682ae61ef240e9b7de4526cd",
+          "size": 293597
+        },
+        "03-er-hao-keng.jpg": {
+          "sha256": "ba02223fc49affacee26df370e1c04379a328fbf19130860e9c0dc2caf956344",
+          "size": 241007
+        },
+        "04-san-hao-keng.jpg": {
+          "sha256": "9b19201bc4cd246f755aea5f586c3cc58a6660d55af066fcfb8c6e4ca6e62257",
+          "size": 226646
+        },
+        "05-kao-gu-xian-chang.jpg": {
+          "sha256": "b964ea4e31e2a3d5aa9731590f2b09252d4bdeabafb0e88da35f117e8a10a28f",
+          "size": 188350
+        },
+        "body/01-fa-xian-yuan-dian.md": {
+          "sha256": "6f158aea6d410d1f889f630f4165ac29e3f9345a6e0c05da7ff217ca95e97e1b",
+          "size": 366
+        },
+        "body/02-yi-hao-keng.md": {
+          "sha256": "efdd37793934b94603093636e5bdc3d167c9fd58d7e5543234cee0fbcdbe4a4f",
+          "size": 462
+        },
+        "body/03-er-hao-keng.md": {
+          "sha256": "144a1c405c663ed8dccd59033012a0e3edda383618fd5d0f36cb6065d557bac0",
+          "size": 447
+        },
+        "body/04-san-hao-keng.md": {
+          "sha256": "669911818621b9980be04d9e1bf9d7302706b175756dcc9ebfbfe0e4afc47497",
+          "size": 282
+        },
+        "body/05-kao-gu-xian-chang.md": {
+          "sha256": "0563cb574f05dceca436c5ce11d4a33640e0663b9476e4af479885fc4fa4ee2a",
+          "size": 456
+        }
+      }
+    },
+    {
+      "id": "dayan-ta",
+      "version": 1,
+      "title": "大雁塔",
+      "subtitle": "丝路见证与唐代楼阁式砖塔典范",
+      "summary": "玄奘为存天竺经像主持修建，历经改建保持七层外观，是丝绸之路文化交流的重要物证。",
+      "tags": [
+        "世界文化遗产",
+        "唐代建筑",
+        "玄奘法师",
+        "佛教名塔"
+      ],
+      "total": 6,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1548448,
+      "audioCount": 6,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T07:59:13.353Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-nan-men-bei.jpg",
+        "02-ta-shen-yi-ceng.jpg",
+        "03-ta-shen-er-ceng.jpg",
+        "04-ta-shen-si-ceng.jpg",
+        "05-ta-shen-liu-ceng.jpg",
+        "06-ta-ding-zao-jing.jpg",
+        "body/01-nan-men-bei.md",
+        "body/02-ta-shen-yi-ceng.md",
+        "body/03-ta-shen-er-ceng.md",
+        "body/04-ta-shen-si-ceng.md",
+        "body/05-ta-shen-liu-ceng.md",
+        "body/06-ta-ding-zao-jing.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "c7d9b6318cbbf38bb34fb2b7765aedf8fedc5646f1351d3f6002892122a3700f",
+          "size": 3687
+        },
+        "cover.jpg": {
+          "sha256": "6bdf8af1a923900b9c6e6f6a0d66f2b834afab85fbd2ea96fcf42c4e8129008f",
+          "size": 201018
+        },
+        "01-nan-men-bei.jpg": {
+          "sha256": "5a592c4f1e5a412bd9054df06498262edfbadd06a7f6cab6fe86966f052c21cf",
+          "size": 237926
+        },
+        "02-ta-shen-yi-ceng.jpg": {
+          "sha256": "edb35b37e6ea91e1b6fef6b27a8e9360ed7054129e26e548947a2ec58716ecf0",
+          "size": 206267
+        },
+        "03-ta-shen-er-ceng.jpg": {
+          "sha256": "6fe244116505497316c4800915e1410cd03c1696a1ef0e34a7fa897905d5025f",
+          "size": 217647
+        },
+        "04-ta-shen-si-ceng.jpg": {
+          "sha256": "e791be227a324258413942cd35215ea3bc7624fcd2151366de6d9a2b9f986b06",
+          "size": 189651
+        },
+        "05-ta-shen-liu-ceng.jpg": {
+          "sha256": "4039a51162ffcde57020891dc76f1f5e04208fa7d3dc5355e05cca2d71845f93",
+          "size": 155586
+        },
+        "06-ta-ding-zao-jing.jpg": {
+          "sha256": "0665b6b10e04e416bfd7e02efb7188b3a1065f1afafed92d18181cdb00bda024",
+          "size": 334536
+        },
+        "body/01-nan-men-bei.md": {
+          "sha256": "a54c00f72885365b8b7fdc6047a2bc5839a8206ef61ff00cf4e8de0135553eda",
+          "size": 357
+        },
+        "body/02-ta-shen-yi-ceng.md": {
+          "sha256": "f7803a002d01819e589ce66c04f4a429adfb277e614877f6127795552797b95e",
+          "size": 294
+        },
+        "body/03-ta-shen-er-ceng.md": {
+          "sha256": "4f392221d63d2f8c55e50df80276482342700632fb68bb2fba97e3a52aa0ffd6",
+          "size": 357
+        },
+        "body/04-ta-shen-si-ceng.md": {
+          "sha256": "d44acd58d4b9f939af936be8afaa2ea197bd06de520f7307aca177f93d97aa16",
+          "size": 405
+        },
+        "body/05-ta-shen-liu-ceng.md": {
+          "sha256": "92f3b6060dd7e35d1cff0d499ade7a189658f352549a3f2e116058d4da69887c",
+          "size": 330
+        },
+        "body/06-ta-ding-zao-jing.md": {
+          "sha256": "6bac726460fa3283fde677009077853b47d599e4e12cb152ee06a5445ae42d2b",
+          "size": 387
         }
       }
     },
@@ -177,6 +617,110 @@
         "body/06-yi-yi-you-ke.md": {
           "sha256": "fdaf7e32f9e589d5e013decbdaa783dc0d7e3f3c2537d07f29f4db573614ad17",
           "size": 368
+        }
+      }
+    },
+    {
+      "id": "dufu-caotang",
+      "version": 1,
+      "title": "成都杜甫草堂",
+      "subtitle": "诗圣流寓成都的故居遗址",
+      "summary": "唐代大诗人杜甫避乱入蜀后的居所，保留清代建筑格局，集纪念祠堂与诗人旧居风貌于一体。",
+      "tags": [
+        "全国重点文物保护单位",
+        "唐代遗址",
+        "古典园林",
+        "诗圣故居"
+      ],
+      "total": 7,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1843867,
+      "audioCount": 7,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T08:13:44.653Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-zhao-bi-zheng-men.jpg",
+        "02-da-xie.jpg",
+        "03-shi-shi-tang.jpg",
+        "04-gong-bu-ci.jpg",
+        "05-shao-ling-bei-ting.jpg",
+        "06-hua-jing-ying-bi.jpg",
+        "07-tang-dai-yi-zhi.jpg",
+        "body/01-zhao-bi-zheng-men.md",
+        "body/02-da-xie.md",
+        "body/03-shi-shi-tang.md",
+        "body/04-gong-bu-ci.md",
+        "body/05-shao-ling-bei-ting.md",
+        "body/06-hua-jing-ying-bi.md",
+        "body/07-tang-dai-yi-zhi.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "262ac2b87edd082a0b00b798c1ebedc6330569e26194489470bb0b4bed0fce68",
+          "size": 4169
+        },
+        "cover.jpg": {
+          "sha256": "0df1347433196fb659bb66568b2a161a087dd03eeea028e6e3a3cef67d48efb7",
+          "size": 200443
+        },
+        "01-zhao-bi-zheng-men.jpg": {
+          "sha256": "729d80d1596d3d4940355fb06b93e67249be2ba2e63db25db3d2f0d2bc3ebcce",
+          "size": 231198
+        },
+        "02-da-xie.jpg": {
+          "sha256": "5b3bd67778a611399273f2487a6484162c0dfd80223ac00af1b41b6d9148792a",
+          "size": 230362
+        },
+        "03-shi-shi-tang.jpg": {
+          "sha256": "3b06f5d6238203d4fd89ce7085ee300fa0c74f6a7e314c3532b5aedfbac81523",
+          "size": 243468
+        },
+        "04-gong-bu-ci.jpg": {
+          "sha256": "5e2c698431bf1357f3e1756955770dc5b64ad09e9a9b7a1f07bfdb660669d6e1",
+          "size": 177033
+        },
+        "05-shao-ling-bei-ting.jpg": {
+          "sha256": "6f357dd958664288dbd7facf8c718a7a02977515e418042357e9b182b17d1bbb",
+          "size": 290378
+        },
+        "06-hua-jing-ying-bi.jpg": {
+          "sha256": "81f61f3a65817a1564cf61769ac109130a8640113f306d11102bc5fc994cb174",
+          "size": 277596
+        },
+        "07-tang-dai-yi-zhi.jpg": {
+          "sha256": "25accea1dd5bd63e013413d11477dc77201b1f7d0131f5d15a5af6cfa63ae1bc",
+          "size": 186451
+        },
+        "body/01-zhao-bi-zheng-men.md": {
+          "sha256": "b87f54435408a12e1520fdc3b6e2ab523bec712274df808044dea777dfe2aada",
+          "size": 387
+        },
+        "body/02-da-xie.md": {
+          "sha256": "9eac9c069aaa98410041992b6885243e279579fa23d0a5e847ca14eea9a15d50",
+          "size": 393
+        },
+        "body/03-shi-shi-tang.md": {
+          "sha256": "a2a24561a9714a26af55700987e035acb0929ea72435e7b0aa3a02e1dd7bb693",
+          "size": 447
+        },
+        "body/04-gong-bu-ci.md": {
+          "sha256": "1d861a7c213e484292ed0a193e8b9a1a0588baf3114fa37e6e0039a886158972",
+          "size": 372
+        },
+        "body/05-shao-ling-bei-ting.md": {
+          "sha256": "38accedadbc8fcb3da4cefaf4c6e88b5b2cab71b62d65c4edb65b9b5a219ac48",
+          "size": 381
+        },
+        "body/06-hua-jing-ying-bi.md": {
+          "sha256": "21dc1c56f11a8a4027604086347af09b536e1ae275d38b8e0b5fe6301723fda5",
+          "size": 354
+        },
+        "body/07-tang-dai-yi-zhi.md": {
+          "sha256": "f288ecb81616f5a8443a053606581647d6dbd423e58ce9fb6800a9728687ed73",
+          "size": 435
         }
       }
     },
@@ -285,6 +829,278 @@
       }
     },
     {
+      "id": "huaqinggong",
+      "version": 1,
+      "title": "唐华清宫遗址",
+      "subtitle": "骊山脚下的唐代皇家离宫",
+      "summary": "唐代帝王游幸别宫，背山面渭，规模宏大。历经千年变迁，从鼎盛到萧疏，现为全国重点文物保护单位。",
+      "tags": [
+        "唐代遗址",
+        "皇家园林",
+        "温泉文化",
+        "历史古迹"
+      ],
+      "total": 5,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1541818,
+      "audioCount": 5,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T08:00:19.995Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-wei-zhi-li-shi.jpg",
+        "02-li-yuan-yi-zhi.jpg",
+        "03-fei-shuang-dian.jpg",
+        "04-hai-tang-tang.jpg",
+        "05-chao-yuan-ge.jpg",
+        "body/01-wei-zhi-li-shi.md",
+        "body/02-li-yuan-yi-zhi.md",
+        "body/03-fei-shuang-dian.md",
+        "body/04-hai-tang-tang.md",
+        "body/05-chao-yuan-ge.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "366d2af3db2baa90f18d427789afe0d2a3a3baa0c28645627a9908faab658690",
+          "size": 3210
+        },
+        "cover.jpg": {
+          "sha256": "7e7841c9356a6cf4c54ecb72a07047765c99bd885e3d467206970387f5523897",
+          "size": 202772
+        },
+        "01-wei-zhi-li-shi.jpg": {
+          "sha256": "99919a48db1a4d22083b857320c5eb9721ad41c34d430f85cb7ff9b03b917023",
+          "size": 234115
+        },
+        "02-li-yuan-yi-zhi.jpg": {
+          "sha256": "30cb77cee033ef870c3aa4297ea89d9b1645ffbbf352d9dc12d25898be5e554d",
+          "size": 311253
+        },
+        "03-fei-shuang-dian.jpg": {
+          "sha256": "4cfc3632c9381043902da675606d8d4587dac187a313f07aa75067467a3e0e45",
+          "size": 221530
+        },
+        "04-hai-tang-tang.jpg": {
+          "sha256": "f954a4ce10f7c8e09f2f6c17dd4de3fdebf2024b828341946858c7bbd293f8f9",
+          "size": 370087
+        },
+        "05-chao-yuan-ge.jpg": {
+          "sha256": "ee3294b1bfdfc3d1c896c46adc4241ec4075f00cc6d62f4d72f3402312f0923d",
+          "size": 196949
+        },
+        "body/01-wei-zhi-li-shi.md": {
+          "sha256": "44714671bdd67a89ba2ad4bd69ac10e747e6eda4a9ae11c798c67e9ce649a33b",
+          "size": 372
+        },
+        "body/02-li-yuan-yi-zhi.md": {
+          "sha256": "9a4958e9ac5e98f81cbb467dafa514b9382296502f17446e8c647181ff83d646",
+          "size": 339
+        },
+        "body/03-fei-shuang-dian.md": {
+          "sha256": "356c8c8377e62faecad6d93a87e2816ccc6f9774f0c23cbc6186faacb73dd82d",
+          "size": 441
+        },
+        "body/04-hai-tang-tang.md": {
+          "sha256": "8ec353d9b9c112150e8039b849b235b2c2f25c80b75b52f3e6470d5c9151a925",
+          "size": 423
+        },
+        "body/05-chao-yuan-ge.md": {
+          "sha256": "d8861c519f78fa49b14836da5277bee5bf96fd4b7565175d47aea1cb65b16145",
+          "size": 327
+        }
+      }
+    },
+    {
+      "id": "huqiu",
+      "version": 1,
+      "title": "苏州虎丘",
+      "subtitle": "吴中第一名胜与千年斜塔",
+      "summary": "探访海涌山历史，见证剑池神秘传说，仰望云岩寺塔雄姿，感受生公说法典故。",
+      "tags": [
+        "世界遗产",
+        "5A景区",
+        "人文古迹",
+        "苏州园林"
+      ],
+      "total": 5,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1528812,
+      "audioCount": 5,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T08:11:12.095Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-tou-shan-men.jpg",
+        "02-duan-liang-dian.jpg",
+        "03-jian-chi.jpg",
+        "04-qian-ren-shi.jpg",
+        "05-hu-qiu-ta.jpg",
+        "body/01-tou-shan-men.md",
+        "body/02-duan-liang-dian.md",
+        "body/03-jian-chi.md",
+        "body/04-qian-ren-shi.md",
+        "body/05-hu-qiu-ta.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "148bf92089ad6a2f1b12e390514fd1874ccf67c2a8c5526d36a25663a7450473",
+          "size": 3089
+        },
+        "cover.jpg": {
+          "sha256": "6f22a72381ff8c041798a28b9eea97aabfdc5ef52b3904af9ab0d3afac2fc631",
+          "size": 204381
+        },
+        "01-tou-shan-men.jpg": {
+          "sha256": "9ac26de68152ba950b2b8ebe32e595b9d9cae96d0c0e8dd00525e1349f4559cf",
+          "size": 298364
+        },
+        "02-duan-liang-dian.jpg": {
+          "sha256": "89bd3494feaec3e0c358b771bf6d35142c3c69c81215fe0e0b2b53dc2887edfc",
+          "size": 269201
+        },
+        "03-jian-chi.jpg": {
+          "sha256": "20e8842c11cd2639873e30de2aa6e2b95653dadccc8db1d14ebc128031103c44",
+          "size": 278646
+        },
+        "04-qian-ren-shi.jpg": {
+          "sha256": "d107f8645c85527dedb7e6283e020713d57f840028563b0672ef1dec1e605d8a",
+          "size": 227244
+        },
+        "05-hu-qiu-ta.jpg": {
+          "sha256": "a7d706ff193dfca8d1d80d57b267b6e9e434afbe291b10d28aa82c0154a752fa",
+          "size": 245868
+        },
+        "body/01-tou-shan-men.md": {
+          "sha256": "0c7871517565ce555c074fbb528bf0018744d490e140658c9b4eb11486cc1bfe",
+          "size": 420
+        },
+        "body/02-duan-liang-dian.md": {
+          "sha256": "964429660a1ff1b8d90f44d1684e3409b79951f165c5a42678115c5d3a0dfcc8",
+          "size": 432
+        },
+        "body/03-jian-chi.md": {
+          "sha256": "dfe0709e057fa57613c1e74b72ad3bbb79d9c7ea65a321aac68620b41aa2a0ba",
+          "size": 450
+        },
+        "body/04-qian-ren-shi.md": {
+          "sha256": "b7dd285c2afe62323a56e04bbd8149246f3af234096837a60b21853b14b744f2",
+          "size": 351
+        },
+        "body/05-hu-qiu-ta.md": {
+          "sha256": "e61b3fee029ec768b941fa3e07ae4f4e42d87ab9dcc0abc859d80775f94e0202",
+          "size": 366
+        }
+      }
+    },
+    {
+      "id": "jiming-si",
+      "version": 1,
+      "title": "南京鸡鸣寺",
+      "subtitle": "南朝首刹与尼众道场",
+      "summary": "位于南京玄武区鸡笼山东麓，始于西晋，曾是南朝佛教中心。现为尼众道场，依山而建，殿宇层叠。",
+      "tags": [
+        "南京古迹",
+        "南朝佛教",
+        "尼众道场",
+        "樱花胜地"
+      ],
+      "total": 7,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1949172,
+      "audioCount": 0,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T08:53:09.073Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-shan-men.jpg",
+        "02-mi-le-dian.jpg",
+        "03-da-xiong-bao-dian.jpg",
+        "04-guan-yin-lou.jpg",
+        "05-huo-meng-lou.jpg",
+        "06-yan-zhi-jing.jpg",
+        "07-yao-shi-fo-ta.jpg",
+        "body/01-shan-men.md",
+        "body/02-mi-le-dian.md",
+        "body/03-da-xiong-bao-dian.md",
+        "body/04-guan-yin-lou.md",
+        "body/05-huo-meng-lou.md",
+        "body/06-yan-zhi-jing.md",
+        "body/07-yao-shi-fo-ta.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "64f79bdbbca6d3302e82b8663af255daaa804a133fbed38a966e7c8f199baa52",
+          "size": 2967
+        },
+        "cover.jpg": {
+          "sha256": "f9c78314078201d59978cefde31af42e2a4cef26ba061782353a20ac6a17053b",
+          "size": 202817
+        },
+        "01-shan-men.jpg": {
+          "sha256": "bfc64a930634a1579cb2cf1473d90a2b6343d30b62db50fadfeef8fc85034030",
+          "size": 286511
+        },
+        "02-mi-le-dian.jpg": {
+          "sha256": "ffd096142f4a415fbbde15efb16d0ad3663a3eeda622e46bb6fdc5f36c3e3f3d",
+          "size": 198117
+        },
+        "03-da-xiong-bao-dian.jpg": {
+          "sha256": "e981a97ce57472c0ef3211c0dbe746f08e73d9b30b12ef6ce350fc0d636ba0f3",
+          "size": 267325
+        },
+        "04-guan-yin-lou.jpg": {
+          "sha256": "e1e885960fc9ddc4664516b23a63310adb17c96b2e4e00652ed81aa61c7bc634",
+          "size": 199932
+        },
+        "05-huo-meng-lou.jpg": {
+          "sha256": "bac014b8c1f635748ceab1021bdb0d44ee6cf896e5ede5a7f9d93e54edfb0c47",
+          "size": 259675
+        },
+        "06-yan-zhi-jing.jpg": {
+          "sha256": "872ae9e6084feb1e9a5fd6df9217b6e8c27399de01dfdb8b4eb69580dbb5f065",
+          "size": 281292
+        },
+        "07-yao-shi-fo-ta.jpg": {
+          "sha256": "dd6a5f1b0d71b062ede71a805ce2dff16749579f4be591577579c91ff76b5309",
+          "size": 247677
+        },
+        "body/01-shan-men.md": {
+          "sha256": "4dd1e1292dc679d4db417b2f0c8980185f660f085519db7057c65cd487d8bd6c",
+          "size": 384
+        },
+        "body/02-mi-le-dian.md": {
+          "sha256": "b5379ed3125100410350a88318c78b5c85a2a162e77ad3d32933e2fa36f95eac",
+          "size": 324
+        },
+        "body/03-da-xiong-bao-dian.md": {
+          "sha256": "528f13188a48458d205073a16a3556ec6677118d16c9cc9ddee8e096d2bc301f",
+          "size": 339
+        },
+        "body/04-guan-yin-lou.md": {
+          "sha256": "637884b07f2dfe12a25f2121cb2a625285bfc4e52c86013ba9023035ddcf829f",
+          "size": 429
+        },
+        "body/05-huo-meng-lou.md": {
+          "sha256": "3fb9f17f102512bcf4d132bf2c55b326de805ecfad3cbd54f41775a305f083a1",
+          "size": 426
+        },
+        "body/06-yan-zhi-jing.md": {
+          "sha256": "ed8b9c3b871f69761759050d148f424eb8316fed9d0a3831fa6f372e883bc1f2",
+          "size": 456
+        },
+        "body/07-yao-shi-fo-ta.md": {
+          "sha256": "a7fb2e0f57bb16af1e1db7d2136c62ea03c4b459a050bc44a0acd7689193e0e8",
+          "size": 501
+        }
+      }
+    },
+    {
       "id": "laojunshan",
       "version": 1,
       "title": "老君山",
@@ -379,6 +1195,100 @@
       }
     },
     {
+      "id": "liangzhu-gucheng",
+      "version": 1,
+      "title": "良渚古城遗址",
+      "subtitle": "实证中华五千年文明史的圣地",
+      "summary": "位于杭州余杭，由古城、水利系统、墓地等组成，展现早期国家权力与信仰中心。",
+      "tags": [
+        "世界遗产",
+        "新石器时代",
+        "早期国家",
+        "玉礼器"
+      ],
+      "total": 6,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1822004,
+      "audioCount": 1,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T08:39:59.151Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-wei-shui-xi-tong.jpg",
+        "02-cheng-qiang-yi-zhi.jpg",
+        "03-mo-jiao-shan.jpg",
+        "04-fan-shan-mu-di.jpg",
+        "05-yu-li-qi-wu.jpg",
+        "06-vr-chen-jin.jpg",
+        "body/01-wei-shui-xi-tong.md",
+        "body/02-cheng-qiang-yi-zhi.md",
+        "body/03-mo-jiao-shan.md",
+        "body/04-fan-shan-mu-di.md",
+        "body/05-yu-li-qi-wu.md",
+        "body/06-vr-chen-jin.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "cc287b7a7aec1e503f369bde0284aa41d61bab603dcdb34d7744c4569496dc67",
+          "size": 2981
+        },
+        "cover.jpg": {
+          "sha256": "2c8076feb9f717f214fc1dbf3c19683caa97ce474bdcd2393981648118f69b6e",
+          "size": 196898
+        },
+        "01-wei-shui-xi-tong.jpg": {
+          "sha256": "e7c5a2020d920b0d6725b7048217a2219cf362a8f5ccfcb6f8b90fcf95591c4c",
+          "size": 306512
+        },
+        "02-cheng-qiang-yi-zhi.jpg": {
+          "sha256": "6f623149c9b85f7ee90dbca51738f69e0e7e32632d9c4b2d1d798b46b8f751e4",
+          "size": 320139
+        },
+        "03-mo-jiao-shan.jpg": {
+          "sha256": "5eb40bf6c64f808f70bbdb29fc8e66e84abe1445861fc47b31aa4735cad0b746",
+          "size": 260524
+        },
+        "04-fan-shan-mu-di.jpg": {
+          "sha256": "bd7188560fccfb0aa3e1d736b9c02fb0f79062f157f925e2210781fae4f56eb8",
+          "size": 331643
+        },
+        "05-yu-li-qi-wu.jpg": {
+          "sha256": "656d8555f7d9893c6a9ab70d5e9711c65e8cd5474a3739cbeb2a77274d2449ad",
+          "size": 172845
+        },
+        "06-vr-chen-jin.jpg": {
+          "sha256": "51f47b9b6511276c0135002141ea29b9e04bf4a8cbf364ec661a441a87e39baf",
+          "size": 227965
+        },
+        "body/01-wei-shui-xi-tong.md": {
+          "sha256": "37a0266d5eda5ff6b28116581a0b27b2c68ccc1581a54addc8769f6312eae3a5",
+          "size": 396
+        },
+        "body/02-cheng-qiang-yi-zhi.md": {
+          "sha256": "d50ca1305dbf2da68e03fcbf81ecd4604bbd68dc5efb2a4c6c5c9d68467fa5ca",
+          "size": 375
+        },
+        "body/03-mo-jiao-shan.md": {
+          "sha256": "8662b3f454dbef9eac64e08d2349ba387f9e67b7700416a3aee4fc79b131831e",
+          "size": 426
+        },
+        "body/04-fan-shan-mu-di.md": {
+          "sha256": "648d35a687110fc7e90206ed2fbe128154aba62a92c36fcd5dc9dc30f6791b90",
+          "size": 444
+        },
+        "body/05-yu-li-qi-wu.md": {
+          "sha256": "32cf9e7b6137fe8725954241ae531dce1c4c26f8afe63c0a59ab74c176019eeb",
+          "size": 486
+        },
+        "body/06-vr-chen-jin.md": {
+          "sha256": "a93d77595816440fa7fabba2e75813e407830636f6117933c8710b0a92e93d9a",
+          "size": 370
+        }
+      }
+    },
+    {
       "id": "lijingmen",
       "version": 2,
       "title": "洛阳丽景门",
@@ -459,6 +1369,100 @@
         "body/05-di-wang-shi-guan.md": {
           "sha256": "cc096dd4539605d357fc7020a0af08d051a90824eca1e11481800deb3674af6a",
           "size": 348
+        }
+      }
+    },
+    {
+      "id": "lingyin-si",
+      "version": 1,
+      "title": "杭州灵隐寺",
+      "subtitle": "东南佛国，千年禅宗古刹",
+      "summary": "位于西湖区的佛教名刹，始建于东晋，背靠北高峰面朝飞来峰，中轴线上殿宇庄严，现存清代重建格局。",
+      "tags": [
+        "佛教圣地",
+        "全国重点文保",
+        "杭州十景",
+        "禅宗古刹"
+      ],
+      "total": 6,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1713398,
+      "audioCount": 6,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T08:04:11.085Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-fei-lai-feng.jpg",
+        "02-tian-wang-dian.jpg",
+        "03-shi-ta-jing-chuang.jpg",
+        "04-da-xiong-bao-dian.jpg",
+        "05-yao-shi-dian.jpg",
+        "06-wu-bai-luo-han.jpg",
+        "body/01-fei-lai-feng.md",
+        "body/02-tian-wang-dian.md",
+        "body/03-shi-ta-jing-chuang.md",
+        "body/04-da-xiong-bao-dian.md",
+        "body/05-yao-shi-dian.md",
+        "body/06-wu-bai-luo-han.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "ef1d1004681b1c4994c57141e04623f394011423299639891bbacd73b87372c3",
+          "size": 3677
+        },
+        "cover.jpg": {
+          "sha256": "0b0a17a5b64f2ef0ab724c0cc065302488f22b47ae2d51011ac7ec7875585c3f",
+          "size": 203851
+        },
+        "01-fei-lai-feng.jpg": {
+          "sha256": "dfa6b00e0eeef06556b116c2548476184ff83e4c1946f97294b3aea3935175e7",
+          "size": 333664
+        },
+        "02-tian-wang-dian.jpg": {
+          "sha256": "7c94343c7dd961ba742488deebd5a3b82d1787bee2bc58a5c363169b5983ec74",
+          "size": 233583
+        },
+        "03-shi-ta-jing-chuang.jpg": {
+          "sha256": "326af1cc5b133d431369d047f16978b3df64a9907a541017e7fa927baa27baa9",
+          "size": 234592
+        },
+        "04-da-xiong-bao-dian.jpg": {
+          "sha256": "d9434ba85c108dca3df1b074dce60165f9dbed16ffaf34d5052f50e047eaaa05",
+          "size": 186435
+        },
+        "05-yao-shi-dian.jpg": {
+          "sha256": "da3e50487e2a22f9fded5c3377ddf326f2592798236b7425911bf2c45af36ba1",
+          "size": 252421
+        },
+        "06-wu-bai-luo-han.jpg": {
+          "sha256": "4543dc0463d3e98e53f0f0e710fa91e7e005aede4144125ddb0fb18eca50d4fe",
+          "size": 262736
+        },
+        "body/01-fei-lai-feng.md": {
+          "sha256": "074e9079c769a68ca9d59ceac2dd3e192aa50909e654ff5db61814c467baaade",
+          "size": 375
+        },
+        "body/02-tian-wang-dian.md": {
+          "sha256": "650d3e134a942ec7cf60ef61e0a1f7485a2f6724cb783cc939167d781c5a7143",
+          "size": 477
+        },
+        "body/03-shi-ta-jing-chuang.md": {
+          "sha256": "c220157328e1b8940225acc0cadf91bdcb5e8f2e3a6feb58869937184917d6c5",
+          "size": 366
+        },
+        "body/04-da-xiong-bao-dian.md": {
+          "sha256": "48f597345f04c425239fcf5f60543c409ace5146ee8d69b4330a8a018a44f1bf",
+          "size": 429
+        },
+        "body/05-yao-shi-dian.md": {
+          "sha256": "433e31714173ee3fe943b46010ba7144e5b7441d8f1c400cf2eafde80f5a1989",
+          "size": 330
+        },
+        "body/06-wu-bai-luo-han.md": {
+          "sha256": "569b8c2afafe53eb2b9c0a23c4bc28fa3c5943bb4cc97bc8c7d76c832ebb4581",
+          "size": 462
         }
       }
     },
@@ -923,6 +1927,278 @@
       }
     },
     {
+      "id": "ming-xiao-ling",
+      "version": 1,
+      "title": "南京明孝陵",
+      "subtitle": "明清皇家陵寝的开创之作",
+      "summary": "位于南京紫金山南麓，是明太祖朱元璋与马皇后的合葬陵寝。其首创的前方后圆格局，奠定了明清帝陵五百年的规制范本。",
+      "tags": [
+        "世界遗产",
+        "明代皇陵",
+        "朱元璋",
+        "建筑典范"
+      ],
+      "total": 6,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1847145,
+      "audioCount": 6,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T08:07:08.033Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-xia-ma-fang.jpg",
+        "02-si-fang-cheng.jpg",
+        "03-shen-dao-shi-ke.jpg",
+        "04-wen-wu-fang-men.jpg",
+        "05-xiang-dian-yi-zhi.jpg",
+        "06-fang-cheng-ming-lou.jpg",
+        "body/01-xia-ma-fang.md",
+        "body/02-si-fang-cheng.md",
+        "body/03-shen-dao-shi-ke.md",
+        "body/04-wen-wu-fang-men.md",
+        "body/05-xiang-dian-yi-zhi.md",
+        "body/06-fang-cheng-ming-lou.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "d7f649afdf31d109fbc1a770cae12c9c120a5a934026b681be8aee999ff0456f",
+          "size": 3690
+        },
+        "cover.jpg": {
+          "sha256": "566e655779c946309a92d0ed87fdea64a68d9d68a2fc96ae897617f7437ac794",
+          "size": 186497
+        },
+        "01-xia-ma-fang.jpg": {
+          "sha256": "6962a7d265eb7dd402b8c245786cac7044cecb438df5d9992c017a49736e9a25",
+          "size": 266518
+        },
+        "02-si-fang-cheng.jpg": {
+          "sha256": "7a0107424cbc4aa22e474e1551653c33f2295d8758feab7692a2897d540cf33e",
+          "size": 326533
+        },
+        "03-shen-dao-shi-ke.jpg": {
+          "sha256": "a2d41d06083731d729cdff97106de58b74e4bef02335cd495551a3a55e23246a",
+          "size": 261407
+        },
+        "04-wen-wu-fang-men.jpg": {
+          "sha256": "bf8ac4f54f9227e0a152d4048fa7efbc3c40ded374a78b1abd81d0453661201a",
+          "size": 185233
+        },
+        "05-xiang-dian-yi-zhi.jpg": {
+          "sha256": "0c0896bbc521714bbf4639aaad012c8f7b8fbe46044d1a3c7f3d1c79256116f1",
+          "size": 320668
+        },
+        "06-fang-cheng-ming-lou.jpg": {
+          "sha256": "fa508de0a088d21de02a50b376de11380cd8917da91dee8af00db7e4cfd2d2bc",
+          "size": 294298
+        },
+        "body/01-xia-ma-fang.md": {
+          "sha256": "b3b09ec409759de5a0aa84dc4e6dbb422741e0a7cc9374e1362fbd501a1e0627",
+          "size": 435
+        },
+        "body/02-si-fang-cheng.md": {
+          "sha256": "cc49905faaa1b1f1c96911f6ce83310e24c3646e082c887d5f439c439d4ab02f",
+          "size": 432
+        },
+        "body/03-shen-dao-shi-ke.md": {
+          "sha256": "c2ca5beb6ca5db179bdd4a26226328d2473124e34d0f312f1c338e23b441f0eb",
+          "size": 261
+        },
+        "body/04-wen-wu-fang-men.md": {
+          "sha256": "4bb042683382a10268cb7afd72c6b336ae9c9af90c60f25c75ecbc90ba6a9049",
+          "size": 378
+        },
+        "body/05-xiang-dian-yi-zhi.md": {
+          "sha256": "d53bdb4110b33277651af1470d14b57b84b587b6af55846e4a93747685a4091f",
+          "size": 414
+        },
+        "body/06-fang-cheng-ming-lou.md": {
+          "sha256": "c01f42d60b4e1b089bb2f814079d3def3493ab7d0e5cb8425ea9d919f3d216dc",
+          "size": 381
+        }
+      }
+    },
+    {
+      "id": "mingtang-tiantang",
+      "version": 1,
+      "title": "明堂天堂景区",
+      "subtitle": "武周神都核心遗址展示",
+      "summary": "位于洛阳紫微城遗址核心区，由明堂与天堂组成，是武则天理政礼佛的重要场所。",
+      "tags": [
+        "武则天",
+        "唐代建筑",
+        "遗址保护",
+        "洛阳地标"
+      ],
+      "total": 6,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1617094,
+      "audioCount": 6,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T07:32:36.704Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-jing-quan-mao.jpg",
+        "02-ming-tang-wai-guan.jpg",
+        "03-ming-tang-nei-ting.jpg",
+        "04-tian-tang-yi-zhi.jpg",
+        "05-tian-tang-bi-hua.jpg",
+        "06-tian-tang-ding-ceng.jpg",
+        "body/01-jing-quan-mao.md",
+        "body/02-ming-tang-wai-guan.md",
+        "body/03-ming-tang-nei-ting.md",
+        "body/04-tian-tang-yi-zhi.md",
+        "body/05-tian-tang-bi-hua.md",
+        "body/06-tian-tang-ding-ceng.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "628d7fceaea0a9c894781fd3385f054cd30992e0e15de34d10d4efe11791a221",
+          "size": 3750
+        },
+        "cover.jpg": {
+          "sha256": "d94c9737d7ca0e6d617d593ff7a7fb8a46c42435f1b9b682fef09e7373d13350",
+          "size": 184619
+        },
+        "01-jing-quan-mao.jpg": {
+          "sha256": "be192f6f41667abfb9f347a50d32142d5f24f5d7c8c96d6891e36ba9935361ce",
+          "size": 220108
+        },
+        "02-ming-tang-wai-guan.jpg": {
+          "sha256": "2d6209054aa8ebdb21443269b42ffe14f584a05cd0d9050fdefdb748c7223b89",
+          "size": 241711
+        },
+        "03-ming-tang-nei-ting.jpg": {
+          "sha256": "0c05b3fec591f671238e4e796470a5d15dcbba209ed5d3357c18008e27f2d124",
+          "size": 222022
+        },
+        "04-tian-tang-yi-zhi.jpg": {
+          "sha256": "eb609c70043518855bf4ec62df5abe8a5084b533aebcdebfc3bacc8965e3ac70",
+          "size": 215076
+        },
+        "05-tian-tang-bi-hua.jpg": {
+          "sha256": "5449d81106f07f7060da23a2a16e2859ec45371bd20ce4b0a780c5640ba44d43",
+          "size": 245140
+        },
+        "06-tian-tang-ding-ceng.jpg": {
+          "sha256": "1c4014e34b91c8670216f00499713cbcd766669ddf82f4e5ba15706f91805f80",
+          "size": 281920
+        },
+        "body/01-jing-quan-mao.md": {
+          "sha256": "ba3f37861fb6851d2574214ef9d2f8e7ddd40c24a4c80b484dcc653ed38f6985",
+          "size": 447
+        },
+        "body/02-ming-tang-wai-guan.md": {
+          "sha256": "382ed09e4ce0096d0e0f2bef52fcd9347a4daf20dc90bc30eadbd32aead31f60",
+          "size": 540
+        },
+        "body/03-ming-tang-nei-ting.md": {
+          "sha256": "8c79600c750691ca38fbc555b7ca2dc0b506e8f679ef1544e6d4ec55ec297cf7",
+          "size": 393
+        },
+        "body/04-tian-tang-yi-zhi.md": {
+          "sha256": "1139bf281bb11c29f3235983279481c1f7313a678e60f86647c8aff575231605",
+          "size": 474
+        },
+        "body/05-tian-tang-bi-hua.md": {
+          "sha256": "e668e4224aa778da9d41a80a8b97894def1d14506edf34f2c39c2a97f5d65640",
+          "size": 399
+        },
+        "body/06-tian-tang-ding-ceng.md": {
+          "sha256": "6d480cac8f82a0f3f2f47781c3ff5a0fb2a2bac2f2637dd85dcb37304db0e308",
+          "size": 495
+        }
+      }
+    },
+    {
+      "id": "nanjing-fuzimiao",
+      "version": 1,
+      "title": "南京夫子庙",
+      "subtitle": "秦淮河畔的文教圣地与科举中心",
+      "summary": "始建于东晋，由孔庙、学宫、贡院组成。这里曾是古代最高学府与科举考场，见证千年文脉。",
+      "tags": [
+        "国家5A景区",
+        "中国四大文庙",
+        "江南贡院",
+        "秦淮风光"
+      ],
+      "total": 5,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1251294,
+      "audioCount": 5,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T08:08:08.384Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-panchi-zhaobi.jpg",
+        "02-lingxing-men.jpg",
+        "03-dacheng-dian.jpg",
+        "04-mingde-tang.jpg",
+        "05-jiangnan-gongyuan.jpg",
+        "body/01-panchi-zhaobi.md",
+        "body/02-lingxing-men.md",
+        "body/03-dacheng-dian.md",
+        "body/04-mingde-tang.md",
+        "body/05-jiangnan-gongyuan.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "b6ce931084e5aa9b6278211db9106f743d44241a660974aded425b98f4452287",
+          "size": 3226
+        },
+        "cover.jpg": {
+          "sha256": "5dd4f0b04e41043934f7d378334357f68c10dab2a9babc7a8dd73d6a4fa56547",
+          "size": 197414
+        },
+        "01-panchi-zhaobi.jpg": {
+          "sha256": "3f421f9b177296806b139936920b966a9b920ffa3c18d899392a30e3610130c6",
+          "size": 244011
+        },
+        "02-lingxing-men.jpg": {
+          "sha256": "59d0b8dd62f913b3c27ec4879f25af82d0d6a479e49e40c5e29dea36f7b3ce6b",
+          "size": 209249
+        },
+        "03-dacheng-dian.jpg": {
+          "sha256": "b1572e08b0d8fe6dc552200ab506fac4994cf7e463ca7a4896d5e9fb48b0dc9b",
+          "size": 230109
+        },
+        "04-mingde-tang.jpg": {
+          "sha256": "d5b39ec35361a17afb5d179b48b1b8e85157e3eaf56197d4c5b424f575531aba",
+          "size": 166732
+        },
+        "05-jiangnan-gongyuan.jpg": {
+          "sha256": "377dc0c032872f32d0dc1abf9ac8b4f3393024f9304ac164947d26188a0d61f2",
+          "size": 198447
+        },
+        "body/01-panchi-zhaobi.md": {
+          "sha256": "78d55c5d4e5e8753ec27a0bc353360b9e01dbf34337dcf6233b6ce42452bc81a",
+          "size": 450
+        },
+        "body/02-lingxing-men.md": {
+          "sha256": "1c1b98bb49024a9c9266efb903630d120e31e94e0d694282a11652f9cab74108",
+          "size": 429
+        },
+        "body/03-dacheng-dian.md": {
+          "sha256": "ec49fcda9db4c430f747f6f94ab401184b85036a6f8e47c1569dcbbbf22118f0",
+          "size": 381
+        },
+        "body/04-mingde-tang.md": {
+          "sha256": "e4566a57b5aabdaea1179f0e3fdf2c33722ad328529aa77e638a563cb9efe6ec",
+          "size": 456
+        },
+        "body/05-jiangnan-gongyuan.md": {
+          "sha256": "597cedfbbf52a5f30d7477626ef79d29e6099b66f612433e8336fb0900ce1694",
+          "size": 390
+        }
+      }
+    },
+    {
       "id": "nanjing-road-walkway",
       "version": 1,
       "title": "南京路步行街",
@@ -1017,264 +2293,1143 @@
       }
     },
     {
-      "id": "waitan",
+      "id": "tian-tan",
       "version": 1,
-      "title": "上海外滩",
-      "subtitle": "万国建筑博览与百年金融传奇",
-      "summary": "沿黄浦江畔漫步，从南端延安东路至北端外白渡桥，解读52幢古典复兴大楼背后的租界历史与金融变迁。",
+      "title": "北京天坛",
+      "subtitle": "明清皇家祭天祈谷的礼制建筑群",
+      "summary": "位于北京东城区，是明清皇帝祭天、祈谷和祈雨场所。集古代建筑技艺与礼制内涵于一体，展现天圆地方宇宙观。",
       "tags": [
-        "历史街区",
-        "建筑艺术",
-        "金融中心",
-        "城市地标"
-      ],
-      "total": 6,
-      "narratorName": "",
-      "cover": "cover.jpg",
-      "bytes": 1439824,
-      "audioCount": 6,
-      "aiGenerated": true,
-      "refreshedAt": "2026-11-18T04:38:43.584Z",
-      "files": [
-        "pack.json",
-        "cover.jpg",
-        "01-qi-yuan.jpg",
-        "02-chen-yi.jpg",
-        "03-hui-feng.jpg",
-        "04-hai-guan.jpg",
-        "05-he-ping.jpg",
-        "06-wai-bai.jpg",
-        "body/01-qi-yuan.md",
-        "body/02-chen-yi.md",
-        "body/03-hui-feng.md",
-        "body/04-hai-guan.md",
-        "body/05-he-ping.md",
-        "body/06-wai-bai.md"
-      ],
-      "checksums": {
-        "pack.json": {
-          "sha256": "cc95e66552a78ddff5b54b84a6b5945a6369e4fcb5329a799e7e64b0da985c78",
-          "size": 3612
-        },
-        "cover.jpg": {
-          "sha256": "cc4547011e9dcbcc8855207bd73cc7a3cc711f7031618af02adebc2f05834150",
-          "size": 167661
-        },
-        "01-qi-yuan.jpg": {
-          "sha256": "1b17a38c52a93a9c881e580ad5d7de3d460fadea6021f48efb3c60be86bc4de1",
-          "size": 191054
-        },
-        "02-chen-yi.jpg": {
-          "sha256": "f7858fcc9e972446c3644b81bb791d36e930300edcc9a75f16458a1cc4d23ea9",
-          "size": 219840
-        },
-        "03-hui-feng.jpg": {
-          "sha256": "60ee96cf1e0d8176e800d63e8ba0393f491c941cad9d62903b79b0abecbbdf27",
-          "size": 246341
-        },
-        "04-hai-guan.jpg": {
-          "sha256": "5f166d19cda06ec644765bfab24be56916c8ae91e164cb70ebd6c94009809d4c",
-          "size": 202257
-        },
-        "05-he-ping.jpg": {
-          "sha256": "6242f193e1ee25529809b70cf1b2e77d6bff70dab8c9fd54e7171f70a2077675",
-          "size": 215534
-        },
-        "06-wai-bai.jpg": {
-          "sha256": "01b9f1e9eec4fd63a27433275b55588178c833dc16bdeab505bea459e7bb5e5e",
-          "size": 191228
-        },
-        "body/01-qi-yuan.md": {
-          "sha256": "a580a7dd257b382b6b818ae41c8f18b5043712abca72d92e44ba5b82ad6702b1",
-          "size": 360
-        },
-        "body/02-chen-yi.md": {
-          "sha256": "e12009b505e36fb714571a2465fe741c406f8b8cd1b0c7cb6328fb4166789edb",
-          "size": 351
-        },
-        "body/03-hui-feng.md": {
-          "sha256": "4ffaf281520ee58a69623ddf34f644a69c96074b42c4e89e8583b9093f5ba903",
-          "size": 459
-        },
-        "body/04-hai-guan.md": {
-          "sha256": "9e824ba327352e9717853913781b000c8f46bed2555dd976b81cf2133849f744",
-          "size": 354
-        },
-        "body/05-he-ping.md": {
-          "sha256": "6693fda99daceb9997348fdda72ea9bc09c932a48d1b322e45497e884caead81",
-          "size": 389
-        },
-        "body/06-wai-bai.md": {
-          "sha256": "995ca15d384ee3ec2eab59bd2127ae03fbe8c2a8253180fd505e923fbec07b21",
-          "size": 384
-        }
-      }
-    },
-    {
-      "id": "yingtianmen",
-      "version": 1,
-      "title": "应天门遗址",
-      "subtitle": "隋唐洛阳城宫城正南门，天下第一门",
-      "summary": "隋唐洛阳城标志性建筑，存世530余年。2019年遗址博物馆开放，以数字化技术再现盛唐气象。",
-      "tags": [
-        "隋唐遗迹",
-        "皇家建筑",
-        "中轴线",
-        "夜景灯光"
+        "世界文化遗产",
+        "皇家祭祀",
+        "古建筑",
+        "北京中轴线"
       ],
       "total": 5,
       "narratorName": "",
       "cover": "cover.jpg",
-      "bytes": 1339320,
+      "bytes": 1139339,
       "audioCount": 5,
       "aiGenerated": true,
-      "refreshedAt": "2026-11-18T02:30:24.690Z",
+      "refreshedAt": "2026-11-18T07:51:49.377Z",
       "files": [
         "pack.json",
         "cover.jpg",
-        "01-zhongzhou-nanzhan.jpg",
-        "02-que-tai-jizhi.jpg",
-        "03-wa-dang-goujian.jpg",
-        "04-gang-jie-cheng-tai.jpg",
-        "05-fu-yuan-men-lou.jpg",
-        "body/01-zhongzhou-nanzhan.md",
-        "body/02-que-tai-jizhi.md",
-        "body/03-wa-dang-goujian.md",
-        "body/04-gang-jie-cheng-tai.md",
-        "body/05-fu-yuan-men-lou.md"
+        "01-zhai-gong.jpg",
+        "02-dan-bi-qiao.jpg",
+        "03-huang-qiong-yu.jpg",
+        "04-huan-qiu-tan.jpg",
+        "05-qi-nian-dian.jpg",
+        "body/01-zhai-gong.md",
+        "body/02-dan-bi-qiao.md",
+        "body/03-huang-qiong-yu.md",
+        "body/04-huan-qiu-tan.md",
+        "body/05-qi-nian-dian.md"
       ],
       "checksums": {
         "pack.json": {
-          "sha256": "73b6628f2cbeba1b1af8a21c9357135a6ad5b4020ab40e7d388f7c0646ac93d7",
-          "size": 3262
+          "sha256": "82c2c7798de1468aea9f628d7894fa9b26a4629c26f5bde03855de9d08e677eb",
+          "size": 3162
         },
         "cover.jpg": {
-          "sha256": "5191b60e950f1ccf0cdf120082ac0809e1281c2510b28ff16aca1d7e8d7f3d9b",
-          "size": 195187
+          "sha256": "2489ada3f18619b24bdb922a23c14778431cde3110fb4f04f53eb2c777cde645",
+          "size": 183493
         },
-        "01-zhongzhou-nanzhan.jpg": {
-          "sha256": "4e30a3f94b3847e78ab464d52208333efd31ba8d2fd67637df0c756c032c6708",
-          "size": 226861
+        "01-zhai-gong.jpg": {
+          "sha256": "6748c079b772695fc24104813e9997e1e36f45e5cc39966379f40c3c985ad578",
+          "size": 203630
         },
-        "02-que-tai-jizhi.jpg": {
-          "sha256": "1944114d49aafbce2e2879be6f4b20526550c25c49a8c6ba03cac068d1eb556f",
-          "size": 241188
+        "02-dan-bi-qiao.jpg": {
+          "sha256": "8abc089ef35de4c6b1ea2bac79d82f684db17666811ac2208e40d025106353ae",
+          "size": 165542
         },
-        "03-wa-dang-goujian.jpg": {
-          "sha256": "bd0b8137dad21a32777b90127d20fe03e0733f03ec503e9ff0d04843f3d60a94",
-          "size": 250666
+        "03-huang-qiong-yu.jpg": {
+          "sha256": "8c24f95f9b3fcf6e194c3f57b9f02939dd97bdcdfa18ac3047d5ad72d9904022",
+          "size": 195637
         },
-        "04-gang-jie-cheng-tai.jpg": {
-          "sha256": "169ba52bbe3cc750429f7502d7b6608a75eefa1d31481fb636fe378ec8f542df",
-          "size": 245272
+        "04-huan-qiu-tan.jpg": {
+          "sha256": "d9b4d9aa8b42243bd519fc1c8aba351eac6a7b8af0a8b055a3966b286a015fab",
+          "size": 160551
         },
-        "05-fu-yuan-men-lou.jpg": {
-          "sha256": "6107d383e3ee007bd9901295221d1cb8f348e6c07d338d9e6353dca74e564f1e",
-          "size": 175036
+        "05-qi-nian-dian.jpg": {
+          "sha256": "37285bcc33a7de03e26fda0113e3f5576978abd51afefcf9ddf2dd62d32ee8d0",
+          "size": 225494
         },
-        "body/01-zhongzhou-nanzhan.md": {
-          "sha256": "eb651f11b66dc8bd400854b9155d9f9f067402c7deba3e5d684d414400f94367",
-          "size": 318
+        "body/01-zhai-gong.md": {
+          "sha256": "43adac8ea1082cb12531bc6f89f8f14499db9069eb4c95df26bb38a1627d34c7",
+          "size": 435
         },
-        "body/02-que-tai-jizhi.md": {
-          "sha256": "26fde2c74bafc369b9b5b01eaf1ed261402b82125075180d76d47fcf71d01907",
-          "size": 357
+        "body/02-dan-bi-qiao.md": {
+          "sha256": "8c8c1e379cfc5ff3e62ce05eee1067697425edb9810cc533135235b3849830ae",
+          "size": 369
         },
-        "body/03-wa-dang-goujian.md": {
-          "sha256": "c3327c4dc206689b175f2dda77c16b684bfbaa25d8d8e3dbc0d94de816c5d3e2",
-          "size": 342
+        "body/03-huang-qiong-yu.md": {
+          "sha256": "2c2aee6fedcfe4bf44d2bea81ad6a35851364c1d71b369f12c2f5b710d30c4b2",
+          "size": 339
         },
-        "body/04-gang-jie-cheng-tai.md": {
-          "sha256": "d0288d3f39072093685065d53f40baf6ace03694b9b8d0ea0aff46cbbc0dc47b",
-          "size": 453
+        "body/04-huan-qiu-tan.md": {
+          "sha256": "62637ddfd5dbfa35af65e35c2c1e551d514c35f022a05c9978974d889cba1a4c",
+          "size": 351
         },
-        "body/05-fu-yuan-men-lou.md": {
-          "sha256": "7c76729c64bd2f175fb5c77ac26b9c45254d0c03c0d14fe953c3b8e11d124dc0",
+        "body/05-qi-nian-dian.md": {
+          "sha256": "4f45795983bafeb98af776150a093bff385a39a708679f6ccaff703143e21ca8",
+          "size": 336
+        }
+      }
+    },
+    {
+      "id": "tianzi-jialiu",
+      "version": 3,
+      "title": "天子驾六博物馆",
+      "subtitle": "东周王城遗址下的车马遗珍",
+      "summary": "依托2002年重大考古发现，原址展示东周时期大型车马坑，印证“天子驾六”礼制。",
+      "tags": [
+        "遗址博物馆",
+        "东周文明",
+        "车马坑",
+        "洛阳"
+      ],
+      "total": 6,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1439308,
+      "audioCount": 6,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T07:47:28.748Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-zhou-wangcheng-guangchang.jpg",
+        "02-bowuguan-rukou.jpg",
+        "03-wangcheng-xunzong.jpg",
+        "04-wangling-tanmi.jpg",
+        "05-chemakeng-yizhi.jpg",
+        "06-tianzi-jialiu-shiche.jpg",
+        "body/01-zhou-wangcheng-guangchang.md",
+        "body/02-bowuguan-rukou.md",
+        "body/03-wangcheng-xunzong.md",
+        "body/04-wangling-tanmi.md",
+        "body/05-chemakeng-yizhi.md",
+        "body/06-tianzi-jialiu-shiche.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "be19408554eb43b3c5253e6ad9477fef74373f25aea431ab2d6f2ba26fe77fb3",
+          "size": 3810
+        },
+        "cover.jpg": {
+          "sha256": "ee80e48a49c8c38619f587b5a36ed94ba443683bb7b6c1fff12f00481317cef3",
+          "size": 184795
+        },
+        "01-zhou-wangcheng-guangchang.jpg": {
+          "sha256": "db902c1ee50b5748a9832aa3bcb7badf33ff61e1feb06413ed25efb9e49623aa",
+          "size": 204934
+        },
+        "02-bowuguan-rukou.jpg": {
+          "sha256": "f3d1d1d000d61a304d212906eff94f9a25fa03d6d0e3f28adcdd4fbe2d8cda25",
+          "size": 116982
+        },
+        "03-wangcheng-xunzong.jpg": {
+          "sha256": "a7086340ce8330a909d81619f70de930a785a54beaf5c960def1aaa8c59a10ba",
+          "size": 274089
+        },
+        "04-wangling-tanmi.jpg": {
+          "sha256": "7c01bcac6f0a60efaacdc08af66bece460909362cc352920f581920577174719",
+          "size": 209501
+        },
+        "05-chemakeng-yizhi.jpg": {
+          "sha256": "5e9317f37686151b7853345087fbc1bf3dbf33639498509ccb6fccd1a44faa73",
+          "size": 215546
+        },
+        "06-tianzi-jialiu-shiche.jpg": {
+          "sha256": "931b507dabb3c7143db0819b40845942740a589b2dbf90019e6ab27310d2cc9d",
+          "size": 227131
+        },
+        "body/01-zhou-wangcheng-guangchang.md": {
+          "sha256": "e9696305ee9099390ef392c25b94441965d5ca9a00d4937c41c9180a4650b876",
+          "size": 486
+        },
+        "body/02-bowuguan-rukou.md": {
+          "sha256": "f208de7d61f4ed4fd007879b249ce9db72102f1bffb3d51b78a81de10cfb5725",
+          "size": 381
+        },
+        "body/03-wangcheng-xunzong.md": {
+          "sha256": "7e834d9f6d87f12874381e6bcae1864332cc422d0c4755218c89e8b047c6fd8e",
+          "size": 462
+        },
+        "body/04-wangling-tanmi.md": {
+          "sha256": "adea1702bad9b3774f0ef4dfc2efb0f421c3943b4858dfa30e1dc0b06b45ffc6",
+          "size": 345
+        },
+        "body/05-chemakeng-yizhi.md": {
+          "sha256": "2d3bc6bb248f252915a1dfa32ecfc105b7e368fa3140dac1d6ce82fdd7dc3f2f",
+          "size": 405
+        },
+        "body/06-tianzi-jialiu-shiche.md": {
+          "sha256": "c612a5aedf4ec5af08c70175bf1c6795e3af1e8c13897d914a868de728d39997",
+          "size": 441
+        }
+      }
+    },
+    {
+      "id": "waitan",
+      "version": 2,
+      "title": "上海外滩",
+      "subtitle": "黄浦江畔的万国建筑博览群",
+      "summary": "位于上海市黄浦区，全长一点五千米。曾是英法租界起点，汇聚五十二幢风格迥异的古典复兴大楼，见证上海近代金融与城市变迁。",
+      "tags": [
+        "历史街区",
+        "建筑艺术",
+        "金融中心",
+        "上海地标"
+      ],
+      "total": 6,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1353066,
+      "audioCount": 6,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T07:49:43.945Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-wai-tan-yuan-you.jpg",
+        "02-chen-yi-guang-chang.jpg",
+        "03-hui-feng-da-lou.jpg",
+        "04-zhong-guo-yin-hang.jpg",
+        "05-hai-guan-da-lou.jpg",
+        "06-wai-bai-du-qiao.jpg",
+        "body/01-wai-tan-yuan-you.md",
+        "body/02-chen-yi-guang-chang.md",
+        "body/03-hui-feng-da-lou.md",
+        "body/04-zhong-guo-yin-hang.md",
+        "body/05-hai-guan-da-lou.md",
+        "body/06-wai-bai-du-qiao.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "0e5f89789c5bb3d8d96edf7793c16484e97e6fda549ce714344636abf2ccf76a",
+          "size": 3757
+        },
+        "cover.jpg": {
+          "sha256": "e763fc5ae7c0da0b0812becaa000ec1da08ef57cbe75db66b1823dbfbd33891b",
+          "size": 143219
+        },
+        "01-wai-tan-yuan-you.jpg": {
+          "sha256": "1998ca4b62ebddc4ea7c7aeafc882bdcdedb40f928057c9bd7011306438173c3",
+          "size": 151872
+        },
+        "02-chen-yi-guang-chang.jpg": {
+          "sha256": "1e061c4e12d464bcbf3432f5ff7ca871fee250cc064d778674c9813ec14dbdd2",
+          "size": 160357
+        },
+        "03-hui-feng-da-lou.jpg": {
+          "sha256": "789741027b160ce88c7c135c4f63795caee5ee7dbede3f3ed5f1d122fee004a1",
+          "size": 229280
+        },
+        "04-zhong-guo-yin-hang.jpg": {
+          "sha256": "0631d3fdcdd3bba5ee33e098569f4b342cc890d4195124bbf3e7172436e33b86",
+          "size": 234421
+        },
+        "05-hai-guan-da-lou.jpg": {
+          "sha256": "06081e5b07c2f6ff5380d51d9ec08e993958454a24484a2f6d2bdc198f07cf42",
+          "size": 215635
+        },
+        "06-wai-bai-du-qiao.jpg": {
+          "sha256": "964e7360af45394b0b552c949685807e2f3b2ffb217b1cc0fc7e0e512484a29c",
+          "size": 211795
+        },
+        "body/01-wai-tan-yuan-you.md": {
+          "sha256": "c4ab71c0b19087521feaee65d600c150ffc53d0fdf4bccfb00f6a23d7dd809ab",
+          "size": 384
+        },
+        "body/02-chen-yi-guang-chang.md": {
+          "sha256": "23dcc22328f98822f22180f7d92c12fde3123e9d270bae465f67d6d68604b419",
+          "size": 504
+        },
+        "body/03-hui-feng-da-lou.md": {
+          "sha256": "e330db0d24db0e65cc23166762df7b26abef71f8ec0c5b5e69511901bec80276",
+          "size": 393
+        },
+        "body/04-zhong-guo-yin-hang.md": {
+          "sha256": "9d53f5c85cd8cb99b4371c7964a591e8c25d0c15cba7f81ed4a87aba00308e20",
+          "size": 564
+        },
+        "body/05-hai-guan-da-lou.md": {
+          "sha256": "b82fabde91f820379cc4615432c19574c4e56364c31a8b39741fc1cc883050db",
+          "size": 525
+        },
+        "body/06-wai-bai-du-qiao.md": {
+          "sha256": "c57e706ea63c423e4015fdbe552b9881a6ccf7fe7cfe814ecb0d571c50fcda5c",
+          "size": 360
+        }
+      }
+    },
+    {
+      "id": "wuhou-ci",
+      "version": 1,
+      "title": "成都武侯祠",
+      "subtitle": "君臣合祀的蜀汉英雄纪念地",
+      "summary": "位于成都武侯区，由汉昭烈庙、武侯祠、惠陵等组成，是第一批全国重点文物保护单位。",
+      "tags": [
+        "三国文化",
+        "全国重点文物",
+        "君臣合祀",
+        "成都名胜"
+      ],
+      "total": 6,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1434991,
+      "audioCount": 6,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T08:12:20.160Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-da-men-bi-ting.jpg",
+        "02-han-zhao-lie-miao.jpg",
+        "03-wen-wu-lang.jpg",
+        "04-liu-bei-dian.jpg",
+        "05-zhu-ge-liang-dian.jpg",
+        "06-hui-ling.jpg",
+        "body/01-da-men-bi-ting.md",
+        "body/02-han-zhao-lie-miao.md",
+        "body/03-wen-wu-lang.md",
+        "body/04-liu-bei-dian.md",
+        "body/05-zhu-ge-liang-dian.md",
+        "body/06-hui-ling.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "cdff677982e0071f8df45f14063fb2ce15f770029dac39f13e1e3ccdaf8da793",
+          "size": 3696
+        },
+        "cover.jpg": {
+          "sha256": "d219f69847b9660230378b07a03c7b60f68656145643d38b77a50c721df0b6bc",
+          "size": 140024
+        },
+        "01-da-men-bi-ting.jpg": {
+          "sha256": "8fc2f2bff780a3bf45cfd34a6828f0731d6065fb31652ac7d18176c8dc92776a",
+          "size": 183985
+        },
+        "02-han-zhao-lie-miao.jpg": {
+          "sha256": "15e3f07e5cfbe050f7022d82b92ab9e122a63675af410804b316730d1d503bc9",
+          "size": 224083
+        },
+        "03-wen-wu-lang.jpg": {
+          "sha256": "853d19d35535f54a05a7e09c9e093eeb84a6b0812283daee8979e9735dbe9290",
+          "size": 234123
+        },
+        "04-liu-bei-dian.jpg": {
+          "sha256": "6577a84276b34a069f99b56df1a37484cafd0cda317b048de4545ee0183ffdc7",
+          "size": 207967
+        },
+        "05-zhu-ge-liang-dian.jpg": {
+          "sha256": "3681b3d61c6798ca1d2e192f299321cc7749f50b2e8d23b52e130eb37f63b1af",
+          "size": 188087
+        },
+        "06-hui-ling.jpg": {
+          "sha256": "a6f3a754175584743cf73a3ec6acf1437d90fbf922e5f2c0748e34201daef22a",
+          "size": 250623
+        },
+        "body/01-da-men-bi-ting.md": {
+          "sha256": "095e27cc39795d20f429f9d3e56d3a14bcdc04e378f1bd26bf3b1950f90bc5ef",
+          "size": 378
+        },
+        "body/02-han-zhao-lie-miao.md": {
+          "sha256": "376d2c1376852b08f25c8090158cb4c1e022d8a5c88e028943a6406db37a667c",
+          "size": 474
+        },
+        "body/03-wen-wu-lang.md": {
+          "sha256": "a726c23f33930406c33462551d6218adae9cb28aba4cf3b9de4e1da006dd5544",
+          "size": 393
+        },
+        "body/04-liu-bei-dian.md": {
+          "sha256": "9311447cd2ce8a33644189aff7e767ccd9c7391a87ee7a4677066e1252c20975",
+          "size": 378
+        },
+        "body/05-zhu-ge-liang-dian.md": {
+          "sha256": "086fd917e1c4cbbcca0289c17a78d20de16a7e2decd4a82f84e5c27a668d5d47",
+          "size": 381
+        },
+        "body/06-hui-ling.md": {
+          "sha256": "84728a64a09b40f666495db361a391a4937c7f932e66c7d23203f2bd95690a15",
+          "size": 399
+        }
+      }
+    },
+    {
+      "id": "xi-an-zhong-lou",
+      "version": 1,
+      "title": "西安钟楼",
+      "subtitle": "古城中心的明代重檐楼阁",
+      "summary": "始建于明洪武年间，万历年间整体迁移至现址。作为全国重点文物保护单位，见证古城变迁与晨钟暮鼓。",
+      "tags": [
+        "全国重点文保",
+        "明代建筑",
+        "城市地标",
+        "历史迁移"
+      ],
+      "total": 5,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1434302,
+      "audioCount": 5,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T08:01:31.206Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-zhong-xin-wei-zhi.jpg",
+        "02-dong-qian-bei-ke.jpg",
+        "03-men-shan-diao-hua.jpg",
+        "04-jing-yun-fang-zhong.jpg",
+        "05-liu-li-jin-ding.jpg",
+        "body/01-zhong-xin-wei-zhi.md",
+        "body/02-dong-qian-bei-ke.md",
+        "body/03-men-shan-diao-hua.md",
+        "body/04-jing-yun-fang-zhong.md",
+        "body/05-liu-li-jin-ding.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "c4f0516ffd6e64a5ac35be6b6a7a4b760d58cb26d572b7d496a3ed51967d6ef4",
+          "size": 3250
+        },
+        "cover.jpg": {
+          "sha256": "f63d89095b6987c28d156cf5b5e045591625a420bc0ce117750c984125e20b3c",
+          "size": 201146
+        },
+        "01-zhong-xin-wei-zhi.jpg": {
+          "sha256": "3942f709f67ae06b2865b03adec615128d37082fa4f6fa29f6797a2c97c0d918",
+          "size": 333753
+        },
+        "02-dong-qian-bei-ke.jpg": {
+          "sha256": "58ca7ace4d3c61f44fe15f3ed06a926e9e807968b9a90b93c90ca9480c06da24",
+          "size": 254944
+        },
+        "03-men-shan-diao-hua.jpg": {
+          "sha256": "24d94c1d528c782d01ef06a30b9cc7d7f3d28d84b191a202223aa0df6857eba0",
+          "size": 283389
+        },
+        "04-jing-yun-fang-zhong.jpg": {
+          "sha256": "be1b30ceb9ffc8f2dea4025d350345d93726c911f51e2be54a9b88ac64f89b4d",
+          "size": 166360
+        },
+        "05-liu-li-jin-ding.jpg": {
+          "sha256": "4463cadc053626a2eea212e12bd91cb1c9ad971939f54c1399182cbe57bb09d4",
+          "size": 189459
+        },
+        "body/01-zhong-xin-wei-zhi.md": {
+          "sha256": "e2aad6646557a7b174d052219a23f934427fd2ea2abc55f28f5b72370b52152e",
+          "size": 423
+        },
+        "body/02-dong-qian-bei-ke.md": {
+          "sha256": "2933fbb88d25422755bdb9b801eda488d8f9abae0c98537da3b8faf92e3218b2",
+          "size": 360
+        },
+        "body/03-men-shan-diao-hua.md": {
+          "sha256": "b2aa412a336e87d9d20360309e0f0b3971c2364fc2e0400e755d3454c5add9d4",
+          "size": 378
+        },
+        "body/04-jing-yun-fang-zhong.md": {
+          "sha256": "1ecad44995067260ca0b341bc8e995b1343508c7148e4f708d53555486ae7186",
+          "size": 462
+        },
+        "body/05-liu-li-jin-ding.md": {
+          "sha256": "995d7d60fe5add72a5f5afc8a683daf66ef057c492b3254bb3f7f8de06abcdcb",
           "size": 378
         }
       }
     },
     {
-      "id": "yu-yuan",
+      "id": "xi-hu",
       "version": 1,
-      "title": "上海豫园",
-      "subtitle": "江南古典园林与近代历史见证",
-      "summary": "始建于明嘉靖年间的私家园林，历经战火与公所瓜分，现为国家重点文物保护单位，集山水建筑与红色历史于一体。",
+      "title": "杭州西湖",
+      "subtitle": "世界文化景观遗产与江南名湖",
+      "summary": "位于杭州市区西部，由海湾演变为潟湖，经历代治理成为灌溉水库与风景名胜，2011年列入世界遗产名录。",
+      "tags": [
+        "世界遗产",
+        "江南名湖",
+        "水利奇迹",
+        "人文景观"
+      ],
+      "total": 6,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1415636,
+      "audioCount": 6,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T08:02:54.811Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-hu-pan-yuan-wang.jpg",
+        "02-bao-shi-yan-dao.jpg",
+        "03-bai-gong-ti-zhi.jpg",
+        "04-su-di-chun-xiao.jpg",
+        "05-yin-shui-gong-cheng.jpg",
+        "06-shi-jie-yi-chan.jpg",
+        "body/01-hu-pan-yuan-wang.md",
+        "body/02-bao-shi-yan-dao.md",
+        "body/03-bai-gong-ti-zhi.md",
+        "body/04-su-di-chun-xiao.md",
+        "body/05-yin-shui-gong-cheng.md",
+        "body/06-shi-jie-yi-chan.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "dc239e3aabead2261af76d32fa88b415b392e3e2990aae8e2203d19e08bd8de2",
+          "size": 3703
+        },
+        "cover.jpg": {
+          "sha256": "ce5d9ad078d6b4f51cf6e450331dbe989581247d841b4a618901982df5191fcf",
+          "size": 118040
+        },
+        "01-hu-pan-yuan-wang.jpg": {
+          "sha256": "2c8dd40fe11a448654bda5472271c07d648b3e42676e8e1e3133162e2db47a7d",
+          "size": 142500
+        },
+        "02-bao-shi-yan-dao.jpg": {
+          "sha256": "32fe9619ad632f1faf29856d8c9ce1e66027af3c033a92df4e57c1c81b34c09f",
+          "size": 164710
+        },
+        "03-bai-gong-ti-zhi.jpg": {
+          "sha256": "9b81e8ceeeb17a4c27cdd2337530e84210c1b9d7567940325ba538293b347b19",
+          "size": 295880
+        },
+        "04-su-di-chun-xiao.jpg": {
+          "sha256": "46dc9284b7507047d5ea06e1c25780ed522fe37c5280181198aab1d82a6d51e7",
+          "size": 189990
+        },
+        "05-yin-shui-gong-cheng.jpg": {
+          "sha256": "cdb34fc12dfc31d6c728b92e109d050f244b9cee27612c9d025f7e17c3d96f22",
+          "size": 253238
+        },
+        "06-shi-jie-yi-chan.jpg": {
+          "sha256": "d54f0bf128397e7b6713bc2d60964486c8d06ec38dd262a8f42468f27abe6a6e",
+          "size": 245028
+        },
+        "body/01-hu-pan-yuan-wang.md": {
+          "sha256": "3287f36b6bc6c9ef75722297d83ae83fcf60454cbcf429e0dfb0745d7327e955",
+          "size": 468
+        },
+        "body/02-bao-shi-yan-dao.md": {
+          "sha256": "0e06b42752de1d12ef8c36c57de6b3af9abcec6c623dd46b838bf1163cf512c0",
+          "size": 423
+        },
+        "body/03-bai-gong-ti-zhi.md": {
+          "sha256": "a756aed749bb9ce10366835525372b7862870cf5ba62ae904f6f5fd4720b4651",
+          "size": 408
+        },
+        "body/04-su-di-chun-xiao.md": {
+          "sha256": "dcdc9d50d5d7e99c4d7758bd3390ef9b1e45d7e505280e466c1063e4514cda98",
+          "size": 435
+        },
+        "body/05-yin-shui-gong-cheng.md": {
+          "sha256": "62681483758e92efc6306c9ab25bb6defdec463960490b0cbdbe62485e1fe2be",
+          "size": 369
+        },
+        "body/06-shi-jie-yi-chan.md": {
+          "sha256": "d6416764b4d9d9dbcf986ba4369e90a3300fe9404522e1600b8e92f384cade7f",
+          "size": 444
+        }
+      }
+    },
+    {
+      "id": "xian-chengqiang",
+      "version": 1,
+      "title": "西安城墙",
+      "subtitle": "明代府城与隋唐皇城的叠压共生",
+      "summary": "依托隋唐皇城基础扩建，历经明清修葺，是中国现存规模宏大、保存完整的古代城垣建筑。",
       "tags": [
         "全国重点文保",
-        "江南园林",
-        "小刀会遗址",
-        "明代假山"
+        "明代军事防御",
+        "城市历史变迁"
       ],
       "total": 5,
       "narratorName": "",
       "cover": "cover.jpg",
-      "bytes": 1797139,
+      "bytes": 1327848,
       "audioCount": 5,
       "aiGenerated": true,
-      "refreshedAt": "2026-11-18T04:41:04.326Z",
+      "refreshedAt": "2026-11-18T07:58:07.401Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-yongning-men.jpg",
+        "02-han-guang-men.jpg",
+        "03-cheng-qiang-duan-mian.jpg",
+        "04-di-tai-yu-dou-kou.jpg",
+        "05-weng-cheng-jie-gou.jpg",
+        "body/01-yongning-men.md",
+        "body/02-han-guang-men.md",
+        "body/03-cheng-qiang-duan-mian.md",
+        "body/04-di-tai-yu-dou-kou.md",
+        "body/05-weng-cheng-jie-gou.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "87392f66ff784f6870b64321289f131a657addf90d11d82abc6927cbf96f5a22",
+          "size": 3182
+        },
+        "cover.jpg": {
+          "sha256": "ba4152473001da46f341e1a8d0c43d5dd956d38937458eb7306883ef6e8f4cd6",
+          "size": 189393
+        },
+        "01-yongning-men.jpg": {
+          "sha256": "79c16814fe77cb26ad4382d460464bceb8318f9b4dff075a1489af1044f79e81",
+          "size": 247878
+        },
+        "02-han-guang-men.jpg": {
+          "sha256": "f55700e8dd1c600f69aa1fa3cfb933f0827db9212020e5cb42fcf38dece57417",
+          "size": 194779
+        },
+        "03-cheng-qiang-duan-mian.jpg": {
+          "sha256": "be2192ecce6c5d4d434f94183ea6d8d3f6ae5044b9a5b95524017b8995ccb731",
+          "size": 272219
+        },
+        "04-di-tai-yu-dou-kou.jpg": {
+          "sha256": "5fc4dd976fe1ab68e945ac7162d370e26fba262c2e45acb5e1878c810ab4bc06",
+          "size": 236392
+        },
+        "05-weng-cheng-jie-gou.jpg": {
+          "sha256": "b2fedbe4f3c6fbf4ec727cfc2fb51fc14cd688b217a724b22d3c081d5b2679fc",
+          "size": 181980
+        },
+        "body/01-yongning-men.md": {
+          "sha256": "31faa275daef77c4090fa2ca10053f7557fce8b7a8f1f4fd73b9dd65e854d366",
+          "size": 363
+        },
+        "body/02-han-guang-men.md": {
+          "sha256": "54f136b20728a14dcadfec8c22f65bdbca8b267e74761c0a9dfb96589921b20e",
+          "size": 426
+        },
+        "body/03-cheng-qiang-duan-mian.md": {
+          "sha256": "050249e67eaf4e89e3b8ba2cdd4d6082dca094b8e19415e55b77a59014678959",
+          "size": 420
+        },
+        "body/04-di-tai-yu-dou-kou.md": {
+          "sha256": "b440ac19b5d4fe2b2b2314a6acd4ea03fb6c2b09f668fd2ee852158c20c7ed32",
+          "size": 396
+        },
+        "body/05-weng-cheng-jie-gou.md": {
+          "sha256": "40b59fd8a560c3238f285e5e66e09270e39a103b889f7c412e48b73473cbf0a4",
+          "size": 420
+        }
+      }
+    },
+    {
+      "id": "yiheyuan",
+      "version": 1,
+      "title": "颐和园",
+      "subtitle": "清代皇家园林博物馆",
+      "summary": "位于北京西郊，以昆明湖、万寿山为基址，融合江南园林意境，是保存最完整的皇家行宫御苑。",
+      "tags": [
+        "世界文化遗产",
+        "皇家园林",
+        "清代历史",
+        "北京旅游"
+      ],
+      "total": 5,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1316711,
+      "audioCount": 5,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T07:52:50.646Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-donggongmen.jpg",
+        "02-renshoudian.jpg",
+        "03-changlang.jpg",
+        "04-foxiangge.jpg",
+        "05-kunminghu.jpg",
+        "body/01-donggongmen.md",
+        "body/02-renshoudian.md",
+        "body/03-changlang.md",
+        "body/04-foxiangge.md",
+        "body/05-kunminghu.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "0e872b783c49c3ce74bfe94cc964027b3ebe0f1c859ad2619899a2989d9e4984",
+          "size": 3120
+        },
+        "cover.jpg": {
+          "sha256": "c865c0382dd2ca9a13144605ae4e01d3ee1ceb0349cebae32dbd4e167b3714f9",
+          "size": 143914
+        },
+        "01-donggongmen.jpg": {
+          "sha256": "3737db19aa3479831443d8d3dcd4bb72c1b4dc1407ed7fb35c7656a21de0d66f",
+          "size": 162785
+        },
+        "02-renshoudian.jpg": {
+          "sha256": "3b7f7a303d75ef2e1be317f07e79319fdc0ccad3bb8c7b04247c2e90d1c37fa8",
+          "size": 226353
+        },
+        "03-changlang.jpg": {
+          "sha256": "afa91dea0e4b9f7ca76e734133112c4c344523fb6ef9e086c39114aa8056485a",
+          "size": 320214
+        },
+        "04-foxiangge.jpg": {
+          "sha256": "d6035206b28d3773192b89a6e9fed5dabc8025b153f59fd31639d4f2b0560b07",
+          "size": 205112
+        },
+        "05-kunminghu.jpg": {
+          "sha256": "d1694caa19bc6560969356bc064a44d6d48417897641508bf0419ab5731ac6de",
+          "size": 253239
+        },
+        "body/01-donggongmen.md": {
+          "sha256": "723bc9551c29544091a4485e5ec2bd6c1916fa0500157cb80d45e542f7c7164a",
+          "size": 423
+        },
+        "body/02-renshoudian.md": {
+          "sha256": "33fb5f1d6c9e49117962e1e4ddb31775dc0db440942048a7ef9e503ad3e6f6bc",
+          "size": 429
+        },
+        "body/03-changlang.md": {
+          "sha256": "b3f4053738de07a3d6107330c3ce2db6ec25071c7d3cb0aafd7213b39bbe9f40",
+          "size": 372
+        },
+        "body/04-foxiangge.md": {
+          "sha256": "0606e2b665025f79364c6f57f1ce7d736b82a210236e7936998e10f76ff0a820",
+          "size": 399
+        },
+        "body/05-kunminghu.md": {
+          "sha256": "80961560a77815c0e71ac9a4e8b00e7d0fa97c4a560028d440ab8954d51af7c5",
+          "size": 351
+        }
+      }
+    },
+    {
+      "id": "yingtianmen",
+      "version": 3,
+      "title": "隋唐洛阳应天门",
+      "subtitle": "紫微城正南门遗址与博物馆",
+      "summary": "始建于隋大业元年，原名则天门，是隋唐宫城正门。见证武则天登基及万国来朝，被誉为“天下第一门”。",
+      "tags": [
+        "隋唐遗址",
+        "皇家礼制",
+        "建筑考古",
+        "中日交流"
+      ],
+      "total": 5,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 939826,
+      "audioCount": 5,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T07:46:18.201Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-wei-zhi-lai-li.jpg",
+        "02-ri-ben-bei.jpg",
+        "03-shuang-xiang-que.jpg",
+        "04-wu-feng-lou.jpg",
+        "05-deng-di-da-dian.jpg",
+        "body/01-wei-zhi-lai-li.md",
+        "body/02-ri-ben-bei.md",
+        "body/03-shuang-xiang-que.md",
+        "body/04-wu-feng-lou.md",
+        "body/05-deng-di-da-dian.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "429e8726726fa29a85b10735bce1f7bac4290af67dee4cb7e8a81ff6c47dd04a",
+          "size": 3201
+        },
+        "cover.jpg": {
+          "sha256": "4e2e5bbedfaca197818bd46535962e7d8920a6bfcee59e07c89f69236b44fe04",
+          "size": 133341
+        },
+        "01-wei-zhi-lai-li.jpg": {
+          "sha256": "6b26002331fc1579ae9229469cd0fd6c0dbe97f63906cf1a3de43c65b9bc9050",
+          "size": 145423
+        },
+        "02-ri-ben-bei.jpg": {
+          "sha256": "b6db3bf36b024c8dbd12d0b1273880fd0e2538200213768b8de06b4eefc8ccfd",
+          "size": 147040
+        },
+        "03-shuang-xiang-que.jpg": {
+          "sha256": "29a410b4dca21d617ea96951f7ea23eb0d075ce603a41e3f179328f7f967af23",
+          "size": 154543
+        },
+        "04-wu-feng-lou.jpg": {
+          "sha256": "5d634f6a6c0c2f239c6bfbb6df1912c83d223c6bafe6ccb344101d941cca60b6",
+          "size": 173560
+        },
+        "05-deng-di-da-dian.jpg": {
+          "sha256": "ef47f027d6c0b34478a06405c775ecc624f65b0465e09fb9c9d68d2b9b3c986d",
+          "size": 180876
+        },
+        "body/01-wei-zhi-lai-li.md": {
+          "sha256": "dd4f8b57c3c3ed9efb1b79fd7ef14dc502e3f77b908678c7c640a03ee99a76d8",
+          "size": 393
+        },
+        "body/02-ri-ben-bei.md": {
+          "sha256": "6d05eb6b81ddef5512fd4fdb432c13d04aa192fc8f5547be8fe4422bfbab7d14",
+          "size": 444
+        },
+        "body/03-shuang-xiang-que.md": {
+          "sha256": "5b5daf4956a9c038cca825b3ee55f2ec0f44cb26c31be378337eec5a5d122d71",
+          "size": 375
+        },
+        "body/04-wu-feng-lou.md": {
+          "sha256": "d29f7f182d3a24853f30748f979761010ea0b8ec916c6006de0f6a6ed6dc46f4",
+          "size": 348
+        },
+        "body/05-deng-di-da-dian.md": {
+          "sha256": "1b03007b792eb524c474d5f06c27a857c1c7f04f08d642534a0bd20546077f6f",
+          "size": 282
+        }
+      }
+    },
+    {
+      "id": "yonghegong",
+      "version": 1,
+      "title": "雍和宫",
+      "subtitle": "从王府到皇家寺院的传奇变迁",
+      "summary": "位于北京东北角，原为雍亲王府，后改为喇嘛庙。融汉满蒙藏建筑艺术，供奉巨大白檀木弥勒佛，是清代规格最高的佛教寺院。",
+      "tags": [
+        "皇家寺院",
+        "藏传佛教",
+        "历史建筑",
+        "木雕艺术"
+      ],
+      "total": 5,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1473268,
+      "audioCount": 5,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T07:54:56.044Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-pai-fang-yuan.jpg",
+        "02-tian-wang-dian.jpg",
+        "03-yong-he-gong-dian.jpg",
+        "04-fa-lun-dian.jpg",
+        "05-wan-fu-ge.jpg",
+        "body/01-pai-fang-yuan.md",
+        "body/02-tian-wang-dian.md",
+        "body/03-yong-he-gong-dian.md",
+        "body/04-fa-lun-dian.md",
+        "body/05-wan-fu-ge.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "48251f644b2c6edbce26f0f43afd0e875ab3502fb52ca2450ca93a08c6edaa83",
+          "size": 3236
+        },
+        "cover.jpg": {
+          "sha256": "c45d0574b31ba2a7530c65d707fb7f7de07922f8d0fa1fb39a89d36963a3ea35",
+          "size": 187507
+        },
+        "01-pai-fang-yuan.jpg": {
+          "sha256": "7133e22ef1d55ef6ae2349800ae3aef1dac20f9a4089a06f55415ed105bf99a4",
+          "size": 260019
+        },
+        "02-tian-wang-dian.jpg": {
+          "sha256": "ff4d77b404d237f00b0fe660e328c5bef499e83dbe169c89bcd1fcb0a3a46bec",
+          "size": 308219
+        },
+        "03-yong-he-gong-dian.jpg": {
+          "sha256": "6d21d34e14a95608604f644c08d0ec9669f63e051ac70ad905725aa50155dd5f",
+          "size": 202187
+        },
+        "04-fa-lun-dian.jpg": {
+          "sha256": "674d87ccfb2629025f7799197f0178f196eb4a489348e8ac940b7671a36610ee",
+          "size": 292170
+        },
+        "05-wan-fu-ge.jpg": {
+          "sha256": "bf93c8a7875950feebbb1e2c54eac00ab72e93d562cdf27d15e0d32636f3d7fe",
+          "size": 217806
+        },
+        "body/01-pai-fang-yuan.md": {
+          "sha256": "131d502b1adff7a37609fbdc0d7d7833f4df3ae02f32b58fa27029c99f728c6d",
+          "size": 438
+        },
+        "body/02-tian-wang-dian.md": {
+          "sha256": "c61060675f3306590ac395e4bad88a3269aa06df8902f8118200cff0f3677c3b",
+          "size": 393
+        },
+        "body/03-yong-he-gong-dian.md": {
+          "sha256": "ad9b86dc73e2c3c7153ebc2ac40aafd35cf91faaa8cb3ac8901b9a2c24eb2e73",
+          "size": 480
+        },
+        "body/04-fa-lun-dian.md": {
+          "sha256": "01428bd38408dceee92bbb4114a6f711ae1f63680e077014ca8471770767dbd1",
+          "size": 438
+        },
+        "body/05-wan-fu-ge.md": {
+          "sha256": "7cdf660be70c7fda0b114f20347a198fdee60bdc2e138326fd2acb78efd8be12",
+          "size": 375
+        }
+      }
+    },
+    {
+      "id": "yu-yuan",
+      "version": 2,
+      "title": "豫园",
+      "subtitle": "明代私家园林与海派文化地标",
+      "summary": "始建于明嘉靖年间，潘允端为悦亲所建。历经战火与公所瓜分，现由六大景区组成，融合山水亭台与历史记忆。",
+      "tags": [
+        "全国重点文物保护单位",
+        "江南古典园林",
+        "上海老城厢",
+        "爱国主义教育基地"
+      ],
+      "total": 5,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1671858,
+      "audioCount": 5,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T07:48:27.860Z",
       "files": [
         "pack.json",
         "cover.jpg",
         "01-san-sui-tang.jpg",
         "02-da-jia-shan.jpg",
         "03-dian-chun-tang.jpg",
-        "04-he-jing-lou.jpg",
+        "04-ji-yu-lang.jpg",
         "05-yu-ling-long.jpg",
         "body/01-san-sui-tang.md",
         "body/02-da-jia-shan.md",
         "body/03-dian-chun-tang.md",
-        "body/04-he-jing-lou.md",
+        "body/04-ji-yu-lang.md",
         "body/05-yu-ling-long.md"
       ],
       "checksums": {
         "pack.json": {
-          "sha256": "17de24ffda957e28a62fa5f6dad4abb867950891808252b02432b4d80f5ed994",
-          "size": 3146
+          "sha256": "aa9110aa2ab3fcef6d73dd1641e8321a66e1753993dc74b15438534bc57c4156",
+          "size": 3164
         },
         "cover.jpg": {
-          "sha256": "7a46d5f280a1b52d049a64f8c3d9425c33416ef4f1f5e006a2284de8fea56118",
-          "size": 182037
+          "sha256": "4e60b3286d511f2085b064ba6515d29b1a315149c9f13e3ce53e70db0e8a2578",
+          "size": 175793
         },
         "01-san-sui-tang.jpg": {
-          "sha256": "65ee3121c54dfdce16cd95370296740a0bacfe5c08e94bfe7567ffee01233c60",
-          "size": 235413
+          "sha256": "90a3dc0bfd51bdd4c970a6445d49eb86e143eeacf13cf51762ed245d3ccea3be",
+          "size": 192153
         },
         "02-da-jia-shan.jpg": {
-          "sha256": "f1e844c17a345513c6da480b66730a88e460d5d6d70ab52d88b3e2cca7f5fe7d",
-          "size": 365324
+          "sha256": "62d8e7318e0b4cf254c1a5d09e0f38dbad83e615213ec120015a8df250d58757",
+          "size": 342918
         },
         "03-dian-chun-tang.jpg": {
-          "sha256": "68ae572a2d43003ebb68be29652449da28c992b77fbffe6def1fbc5be2eb8c38",
-          "size": 388414
+          "sha256": "7648e22025ef7d3856d6a6affa0cae1a95c11213f9efd2b3732a57a3bbd3b9b5",
+          "size": 394439
         },
-        "04-he-jing-lou.jpg": {
-          "sha256": "07bf079882ea877dc675ee1c7c7b6aef68dc2427a73c74b5e45c8f99b1edafa4",
-          "size": 232680
+        "04-ji-yu-lang.jpg": {
+          "sha256": "b84e4e0916db37c6c02c14b912f422f1c867239639413f2ad2993b4a9fdb09ff",
+          "size": 279035
         },
         "05-yu-ling-long.jpg": {
-          "sha256": "8c6bf8c10f90c06c9c1270b9266eed77aa53b67fc93ffba67657bbd98d1ee3d2",
-          "size": 388244
+          "sha256": "43b8e5f1359dc37713516f8c1dabacb54998fd011f31e22479ba947a67be5021",
+          "size": 282448
         },
         "body/01-san-sui-tang.md": {
-          "sha256": "71cb5b6d1900335d8bf5453f39695e0c62de00356cb1629b7628db08eb3b07df",
-          "size": 390
+          "sha256": "46e4eb1accf89be733c1d8a275fbc1645e0bc764f8ece82111edd0702ae4d4c3",
+          "size": 456
         },
         "body/02-da-jia-shan.md": {
-          "sha256": "2c76384e3533019b044ac95c78924c8469eeabd2466cd3dcdad17755eff0365a",
-          "size": 372
+          "sha256": "bbf3edde37493bc9f877af2ee818b592c2b8194b769830e2c72076e3de10a2c2",
+          "size": 300
         },
         "body/03-dian-chun-tang.md": {
-          "sha256": "3f6631e007c9c0042f0e7c9d091653380fc2de62e248d6b24c17552d12bb0ba8",
-          "size": 417
+          "sha256": "1188db084ee6d55f5af9f8fb7169a6b462d76c938663d1be8c3d633e79d561f2",
+          "size": 393
         },
-        "body/04-he-jing-lou.md": {
-          "sha256": "92d24fd91c5ad3767215309f3b8da3bdc57194776d80a1113c4f3d04398d0c73",
-          "size": 330
+        "body/04-ji-yu-lang.md": {
+          "sha256": "4da0986f47f03106ff4dd08f61f0ad0ee25af12c5809791bc47b4040cf5987af",
+          "size": 423
         },
         "body/05-yu-ling-long.md": {
-          "sha256": "851ad10f17e1d4aa3cbcdb3cf3c0850e17527b0e791a899382570019930c1ccb",
-          "size": 372
+          "sha256": "e789ffc67dbef9839a392c62648bfc060c5bb6f3113f358e8612c3c8478a3f7d",
+          "size": 336
+        }
+      }
+    },
+    {
+      "id": "zhongshanling",
+      "version": 1,
+      "title": "南京中山陵",
+      "subtitle": "紫金山南麓的民国礼制建筑群",
+      "summary": "孙中山先生陵寝，由建筑师吕彦直设计，融合中西风格，呈警钟形平面，象征唤醒民众。",
+      "tags": [
+        "全国重点文物保护单位",
+        "孙中山陵寝",
+        "民国建筑",
+        "南京地标"
+      ],
+      "total": 6,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1383258,
+      "audioCount": 6,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T08:05:55.180Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-bo-ai-fang.jpg",
+        "02-mu-dao.jpg",
+        "03-ling-men.jpg",
+        "04-bei-ting.jpg",
+        "05-ji-tang.jpg",
+        "06-mu-shi.jpg",
+        "body/01-bo-ai-fang.md",
+        "body/02-mu-dao.md",
+        "body/03-ling-men.md",
+        "body/04-bei-ting.md",
+        "body/05-ji-tang.md",
+        "body/06-mu-shi.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "0e2658a53aaef88bd585cf41ea4d70452a99d9b4570c47a7c53007cce6a21ee6",
+          "size": 3587
+        },
+        "cover.jpg": {
+          "sha256": "0ce25171f3464859cb7ec25757312509da7d0f7b08a901ce43bcbb1d4d309ee4",
+          "size": 166954
+        },
+        "01-bo-ai-fang.jpg": {
+          "sha256": "71b9485ac30a3667762c2d3c8448f97ad8fafe3abc6d5b41a4078667370bc327",
+          "size": 182861
+        },
+        "02-mu-dao.jpg": {
+          "sha256": "7e80f60d56aa4dd0dbfc4590907be7b08fb4bc9dc350c8de2f2cabda7808458f",
+          "size": 264865
+        },
+        "03-ling-men.jpg": {
+          "sha256": "42f661d47cb1d458da4ff4cad68e8a3106a55d9a8bb50d1cfcae8a698afe3344",
+          "size": 157882
+        },
+        "04-bei-ting.jpg": {
+          "sha256": "49bd7a29149be3f36e4997910bc26a7f9d1c9fdabefb4479b5504fe01a3c27ed",
+          "size": 232996
+        },
+        "05-ji-tang.jpg": {
+          "sha256": "78eb9ca16313ce9481814e964ef5cee354351e7859fd2c43d822319412695b3c",
+          "size": 190733
+        },
+        "06-mu-shi.jpg": {
+          "sha256": "aaa616c8aa6e6c970b6359bf803b93488199c1cedbaca7c6661d9d274a0a54e6",
+          "size": 180791
+        },
+        "body/01-bo-ai-fang.md": {
+          "sha256": "7381068cd7b9f0515c5585a43262fef7224af332b708e467bfc35f7c866ab2f9",
+          "size": 504
+        },
+        "body/02-mu-dao.md": {
+          "sha256": "8bdf68532c12395b34cecd3c24815379f59531726931ae00055966be3646a0e3",
+          "size": 330
+        },
+        "body/03-ling-men.md": {
+          "sha256": "9d9ae60ef33d50a41361fa277a1a6f8f5a5b2a10dd28c43a1afce27e7ebec571",
+          "size": 411
+        },
+        "body/04-bei-ting.md": {
+          "sha256": "61f6b87dec00f7c0a530c92e681919d4ed61e0ba6314a905a3bcebc4e9df12da",
+          "size": 459
+        },
+        "body/05-ji-tang.md": {
+          "sha256": "63868e35ef49fcbcc13782884f4638b01a8d704da93ea71656480ccdbbb2a6c8",
+          "size": 486
+        },
+        "body/06-mu-shi.md": {
+          "sha256": "2430f114429e38fee681326f69bf0adb3c0bdf6ce148b9269c2d4d9a6613e094",
+          "size": 399
+        }
+      }
+    },
+    {
+      "id": "zhuozhengyuan",
+      "version": 1,
+      "title": "拙政园",
+      "subtitle": "江南私家园林典范",
+      "summary": "始建于明代，中国四大名园之一，以水为中心，疏朗自然，融合东中西三部景观。",
+      "tags": [
+        "世界文化遗产",
+        "苏州园林",
+        "明代园林",
+        "国家5A级景区"
+      ],
+      "total": 5,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1771292,
+      "audioCount": 5,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-18T08:10:00.273Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-yuan-men.jpg",
+        "02-lan-xue-tang.jpg",
+        "03-yuan-xiang-tang.jpg",
+        "04-xiao-fei-hong.jpg",
+        "05-san-shi-liu-yuan-yang-guan.jpg",
+        "body/01-yuan-men.md",
+        "body/02-lan-xue-tang.md",
+        "body/03-yuan-xiang-tang.md",
+        "body/04-xiao-fei-hong.md",
+        "body/05-san-shi-liu-yuan-yang-guan.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "b4db02c7f675120287a65308db013919ce9c583020dd537d769997639b839b1c",
+          "size": 3190
+        },
+        "cover.jpg": {
+          "sha256": "f4c08d6ee876dff0c07b8f42d149b3f3b520b02bbcc2ca5c6c0d3bffb3654b04",
+          "size": 202429
+        },
+        "01-yuan-men.jpg": {
+          "sha256": "f75bd3ba8542e4d8e2a99817cfd1b36804bd80bf534bcc8a2480b958492843df",
+          "size": 358535
+        },
+        "02-lan-xue-tang.jpg": {
+          "sha256": "d45cec054bcbaf1a81e9e08509da352cb4c08b66297831a6c090da156a4c9950",
+          "size": 307211
+        },
+        "03-yuan-xiang-tang.jpg": {
+          "sha256": "f2678ba95848c79f29a0f692fa76005fb68f248571f46369fb593150033d52cf",
+          "size": 239895
+        },
+        "04-xiao-fei-hong.jpg": {
+          "sha256": "bd8723f03772035a73715cf839ab8ca6fbcf097862705f55617366ede2eb6d1a",
+          "size": 349941
+        },
+        "05-san-shi-liu-yuan-yang-guan.jpg": {
+          "sha256": "7f5d25286df2b57e0b2fef3850ff020f6b05302d2cbc770e70360f80907c6e0c",
+          "size": 308051
+        },
+        "body/01-yuan-men.md": {
+          "sha256": "b3da54ca38c7726f16d26c97d8887b5d25f833e0f6c5c94cb2f78367ce90d77f",
+          "size": 435
+        },
+        "body/02-lan-xue-tang.md": {
+          "sha256": "cd15251537e0d7c18095e1b57794c710190d344555ad510554ce74df324e408b",
+          "size": 315
+        },
+        "body/03-yuan-xiang-tang.md": {
+          "sha256": "87de055771c0645e833ff7021c76032e2da74675b6edd108df2d3a335e50e55b",
+          "size": 447
+        },
+        "body/04-xiao-fei-hong.md": {
+          "sha256": "1b3e239b21424a68034ee877a06080eba9d8345cc0d37f1d17ba81ca77be2f76",
+          "size": 465
+        },
+        "body/05-san-shi-liu-yuan-yang-guan.md": {
+          "sha256": "816d18ef88062b7b5095359c900717882d1be3c129fa98feb6321205dfd0a57a",
+          "size": 378
         }
       }
     }

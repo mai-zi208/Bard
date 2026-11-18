@@ -32,7 +32,7 @@ function planPrompt(wish: string): string {
 
 规则：
 1. 从愿望中推断城市；无法确定时默认洛阳；
-2. 挑选该城市 ${STOPS_MIN}–${STOPS_MAX} 个真实存在的景点，按顺路可执行的游览顺序排列（同片区相邻、不走回头路），名称用通用全称；
+2. 若愿望只点名了一个具体景点（如「想看白马寺」「带我去龙门石窟」）且没有多日/顺路/路线类诉求，stops 只输出该景点 1 站，绝对不要补充其他景点；否则挑选该城市 ${STOPS_MIN}–${STOPS_MAX} 个真实存在的景点，按顺路可执行的游览顺序排列（同片区相邻、不走回头路），名称用通用全称；
 3. 坐标必须是 GCJ-02（火星坐标，小程序地图 gcj02 用），保留 4–6 位小数；
 4. tags 为 2–4 个短标签，覆盖天数/城市/主题/节奏这类意图，例如 ["2 天","洛阳","人文古迹","节奏舒缓"]；
 5. 愿望若指定了讲述人或同行人物视角（如「让武则天带我们逛」「武则天讲解」「请玄奘当导游」），persona 输出该历史人物的通用姓名（不超过 6 字）；未指定则输出空字符串。persona 只填人物名，不要带「讲述」「导游」等后缀。
@@ -49,7 +49,7 @@ function planPrompt(wish: string): string {
 
 /**
  * 防御性解析：剥掉 Markdown 围栏、截取首个 JSON 对象再 parse；
- * 逐条校验景点名与坐标区间，按名去重并压进 3–6 站，不合格直接抛错。
+ * 逐条校验景点名与坐标区间，按名去重并压进 1–6 站（单景点愿望只出 1 站），不合格直接抛错。
  */
 export function parsePlan(content: string): PlanResult {
   const trimmed = content.trim();
@@ -86,8 +86,9 @@ export function parsePlan(content: string): PlanResult {
     stops.push({ name, lat, lng });
   });
 
-  if (stops.length < STOPS_MIN) {
-    throw new Error(`行程规划失败：可用景点不足（${stops.length} 个）`);
+  // 单景点愿望只出 1 站，因此下限是 1；一站都没有才判失败
+  if (!stops.length) {
+    throw new Error('行程规划失败：可用景点不足（0 个）');
   }
 
   const persona = text(record.persona).slice(0, 12);

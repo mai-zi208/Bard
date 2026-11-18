@@ -1,0 +1,94 @@
+{
+  "id": "liangzhu-gucheng",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "良渚古城遗址",
+  "subtitle": "实证中华五千年文明史的圣地",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T08:39:59.151Z",
+  "summary": "位于杭州余杭，由古城、水利系统、墓地等组成，展现早期国家权力与信仰中心。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "世界遗产",
+    "新石器时代",
+    "早期国家",
+    "玉礼器"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "wei-shui-xi-tong",
+      "title": "外围水利",
+      "subtitle": "世界最早的水坝系统",
+      "image": "01-wei-shui-xi-tong.jpg",
+      "imageAlt": "老虎岭遗址公园内的水坝剖面展示区，呈现黄土与石块堆筑的层次结构",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-wei-shui-xi-tong.md",
+      "audio": {
+        "durSec": 28,
+        "bytes": 223235,
+        "sha256": "f33323562dbbce39cdc0816039023f611697d32e6b5f574826120a4ee05d7bfd"
+      }
+    },
+    {
+      "id": "cheng-qiang-yi-zhi",
+      "title": "古城城墙",
+      "subtitle": "底部铺垫石块的防御",
+      "image": "02-cheng-qiang-yi-zhi.jpg",
+      "imageAlt": "良渚古城遗址公园内城墙剖面，展示底部石块基础与上部黄土结构",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-cheng-qiang-yi-zhi.md"
+    },
+    {
+      "id": "mo-jiao-shan",
+      "title": "莫角山台",
+      "subtitle": "宫殿基址与王权象征",
+      "image": "03-mo-jiao-shan.jpg",
+      "imageAlt": "良渚古城遗址莫角山台全景，开阔的高大土台与周边绿地",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-mo-jiao-shan.md"
+    },
+    {
+      "id": "fan-shan-mu-di",
+      "title": "反山王陵",
+      "subtitle": "高等级墓葬与玉器",
+      "image": "04-fan-shan-mu-di.jpg",
+      "imageAlt": "反山王陵遗址保护区，展示着经过回填保护的墓葬坑位与出土玉器陈列",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-fan-shan-mu-di.md"
+    },
+    {
+      "id": "yu-li-qi-wu",
+      "title": "玉礼神器",
+      "subtitle": "神人兽面纹的信仰",
+      "image": "05-yu-li-qi-wu.jpg",
+      "imageAlt": "良渚古城遗址博物馆内展出的刻有神人兽面纹的玉琮特写",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-yu-li-qi-wu.md"
+    },
+    {
+      "id": "vr-chen-jin",
+      "title": "VR时空",
+      "subtitle": "沉浸式重返五千年前",
+      "image": "06-vr-chen-jin.jpg",
+      "imageAlt": "良渚古城遗址公园内，游客佩戴VR设备沉浸在绘有神徽的虚拟空间中",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/06-vr-chen-jin.md"
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "id": "dufu-caotang",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "成都杜甫草堂",
+  "subtitle": "诗圣流寓成都的故居遗址",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T08:13:44.653Z",
+  "summary": "唐代大诗人杜甫避乱入蜀后的居所，保留清代建筑格局，集纪念祠堂与诗人旧居风貌于一体。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "全国重点文物保护单位",
+    "唐代遗址",
+    "古典园林",
+    "诗圣故居"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "zhao-bi-zheng-men",
+      "title": "照壁正门",
+      "subtitle": "果亲王手书草堂匾额",
+      "image": "01-zhao-bi-zheng-men.jpg",
+      "imageAlt": "杜甫草堂照壁正门及悬挂的果亲王手书草堂匾额",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-zhao-bi-zheng-men.md",
+      "audio": {
+        "durSec": 30,
+        "bytes": 237445,
+        "sha256": "350bb766da18c494858d3606636301f90aa41fb88d4e9774e94f253c30d14ab9"
+      }
+    },
+    {
+      "id": "da-xie",
+      "title": "大廨敞厅",
+      "subtitle": "悬挂异代不同时名联",
+      "image": "02-da-xie.jpg",
+      "imageAlt": "杜甫草堂大廨敞厅内景，两壁悬挂长联",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-da-xie.md",
+      "audio": {
+        "durSec": 29,
+        "bytes": 232430,
+        "sha256": "902978baf96c1839c4b63d264a934ae673bd83c9fc8d5c92b40bfe9e19718aad"
+      }
+    },
+    {
+      "id": "shi-shi-tang",
+      "title": "诗史堂",
+      "subtitle": "刘开渠塑杜甫坐像",
+      "image": "03-shi-shi-tang.jpg",
+      "imageAlt": "诗史堂内景，正中陈列刘开渠创作的杜甫坐像",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-shi-shi-tang.md",
+      "audio": {
+        "durSec": 33,
+        "bytes": 262732,
+        "sha256": "cdcbc3252572eb0c7b9ff8cacdbc0bc153615753a7bcd094defe038b25803a46"
+      }
+    },
+    {
+      "id": "gong-bu-ci",
+      "title": "工部祠",
+      "subtitle": "三贤堂内陪祀宋贤",
+      "image": "04-gong-bu-ci.jpg",
+      "imageAlt": "工部祠正殿内杜甫塑像及两侧黄庭坚、陆游陪祀像",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-gong-bu-ci.md",
+      "audio": {
+        "durSec": 29,
+        "bytes": 230549,
+        "sha256": "d6ec35caca2e952e6896afff7f5b533c9a94972b629be68fa65e3123baf2c12e"
+      }
+    },
+    {
+      "id": "shao-ling-bei-ting",
+      "title": "碑亭茅屋",
+      "subtitle": "少陵草堂碑亭伫立",
+      "image": "05-shao-ling-bei-ting.jpg",
+      "imageAlt": "杜甫草堂工部祠东侧茅草顶碑亭及内部石碑特写",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-shao-ling-bei-ting.md",
+      "audio": {
+        "durSec": 28,
+        "bytes": 227414,
+        "sha256": "3c03146684a89a617588ee1f9dce760647b7e32cb45831d7f0c520ed2d88af01"
+      }
+    },
+    {
+      "id": "hua-jing-ying-bi",
+      "title": "花径影壁",
+      "subtitle": "碎瓷镶嵌草堂二字",
+      "image": "06-hua-jing-ying-bi.jpg",
+      "imageAlt": "杜甫草堂花径尽头的影壁，红墙与青花碎瓷镶嵌的草堂二字",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/06-hua-jing-ying-bi.md",
+      "audio": {
+        "durSec": 28,
+        "bytes": 224489,
+        "sha256": "cfd710e892d4393572f9691f2ec4147c4357c1d470a067c26c567606720b250d"
+      }
+    },
+    {
+      "id": "tang-dai-yi-zhi",
+      "title": "唐代遗址",
+      "subtitle": "发掘唐代生活遗存",
+      "image": "07-tang-dai-yi-zhi.jpg",
+      "imageAlt": "杜甫草堂唐代遗址陈列馆内，展示着发掘出的唐代房基与生活遗存",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/07-tang-dai-yi-zhi.md",
+      "audio": {
+        "durSec": 30,
+        "bytes": 242252,
+        "sha256": "db07551b85675323711afde654244cbb806544c1915f7b5d787d791a875c8bfc"
+      }
+    }
+  ]
+}

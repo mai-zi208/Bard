@@ -1,0 +1,119 @@
+{
+  "id": "dayan-ta",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "大雁塔",
+  "subtitle": "丝路见证与唐代楼阁式砖塔典范",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T07:59:13.353Z",
+  "summary": "玄奘为存天竺经像主持修建，历经改建保持七层外观，是丝绸之路文化交流的重要物证。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "世界文化遗产",
+    "唐代建筑",
+    "玄奘法师",
+    "佛教名塔"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "nan-men-bei",
+      "title": "南门石碑",
+      "subtitle": "二圣三绝碑刻艺术",
+      "image": "01-nan-men-bei.jpg",
+      "imageAlt": "大雁塔底层南门洞两侧嵌入的唐代石碑特写",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-nan-men-bei.md",
+      "audio": {
+        "durSec": 27,
+        "bytes": 216756,
+        "sha256": "39a4c30c84a765b3f1bff3d20878e38a87a09a083e81d43848e07f06ffc96eb4"
+      }
+    },
+    {
+      "id": "ta-shen-yi-ceng",
+      "title": "塔内一层",
+      "subtitle": "明代题名与玄奘足迹",
+      "image": "02-ta-shen-yi-ceng.jpg",
+      "imageAlt": "大雁塔一层内部，展示墙上的明代题名碑与地面的玄奘足迹石",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-ta-shen-yi-ceng.md",
+      "audio": {
+        "durSec": 22,
+        "bytes": 174960,
+        "sha256": "6fb4a8cd592f7269c2021b2c1cde980522231d22727f854ffb32aea934dd906a"
+      }
+    },
+    {
+      "id": "ta-shen-er-ceng",
+      "title": "二层佛宝",
+      "subtitle": "鎏金释迦牟尼佛像",
+      "image": "03-ta-shen-er-ceng.jpg",
+      "imageAlt": "大雁塔二层塔室内的明初铜质鎏金释迦牟尼佛像",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-ta-shen-er-ceng.md",
+      "audio": {
+        "durSec": 27,
+        "bytes": 218010,
+        "sha256": "3f21207aaedd0a68b1f52dd233387a00fafacb19b3acf2be1ec593e6b3e4bf8f"
+      }
+    },
+    {
+      "id": "ta-shen-si-ceng",
+      "title": "四层贝叶",
+      "subtitle": "罕见梵文贝叶真经",
+      "image": "04-ta-shen-si-ceng.jpg",
+      "imageAlt": "大雁塔四层塔室内，玻璃展柜中供奉的两片刻有梵文的贝叶经特写",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-ta-shen-si-ceng.md",
+      "audio": {
+        "durSec": 29,
+        "bytes": 230758,
+        "sha256": "7b7b709530da177dcd21f2d407cb86f25f2f18120c8c6e30d1511e87f87c690c"
+      }
+    },
+    {
+      "id": "ta-shen-liu-ceng",
+      "title": "六层诗会",
+      "subtitle": "杜甫岑参等唐诗佳作",
+      "image": "05-ta-shen-liu-ceng.jpg",
+      "imageAlt": "大雁塔六层塔室内悬挂的唐代诗人诗会佳作横幅",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-ta-shen-liu-ceng.md",
+      "audio": {
+        "durSec": 27,
+        "bytes": 217801,
+        "sha256": "813f49c45323195164d8fd6999b2a67a423b701dfa62ac2f5223d8615b02f146"
+      }
+    },
+    {
+      "id": "ta-ding-zao-jing",
+      "title": "七层藻井",
+      "subtitle": "莲花藻井与西域传说",
+      "image": "06-ta-ding-zao-jing.jpg",
+      "imageAlt": "大雁塔七层塔顶内部，圣洁的莲花藻井特写",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/06-ta-ding-zao-jing.md",
+      "audio": {
+        "durSec": 28,
+        "bytes": 224071,
+        "sha256": "fa8b65c3805b83f86fb1781cb4626a45440ac3b14b96c7d92dcb726d8540bd25"
+      }
+    }
+  ]
+}

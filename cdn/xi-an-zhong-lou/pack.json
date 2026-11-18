@@ -1,0 +1,104 @@
+{
+  "id": "xi-an-zhong-lou",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "西安钟楼",
+  "subtitle": "古城中心的明代重檐楼阁",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T08:01:31.206Z",
+  "summary": "始建于明洪武年间，万历年间整体迁移至现址。作为全国重点文物保护单位，见证古城变迁与晨钟暮鼓。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "全国重点文保",
+    "明代建筑",
+    "城市地标",
+    "历史迁移"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "zhong-xin-wei-zhi",
+      "title": "城市轴心",
+      "subtitle": "四条大街交汇几何中心",
+      "image": "01-zhong-xin-wei-zhi.jpg",
+      "imageAlt": "西安钟楼俯瞰图，展现其位于四条大街交汇处的几何中心位置",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-zhong-xin-wei-zhi.md",
+      "audio": {
+        "durSec": 32,
+        "bytes": 259597,
+        "sha256": "9f956cc622ab8e501c76be9f9a9ec39af57e2a2eb1ee308e9062ecb9a37b3b61"
+      }
+    },
+    {
+      "id": "dong-qian-bei-ke",
+      "title": "东迁歌碑",
+      "subtitle": "铭记万历整体迁移壮举",
+      "image": "02-dong-qian-bei-ke.jpg",
+      "imageAlt": "西安钟楼二层西墙镶嵌的《钟楼东迁歌》石碑特写",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-dong-qian-bei-ke.md",
+      "audio": {
+        "durSec": 28,
+        "bytes": 224489,
+        "sha256": "bdc7a5748375f13dc649a0b0bdb3bb46b63c4c8879dac26f55cae955e9d99c4f"
+      }
+    },
+    {
+      "id": "men-shan-diao-hua",
+      "title": "门窗浮雕",
+      "subtitle": "木刻典故演绎历史传奇",
+      "image": "03-men-shan-diao-hua.jpg",
+      "imageAlt": "西安钟楼门扇上的木刻浮雕特写",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-men-shan-diao-hua.md",
+      "audio": {
+        "durSec": 31,
+        "bytes": 246849,
+        "sha256": "9efaa9b1e56ea18f6b6a95e74be5e65bee48015010e2895d992686c66dd32bba"
+      }
+    },
+    {
+      "id": "jing-yun-fang-zhong",
+      "title": "景云仿钟",
+      "subtitle": "复刻唐钟重现晨钟暮鼓",
+      "image": "04-jing-yun-fang-zhong.jpg",
+      "imageAlt": "西安钟楼二层西北角悬挂的景云钟仿制品特写",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-jing-yun-fang-zhong.md",
+      "audio": {
+        "durSec": 34,
+        "bytes": 269210,
+        "sha256": "3b9eec81c6c5cf1c380f9a3e750b02537856ab08d33225024d981a565b09f210"
+      }
+    },
+    {
+      "id": "liu-li-jin-ding",
+      "title": "琉璃金顶",
+      "subtitle": "重檐攒尖闪耀皇家气派",
+      "image": "05-liu-li-jin-ding.jpg",
+      "imageAlt": "西安钟楼顶部特写，绿色琉璃瓦与金色宝顶在光照下清晰可见",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-liu-li-jin-ding.md",
+      "audio": {
+        "durSec": 29,
+        "bytes": 233475,
+        "sha256": "a1426f970bd17c2ae6000bf8d13f6c6f6b9eda00cbfcb1cb49478e0046e5134b"
+      }
+    }
+  ]
+}

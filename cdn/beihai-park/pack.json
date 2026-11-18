@@ -1,0 +1,119 @@
+{
+  "id": "beihai-park",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "北海公园皇家园林",
+  "subtitle": "北京中心现存最完整皇家御苑",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T07:56:08.052Z",
+  "summary": "位于北京市西城区，距今八百余年历史，依循一池三山规制，曾是紫禁城西面御苑。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "皇家园林",
+    "一池三山",
+    "全国重点文物",
+    "北京中轴线"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "tuan-cheng",
+      "title": "团城",
+      "subtitle": "太液池中古老岛屿遗迹",
+      "image": "01-tuan-cheng.jpg",
+      "imageAlt": "北海公园团城景区，圆形城墙环绕承光殿与古树",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-tuan-cheng.md",
+      "audio": {
+        "durSec": 24,
+        "bytes": 192306,
+        "sha256": "905dc6b806008ea0a26abe5debc89711c8821717b2f9772146448705a736fe19"
+      }
+    },
+    {
+      "id": "yong-an-qiao",
+      "title": "永安桥",
+      "subtitle": "连接陆地与琼华岛石桥",
+      "image": "02-yong-an-qiao.jpg",
+      "imageAlt": "北海公园永安桥全景，三孔石桥横跨水面，两端有石狮和牌坊",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-yong-an-qiao.md",
+      "audio": {
+        "durSec": 35,
+        "bytes": 283630,
+        "sha256": "e5779967fc624cd0484405986a4dcc6be1f325fc6f52dba7eb1e003fcd388681"
+      }
+    },
+    {
+      "id": "bai-ta",
+      "title": "白塔",
+      "subtitle": "琼华岛顶藏式佛塔",
+      "image": "03-bai-ta.jpg",
+      "imageAlt": "北海公园琼华岛山顶的藏式白塔，塔身洁白耸立",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-bai-ta.md",
+      "audio": {
+        "durSec": 31,
+        "bytes": 251865,
+        "sha256": "93b8dbfcedd511edfcaf9f6186db0aac1f1c8957140ed8f99a0a8369277176a1"
+      }
+    },
+    {
+      "id": "jing-xin-zhai",
+      "title": "静心斋",
+      "subtitle": "北岸精巧园中之园",
+      "image": "04-jing-xin-zhai.jpg",
+      "imageAlt": "北海公园静心斋全景，亭台楼阁与假山池水相映成趣",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-jing-xin-zhai.md",
+      "audio": {
+        "durSec": 29,
+        "bytes": 234102,
+        "sha256": "ac77dac9c62509671ae8423ed16e0ba8917c7cef5c1b5f238e9141548a729c56"
+      }
+    },
+    {
+      "id": "jiu-long-bi",
+      "title": "九龙壁",
+      "subtitle": "双面琉璃蟠龙影壁",
+      "image": "05-jiu-long-bi.jpg",
+      "imageAlt": "北海公园九龙壁正面全景，七色琉璃蟠龙在波涛云际中飞腾",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-jiu-long-bi.md",
+      "audio": {
+        "durSec": 28,
+        "bytes": 225951,
+        "sha256": "f93220071ecf14901fb7c926f6d24fbf7d28334f142413557146028f738e0675"
+      }
+    },
+    {
+      "id": "wu-long-ting",
+      "title": "五龙亭",
+      "subtitle": "太液池西北隅观景亭",
+      "image": "06-wu-long-ting.jpg",
+      "imageAlt": "北海公园五龙亭全景，五座亭子由曲折石桥相连，背景可见白塔",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/06-wu-long-ting.md",
+      "audio": {
+        "durSec": 31,
+        "bytes": 246849,
+        "sha256": "777dd61e202d41a5188623beb5cceeb93f7999b589de9017ff6a526930226f95"
+      }
+    }
+  ]
+}

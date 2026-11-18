@@ -1,0 +1,103 @@
+{
+  "id": "xian-chengqiang",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "西安城墙",
+  "subtitle": "明代府城与隋唐皇城的叠压共生",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T07:58:07.401Z",
+  "summary": "依托隋唐皇城基础扩建，历经明清修葺，是中国现存规模宏大、保存完整的古代城垣建筑。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "全国重点文保",
+    "明代军事防御",
+    "城市历史变迁"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "yongning-men",
+      "title": "永宁门",
+      "subtitle": "资格最老的南门",
+      "image": "01-yongning-men.jpg",
+      "imageAlt": "西安城墙永宁门全景，三重城楼与瓮城结构清晰可见",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-yongning-men.md",
+      "audio": {
+        "durSec": 28,
+        "bytes": 223026,
+        "sha256": "f96593931ee18407199256f70eb072439b33c0a88d89b9aca66c4d2d5a30d98f"
+      }
+    },
+    {
+      "id": "han-guang-men",
+      "title": "含光门",
+      "subtitle": "唐皇城门遗址",
+      "image": "02-han-guang-men.jpg",
+      "imageAlt": "西安城墙含光门遗址博物馆内，玻璃保护罩下的唐代门道夯土断面",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-han-guang-men.md",
+      "audio": {
+        "durSec": 32,
+        "bytes": 255209,
+        "sha256": "a030f1589cb32b72199317cd6b837c876c9458b83e4b045a22e00076c0aa36e8"
+      }
+    },
+    {
+      "id": "cheng-qiang-duan-mian",
+      "title": "城墙剖面",
+      "subtitle": "黄土夯筑的肌理",
+      "image": "03-cheng-qiang-duan-mian.jpg",
+      "imageAlt": "西安城墙剖面展示区，裸露的黄土夯层与外侧青砖",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-cheng-qiang-duan-mian.md",
+      "audio": {
+        "durSec": 31,
+        "bytes": 249566,
+        "sha256": "920e354090ec595e06531481bd5bc595e9f21ba97ef25c9810b21ca9ad640345"
+      }
+    },
+    {
+      "id": "di-tai-yu-dou-kou",
+      "title": "敌台垛口",
+      "subtitle": "严密的防御体系",
+      "image": "04-di-tai-yu-dou-kou.jpg",
+      "imageAlt": "西安城墙外侧突出的敌台与密集的垛口特写",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-di-tai-yu-dou-kou.md",
+      "audio": {
+        "durSec": 28,
+        "bytes": 224907,
+        "sha256": "9f3605025440bd3e1499cbd787dbb2142261cdf383ef5bbb85f82fb778a4abf1"
+      }
+    },
+    {
+      "id": "weng-cheng-jie-gou",
+      "title": "瓮城结构",
+      "subtitle": "瓮中捉鳖的陷阱",
+      "image": "05-weng-cheng-jie-gou.jpg",
+      "imageAlt": "西安城墙瓮城全景，箭楼与正楼围合的方形空间",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-weng-cheng-jie-gou.md",
+      "audio": {
+        "durSec": 32,
+        "bytes": 256671,
+        "sha256": "0003d04b45043807fe05fc15075bacb3209f0c4d588adf3b6354fd14e2405a43"
+      }
+    }
+  ]
+}

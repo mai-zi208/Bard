@@ -12,6 +12,8 @@
     "start": "node --env-file-if-exists=.env src/index.ts",
     "tts:check": "node --env-file-if-exists=.env src/scripts/tts-check.ts",
     "audio:backfill": "node --env-file-if-exists=.env src/scripts/audio-backfill.ts",
+    "hot:stats": "node --env-file-if-exists=.env src/scripts/hot-stats.ts",
+    "hot:pregen": "node --env-file-if-exists=.env src/scripts/hot-pregen.ts",
     "test": "node --test --test-concurrency=1 \"src/**/*.test.ts\"",
     "typecheck": "tsc --noEmit"
   },

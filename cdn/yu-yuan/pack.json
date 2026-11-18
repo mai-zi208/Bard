@@ -1,23 +1,23 @@
 {
   "id": "yu-yuan",
   "schemaVersion": 2,
-  "version": 1,
+  "version": 2,
   "defaultLocale": "zh-CN",
   "locales": [
     "zh-CN"
   ],
-  "title": "上海豫园",
-  "subtitle": "江南古典园林与近代历史见证",
+  "title": "豫园",
+  "subtitle": "明代私家园林与海派文化地标",
   "cover": "cover.jpg",
-  "refreshedAt": "2026-11-18T04:41:04.326Z",
-  "summary": "始建于明嘉靖年间的私家园林，历经战火与公所瓜分，现为国家重点文物保护单位，集山水建筑与红色历史于一体。",
+  "refreshedAt": "2026-11-18T07:48:27.860Z",
+  "summary": "始建于明嘉靖年间，潘允端为悦亲所建。历经战火与公所瓜分，现由六大景区组成，融合山水亭台与历史记忆。",
   "author": "行迹",
   "generated": true,
   "tags": [
-    "全国重点文保",
-    "江南园林",
-    "小刀会遗址",
-    "明代假山"
+    "全国重点文物保护单位",
+    "江南古典园林",
+    "上海老城厢",
+    "爱国主义教育基地"
   ],
   "theme": {
     "bg": "#16130F",
@@ -28,61 +28,61 @@
     {
       "id": "san-sui-tang",
       "title": "三穗堂",
-      "subtitle": "入园首景寓意吉祥",
+      "subtitle": "入园首景寄托青云之志",
       "image": "01-san-sui-tang.jpg",
-      "imageAlt": "豫园三穗堂正面全景，展示其作为入园首景的开阔厅堂建筑",
+      "imageAlt": "豫园三穗堂正面全景，展现其作为入园首景的开阔与庄重",
       "transition": "zoom-out",
       "holdMs": 9000,
       "body": "body/01-san-sui-tang.md",
       "audio": {
-        "durSec": 30,
-        "bytes": 239326,
-        "sha256": "21e07d119c04596b7a4d946cd345f95a19bcf6ed3ecf19223cf5ff473219fd90"
+        "durSec": 34,
+        "bytes": 274644,
+        "sha256": "2957bca1ba9b77b973bf247b603998a609f0892bf417967519b493863fab10de"
       }
     },
     {
       "id": "da-jia-shan",
       "title": "大假山",
-      "subtitle": "明代叠石艺术孤品",
+      "subtitle": "张南阳叠石传世名作",
       "image": "02-da-jia-shan.jpg",
-      "imageAlt": "豫园大假山全景，武康黄石堆叠的山体与周边绿植相映",
+      "imageAlt": "豫园大假山，武康黄石堆叠的山体与周边绿植",
       "transition": "rise",
       "holdMs": 9000,
       "body": "body/02-da-jia-shan.md",
       "audio": {
-        "durSec": 29,
-        "bytes": 232639,
-        "sha256": "8776cafab0297d5582da53764fe5b3f3876d0e596ee11bada189a6efd5ad901e"
+        "durSec": 23,
+        "bytes": 187917,
+        "sha256": "cfae5d37f423e253606dbaa08d57c8a8ca9dc326dff610c2977e6cf6ad0262ee"
       }
     },
     {
       "id": "dian-chun-tang",
       "title": "点春堂",
-      "subtitle": "小刀会起义指挥部",
+      "subtitle": "小刀会起义指挥旧址",
       "image": "03-dian-chun-tang.jpg",
-      "imageAlt": "豫园点春堂全景，正对打唱台，周围绿树环绕",
+      "imageAlt": "豫园点春堂正立面与对面的打唱台，古建掩映在绿树中",
       "transition": "slide",
       "holdMs": 9000,
       "body": "body/03-dian-chun-tang.md",
       "audio": {
-        "durSec": 31,
-        "bytes": 248312,
-        "sha256": "963b7e0d35e5e55ec0058826670e67a00e27bd4b775f36e4a6eb106f3c1520b1"
+        "durSec": 30,
+        "bytes": 239326,
+        "sha256": "fff49fafcebc287989d20e3be3e08d3fe566b0310ac2dbf649f14797d4a60914"
       }
     },
     {
-      "id": "he-jing-lou",
-      "title": "会景楼",
-      "subtitle": "环视全园最佳视点",
-      "image": "04-he-jing-lou.jpg",
-      "imageAlt": "豫园会景楼临水而立，倒映在平静的荷花池中",
+      "id": "ji-yu-lang",
+      "title": "积玉廊",
+      "subtitle": "临水长廊连接湖光山色",
+      "image": "04-ji-yu-lang.jpg",
+      "imageAlt": "豫园积玉廊临水蜿蜒的长廊景观",
       "transition": "fade",
       "holdMs": 9000,
-      "body": "body/04-he-jing-lou.md",
+      "body": "body/04-ji-yu-lang.md",
       "audio": {
-        "durSec": 26,
-        "bytes": 208397,
-        "sha256": "bbcd7910bb2e9ea1158d58fd9e32862f19fa1809459db82981e425ad4cf9e370"
+        "durSec": 33,
+        "bytes": 266076,
+        "sha256": "9bee09d2e74c77d48c1bc4708f01356afcbc2020204e5100debd1e4a2ef641fb"
       }
     },
     {
@@ -90,14 +90,14 @@
       "title": "玉玲珑",
       "subtitle": "江南三大名石之一",
       "image": "05-yu-ling-long.jpg",
-      "imageAlt": "豫园玉华堂前的玉玲珑奇石，石身多孔通透",
+      "imageAlt": "豫园玉华堂前的玉玲珑奇石，周身多孔玲珑剔透",
       "transition": "zoom-out",
       "holdMs": 9000,
       "body": "body/05-yu-ling-long.md",
       "audio": {
-        "durSec": 29,
-        "bytes": 230549,
-        "sha256": "bbf8e74303f22378b479366aadcda29ae53a2852b7cb1c42e02eac4746d6a1bc"
+        "durSec": 27,
+        "bytes": 216547,
+        "sha256": "eeaee1f000ca61bd3719145dec76fee08f57a0f1c0ce0d2ced8a53160341872e"
       }
     }
   ]

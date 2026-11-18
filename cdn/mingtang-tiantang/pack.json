@@ -1,0 +1,119 @@
+{
+  "id": "mingtang-tiantang",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "明堂天堂景区",
+  "subtitle": "武周神都核心遗址展示",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T07:32:36.704Z",
+  "summary": "位于洛阳紫微城遗址核心区，由明堂与天堂组成，是武则天理政礼佛的重要场所。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "武则天",
+    "唐代建筑",
+    "遗址保护",
+    "洛阳地标"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "jing-quan-mao",
+      "title": "景区概貌",
+      "subtitle": "定鼎路与中州路交汇",
+      "image": "01-jing-quan-mao.jpg",
+      "imageAlt": "隋唐洛阳城国家遗址公园内的明堂与天堂建筑群全景",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-jing-quan-mao.md",
+      "audio": {
+        "durSec": 35,
+        "bytes": 281958,
+        "sha256": "ce3b815b9829adb1b30778c85a2e19d76e8c598cb8d371b481adee05320143a5"
+      }
+    },
+    {
+      "id": "ming-tang-wai-guan",
+      "title": "明堂外观",
+      "subtitle": "万象神宫重现天日",
+      "image": "02-ming-tang-wai-guan.jpg",
+      "imageAlt": "明堂天堂景区明堂主体建筑，圆形阁楼立于方形台基，顶部有金色宝珠",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-ming-tang-wai-guan.md",
+      "audio": {
+        "durSec": 41,
+        "bytes": 328769,
+        "sha256": "5f9a8cae31ec4a868f1e3b67e81ab9a6e495e476d0e5d43bf6cec446a60e4852"
+      }
+    },
+    {
+      "id": "ming-tang-nei-ting",
+      "title": "明堂内厅",
+      "subtitle": "见证武皇登基大典",
+      "image": "03-ming-tang-nei-ting.jpg",
+      "imageAlt": "明堂大享厅内陈列的陶泥人偶群像，展现登基大典场景",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-ming-tang-nei-ting.md",
+      "audio": {
+        "durSec": 29,
+        "bytes": 230758,
+        "sha256": "e41554906dbd108feb5d5c91e0f6280779c62af10e175883877e72e2db8d9df1"
+      }
+    },
+    {
+      "id": "tian-tang-yi-zhi",
+      "title": "天堂遗址",
+      "subtitle": "古柱础坑静默无言",
+      "image": "04-tian-tang-yi-zhi.jpg",
+      "imageAlt": "隋唐洛阳城国家遗址公园内天堂遗址古柱础坑展示区",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-tian-tang-yi-zhi.md",
+      "audio": {
+        "durSec": 35,
+        "bytes": 280913,
+        "sha256": "9f6085becf65f8a3ef7008777e19d03766a9c06f069d797648583eb4e56b56b1"
+      }
+    },
+    {
+      "id": "tian-tang-bi-hua",
+      "title": "接引堂画",
+      "subtitle": "黑面飞天诉说沧桑",
+      "image": "05-tian-tang-bi-hua.jpg",
+      "imageAlt": "天堂接引堂二层顶部黑面飞天壁画特写",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-tian-tang-bi-hua.md",
+      "audio": {
+        "durSec": 27,
+        "bytes": 219473,
+        "sha256": "54861f09cb185c990b668b37ec8b91bf23258df4a1c305517d1ed3b62d307a1a"
+      }
+    },
+    {
+      "id": "tian-tang-ding-ceng",
+      "title": "天之圣堂",
+      "subtitle": "登顶俯瞰神都气象",
+      "image": "06-tian-tang-ding-ceng.jpg",
+      "imageAlt": "洛阳明堂天堂景区天堂九层天之圣堂内部，弥勒佛像与俯瞰视角的城市景观",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/06-tian-tang-ding-ceng.md",
+      "audio": {
+        "durSec": 38,
+        "bytes": 302647,
+        "sha256": "d9f8417ef14235ad01bdd2cdda03f8ac6becf11c0cd75efe4f5bb9216c822a92"
+      }
+    }
+  ]
+}

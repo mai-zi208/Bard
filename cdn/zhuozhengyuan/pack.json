@@ -1,0 +1,104 @@
+{
+  "id": "zhuozhengyuan",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "拙政园",
+  "subtitle": "江南私家园林典范",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-18T08:10:00.273Z",
+  "summary": "始建于明代，中国四大名园之一，以水为中心，疏朗自然，融合东中西三部景观。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "世界文化遗产",
+    "苏州园林",
+    "明代园林",
+    "国家5A级景区"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "yuan-men",
+      "title": "入园初识",
+      "subtitle": "东北街畔古园门",
+      "image": "01-yuan-men.jpg",
+      "imageAlt": "拙政园东北街古园门全景，青砖门楼与周边绿植相映",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-yuan-men.md",
+      "audio": {
+        "durSec": 32,
+        "bytes": 259806,
+        "sha256": "29dd3f0d0db4a18cb7e06f00019f4896e842c261aa14aa1c1900e57b0ea4a3fb"
+      }
+    },
+    {
+      "id": "lan-xue-tang",
+      "title": "兰雪堂前",
+      "subtitle": "东部归田园居景",
+      "image": "02-lan-xue-tang.jpg",
+      "imageAlt": "拙政园东部兰雪堂前平冈远山与松林草坪景观",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-lan-xue-tang.md",
+      "audio": {
+        "durSec": 26,
+        "bytes": 206725,
+        "sha256": "7e4b8db32d966fd5ddf8b11e98401c362f822b8193fb06fec6606ff4d49477a1"
+      }
+    },
+    {
+      "id": "yuan-xiang-tang",
+      "title": "远香堂下",
+      "subtitle": "中部主厅赏荷风",
+      "image": "03-yuan-xiang-tang.jpg",
+      "imageAlt": "拙政园远香堂主体建筑，四面长窗临水而立，背景可见池中荷花与远处山岛",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-yuan-xiang-tang.md",
+      "audio": {
+        "durSec": 35,
+        "bytes": 283839,
+        "sha256": "56ae811301bb2346d651399b4218ec0cbf1fa2b52d9a0b165e9ee037d1791785"
+      }
+    },
+    {
+      "id": "xiao-fei-hong",
+      "title": "小飞虹上",
+      "subtitle": "廊桥分隔水院幽",
+      "image": "04-xiao-fei-hong.jpg",
+      "imageAlt": "拙政园中部小飞虹廊桥横跨水面，朱红栏杆与倒影相映",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-xiao-fei-hong.md",
+      "audio": {
+        "durSec": 36,
+        "bytes": 285093,
+        "sha256": "4970326af31883a9841e0eca1c009a97dc5a29ad6e37f4b1c6b899391e09c927"
+      }
+    },
+    {
+      "id": "san-shi-liu-yuan-yang-guan",
+      "title": "鸳鸯馆内",
+      "subtitle": "西部补园听昆曲",
+      "image": "05-san-shi-liu-yuan-yang-guan.jpg",
+      "imageAlt": "拙政园西部卅六鸳鸯馆外观，展示其临水而建的精致台馆与回廊",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-san-shi-liu-yuan-yang-guan.md",
+      "audio": {
+        "durSec": 29,
+        "bytes": 232430,
+        "sha256": "4c3736f4d665fed5e8447e8b6795ab3a3079c41b3160c040a2cc8c8020200ce3"
+      }
+    }
+  ]
+}
