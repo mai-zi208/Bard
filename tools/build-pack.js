@@ -11,7 +11,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const MP_DIR = path.resolve(__dirname, '..', 'miniprogram');
+const MP_DIR = path.resolve(__dirname, '..', 'web');
 const PACKS_DIR = path.join(MP_DIR, 'packs');
 const COVERS_DIR = path.join(MP_DIR, 'covers');
 const APP_JSON = path.join(MP_DIR, 'app.json');
@@ -83,7 +83,7 @@ function main() {
 
   const body = [
     '// 此文件由 tools/build-pack.js 生成，请勿手动修改。',
-    '// 数据源：miniprogram/packs/*/pack.json',
+    '// 数据源：web/packs/*/pack.json',
     'module.exports = ' + JSON.stringify(packs, null, 2) + ';',
     '',
   ].join('\n');

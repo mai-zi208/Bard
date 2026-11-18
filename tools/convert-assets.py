@@ -1,7 +1,7 @@
 """把景物原图转换为资源包规范要求的图片。
 
 用法：
-    python tools/convert-assets.py --src design/design_no.2/assets --out miniprogram/packs/baimasi
+    python tools/convert-assets.py --src design/design_no.2/assets --out web/packs/baimasi
     python tools/convert-assets.py            # 等价于上面这条默认路径
 
 映射来源（按优先级）：
@@ -29,7 +29,7 @@ from PIL import Image
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEFAULT_SRC = os.path.join(ROOT, "design", "design_no.2", "assets")
-DEFAULT_OUT = os.path.join(ROOT, "miniprogram", "packs", "baimasi")
+DEFAULT_OUT = os.path.join(ROOT, "web", "packs", "baimasi")
 
 EXT_ORDER = (".jpg", ".jpeg", ".png", ".webp")
 

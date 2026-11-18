@@ -14,7 +14,7 @@ function pickText(value: unknown): string {
 }
 
 /**
- * 内置包目录（miniprogram/packs/{id}/pack.json）读取。
+ * 内置包目录（web/packs/{id}/pack.json）读取。
  * 内置包随小程序发布、不进 cdn/，服务端索引不到，提交去重时单独读取。
  */
 export class BuiltinPackStore implements BuiltinPackPort {

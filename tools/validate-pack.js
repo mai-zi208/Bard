@@ -3,7 +3,7 @@
  * 资源包校验：按 docs/技术方案.md §3.5 执行。
  *
  * 用法：
- *   node tools/validate-pack.js                 # 校验 miniprogram/packs 下全部资源包
+ *   node tools/validate-pack.js                 # 校验 web/packs 下全部资源包
  *   node tools/validate-pack.js baimasi         # 只校验指定包
  *   node tools/validate-pack.js --dir cdn       # 校验发布目录（在线包）
  *
@@ -13,7 +13,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const MP_DIR = path.resolve(__dirname, '..', 'miniprogram');
+const MP_DIR = path.resolve(__dirname, '..', 'web');
 const PACKS_DIR = path.join(MP_DIR, 'packs');
 const COVERS_DIR = path.join(MP_DIR, 'covers');
 const APP_JSON = path.join(MP_DIR, 'app.json');

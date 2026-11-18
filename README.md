@@ -44,7 +44,7 @@
 ## 工程结构
 
 ```
-miniprogram/
+web/
   app.json                 页面与分包声明
   config.js                CDN_BASE / API_BASE / API_TOKEN
   pages/
@@ -84,7 +84,7 @@ docs/                      技术方案、生成规范与规划页预览
 
 ### 小程序
 
-用微信开发者工具导入仓库根目录（`project.config.json` 已指定 `miniprogram/` 为代码根目录）。只读内置包时无需启动服务端；要在列表看到并下载在线包，需要先启动服务端，并在 `miniprogram/config.js` 中配置 `CDN_BASE` / `API_BASE`。
+用微信开发者工具导入仓库根目录（`project.config.json` 已指定 `web/` 为代码根目录）。只读内置包时无需启动服务端；要在列表看到并下载在线包，需要先启动服务端，并在 `web/config.js` 中配置 `CDN_BASE` / `API_BASE`。
 
 ### 服务端
 
@@ -114,7 +114,7 @@ node tools/assemble-pack.js --content packs-src/{id}/content.json \
 node tools/validate-pack.js --dir cdn         # 校验在线包
 node tools/validate-pack.js                   # 校验内置包与分包体积
 node tools/build-covers.py                    # 生成主包内的列表封面
-node tools/build-pack.js                      # 重建 miniprogram/packs/registry.js
+node tools/build-pack.js                      # 重建 web/packs/registry.js
 node tools/build-manifest.js                  # 扫描 cdn/ 重建 manifest.json
 node tools/editor/server.js                   # 可视化编辑器，端口 8790
 ```

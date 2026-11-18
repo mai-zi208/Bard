@@ -17,7 +17,7 @@ export const config = {
   cdnDir: dirFromEnv('CDN_DIR', path.join(projectRoot, 'cdn')),
   srcDir: dirFromEnv('SRC_DIR', path.join(projectRoot, 'packs-src')),
   /** 小程序内置包目录：服务端提交去重时也要认出这些已内置的景点 */
-  builtinPackDir: dirFromEnv('BUILTIN_PACK_DIR', path.join(projectRoot, 'miniprogram', 'packs')),
+  builtinPackDir: dirFromEnv('BUILTIN_PACK_DIR', path.join(projectRoot, 'web', 'packs')),
   dbPath: dirFromEnv('DB_PATH', path.join(serverRoot, 'data', 'app.db')),
   assetsDir: dirFromEnv('ASSETS_DIR', path.join(projectRoot, 'assets'))
 };

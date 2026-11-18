@@ -2,11 +2,11 @@
 
 内置资源包已拆成分包（packs/{id}），列表页不能直接引用分包内封面，
 否则进入列表就会下载全部分包。这里把每个包的 cover.jpg 缩成 3:4 竖图，
-输出到 miniprogram/covers/{id}.jpg，供资源包列表与欢迎页使用。
+输出到 web/covers/{id}.jpg，供资源包列表与欢迎页使用。
 
 用法：
     python tools/build-covers.py
-    python tools/build-covers.py --packs miniprogram/packs --out miniprogram/covers
+    python tools/build-covers.py --packs web/packs --out web/covers
 
 规格：3:4 竖图，宽 600，单张 ≤80KB（超出逐步降质）。
 """
@@ -17,8 +17,8 @@ import os
 from PIL import Image
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DEFAULT_PACKS = os.path.join(ROOT, "miniprogram", "packs")
-DEFAULT_OUT = os.path.join(ROOT, "miniprogram", "covers")
+DEFAULT_PACKS = os.path.join(ROOT, "web", "packs")
+DEFAULT_OUT = os.path.join(ROOT, "web", "covers")
 
 WIDTH = 600
 RATIO = (3, 4)

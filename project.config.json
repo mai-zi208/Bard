@@ -1,6 +1,6 @@
 {
   "description": "游览向导 · 微信小程序",
-  "miniprogramRoot": "miniprogram/",
+  "miniprogramRoot": "web/",
   "compileType": "miniprogram",
   "appid": "wx8071846a10294d15",
   "projectname": "tour-guide",
