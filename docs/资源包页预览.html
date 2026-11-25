@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>游览向导 · 资源包页预览</title>
+<style>
+  /* 1:1 还原 web/pages/packs（小程序 750rpx 设计稿按 1rpx = 0.5px 折算到 375px 视口）
+     数据取自 web/packs/*/pack.json、web/packs/registry.js 与 cdn/manifest.json 真实字段 */
+  :root {
+    --ink: #1c2733;
+    --gold: #e3c766;
+    --brand: #8a6b2f;
+    --green: #2f5a4a;
+    --serif: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(120% 100% at 50% 0%, #dfe7f0 0%, #c9d4e2 100%);
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .phone {
+    position: relative;
+    width: 375px;
+    height: 812px;
+    border-radius: 44px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #fbfdff 0%, #f3f8fe 58%, #e9f1fb 100%);
+    box-shadow: 0 40px 80px -30px rgba(24, 46, 72, 0.55), 0 0 0 10px #10151c, 0 0 0 11px #2a323d;
+  }
+  .screen {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 20px 120px;
+    scrollbar-width: none;
+  }
+  .screen::-webkit-scrollbar { display: none; }
+
+  /* 微信状态栏 + 胶囊 */
+  .statusbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 44px;
+    padding: 0 14px 0 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .sb-right { display: flex; align-items: center; gap: 6px; }
+  .sb-signal { display: flex; align-items: flex-end; gap: 1.5px; height: 10px; }
+  .sb-signal i { width: 2.5px; background: var(--ink); border-radius: 1px; }
+  .sb-signal i:nth-child(1) { height: 4px; }
+  .sb-signal i:nth-child(2) { height: 6px; }
+  .sb-signal i:nth-child(3) { height: 8px; }
+  .sb-signal i:nth-child(4) { height: 10px; }
+  .sb-wifi { font-size: 12px; line-height: 1; }
+  .sb-battery { width: 22px; height: 11px; border: 1px solid rgba(28, 39, 51, 0.4); border-radius: 3px; position: relative; padding: 1.5px; }
+  .sb-battery::after { content: ''; position: absolute; right: -3px; top: 3px; width: 2px; height: 4px; background: rgba(28, 39, 51, 0.4); border-radius: 0 1px 1px 0; }
+  .sb-battery i { display: block; height: 100%; width: 78%; background: var(--ink); border-radius: 1.5px; }
+  .capsule {
+    position: absolute;
+    top: 9px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    height: 32px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(28, 39, 51, 0.08);
+    overflow: hidden;
+  }
+  .capsule span {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink);
+  }
+  .capsule .c1 { font-size: 17px; letter-spacing: 1px; }
+  .capsule .div { width: 1px; height: 18px; background: rgba(28, 39, 51, 0.12); }
+  .capsule .c2 { width: 26px; }
+  .capsule .c2 i { display: block; width: 16px; height: 16px; border: 1.6px solid var(--ink); border-radius: 50%; position: relative; }
+  .capsule .c2 i::after { content: ''; position: absolute; inset: 4.5px; background: var(--ink); border-radius: 50%; }
+
+  /* 页头（head padding-top = statusBarHeight + 44） */
+  .head { margin-bottom: 18px; }
+  .brand { font-size: 10px; letter-spacing: 0.34em; color: var(--brand); margin-bottom: 9px; }
+  .head-title { font-family: var(--serif); font-size: 26px; letter-spacing: 0.1em; color: var(--ink); }
+  .head-sub { margin-top: 8px; font-size: 11.5px; letter-spacing: 0.06em; color: rgba(28, 39, 51, 0.5); }
+
+  /* 顶部轮播 */
+  .hero-wrap { position: relative; }
+  .hero { position: relative; width: 100%; height: 310px; border-radius: 20px; overflow: hidden; }
+  .hero-track { position: absolute; inset: 0; display: flex; transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1); }
+  .hero-card {
+    position: relative;
+    flex: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid rgba(28, 39, 51, 0.08);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+  }
+  .hero-card:hover { transform: scale(0.985); }
+  .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+  .hero-scrim {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top,
+      rgba(12, 18, 24, 0.92) 0%,
+      rgba(12, 18, 24, 0.54) 34%,
+      rgba(12, 18, 24, 0.06) 64%,
+      rgba(12, 18, 24, 0.26) 100%);
+  }
+  .badge {
+    position: absolute; top: 12px; left: 12px;
+    display: flex; align-items: center;
+    padding: 5px 10px; border-radius: 50px;
+    background: rgba(12, 18, 24, 0.5);
+    border: 1px solid rgba(227, 199, 102, 0.45);
+  }
+  .badge-dot { width: 5px; height: 5px; margin-right: 5px; border-radius: 50%; background: #86ae8f; box-shadow: 0 0 4px rgba(134, 174, 143, 0.8); }
+  .badge-text { font-size: 10px; letter-spacing: 0.08em; color: var(--gold); }
+  .hero-meta { position: absolute; left: 18px; right: 18px; bottom: 15px; }
+  .hero-title { font-family: var(--serif); font-size: 24px; letter-spacing: 0.07em; color: #fbfdff; }
+  .hero-sub { margin-top: 5px; font-size: 11.5px; letter-spacing: 0.1em; color: rgba(250, 252, 255, 0.62); }
+  .ai-inline { font-size: 9.5px; letter-spacing: 0.06em; color: rgba(227, 199, 102, 0.82); }
+  .facts { display: flex; align-items: center; margin-top: 11px; font-size: 10.5px; letter-spacing: 0.05em; color: rgba(250, 252, 255, 0.5); }
+  .fact-sep { margin: 0 6px; opacity: 0.55; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .tag {
+    padding: 3px 8px; border-radius: 4px;
+    border: 1px solid rgba(250, 252, 255, 0.22);
+    font-size: 9.5px; letter-spacing: 0.1em; color: rgba(250, 252, 255, 0.62);
+  }
+  .hero-audio {
+    display: inline-block; margin-top: 10px; padding: 4px 12px;
+    border-radius: 50px; font-size: 10px; letter-spacing: 0.06em;
+    color: rgba(250, 252, 255, 0.86);
+    background: rgba(0, 0, 0, 0.28);
+    border: 1px solid rgba(250, 252, 255, 0.3);
+    cursor: pointer;
+  }
+  .hero-audio.is-on { color: #f0d78c; border-color: rgba(227, 199, 102, 0.62); background: rgba(0, 0, 0, 0.34); }
+  .hero-dots { display: flex; align-items: center; justify-content: center; margin-top: 9px; }
+  .hero-dot {
+    width: 6px; height: 6px; margin-left: 5px; border-radius: 50px;
+    background: rgba(250, 252, 255, 0.42);
+    transition: width 0.3s, background 0.3s; cursor: pointer;
+  }
+  .hero-dot.is-active { width: 16px; background: var(--gold); }
+
+  /* 生成入口 */
+  .ask {
+    display: flex; align-items: center;
+    margin-top: 15px; height: 46px; padding-left: 14px;
+    border-radius: 50px;
+    border: 1px solid rgba(28, 39, 51, 0.1);
+    background: rgba(255, 255, 255, 0.75);
+  }
+  .ask-input {
+    flex: 1; min-width: 0; border: none; outline: none; background: transparent;
+    font-size: 12.5px; letter-spacing: 0.03em; color: var(--ink);
+  }
+  .ask-input::placeholder { color: rgba(28, 39, 51, 0.35); }
+  .ask-go {
+    flex: none; margin-left: 8px; height: 34px; padding: 0 15px;
+    display: flex; align-items: center; border-radius: 50px;
+    font-size: 11.5px; letter-spacing: 0.12em; color: rgba(28, 39, 51, 0.4);
+    border: 1px solid rgba(28, 39, 51, 0.12);
+    cursor: pointer; transition: all 0.25s; user-select: none;
+  }
+  .ask-go.is-ready { color: #f7faff; background: var(--green); border-color: var(--green); }
+
+  /* 列表 */
+  .section-label { margin: 22px 0 10px; font-size: 10px; letter-spacing: 0.26em; color: rgba(28, 39, 51, 0.4); }
+  .list { display: flex; flex-direction: column; }
+  .row {
+    position: relative; display: flex; align-items: center; width: 100%;
+    padding: 10px 12px; margin-bottom: 10px; border-radius: 14px;
+    border: 1px solid rgba(28, 39, 51, 0.07);
+    background: rgba(255, 255, 255, 0.72);
+    transition: background 0.25s, border-color 0.25s;
+    cursor: pointer;
+  }
+  .row:hover { background: rgba(255, 255, 255, 0.96); border-color: rgba(28, 39, 51, 0.14); }
+  .row--failed { border-color: rgba(169, 83, 63, 0.3); background: rgba(169, 83, 63, 0.04); }
+  .thumb {
+    flex: none; display: flex; align-items: center; justify-content: center;
+    width: 64px; height: 64px; margin-right: 12px;
+    border-radius: 10px; overflow: hidden;
+  }
+  .thumb-img { display: block; width: 100%; height: 100%; object-fit: cover; background: rgba(28, 39, 51, 0.05); }
+  .thumb--pending { background: linear-gradient(140deg, #e9f0f8 0%, #dfe9f4 62%, #d5e2f0 100%); }
+  .thumb-glyph { font-family: var(--serif); font-size: 20px; color: rgba(138, 107, 47, 0.66); }
+  .row-body { flex: 1; min-width: 0; }
+  .row-body--del { padding-right: 28px; }
+  .row-title {
+    font-family: var(--serif); font-size: 15px; letter-spacing: 0.06em; color: var(--ink);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .row-sub { margin-top: 4px; font-size: 10.5px; letter-spacing: 0.02em; color: rgba(28, 39, 51, 0.46); }
+  .row-state { margin-top: 6px; font-size: 10px; letter-spacing: 0.04em; color: #3f6b58; display: flex; align-items: center; }
+  .row-state.is-live { animation: livePulse 1.8s ease-in-out infinite; }
+  .row-state.is-failed { color: #a9533f; }
+  .audio-chip {
+    margin-left: 8px; padding: 2px 9px; border-radius: 50px;
+    font-size: 9.5px; color: rgba(28, 39, 51, 0.55);
+    background: rgba(28, 39, 51, 0.06);
+    border: 1px solid rgba(28, 39, 51, 0.12);
+    cursor: pointer;
+  }
+  .audio-chip.is-on { color: #8a6d1f; background: rgba(227, 199, 102, 0.16); border-color: rgba(227, 199, 102, 0.5); }
+  .card-del,
+  .row-del {
+    position: absolute; z-index: 3;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; line-height: 1; cursor: pointer;
+  }
+  .card-del {
+    top: 12px; right: 12px; width: 28px; height: 28px;
+    font-size: 17px; color: rgba(250, 252, 255, 0.92);
+    background: rgba(12, 18, 24, 0.42);
+    border: 1px solid rgba(250, 252, 255, 0.35);
+  }
+  .row-del {
+    top: 4px; right: 5px; width: 24px; height: 24px;
+    font-size: 15px; color: rgba(28, 39, 51, 0.5);
+    background: rgba(28, 39, 51, 0.06);
+    border: 1px solid rgba(28, 39, 51, 0.1);
+  }
+  .note { margin-top: 15px; text-align: center; font-size: 9.5px; letter-spacing: 0.26em; color: rgba(28, 39, 51, 0.3); }
+
+  /* 底部标签栏 */
+  .tabbar {
+    position: absolute; z-index: 30;
+    left: 28px; right: 28px; bottom: 24px;
+    height: 62px; padding: 5px; display: flex; border-radius: 22px;
+    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 17px -13px rgba(24, 46, 72, 0.7), 0 2px 6px rgba(24, 46, 72, 0.05);
+    backdrop-filter: blur(10px);
+  }
+  .tab {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    border-radius: 17px; cursor: pointer; transition: background 0.25s;
+  }
+  .tab-ico { width: 17px; height: 17px; margin-right: 6px; background-repeat: no-repeat; background-position: center; background-size: 100% 100%; }
+  .tab-ico--plan {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18' fill='none' stroke='%231c2733' stroke-opacity='0.42' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.6 14.4c0-3.1 4.6-2.6 4.6-5.8S4.6 6 4.6 3.4'/%3E%3Ccircle cx='4.6' cy='14.9' r='1.5' fill='%231c2733' fill-opacity='0.42' stroke='none'/%3E%3Ccircle cx='13.4' cy='3.2' r='1.6' fill='%231c2733' fill-opacity='0.42' stroke='none'/%3E%3Cpath d='M9.4 8.6h3.2'/%3E%3C/svg%3E");
+  }
+  .tab.is-active .tab-ico--plan {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18' fill='none' stroke='%23e3c766' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.6 14.4c0-3.1 4.6-2.6 4.6-5.8S4.6 6 4.6 3.4'/%3E%3Ccircle cx='4.6' cy='14.9' r='1.5' fill='%23e3c766' stroke='none'/%3E%3Ccircle cx='13.4' cy='3.2' r='1.6' fill='%23e3c766' stroke='none'/%3E%3Cpath d='M9.4 8.6h3.2'/%3E%3C/svg%3E");
+  }
+  .tab-ico--packs {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18' fill='none' stroke='%231c2733' stroke-opacity='0.42' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 2.2 15.8 5.8 9 9.4 2.2 5.8z'/%3E%3Cpath d='m2.2 9.5 6.8 3.6 6.8-3.6'/%3E%3Cpath d='m2.2 13 6.8 3.6 6.8-3.6'/%3E%3C/svg%3E");
+  }
+  .tab.is-active .tab-ico--packs {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18' fill='none' stroke='%23e3c766' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 2.2 15.8 5.8 9 9.4 2.2 5.8z'/%3E%3Cpath d='m2.2 9.5 6.8 3.6 6.8-3.6'/%3E%3Cpath d='m2.2 13 6.8 3.6 6.8-3.6'/%3E%3C/svg%3E");
+  }
+  .tab-label { font-size: 11.5px; letter-spacing: 0.08em; color: rgba(28, 39, 51, 0.42); }
+  .tab.is-active { background: linear-gradient(135deg, #2f5a4a 0%, #3a6a55 100%); box-shadow: 0 5px 9px -6px rgba(47, 90, 74, 0.9); }
+  .tab.is-active .tab-label { color: #f5f9fc; }
+
+  @keyframes livePulse { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="screen" id="screen">
+    <!-- 微信客户端界面 -->
+    <div class="statusbar">
+      <span>9:41</span>
+      <div class="sb-right">
+        <span class="sb-signal"><i></i><i></i><i></i><i></i></span>
+        <span class="sb-wifi"></span>
+        <span class="sb-battery"><i></i></span>
+      </div>
+      <div class="capsule">
+        <span class="c1">⋯</span>
+        <span class="div"></span>
+        <span class="c2"><i></i></span>
+      </div>
+    </div>
+
+    <div class="head">
+      <div class="brand">TOUR GUIDE</div>
+      <div class="head-title">游览向导</div>
+      <div class="head-sub">选一处地方，听一段讲述</div>
+    </div>
+
+    <div class="hero-wrap">
+      <div class="hero" id="hero"><div class="hero-track" id="heroTrack"></div></div>
+      <div class="hero-dots" id="heroDots"></div>
+    </div>
+
+    <div class="ask">
+      <input class="ask-input" id="askInput" placeholder="景点-人物，如 白马寺-武则天" />
+      <div class="ask-go" id="askGo">生成</div>
+    </div>
+
+    <div class="section-label">更多资源包</div>
+    <div class="list" id="list"></div>
+
+    <div class="note">内容持续增加中</div>
+  </div>
+
+  <div class="tabbar">
+    <div class="tab" id="tabPlan">
+      <div class="tab-ico tab-ico--plan"></div><span class="tab-label">规划</span>
+    </div>
+    <div class="tab is-active" id="tabPacks">
+      <div class="tab-ico tab-ico--packs"></div><span class="tab-label">资源包</span>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ---------- mock 数据（与真实前端一致） ----------
+ * heroList：内置包（web/packs/registry.js 顺序），statusText 固定「已下载」、不可删；
+ * 音频在 CDN，未存本地时 chip 显示「存音频，离线可听」。 */
+var HEROES = [
+  { id: 'baimasi', title: '洛阳白马寺·武则天', subtitle: '中国第一古刹', cover: 'assets/cover-baimasi.jpg',
+    facts: ['8 幕', '武则天讲述'], tags: ['古建', '宗教'], audioSaved: false },
+  { id: 'guanlin', title: '洛阳关林', subtitle: '冢庙林三祀合一的关公圣域', cover: 'assets/cover-guanlin.jpg',
+    facts: ['10 幕'], tags: ['关公信俗', '古建筑群', '三国遗迹', '全国重点文保'], audioSaved: false },
+  { id: 'laojunshan', title: '老君山', subtitle: '秦岭支脉伏牛山主峰，道教祖庭', cover: 'assets/cover-laojunshan.jpg',
+    facts: ['6 幕'], tags: ['道教名山', '世界地质公园', '5A景区', '老子文化'], audioSaved: false },
+  { id: 'lijingmen', title: '洛阳丽景门', subtitle: '金明洛阳城西大门，重现古都风貌', cover: 'assets/cover-lijingmen.jpg',
+    facts: ['5 幕'], tags: ['历史建筑', '洛阳八景', '河洛文化', '古城遗址'], audioSaved: false },
+  { id: 'longmen', title: '洛阳龙门石窟', subtitle: '伊阙峡谷两岸的世界石刻艺术宝库', cover: 'assets/cover-longmen.jpg',
+    facts: ['8 幕'], tags: ['世界文化遗产', '石窟艺术', '北魏造像', '唐代石刻'], audioSaved: false },
+  { id: 'luoyang-museum', title: '洛阳博物馆', subtitle: '鼎立天下的河洛文明宝库', cover: 'assets/cover-luoyang-museum.jpg',
+    facts: ['5 幕'], tags: ['国家一级博物馆', '河洛文明', '唐三彩', '免费参观'], audioSaved: false },
+  { id: 'luoyang-shanxi-huiguan', title: '洛阳山陕会馆', subtitle: '清代秦晋商帮的诚信殿堂与建筑瑰宝', cover: 'assets/cover-luoyang-shanxi-huiguan.jpg',
+    facts: ['5 幕'], tags: ['全国重点文物', '清代建筑', '万里茶道', '晋商文化'], audioSaved: false },
+  { id: 'luoyi-gucheng', title: '洛邑古城', subtitle: '周公营建，千年文脉', cover: 'assets/cover-luoyi-gucheng.jpg',
+    facts: ['6 幕'], tags: ['历史古迹', '汉服打卡', '非遗文化', '免费景区'], audioSaved: false },
+  { id: 'shaolin', title: '少林寺', subtitle: '嵩山少室山下的禅宗祖庭与功夫圣地', cover: 'assets/cover-shaolin.jpg',
+    facts: ['9 幕'], tags: ['世界文化遗产', '禅宗祖庭', '少林功夫', '古塔建筑群'], audioSaved: false },
+  { id: 'yingtianmen', title: '应天门遗址博物馆', subtitle: '隋唐洛阳城宫城正门，天下第一门', cover: 'assets/cover-yingtianmen.jpg',
+    facts: ['5 幕'], tags: ['世界文化遗产', '皇家建筑', '历史遗址', '洛阳地标'], audioSaved: false }
+];
+
+/* 更多资源包：cdn/manifest.json 全量在线包（与内置包重名的已合并剔除，按清单原顺序）；
+ * 未下载状态一律「可下载」，在线包可删（出新版本后自动回来）。 */
+var ROWS = [
+  { id: 'badaling', title: '八达岭长城', subtitle: '居庸关前哨与明长城精华段', total: 5 },
+  { id: 'beihai-park', title: '北海公园皇家园林', subtitle: '北京中心现存最完整皇家御苑', total: 6 },
+  { id: 'beijing-gugong', title: '北京故宫', subtitle: '明清皇家宫殿与紫禁城往事', total: 5 },
+  { id: 'bingmayong', title: '秦始皇陵兵马俑', subtitle: '世界第八大奇迹与地下军阵', total: 5 },
+  { id: 'dayan-ta', title: '大雁塔', subtitle: '丝路见证与唐代楼阁式砖塔典范', total: 6 },
+  { id: 'dongfang-mingzhu', title: '东方明珠广播电视塔', subtitle: '浦江畔的上海地标与城市记忆', total: 6 },
+  { id: 'dufu-caotang', title: '成都杜甫草堂', subtitle: '诗圣流寓成都的故居遗址', total: 7 },
+  { id: 'huaqinggong', title: '唐华清宫遗址', subtitle: '骊山脚下的唐代皇家离宫', total: 5 },
+  { id: 'huqiu', title: '苏州虎丘', subtitle: '吴中第一名胜与千年斜塔', total: 5 },
+  { id: 'jiming-si', title: '南京鸡鸣寺', subtitle: '南朝首刹与尼众道场', total: 7 },
+  { id: 'liangzhu-gucheng', title: '良渚古城遗址', subtitle: '实证中华五千年文明史的圣地', total: 6 },
+  { id: 'lingyin-si', title: '杭州灵隐寺', subtitle: '东南佛国，千年禅宗古刹', total: 6 },
+  { id: 'lujiazui-central-green', title: '陆家嘴中心绿地', subtitle: '镶嵌在金融中心的都市绿肺与历史印记', total: 5 },
+  { id: 'ming-xiao-ling', title: '南京明孝陵', subtitle: '明清皇家陵寝的开创之作', total: 6 },
+  { id: 'mingtang-tiantang', title: '明堂天堂景区', subtitle: '武周神都核心遗址展示', total: 6 },
+  { id: 'nanjing-fuzimiao', title: '南京夫子庙', subtitle: '秦淮河畔的文教圣地与科举中心', total: 5 },
+  { id: 'nanjing-road-walkway', title: '南京路步行街', subtitle: '中华商业第一街的百年变迁与新生', total: 6 },
+  { id: 'tian-tan', title: '北京天坛', subtitle: '明清皇家祭天祈谷的礼制建筑群', total: 5 },
+  { id: 'tianzi-jialiu', title: '天子驾六博物馆', subtitle: '东周王城遗址下的车马遗珍', total: 6 },
+  { id: 'waitan', title: '上海外滩', subtitle: '黄浦江畔的万国建筑博览群', total: 6 },
+  { id: 'wuhou-ci', title: '成都武侯祠', subtitle: '君臣合祀的蜀汉英雄纪念地', total: 6 },
+  { id: 'xi-an-zhong-lou', title: '西安钟楼', subtitle: '古城中心的明代重檐楼阁', total: 5 },
+  { id: 'xi-hu', title: '杭州西湖', subtitle: '世界文化景观遗产与江南名湖', total: 6 },
+  { id: 'xian-chengqiang', title: '西安城墙', subtitle: '明代府城与隋唐皇城的叠压共生', total: 5 },
+  { id: 'yiheyuan', title: '颐和园', subtitle: '清代皇家园林博物馆', total: 5 },
+  { id: 'yingtianmen-online', title: '隋唐洛阳应天门', subtitle: '紫微城正南门遗址与博物馆', total: 5 },
+  { id: 'yonghegong', title: '雍和宫', subtitle: '从王府到皇家寺院的传奇变迁', total: 5 },
+  { id: 'yu-yuan', title: '豫园', subtitle: '明代私家园林与海派文化地标', total: 5 },
+  { id: 'zhongshanling', title: '南京中山陵', subtitle: '紫金山南麓的民国礼制建筑群', total: 6 },
+  { id: 'zhuozhengyuan', title: '拙政园', subtitle: '江南私家园林典范', total: 5 }
+].map(function (r) {
+  return {
+    type: 'pack', id: r.id, title: r.title, subtitle: r.subtitle, total: r.total,
+    cover: 'assets/cover-' + (r.id === 'yingtianmen-online' ? 'yingtianmen' : r.id) + '.jpg',
+    statusText: '可下载', downloaded: false, audioSaved: false
+  };
+});
+
+/* ---------- 顶部轮播（heroList = 内置包） ---------- */
+var heroTrack = document.getElementById('heroTrack');
+var heroDots = document.getElementById('heroDots');
+var heroIndex = 0;
+
+HEROES.forEach(function (h, i) {
+  var card = document.createElement('div');
+  card.className = 'hero-card';
+  card.innerHTML =
+    '<img class="hero-img" src="' + h.cover + '" alt="' + h.title + '" />' +
+    '<div class="hero-scrim"></div>' +
+    '<div class="badge"><div class="badge-dot"></div><span class="badge-text">已下载</span></div>' +
+    '<div class="hero-meta">' +
+      '<div class="hero-title">' + h.title + '</div>' +
+      '<div class="hero-sub">' + h.subtitle + '<span class="ai-inline"> · AI 生成</span></div>' +
+      '<div class="facts">' + h.facts.map(function (f, j) {
+        return (j > 0 ? '<span class="fact-sep">·</span>' : '') + '<span class="fact">' + f + '</span>';
+      }).join('') + '</div>' +
+      '<div class="tags">' + h.tags.map(function (t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+      '<div class="hero-audio' + (h.audioSaved ? ' is-on' : '') + '" data-i="' + i + '">' +
+        (h.audioSaved ? '音频已存 · 离线可听' : '存音频，离线可听') +
+      '</div>' +
+    '</div>';
+  card.addEventListener('click', function () { toast('进入「' + h.title + '」游览'); });
+  heroTrack.appendChild(card);
+
+  var dot = document.createElement('div');
+  dot.className = 'hero-dot' + (i === 0 ? ' is-active' : '');
+  dot.addEventListener('click', function () { go(i); restartTimer(); });
+  heroDots.appendChild(dot);
+});
+
+function go(i) {
+  heroIndex = (i + HEROES.length) % HEROES.length;
+  heroTrack.style.transform = 'translateX(-' + (heroIndex * 100) + '%)';
+  var dots = heroDots.children;
+  for (var k = 0; k < dots.length; k += 1) dots[k].classList.toggle('is-active', k === heroIndex);
+}
+
+var timer = null;
+function restartTimer() {
+  clearInterval(timer);
+  timer = setInterval(function () { go(heroIndex + 1); }, 3200);
+}
+restartTimer();
+
+/* 触摸滑动切幕 */
+var startX = null;
+var heroEl = document.getElementById('hero');
+heroEl.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+heroEl.addEventListener('touchend', function (e) {
+  if (startX === null) return;
+  var dx = e.changedTouches[0].clientX - startX;
+  if (Math.abs(dx) > 40) { go(heroIndex + (dx < 0 ? 1 : -1)); restartTimer(); }
+  startX = null;
+}, { passive: true });
+
+/* 轮播上的存音频开关 */
+heroTrack.addEventListener('click', function (e) {
+  var chip = e.target.closest('.hero-audio');
+  if (!chip) return;
+  e.stopPropagation();
+  var h = HEROES[Number(chip.dataset.i)];
+  h.audioSaved = !h.audioSaved;
+  chip.classList.toggle('is-on', h.audioSaved);
+  chip.textContent = h.audioSaved ? '音频已存 · 离线可听' : '存音频，离线可听';
+  toast(h.audioSaved ? '讲解音频已存到本地，离线可听' : '已删除本地音频，改为在线收听');
+});
+
+/* ---------- 更多资源包列表 ---------- */
+var list = document.getElementById('list');
+
+function rowNode(r) {
+  var row = document.createElement('div');
+  row.className = 'row' + (r.failed ? ' row--failed' : '');
+  if (r.type === 'task') {
+    row.innerHTML =
+      '<div class="thumb thumb--pending"><span class="thumb-glyph">' + r.glyph + '</span></div>' +
+      '<div class="row-body">' +
+        '<div class="row-title">' + r.topic + '</div>' +
+        '<div class="row-sub">检索资料 · 编排文稿 · 配图打包</div>' +
+        '<div class="row-state ' + (r.failed ? 'is-failed' : 'is-live') + '">' + r.statusText + '</div>' +
+      '</div>' +
+      (r.failed ? '<div class="row-del">×</div>' : '');
+    return row;
+  }
+  row.innerHTML =
+    '<img class="thumb thumb-img" src="' + r.cover + '" alt="' + r.title + '" />' +
+    '<div class="row-body row-body--del">' +
+      '<div class="row-title">' + r.title + '</div>' +
+      '<div class="row-sub">' + r.subtitle + '</div>' +
+      '<div class="row-state">' + r.total + ' 幕 · ' + r.statusText +
+        (r.downloaded ? '<span class="audio-chip' + (r.audioSaved ? ' is-on' : '') + '">' + (r.audioSaved ? '音频已存' : '存音频') + '</span>' : '') +
+      '</div>' +
+    '</div>' +
+    '<div class="row-del">×</div>';
+  return row;
+}
+
+ROWS.forEach(function (r) { list.appendChild(rowNode(r)); });
+
+list.addEventListener('click', function (e) {
+  var row = e.target.closest('.row');
+  if (!row) return;
+  var idx = Array.prototype.indexOf.call(list.children, row);
+  var r = ROWS[idx];
+
+  /* 音频 chip：存/删本地音频 */
+  var chip = e.target.closest('.audio-chip');
+  if (chip) {
+    r.audioSaved = !r.audioSaved;
+    chip.classList.toggle('is-on', r.audioSaved);
+    chip.textContent = r.audioSaved ? '音频已存' : '存音频';
+    toast(r.audioSaved ? '讲解音频已存到本地，离线可听' : '已删除本地音频');
+    return;
+  }
+  /* 删除在线包：隐藏后出新版本自动回来 */
+  if (e.target.closest('.row-del')) {
+    list.removeChild(row);
+    ROWS.splice(idx, 1);
+    toast('已删除「' + (r.topic || r.title) + '」，出新版本后会自动回来');
+    return;
+  }
+  if (r.type === 'task') { toast('任务进行中：' + r.statusText); return; }
+  if (!r.downloaded) {
+    /* 模拟下载：完成后状态变「已下载」并出现存音频 chip */
+    r.statusText = '下载中…';
+    refreshRow(r);
+    setTimeout(function () {
+      r.downloaded = true;
+      r.statusText = '已下载';
+      refreshRow(r);
+      toast('「' + r.title + '」已下载到本地');
+    }, 1200);
+    return;
+  }
+  toast('进入「' + r.title + '」游览');
+});
+
+function refreshRow(r) {
+  var i = ROWS.indexOf(r);
+  if (i < 0) return;
+  list.replaceChild(rowNode(r), list.children[i]);
+}
+
+/* ---------- 生成入口 ---------- */
+var askInput = document.getElementById('askInput');
+var askGo = document.getElementById('askGo');
+
+askInput.addEventListener('input', function () {
+  askGo.classList.toggle('is-ready', Boolean(askInput.value.trim()));
+});
+
+function submitTask() {
+  var topic = askInput.value.trim();
+  if (!topic) { toast('先输入景点，如：白马寺-武则天'); return; }
+  askInput.value = '';
+  askGo.classList.remove('is-ready');
+
+  var task = { type: 'task', topic: topic, glyph: topic.split('-')[0].charAt(0), statusText: '排队中', failed: false };
+  ROWS.unshift(task);
+  list.insertBefore(rowNode(task), list.firstChild);
+
+  setTimeout(function () { task.statusText = '检索资料 · 编排文稿'; refreshRow(task); }, 2000);
+  setTimeout(function () { task.statusText = '生成中 · 逐幕配音'; refreshRow(task); }, 5000);
+  setTimeout(function () {
+    var i = ROWS.indexOf(task);
+    if (i >= 0) { ROWS.splice(i, 1); list.removeChild(list.children[0]); }
+    toast('「' + topic + '」已生成，正在上架');
+  }, 9000);
+}
+
+askGo.addEventListener('click', submitTask);
+askInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') submitTask(); });
+
+/* ---------- 标签栏 / 提示 ---------- */
+document.getElementById('tabPlan').addEventListener('click', function () {
+  location.href = encodeURIComponent('规划页预览.html');
+});
+document.getElementById('tabPacks').addEventListener('click', function () {
+  document.getElementById('screen').scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+var toastTimer = null;
+function toast(msg) {
+  var host = toast.host || (toast.host = document.createElement('div'));
+  if (!host.parentNode) {
+    host.style.cssText =
+      'position:fixed;z-index:99;left:50%;bottom:120px;transform:translateX(-50%) translateY(8px);' +
+      'padding:8px 18px;border-radius:50px;white-space:nowrap;font-size:11px;color:#f5f9fc;' +
+      'background:rgba(12,18,24,0.82);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s';
+    document.body.appendChild(host);
+  }
+  host.textContent = msg;
+  host.style.opacity = '1';
+  host.style.transform = 'translateX(-50%) translateY(0)';
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function () {
+    host.style.opacity = '0';
+    host.style.transform = 'translateX(-50%) translateY(8px)';
+  }, 2200);
+}
+</script>
+</body>
+</html>

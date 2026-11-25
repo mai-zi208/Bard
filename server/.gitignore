@@ -1,2 +1,3 @@
-data/
+data/*
+!data/national-attractions.json
 node_modules/

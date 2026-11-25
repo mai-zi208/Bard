@@ -1,4 +1,5 @@
 import type { ResearchMaterial, ResearchProvider } from '../../domain/ports.ts';
+import { suggestAttractions } from '../../domain/services/attraction-index.ts';
 import { DESKTOP_UA, MOBILE_UA, fetchText, htmlToText } from './http.ts';
 
 const MIN_CHARS = 800;
@@ -36,6 +37,13 @@ export class BaiduResearchProvider implements ResearchProvider {
     const key = topic.replace(/\s+/g, '');
     const short = key.replace(/^(?:河南省|洛阳市|洛阳)+/, '');
     if (!flat.includes(key) && !(short && flat.includes(short))) {
+      // 地名可能有误时，用全国景点候选集给出「您是不是要找」建议
+      const [suggestion] = suggestAttractions(topic);
+      if (suggestion) {
+        throw new Error(
+          `未检索到「${topic}」的资料，请检查地名是否正确；您是不是要找「${suggestion.name}」（${suggestion.city}）？`
+        );
+      }
       throw new Error(`未检索到「${topic}」的资料，请检查地名是否正确`);
     }
 
