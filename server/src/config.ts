@@ -19,6 +19,8 @@ export const config = {
   /** 小程序内置包目录：服务端提交去重时也要认出这些已内置的景点 */
   builtinPackDir: dirFromEnv('BUILTIN_PACK_DIR', path.join(projectRoot, 'web', 'packs')),
   dbPath: dirFromEnv('DB_PATH', path.join(serverRoot, 'data', 'app.db')),
+  /** 景点内容库（OpenBayes 数据集导入产物）：文件缺失时生成流水线自动回退在线检索 */
+  attractionsDbPath: dirFromEnv('ATTRACTIONS_DB', path.join(serverRoot, 'data', 'attractions.db')),
   assetsDir: dirFromEnv('ASSETS_DIR', path.join(projectRoot, 'assets'))
 };
 

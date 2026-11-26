@@ -1,6 +1,19 @@
 export type TaskStatus = 'queued' | 'running' | 'validating' | 'done' | 'failed';
 export type TaskKind = 'generate' | 'refresh' | 'audio';
 
+/**
+ * 客户端自带的模型密钥（用户设置面板填写，随请求头传入）：
+ * 仅存内存、不落库；缺省项回退服务端 .env 配置。
+ */
+export interface TaskKeyOverrides {
+  /** 文本模型（千问）密钥 */
+  llm?: string;
+  /** 配图模型密钥 */
+  image?: string;
+  /** 豆包配音密钥 */
+  tts?: string;
+}
+
 /** 已发布资源包的元数据，字段与 cdn/manifest.json 的 packs 项对齐 */
 export interface PublishedPack {
   id: string;
@@ -58,6 +71,8 @@ export interface TaskRecord {
   id: string;
   topic: string;
   persona: string;
+  /** 行程所在城市（裸名）：生成时按「城市+景点」检索景点库；可为空 */
+  city: string;
   kind: TaskKind;
   status: TaskStatus;
   stage: string;

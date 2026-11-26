@@ -23,6 +23,7 @@ import type { SourceEntry } from '../../domain/types.ts';
 import { variantId } from '../../domain/services/persona.ts';
 import { resolvePersonaSpeaker } from '../../domain/services/voice-cast.ts';
 import { normalizeTopic } from '../../domain/services/source-matcher.ts';
+import { PersonaMismatchError } from '../providers/script-provider.ts';
 
 export interface PipelineDeps {
   research: ResearchProvider;
@@ -142,6 +143,11 @@ export class ContentGenerationPipeline implements GenerationPipeline {
         if (index >= total) return;
 
         const scene = outline.scenes[index];
+        if (targets[index]) {
+          // 首幕已预填景点库实景图：计入进度但不重复出图
+          step('生成配图');
+          continue;
+        }
         try {
           targets[index] = await this.fetchSceneImage(outline, scene, dir);
           step('生成配图');
@@ -302,7 +308,7 @@ export class ContentGenerationPipeline implements GenerationPipeline {
     const voiceSpeaker = narrator ? resolvePersonaSpeaker(narrator.name) : undefined;
 
     hooks.report(5, '检索资料');
-    const material = await this.deps.research.collect(input.topic);
+    const material = await this.deps.research.collect(input.topic, input.city);
 
     hooks.report(15, '编排幕大纲');
     const outline = await this.deps.writer.outline(input, material, this.deps.sceneLimit);
@@ -336,6 +342,29 @@ export class ContentGenerationPipeline implements GenerationPipeline {
       const images: ImageAsset[] = new Array(total);
       const sceneAudio = new Map<string, SceneAudioMeta>();
       let portrait: ImageAsset | null = null;
+
+      // 景点库命中时首幕优先用数据集实景图（封面复用首幕自动跟进）；不可用仅告警回退生成图
+      if (
+        material.source === 'db' &&
+        material.realPhoto &&
+        this.deps.images.fetchSceneFromUrl &&
+        outline.scenes.length
+      ) {
+        const first = outline.scenes[0];
+        try {
+          images[0] = await this.deps.images.fetchSceneFromUrl(
+            first.id,
+            material.realPhoto,
+            path.join(dir, 'scene-' + first.id),
+            material.references[0]
+          );
+          console.log('[生成] 首幕配图使用景点库实景图');
+        } catch (err) {
+          console.warn(
+            '[生成] 实景图不可用，首幕改走生成图：' + (err instanceof Error ? err.message : String(err))
+          );
+        }
+      }
 
       const eagerAudio = this.eagerLimit(total);
       const audioUnits = this.deps.voice.enabled ? eagerAudio : 0;
@@ -461,7 +490,18 @@ export class ContentGenerationPipeline implements GenerationPipeline {
     if (!master.cover) throw new Error('母本缺少封面图，无法生成人物变体');
 
     hooks.report(12, '生成人物变体');
-    const scripts = await this.deps.writer.rewrite(input, master);
+    let scripts: ScriptResult;
+    try {
+      scripts = await this.deps.writer.rewrite(input, master);
+    } catch (err) {
+      if (err instanceof PersonaMismatchError) {
+        console.warn(
+          '[生成] ' + (err instanceof Error ? err.message : String(err)) + '，回退现代导游母本'
+        );
+        return { packId: master.id, title: master.title, personaMismatch: true };
+      }
+      throw err;
+    }
 
     const outline: PackOutline = {
       id: variantId(master.id, narrator.name),

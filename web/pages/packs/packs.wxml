@@ -73,7 +73,7 @@
     <input
       class="ask-input"
       value="{{topic}}"
-      placeholder="景点-人物，如 白马寺-武则天"
+      placeholder="景点名，如 龙门石窟"
       placeholder-class="ask-ph"
       confirm-type="send"
       bindinput="onInput"
@@ -143,5 +143,6 @@
 
   <view class="note">内容持续增加中</view>
 
+  <settings />
   <tab-bar active="packs" />
 </view>

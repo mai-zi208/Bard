@@ -196,5 +196,6 @@
   </block>
 
   <!-- 地图阶段是原生组件，普通 view 盖不上去，只在输入/规划阶段显示 -->
+  <settings wx:if="{{stage !== 'map'}}" />
   <tab-bar wx:if="{{stage !== 'map'}}" active="plan" />
 </view>

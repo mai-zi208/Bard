@@ -15,6 +15,7 @@ import type {
 function fakeDeps(root: string, options: {
   assemblerOk?: boolean;
   voiceEnabled?: boolean;
+  dbRealPhoto?: boolean;
 }) {
   const srcRoot = path.join(root, 'packs-src');
   const audioRoot = path.join(root, 'cdn', 'audio');
@@ -23,6 +24,8 @@ function fakeDeps(root: string, options: {
 
   const writes: PackSourceInput[] = [];
   let removed = '';
+  const sceneFetches: string[] = [];
+  const realFetches: string[] = [];
 
   const scenes = ['s1', 's2'].map((id) => ({
     id,
@@ -36,7 +39,10 @@ function fakeDeps(root: string, options: {
 
   const pipeline = new ContentGenerationPipeline({
     research: {
-      collect: async () => ({ passages: [' passage '], references: [] })
+      collect: async () =>
+        options.dbRealPhoto
+          ? { topic: '测试景区', text: '资料'.repeat(500), references: ['http://qunar/page'], source: 'db', realPhoto: 'http://qunar/original.jpg' }
+          : ({ passages: [' passage '], references: [] } as never)
     } as never,
     writer: {
       outline: async () => ({ id: 'test-pack', title: '测试景区', subtitle: '', scenes }),
@@ -52,8 +58,14 @@ function fakeDeps(root: string, options: {
     } as never,
     images: {
       fetchScene: async (_id: string, _prompt: string, base: string) => {
+        sceneFetches.push(_id);
         fs.writeFileSync(base + '.jpg', 'image-data');
         return { sceneId: _id, file: base + '.jpg', provider: 'generated', sourceUrl: '', width: 800, height: 1000 };
+      },
+      fetchSceneFromUrl: async (id: string, url: string, base: string) => {
+        realFetches.push(id + '@' + url);
+        fs.writeFileSync(base + '.jpg', 'real-data');
+        return { sceneId: id, file: base + '.jpg', provider: 'dataset', sourceUrl: url, width: 3200, height: 2400 };
       },
       fetchPortrait: async () => {
         throw new Error('不应调用');
@@ -108,7 +120,7 @@ function fakeDeps(root: string, options: {
     eagerAudioScenes: 2
   });
 
-  return { pipeline, writes, srcRoot, audioRoot, removed: () => removed };
+  return { pipeline, writes, srcRoot, audioRoot, sceneFetches, realFetches, removed: () => removed };
 }
 
 const input: GenerationInput = { topic: '测试景区', persona: '' };
@@ -155,6 +167,24 @@ test('未启用配音：不创建任何音频目录，流程正常发布', async
   assert.equal(result.packId, 'test-pack');
   assert.deepEqual(ctx.writes[0].sceneAudio, new Map());
   assert.equal(fs.existsSync(path.join(ctx.audioRoot, 'test-pack')), false);
+
+  fs.rmSync(root, { recursive: true, force: true });
+});
+
+test('景点库命中：首幕预填实景图不再出图，其余幕照常生成', async () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'pipe-realphoto-'));
+  const ctx = fakeDeps(root, { assemblerOk: true, dbRealPhoto: true });
+
+  const result = await ctx.pipeline.run(input, hooks);
+
+  assert.equal(result.packId, 'test-pack');
+  assert.deepEqual(ctx.realFetches, ['s1@http://qunar/original.jpg']);
+  assert.deepEqual(ctx.sceneFetches, ['s2']);
+  const images = ctx.writes[0].images;
+  assert.equal(images[0].provider, 'dataset');
+  assert.equal(images[1].provider, 'generated');
+  // 封面复用首幕实景图
+  assert.equal(ctx.writes[0].cover.sourceUrl, 'http://qunar/original.jpg');
 
   fs.rmSync(root, { recursive: true, force: true });
 });

@@ -10,7 +10,7 @@ const MAX_CHARS = 12000;
  * 只负责拿到「可核验的原始文本」，事实取舍交给大纲/文稿模型。
  */
 export class BaiduResearchProvider implements ResearchProvider {
-  async collect(topic: string): Promise<ResearchMaterial> {
+  async collect(topic: string, _city?: string): Promise<ResearchMaterial> {
     const references: string[] = [];
     let text = '';
 

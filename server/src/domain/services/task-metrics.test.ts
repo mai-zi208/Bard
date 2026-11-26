@@ -8,6 +8,7 @@ function makeTask(overrides: Partial<TaskRecord>): TaskRecord {
     id: 't1',
     topic: '洛阳关林',
     persona: '',
+    city: '',
     kind: 'generate',
     status: 'done',
     stage: '完成',

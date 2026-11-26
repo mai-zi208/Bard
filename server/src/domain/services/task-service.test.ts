@@ -11,12 +11,13 @@ class MemoryTaskStore implements TaskStore {
   records: TaskRecord[] = [];
   private seq = 0;
 
-  create(topic: string, persona: string, kind: TaskKind = 'generate'): TaskRecord {
+  create(topic: string, persona: string, kind: TaskKind = 'generate', city = ''): TaskRecord {
     this.seq += 1;
     const record: TaskRecord = {
       id: 't' + this.seq,
       topic,
       persona,
+      city,
       kind,
       status: 'queued',
       stage: '',
@@ -224,6 +225,67 @@ test('内置包只有默认讲述人时，同景点指定人物仍生成', () =>
   assert.equal(store.records[0].reused, false);
 });
 
+test('自带密钥的任务用工厂流水线，普通任务回退默认流水线', async () => {
+  const store = new MemoryTaskStore();
+  const catalog = {
+    findSource: () => masterSource(),
+    findVariant: () => null,
+    isSourceStale: () => false,
+    isVariantStale: () => false,
+    listPacks: () => [],
+    findPublishedById: () => null,
+    reindex: () => {}
+  } as unknown as CatalogService;
+
+  const usedKeys: (string | undefined)[] = [];
+  const makePipeline = (label: string) =>
+    ({
+      run: async () => {
+        usedKeys.push(label);
+        return { packId: 'demo', title: '白马寺' };
+      }
+    }) as unknown as GenerationPipeline;
+
+  const defaultPipeline = makePipeline('default');
+  const service = new TaskService(store, catalog, defaultPipeline, 8, null, true, null, null, (overrides) =>
+    overrides?.llm ? makePipeline(overrides.llm) : defaultPipeline
+  );
+
+  service.submit('白马寺', '', '', { llm: 'user-key' });
+  await runOnce(service);
+  assert.deepEqual(usedKeys, ['user-key']);
+
+  service.submit('龙门石窟', '', '');
+  await runOnce(service);
+  assert.deepEqual(usedKeys, ['user-key', 'default']);
+});
+
+test('服务端无默认流水线时，自带密钥任务仍可执行', async () => {
+  const store = new MemoryTaskStore();
+  const catalog = {
+    findSource: () => null,
+    listPacks: () => [],
+    findPublishedById: () => null,
+    reindex: () => {}
+  } as unknown as CatalogService;
+
+  let ran = 0;
+  const service = new TaskService(store, catalog, null, 8, null, true, null, null, (overrides) => {
+    if (!overrides?.llm) return null;
+    return {
+      run: async () => {
+        ran += 1;
+        return { packId: 'demo', title: '白马寺' };
+      }
+    } as unknown as GenerationPipeline;
+  });
+
+  service.submit('白马寺', '', '', { llm: 'user-key' });
+  await runOnce(service);
+  assert.equal(ran, 1);
+  assert.equal(store.records[0].status, 'done');
+});
+
 function masterSource(): SourceEntry {
   return {
     id: 'demo',
@@ -364,4 +426,37 @@ test('生成成功后清理同景点同讲述人的旧重复包', async () => {
   assert.deepEqual(removed, ['demo']);
   assert.equal(store.records[0].packId, 'demo-2');
   assert.equal(store.records[0].status, 'done');
+});
+
+test('人物与景点不符时回退现代导游母本，不产出变体', async () => {
+  const store = new MemoryTaskStore();
+  const master = masterSource();
+  const catalog = {
+    findSource: () => master,
+    findVariant: () => null,
+    isSourceStale: () => false,
+    isVariantStale: () => false,
+    listPacks: () => [],
+    findPublishedById: () => null,
+    reindex: () => {}
+  } as unknown as CatalogService;
+
+  const calls: { persona: string; variant: boolean }[] = [];
+  const pipeline = {
+    run: async (input: { persona: string; variant?: { masterId: string } }) => {
+      calls.push({ persona: input.persona, variant: Boolean(input.variant) });
+      // 变体阶段回报人物不符：未生成变体，packId 为母本
+      return { packId: master.id, title: master.title, personaMismatch: true };
+    }
+  } as unknown as GenerationPipeline;
+
+  const service = new TaskService(store, catalog, pipeline, 8);
+
+  service.submit('白马寺', '秦始皇');
+  await runOnce(service);
+
+  assert.deepEqual(calls, [{ persona: '秦始皇', variant: true }]);
+  assert.equal(store.records[0].status, 'done');
+  assert.equal(store.records[0].packId, 'demo');
+  assert.equal(store.records[0].reused, true);
 });

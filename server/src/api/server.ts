@@ -15,6 +15,8 @@ export interface ServerDeps {
   catalog: CatalogService;
   tasks: TaskService;
   planner: RoutePlanner;
+  /** 客户端自带文本模型密钥时按密钥临时构建规划器；缺省时忽略请求头 */
+  plannerFactory?: (llmKey: string) => RoutePlanner;
   submitGuard?: SubmitGuard;
 }
 
@@ -72,7 +74,7 @@ export async function buildServer(deps: ServerDeps): Promise<FastifyInstance> {
 
   registerTaskRoutes(app, deps.tasks, deps.submitGuard);
   registerCatalogRoutes(app, deps.catalog);
-  registerPlanRoutes(app, deps.planner, deps.submitGuard);
+  registerPlanRoutes(app, deps.planner, deps.submitGuard, deps.plannerFactory);
 
   return app;
 }

@@ -1,5 +1,6 @@
 import type { FastifyInstance } from 'fastify';
 import type { SubmitGuard } from './tasks.ts';
+import { readKeyOverrides } from './tasks.ts';
 import type { RoutePlanner } from '../../domain/ports.ts';
 
 /** 一句话愿望的长度上限：超出截断，防止把长文塞进提示词 */
@@ -9,7 +10,8 @@ const TEXT_MAX = 60;
 export function registerPlanRoutes(
   app: FastifyInstance,
   planner: RoutePlanner,
-  guard?: SubmitGuard
+  guard?: SubmitGuard,
+  plannerFactory?: (llmKey: string) => RoutePlanner
 ): void {
   app.post('/plan', async (request, reply) => {
     if (guard) {
@@ -28,8 +30,12 @@ export function registerPlanRoutes(
       return reply.code(400).send({ error: 'text required' });
     }
 
+    // 客户端自带文本模型密钥时优先用它规划
+    const overrides = readKeyOverrides(request.headers);
+    const active = overrides?.llm && plannerFactory ? plannerFactory(overrides.llm) : planner;
+
     try {
-      const plan = await planner.plan(wish.slice(0, TEXT_MAX));
+      const plan = await active.plan(wish.slice(0, TEXT_MAX));
       request.log.info({ wish, stops: plan.stops.length }, '行程规划完成');
       return plan;
     } catch (error) {

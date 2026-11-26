@@ -18,7 +18,7 @@ export interface TaskPatch {
 
 /** 任务状态存储 */
 export interface TaskStore {
-  create(topic: string, persona: string, kind?: TaskKind): TaskRecord;
+  create(topic: string, persona: string, kind?: TaskKind, city?: string): TaskRecord;
   find(id: string): TaskRecord | null;
   /** 同主题 + 同讲述人 + 同类型的进行中任务；刷新任务不应被用户提交命中 */
   findActive(topic: string, persona: string, kind?: TaskKind): TaskRecord | null;
@@ -97,6 +97,8 @@ export interface PlanStop {
 export interface PlanResult {
   /** 2–4 个意图短标签：天数/城市/主题/节奏 */
   tags: string[];
+  /** 愿望推断出的城市（裸名，如「洛阳」），供提交任务时检索景点库；未确定为空串 */
+  city: string;
   /** 愿望里指定的讲述人（如「武则天」），未指定为空串；生成时按人物音色配音 */
   persona: string;
   /** 3–6 个按顺路顺序排列的景点 */
@@ -113,6 +115,8 @@ export interface RoutePlanner {
 export interface GenerationInput {
   topic: string;
   persona: string;
+  /** 行程所在城市：命中景点内容库时按「城市+景点」精确检索 */
+  city?: string;
   /** 刷新既有包：原地重新生成并保留包 id，版本取 version */
   refresh?: { packId: string; version: number };
   /** 人物变体：复用母本素材与配图，只改写正文 */
@@ -128,10 +132,32 @@ export interface ResearchMaterial {
   topic: string;
   text: string;
   references: string[];
+  /** 资料来源：db=景点内容库词条，web=在线检索；缺省按 web 处理 */
+  source?: 'db' | 'web';
+  /** 景点库收录的实景原图 URL：命中时首幕配图与封面优先使用 */
+  realPhoto?: string;
 }
 
 export interface ResearchProvider {
-  collect(topic: string): Promise<ResearchMaterial>;
+  collect(topic: string, city?: string): Promise<ResearchMaterial>;
+}
+
+/** 景点内容库（attractions.db）单条记录 */
+export interface AttractionContent {
+  name: string;
+  nameCn: string;
+  city: string;
+  address: string;
+  intro: string;
+  openTime: string;
+  ticket: string;
+  tips: string;
+  duration: string;
+  season: string;
+  rating: string;
+  images: string[];
+  link: string;
+  introLen: number;
 }
 
 export interface SceneOutline {
@@ -228,7 +254,7 @@ export interface ImageAsset {
   sceneId: string;
   /** 写入生成源目录的绝对路径 */
   file: string;
-  provider: 'bing' | 'generated' | 'linked';
+  provider: 'bing' | 'generated' | 'linked' | 'dataset';
   sourceUrl: string;
   width: number;
   height: number;
@@ -247,6 +273,8 @@ export interface ImageProvider {
     site: { title: string },
     fileBase: string
   ): Promise<ImageAsset>;
+  /** 景点库实景图：下载指定 URL 并按竖图可用性校验，不合格抛错 */
+  fetchSceneFromUrl?(sceneId: string, url: string, fileBase: string, referer?: string): Promise<ImageAsset>;
 }
 
 /** 单幕音频元数据：写入 content.json / pack.json 的 scene.audio，供小程序校验离线下载 */
@@ -323,6 +351,8 @@ export interface GeneratedPack {
   title: string;
   /** 主任务只同步生成前 N 幕配音，其余幕待后台补齐 */
   pendingAudio?: boolean;
+  /** 人物变体回退标记：人物与景点无历史关联，未产出变体，packId 为现代导游母本 */
+  personaMismatch?: boolean;
 }
 
 /** 后台补齐配音的结果 */

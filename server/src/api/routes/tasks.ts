@@ -1,12 +1,29 @@
 import type { FastifyInstance } from 'fastify';
 import type { SubmitLimiter } from '../../domain/services/submit-limiter.ts';
 import type { TaskService } from '../../domain/services/task-service.ts';
+import type { TaskKeyOverrides } from '../../domain/types.ts';
 import { guardPersona, guardTopic } from '../../domain/services/topic-guard.ts';
 
 export interface SubmitGuard {
   /** 非空时校验 x-api-token 请求头 */
   apiToken: string;
   limiter: SubmitLimiter;
+}
+
+/** 单个密钥长度上限：正常 key 远小于此，防超长头注入 */
+const KEY_MAX = 300;
+
+/** 从请求头读取客户端自带模型密钥（x-llm-key / x-image-key / x-tts-key），全部缺省返回 undefined */
+export function readKeyOverrides(headers: Record<string, unknown>): TaskKeyOverrides | undefined {
+  const pick = (name: string): string | undefined => {
+    const value = String(headers[name] ?? '').trim();
+    return value && value.length <= KEY_MAX ? value : undefined;
+  };
+  const llm = pick('x-llm-key');
+  const image = pick('x-image-key');
+  const tts = pick('x-tts-key');
+  if (!llm && !image && !tts) return undefined;
+  return { llm, image, tts };
 }
 
 /** 客户端契约：POST /tasks、GET /tasks/{id}（见技术方案 13.6） */
@@ -25,7 +42,7 @@ export function registerTaskRoutes(
       }
     }
 
-    const body = (request.body ?? {}) as { topic?: unknown; persona?: unknown };
+    const body = (request.body ?? {}) as { topic?: unknown; persona?: unknown; city?: unknown };
     const topic = String(body.topic ?? '').trim();
 
     if (!topic) {
@@ -43,7 +60,10 @@ export function registerTaskRoutes(
       return reply.code(400).send({ error: personaVerdict.reason });
     }
 
-    const result = tasks.submit(topic, persona);
+    // 城市为可选提示：命中景点内容库时按「城市+景点」精确检索，老客户端不传即空串
+    const city = String(body.city ?? '').trim().slice(0, 20);
+
+    const result = tasks.submit(topic, persona, city, readKeyOverrides(request.headers));
     if (!result.ok) {
       return reply.code(429).send({ error: '生成队列已满，请稍后再试' });
     }

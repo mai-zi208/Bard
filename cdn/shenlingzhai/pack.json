@@ -1,0 +1,98 @@
+{
+  "id": "shenlingzhai",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "神灵寨风景区",
+  "subtitle": "华北地质奇观与河洛人文胜地",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-26T00:54:43.991Z",
+  "summary": "集花岗岩峰丛、罕见石瀑与高山湿地于一体，融北方雄浑与南方秀美，是天然的地质博物馆与生态氧吧。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "国家地质公园",
+    "中国石瀑之乡",
+    "生态旅游"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "di-zhi-ming-pian",
+      "title": "地质名片",
+      "subtitle": "秦岭造山带的构造见证",
+      "image": "01-di-zhi-ming-pian.jpg",
+      "imageAlt": "神灵寨风景区花岗岩峰丛与奇特象形石全景",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-di-zhi-ming-pian.md"
+    },
+    {
+      "id": "shen-ling-xia-gu",
+      "title": "峡谷探秘",
+      "subtitle": "花岗岩河床上的山水画廊",
+      "image": "02-shen-ling-xia-gu.jpg",
+      "imageAlt": "神灵大峡谷花岗岩河床与石瀑群全景",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-shen-ling-xia-gu.md"
+    },
+    {
+      "id": "tian-xia-shi-pu",
+      "title": "中华石瀑",
+      "subtitle": "江海倾泻般的地质奇迹",
+      "image": "03-tian-xia-shi-pu.jpg",
+      "imageAlt": "神灵寨风景区中华石瀑全景，岩壁如水流倾泻",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-tian-xia-shi-pu.md"
+    },
+    {
+      "id": "wen-ren-yun-ji",
+      "title": "诗赋留痕",
+      "subtitle": "唐代以来的文人墨客足迹",
+      "image": "04-wen-ren-yun-ji.jpg",
+      "imageAlt": "神灵寨风景区山林栈道旁，隐约可见的石碑与茂密植被",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-wen-ren-yun-ji.md"
+    },
+    {
+      "id": "dao-feng-bing-yun",
+      "title": "道韵兵踪",
+      "subtitle": "道教圣地与历代兵家争锋",
+      "image": "05-dao-feng-bing-yun.jpg",
+      "imageAlt": "神灵寨风景区神顶岳庙与旗杆岭全景，山峦起伏间可见古建筑群与山脊线条",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-dao-feng-bing-yun.md"
+    },
+    {
+      "id": "zhu-bo-wu-guan",
+      "title": "竹博万象",
+      "subtitle": "百里难见的竹制品宝库",
+      "image": "06-zhu-bo-wu-guan.jpg",
+      "imageAlt": "神灵寨中国竹制品博物馆内陈列的各式竹制器物与竹文化展示区",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/06-zhu-bo-wu-guan.md"
+    },
+    {
+      "id": "luo-shen-quan-yan",
+      "title": "全竹盛宴",
+      "subtitle": "北国竹海里的味觉体验",
+      "image": "07-luo-shen-quan-yan.jpg",
+      "imageAlt": "神灵寨风景区餐厅内摆放精致的洛神全竹宴菜品特写",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/07-luo-shen-quan-yan.md"
+    }
+  ]
+}

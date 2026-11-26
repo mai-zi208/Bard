@@ -6,6 +6,7 @@ interface TaskRow {
   id: string;
   topic: string;
   persona: string;
+  city: string;
   kind: string;
   status: string;
   stage: string;
@@ -36,6 +37,7 @@ function toRecord(row: TaskRow): TaskRecord {
     id: row.id,
     topic: row.topic,
     persona: row.persona,
+    city: row.city || '',
     kind: row.kind === 'refresh' ? 'refresh' : row.kind === 'audio' ? 'audio' : 'generate',
     status: row.status as TaskStatus,
     stage: row.stage,
@@ -60,12 +62,13 @@ export class TaskRepository implements TaskStore {
     this.db = db;
   }
 
-  create(topic: string, persona: string, kind: TaskKind = 'generate'): TaskRecord {
+  create(topic: string, persona: string, kind: TaskKind = 'generate', city = ''): TaskRecord {
     const now = Date.now();
     const record: TaskRecord = {
       id: createId(),
       topic: topic,
       persona: persona,
+      city: city,
       kind: kind,
       status: 'queued',
       stage: '',
@@ -80,13 +83,14 @@ export class TaskRepository implements TaskStore {
 
     this.db
       .prepare(
-        `INSERT INTO tasks (id, topic, persona, kind, status, stage, progress, pack_id, error, reused, stage_log, created_at, updated_at)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+        `INSERT INTO tasks (id, topic, persona, city, kind, status, stage, progress, pack_id, error, reused, stage_log, created_at, updated_at)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
       )
       .run(
         record.id,
         record.topic,
         record.persona,
+        record.city,
         record.kind,
         record.status,
         record.stage,

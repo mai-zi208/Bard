@@ -8,6 +8,7 @@ const cache = require('./cache');
 const remote = require('./remote');
 const task = require('./task');
 const naming = require('./naming');
+const settings = require('./settings');
 
 const CURRENT_KEY = 'plan_current_v1';
 /** 路线历史列表（数组，最新在前） */
@@ -61,7 +62,7 @@ function persist() {
 
 function requestPlan(text) {
   return new Promise((resolve, reject) => {
-    const headers = {};
+    const headers = Object.assign({}, settings.keyHeaders());
     if (config.API_TOKEN) headers['x-api-token'] = config.API_TOKEN;
 
     wx.request({
@@ -227,7 +228,7 @@ function checkAdvance() {
 function submitFor(i, r) {
   const stop = state.stops[i];
   return task
-    .submit(stop.name, stop.persona || '')
+    .submit(stop.name, stop.persona || '', state.city || '')
     .then((res) => {
       if (inited && r !== run) return;
       if (!res || !res.taskId) throw new Error('missing taskId');
@@ -464,6 +465,8 @@ function applyPlan(res, r) {
   }
 
   state.stops = stops;
+  // 规划推断出的城市：提交生成任务时带上，服务端据此检索景点内容库
+  state.city = String((res && res.city) || '').trim();
   state.tags = (res && Array.isArray(res.tags) ? res.tags : []).slice(0, 6);
   if (routePersona) state.tags.push(routePersona + ' 讲述');
   state.route = {

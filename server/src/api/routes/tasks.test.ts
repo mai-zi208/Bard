@@ -6,10 +6,12 @@ import type { TaskService } from '../../domain/services/task-service.ts';
 import { registerTaskRoutes } from './tasks.ts';
 
 /** 只验证鉴权与限流，不触发生成流水线 */
-function fakeTasks(calls?: { topic: string; persona: string }[]): TaskService {
+function fakeTasks(calls?: { topic: string; persona: string; city: string; keys?: unknown }[]): TaskService {
   return {
-    submit: (topic: string, persona = '') => {
-      if (calls) calls.push({ topic, persona });
+    submit: (topic: string, persona = '', city = '', keys?: unknown) => {
+      if (calls) {
+        calls.push(keys ? { topic, persona, city, keys } : { topic, persona, city });
+      }
       return { ok: true, taskId: 't1' };
     },
     view: () => null,
@@ -28,7 +30,7 @@ function fakeTasks(calls?: { topic: string; persona: string }[]): TaskService {
 async function makeApp(
   apiToken: string,
   perMinute: number,
-  calls?: { topic: string; persona: string }[]
+  calls?: { topic: string; persona: string; city: string; keys?: unknown }[]
 ) {
   const app = Fastify();
   registerTaskRoutes(app, fakeTasks(calls), {
@@ -102,7 +104,7 @@ test('人物身份不合法时返回 400', async () => {
 });
 
 test('人物身份随主题一起提交', async () => {
-  const calls: { topic: string; persona: string }[] = [];
+  const calls: { topic: string; persona: string; city: string; keys?: unknown }[] = [];
   const app = await makeApp('', 10, calls);
   const res = await app.inject({
     method: 'POST',
@@ -111,7 +113,47 @@ test('人物身份随主题一起提交', async () => {
   });
 
   assert.equal(res.statusCode, 200);
-  assert.deepEqual(calls, [{ topic: '白马寺', persona: '武则天' }]);
+  assert.deepEqual(calls, [{ topic: '白马寺', persona: '武则天', city: '' }]);
+});
+
+test('城市随主题一起提交并截断超长值', async () => {
+  const calls: { topic: string; persona: string; city: string; keys?: unknown }[] = [];
+  const app = await makeApp('', 10, calls);
+  const res = await app.inject({
+    method: 'POST',
+    url: '/tasks',
+    payload: { topic: '龙门石窟', persona: '', city: ' 洛阳 ' }
+  });
+  assert.equal(res.statusCode, 200);
+  assert.deepEqual(calls, [{ topic: '龙门石窟', persona: '', city: '洛阳' }]);
+
+  const long = await app.inject({
+    method: 'POST',
+    url: '/tasks',
+    payload: { topic: '白马寺', city: '洛'.repeat(30) }
+  });
+  assert.equal(long.statusCode, 200);
+  assert.equal(calls[1].city.length, 20);
+});
+
+test('未带密钥头时不传覆盖项', async () => {
+  const calls: { topic: string; persona: string; city: string; keys?: unknown }[] = [];
+  const app = await makeApp('', 10, calls);
+  await app.inject({ method: 'POST', url: '/tasks', payload: { topic: '白马寺' } });
+  assert.equal(calls[0].keys, undefined);
+});
+
+test('客户端自带密钥经请求头透传给任务', async () => {
+  const calls: { topic: string; persona: string; city: string; keys?: unknown }[] = [];
+  const app = await makeApp('', 10, calls);
+  const res = await app.inject({
+    method: 'POST',
+    url: '/tasks',
+    headers: { 'x-llm-key': ' sk-user ', 'x-tts-key': 'doubao-user' },
+    payload: { topic: '白马寺' }
+  });
+  assert.equal(res.statusCode, 200);
+  assert.deepEqual(calls[0].keys, { llm: 'sk-user', image: undefined, tts: 'doubao-user' });
 });
 
 test('/metrics 受令牌保护并可返回统计', async () => {

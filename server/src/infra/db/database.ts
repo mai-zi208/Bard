@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS tasks (
   id          TEXT PRIMARY KEY,
   topic       TEXT NOT NULL,
   persona     TEXT NOT NULL DEFAULT '',
+  city        TEXT NOT NULL DEFAULT '',
   kind        TEXT NOT NULL DEFAULT 'generate',
   status      TEXT NOT NULL,
   stage       TEXT NOT NULL DEFAULT '',
@@ -84,6 +85,9 @@ function migrate(db: DatabaseSync): void {
   }
   if (!columns.some((column) => column.name === 'kind')) {
     db.exec("ALTER TABLE tasks ADD COLUMN kind TEXT NOT NULL DEFAULT 'generate'");
+  }
+  if (!columns.some((column) => column.name === 'city')) {
+    db.exec("ALTER TABLE tasks ADD COLUMN city TEXT NOT NULL DEFAULT ''");
   }
 
   const packColumns = db.prepare('PRAGMA table_info(packs)').all() as { name: string }[];

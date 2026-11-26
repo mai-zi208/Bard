@@ -8,6 +8,7 @@ import { registerPlanRoutes } from './plan.ts';
 
 const PLAN: PlanResult = {
   tags: ['2 天', '洛阳', '人文古迹', '节奏舒缓'],
+  city: '洛阳',
   persona: '',
   stops: [
     { name: '白马寺', lat: 34.7216, lng: 112.6021 },
@@ -129,6 +130,17 @@ test('parsePlan 提取讲述人，未指定时为空串', () => {
   assert.equal(withPersona.persona, '武则天');
   const without = parsePlan(JSON.stringify({ tags: ['洛阳'], stops: three }));
   assert.equal(without.persona, '');
+});
+
+test('parsePlan 提取城市裸名，剥省市后缀、缺省为空串', () => {
+  const three = [
+    { name: '白马寺', lat: 34.7216, lng: 112.6021 },
+    { name: '龙门石窟', lat: 34.5594, lng: 112.4678 },
+    { name: '关林', lat: 34.6056, lng: 112.4935 }
+  ];
+  assert.equal(parsePlan(JSON.stringify({ city: '洛阳市', stops: three })).city, '洛阳');
+  assert.equal(parsePlan(JSON.stringify({ city: ' 洛阳 ', stops: three })).city, '洛阳');
+  assert.equal(parsePlan(JSON.stringify({ stops: three })).city, '');
 });
 
 test('parsePlan 丢弃坐标越界或名称为空的景点', () => {

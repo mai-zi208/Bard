@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-18T08:53:11.542Z",
+  "updatedAt": "2026-11-26T03:28:49.078Z",
   "packs": [
     {
       "id": "badaling",
@@ -2289,6 +2289,109 @@
         "body/06-dong-tuo-jie-qu.md": {
           "sha256": "b78bbfba19cb21392beaf779ded67e58e230578ee16401001b3943ca817c3125",
           "size": 453
+        }
+      }
+    },
+    {
+      "id": "shenlingzhai",
+      "version": 1,
+      "title": "神灵寨风景区",
+      "subtitle": "华北地质奇观与河洛人文胜地",
+      "summary": "集花岗岩峰丛、罕见石瀑与高山湿地于一体，融北方雄浑与南方秀美，是天然的地质博物馆与生态氧吧。",
+      "tags": [
+        "国家地质公园",
+        "中国石瀑之乡",
+        "生态旅游"
+      ],
+      "total": 7,
+      "narratorName": "",
+      "cover": "cover.jpg",
+      "bytes": 1980532,
+      "audioCount": 0,
+      "aiGenerated": true,
+      "refreshedAt": "2026-11-26T00:54:43.991Z",
+      "files": [
+        "pack.json",
+        "cover.jpg",
+        "01-di-zhi-ming-pian.jpg",
+        "02-shen-ling-xia-gu.jpg",
+        "03-tian-xia-shi-pu.jpg",
+        "04-wen-ren-yun-ji.jpg",
+        "05-dao-feng-bing-yun.jpg",
+        "06-zhu-bo-wu-guan.jpg",
+        "07-luo-shen-quan-yan.jpg",
+        "body/01-di-zhi-ming-pian.md",
+        "body/02-shen-ling-xia-gu.md",
+        "body/03-tian-xia-shi-pu.md",
+        "body/04-wen-ren-yun-ji.md",
+        "body/05-dao-feng-bing-yun.md",
+        "body/06-zhu-bo-wu-guan.md",
+        "body/07-luo-shen-quan-yan.md"
+      ],
+      "checksums": {
+        "pack.json": {
+          "sha256": "116de3957e2d4cd6399d6ae74aed45f6d046d0ef2c7ec2c24a0d94bf5d4b3c29",
+          "size": 3175
+        },
+        "cover.jpg": {
+          "sha256": "72102efd99c90c6e1bd2416c1e801c3506f83da73ffd3f3c21f0747c9158773a",
+          "size": 193176
+        },
+        "01-di-zhi-ming-pian.jpg": {
+          "sha256": "4bc19c077e994d5586e43c2ce92299db29788258376326c1dd030560bd83a524",
+          "size": 287057
+        },
+        "02-shen-ling-xia-gu.jpg": {
+          "sha256": "fa506160c263ce2679f3db7da131260b647ffa0d346024ec6da484e03e2bec0a",
+          "size": 279699
+        },
+        "03-tian-xia-shi-pu.jpg": {
+          "sha256": "6f9172c7eaf6993308dabfcc1a6ccef64abb0813e3de5512dc5fbd7e0c7fec6f",
+          "size": 289374
+        },
+        "04-wen-ren-yun-ji.jpg": {
+          "sha256": "c5041e05b31d231f107d812d3ce3ee01437b30caf60684f393f81fa0ea072162",
+          "size": 285942
+        },
+        "05-dao-feng-bing-yun.jpg": {
+          "sha256": "93f52a6d690dca47e70b25184266260a47ad871667787e12c0a4363de938d8e9",
+          "size": 202601
+        },
+        "06-zhu-bo-wu-guan.jpg": {
+          "sha256": "4f502936778d2c798af610439c47ae7c509e4e3dc38577f0bff6e1ad4006d593",
+          "size": 275565
+        },
+        "07-luo-shen-quan-yan.jpg": {
+          "sha256": "0d4dc2416ed531b48356bc3599020f052cdcef898dbbe521bb75f108fc6c576d",
+          "size": 160850
+        },
+        "body/01-di-zhi-ming-pian.md": {
+          "sha256": "da9dd9be8f9bc39268296d026e379e5085cd81685333bb2a85a0fb4794c80cf2",
+          "size": 435
+        },
+        "body/02-shen-ling-xia-gu.md": {
+          "sha256": "1571b6635159827b47f6ffb5930888b8814ea988dbf8817dfa9268e9ce1dc086",
+          "size": 444
+        },
+        "body/03-tian-xia-shi-pu.md": {
+          "sha256": "2d22829e87b19c9dd986f248422307e150c24367bc9ab602eae8ea1dd5650965",
+          "size": 396
+        },
+        "body/04-wen-ren-yun-ji.md": {
+          "sha256": "12d3c15f1ae2b599a00d7912c5e517c355d9892c8d9af8ca773cff48192c8a30",
+          "size": 468
+        },
+        "body/05-dao-feng-bing-yun.md": {
+          "sha256": "036367c8edc4225046f1e167252daca6b8fe2c2beb431197f88b6fa6d63baf9f",
+          "size": 474
+        },
+        "body/06-zhu-bo-wu-guan.md": {
+          "sha256": "c18b3d139e0d697cce1da492683c7d2b1469ed75e75af98d4b66a0d816c16a16",
+          "size": 510
+        },
+        "body/07-luo-shen-quan-yan.md": {
+          "sha256": "2c2fb2fdbb37128be5cab0458f395aa2c983cc198447ebbeccc9d4afb754e013",
+          "size": 366
         }
       }
     },

@@ -1,9 +1,12 @@
 import fs from 'node:fs';
 import type { ImageAsset, ImageProvider } from '../../domain/ports.ts';
-import { extensionOf, imageSize } from './http.ts';
+import { DESKTOP_UA, extensionOf, imageSize } from './http.ts';
 
 /** 生成接口未就绪时返回的占位图固定为这个长度，画面是「The image is generating...」 */
 const PLACEHOLDER_BYTES = 176626;
+
+/** 实景图按 9:16 中心裁切后的最低可用宽度，与转换脚本的交付宽度一致 */
+const REAL_PHOTO_MIN_WIDTH = 1080;
 
 /** 出图提示词统一追加的收尾约束：竖幅实景、无文字水印 */
 const SCENE_PROMPT_SUFFIX = '，中国景点实景照片，主体清晰居中，自然光，画面干净，无文字，无水印';
@@ -53,6 +56,44 @@ export class ImageGenerationProvider implements ImageProvider {
       '背景与人物同色系并自然延伸到画面边缘，避免纯黑背景与黑色边框';
 
     return this.generate('default', prompt, fileBase, 'portrait_4_3');
+  }
+
+  /** 景点库实景图：下载原图并按竖裁可用性校验，不合格抛错由调用方回退生成图 */
+  async fetchSceneFromUrl(
+    sceneId: string,
+    url: string,
+    fileBase: string,
+    referer?: string
+  ): Promise<ImageAsset> {
+    let res: Response;
+    try {
+      res = await fetch(url, {
+        headers: { 'user-agent': DESKTOP_UA, referer: referer || url },
+        redirect: 'follow',
+        signal: AbortSignal.timeout(30000)
+      });
+    } catch (err) {
+      throw new Error('实景图抓取失败：' + (err instanceof Error ? err.message : String(err)));
+    }
+    if (!res.ok) throw new Error('实景图抓取失败：返回 ' + res.status);
+
+    const buf = Buffer.from(await res.arrayBuffer());
+    const size = imageSize(buf);
+    if (!size) throw new Error('实景图抓取失败：内容不是图片');
+    if (Math.min(size.width, Math.floor((size.height * 9) / 16)) < REAL_PHOTO_MIN_WIDTH) {
+      throw new Error(`实景图抓取失败：竖裁后可用宽度不足（${size.width}x${size.height}）`);
+    }
+
+    const file = fileBase + '.' + extensionOf(size);
+    fs.writeFileSync(file, buf);
+    return {
+      sceneId,
+      file,
+      provider: 'dataset',
+      sourceUrl: url,
+      width: size.width,
+      height: size.height
+    };
   }
 
   private async generate(

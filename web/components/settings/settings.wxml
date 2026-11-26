@@ -1,0 +1,37 @@
+<view class="gear" style="top: {{top}}px; right: {{right}}px" bindtap="onOpen" hover-class="gear--hover" aria-role="button" aria-label="模型密钥设置">
+  <text class="gear-icon">⚙</text>
+  <view wx:if="{{hasAny}}" class="gear-dot"></view>
+</view>
+
+<view wx:if="{{open}}" class="mask" bindtap="onClose">
+  <view class="panel" catchtap="noop">
+    <view class="panel-head">
+      <view class="panel-title">模型密钥</view>
+      <view class="panel-close" bindtap="onClose" hover-class="none">✕</view>
+    </view>
+    <view class="panel-sub">填入自己的密钥后，生成任务优先用你的密钥计费；留空则用服务端默认配置。密钥只保存在本机。</view>
+
+    <view class="field">
+      <view class="field-label">文本模型密钥 <text class="field-tag">千问</text></view>
+      <input class="field-input" value="{{llm}}" data-field="llm" password="{{!showKeys}}" placeholder="sk-... 阿里云百炼 API Key" placeholder-class="field-ph" bindinput="onInput" />
+    </view>
+    <view class="field">
+      <view class="field-label">配图模型密钥 <text class="field-tag">文生图</text></view>
+      <input class="field-input" value="{{image}}" data-field="image" password="{{!showKeys}}" placeholder="留空则用服务端默认" placeholder-class="field-ph" bindinput="onInput" />
+    </view>
+    <view class="field">
+      <view class="field-label">配音密钥 <text class="field-tag">豆包</text></view>
+      <input class="field-input" value="{{tts}}" data-field="tts" password="{{!showKeys}}" placeholder="留空则用服务端默认" placeholder-class="field-ph" bindinput="onInput" />
+    </view>
+
+    <view class="show-toggle" bindtap="onToggleShow" hover-class="none">
+      <view class="show-box {{showKeys ? 'is-on' : ''}}"></view>
+      <text>明文显示密钥</text>
+    </view>
+
+    <view class="panel-foot">
+      <view class="btn btn--ghost" bindtap="onClear" hover-class="none">清除</view>
+      <view class="btn btn--primary" bindtap="onSave" hover-class="none">保存</view>
+    </view>
+  </view>
+</view>

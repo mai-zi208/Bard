@@ -50,6 +50,9 @@ const RELAXED_SCENE_MAX = 180;
 /** 字数不达标：重试时自动放宽区间，其他校验失败仍按原规则重写 */
 export class ScriptLengthError extends Error {}
 
+/** 人物与景点无可考证关联：不产出变体，回退母本现代导游版 */
+export class PersonaMismatchError extends Error {}
+
 /** 重写提示里的格式要求，按当前是否放宽取对应区间 */
 function lengthRule(relaxed: boolean): string {
   const blockMin = relaxed ? RELAXED_BLOCK_MIN : BLOCK_MIN;
@@ -147,6 +150,13 @@ function narratorLine(persona: string): string {
   return persona ? persona : '现代导游';
 }
 
+/** 景点库资料规则：原文优先、尽量保留，只在编排与字数闸门需要时最小改写 */
+function dbSourceRules(material: ResearchMaterial): string {
+  return material.source === 'db'
+    ? '\n本资料来自景点数据库词条原文：事实、年代、专名与说法尽量保留原文表述，只在为满足分幕结构与字数闸门时做最小编排改写；原文里的套语、头衔、尺寸与数量清单仍按下方规范转成体感描述；不得补充资料以外的内容。\n'
+    : '';
+}
+
 function outlinePrompt(input: GenerationInput, material: ResearchMaterial, sceneLimit: number): string {
   const sceneRange = sceneLimit > 0 ? `5–${sceneLimit}` : '5 个以上（按实际可讲的实体数量，不凑数）';
   return `你是「游览向导」小程序的资深内容策划，要把一处景物拆成可以逐幕游览的分镜。
@@ -156,7 +166,7 @@ function outlinePrompt(input: GenerationInput, material: ResearchMaterial, scene
 
 可使用的资料（只允许使用这里出现的事实，不得补充资料以外的记忆和传闻）：
 ${material.text.slice(0, MATERIAL_LIMIT)}
-
+${dbSourceRules(material)}
 请完成两件事：
 1. 按真实游览路线（由外到内、由南到北）列出 ${sceneRange} 个可以讲的实体，一物一幕。殿、窟、碑、塔、井、树、遗址都算；不得为凑数丢弃主要景物，也不得虚构；资料中与讲述人直接相关的实体或事件优先排进清单；
 2. 首幕交代位置与来历，末幕落在最有分量的实体上。
@@ -259,7 +269,7 @@ ${sceneList}
 
 可使用的资料（事实与数字只能来自这里）：
 ${material.text.slice(0, MATERIAL_LIMIT)}
-
+${dbSourceRules(material)}
 本幕正文要求：
 ${writingRules()}
 
@@ -314,6 +324,8 @@ function rewritePrompt(input: GenerationInput, master: MasterSource): string {
   return `你在为一处景物制作「人物变体」讲解包。母本由现代导游讲解，现在改由「${input.persona}」讲述。
 
 主题：${master.title}
+
+先判断：「${input.persona}」与这处景点是否有可考证的历史关联（在此生活、建造、驻跸、题咏或发生相关事件）。若没有任何关联，不要改写，只输出 {"mismatch": true}。
 
 改写规则：
 - 事实、年代、数字、专名与母本完全一致，不得新增母本里没有的史实，也不得删掉母本的关键信息；
@@ -431,6 +443,9 @@ export class QwenScriptWriter implements ScriptWriter {
       { role: 'user', content: rewritePrompt(input, master) }
     ];
     const pool = await this.chatJson(messages);
+    if (asRecord(pool).mismatch === true) {
+      throw new PersonaMismatchError(`人物「${input.persona}」与「${master.title}」无历史关联`);
+    }
     return this.complete(messages, pool, outline, '事实与数字只能来自母本');
   }
 

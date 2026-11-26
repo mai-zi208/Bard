@@ -77,6 +77,7 @@ Page({
   startTask(value) {
     const input = String(value || '').trim();
     if (!input || this.submitting) return;
+    // 资源包页只按景点生成母本：parseInput 仅用来剥离旧「景点-人物」写法里的人物段，不再作为讲述人提交
     const parsed = parseInput(input);
     if (!parsed.topic) return;
 
@@ -86,8 +87,8 @@ Page({
       this.submitting = false;
       if (this.unloaded) return;
 
-      // 同景点同讲述人已有资源包：直接复用，不重复生成
-      const existing = this.findExisting(parsed.topic, parsed.persona);
+      // 同景点已有资源包：直接复用，不重复生成
+      const existing = this.findExisting(parsed.topic, '');
       if (existing) {
         this.setData({ topic: '' });
         wx.showToast({ title: '已有资源包，直接打开', icon: 'none' });
@@ -95,7 +96,7 @@ Page({
         return;
       }
 
-      const similar = this.findSimilar(parsed.topic, parsed.persona);
+      const similar = this.findSimilar(parsed.topic, '');
       if (similar) {
         this.promptSimilar(similar, input, parsed);
         return;
@@ -125,7 +126,7 @@ Page({
   sendTask(input, parsed) {
     this.submitting = true;
     task
-      .submit(parsed.topic, parsed.persona)
+      .submit(parsed.topic, '')
       .then((res) => {
         this.submitting = false;
         if (!res || !res.taskId) throw new Error('missing taskId');

@@ -10,9 +10,12 @@ import { PackAssembler } from './infra/pipeline/assembler.ts';
 import { ContentGenerationPipeline } from './infra/pipeline/generation-pipeline.ts';
 import { ImageGenerationProvider } from './infra/providers/image-provider.ts';
 import { BaiduResearchProvider } from './infra/providers/research-provider.ts';
+import { TieredResearchProvider } from './infra/providers/db-research-provider.ts';
 import { QwenScriptWriter } from './infra/providers/script-provider.ts';
 import { QwenRoutePlanner } from './infra/providers/plan-provider.ts';
 import { DoubaoProvider } from './infra/providers/doubao-provider.ts';
+import { AttractionRepository, openAttractionDatabase } from './infra/repositories/attraction-repository.ts';
+import type { TaskKeyOverrides } from './domain/types.ts';
 import { PackRepository } from './infra/repositories/pack-repository.ts';
 import { RefreshCooldownRepository } from './infra/repositories/refresh-cooldown-repository.ts';
 import { SourceRepository } from './infra/repositories/source-repository.ts';
@@ -41,24 +44,47 @@ const cleaner = new PackCleaner(config.srcDir, config.cdnDir);
 // 配音：豆包在线合成（配了 API Key 才启用）
 const voice = new DoubaoProvider(doubaoConfig);
 
-// 没有 LLM key 时不构建流水线：任务会明确失败，而不是产出残缺包
-const pipeline = llmConfig.apiKey
-  ? new ContentGenerationPipeline({
-      research: new BaiduResearchProvider(),
-      writer: new QwenScriptWriter(llmConfig),
-      images: new ImageGenerationProvider(imageApiConfig),
-      sources: new PackSourceWriter(config.srcDir, config.assetsDir),
-      cleanup: cleaner,
-      assembler,
-      sceneLimit: generationConfig.sceneMax,
-      sceneBudgetKb: 2000,
-      voice,
-      audioDir: path.join(config.cdnDir, 'audio'),
-      sourceDir: config.srcDir,
-      publishedVersion: (packId) => catalog.findPublishedById(packId)?.version ?? 0,
-      eagerAudioScenes: generationConfig.eagerAudioScenes
-    })
-  : null;
+// 景点内容库：命中时跳过在线检索；未导入（attractions.db 缺失）时全部回退百度
+const attractions = new AttractionRepository(openAttractionDatabase(config.attractionsDbPath));
+const attractionCount = attractions.count();
+console.log(
+  attractionCount
+    ? `[景点库] 已加载 ${attractionCount} 条（${config.attractionsDbPath}）`
+    : '[景点库] 未导入，资料检索全部走在线（npm run db:import-attractions 可构建）'
+);
+
+const research = new TieredResearchProvider(attractions, new BaiduResearchProvider());
+const sources = new PackSourceWriter(config.srcDir, config.assetsDir);
+
+/**
+ * 按密钥覆盖构建生成流水线：客户端自带 key 时优先用自带，缺省项回退服务端 .env。
+ * 文本模型没有可用 key 时返回 null：任务会明确失败，而不是产出残缺包。
+ */
+function createPipeline(overrides?: TaskKeyOverrides): ContentGenerationPipeline | null {
+  const llmKey = overrides?.llm || llmConfig.apiKey;
+  if (!llmKey) return null;
+  const ttsConfig = overrides?.tts ? { ...doubaoConfig, apiKey: overrides.tts } : doubaoConfig;
+  return new ContentGenerationPipeline({
+    research,
+    writer: new QwenScriptWriter({ ...llmConfig, apiKey: llmKey }),
+    images: new ImageGenerationProvider(
+      overrides?.image ? { ...imageApiConfig, apiKey: overrides.image } : imageApiConfig
+    ),
+    sources,
+    cleanup: cleaner,
+    assembler,
+    sceneLimit: generationConfig.sceneMax,
+    sceneBudgetKb: 2000,
+    voice: ttsConfig === doubaoConfig ? voice : new DoubaoProvider(ttsConfig),
+    audioDir: path.join(config.cdnDir, 'audio'),
+    sourceDir: config.srcDir,
+    publishedVersion: (packId) => catalog.findPublishedById(packId)?.version ?? 0,
+    eagerAudioScenes: generationConfig.eagerAudioScenes
+  });
+}
+
+// 没有 LLM key 时不构建默认流水线：任务会明确失败，而不是产出残缺包
+const pipeline = createPipeline();
 
 const tasks = new TaskService(
   new TaskRepository(db),
@@ -71,7 +97,8 @@ const tasks = new TaskService(
   },
   generationConfig.audioTopUp,
   cleaner,
-  new BuiltinPackStore(config.builtinPackDir)
+  new BuiltinPackStore(config.builtinPackDir),
+  createPipeline
 );
 
 catalog.reindex();
@@ -81,7 +108,8 @@ const app = await buildServer({
   cdnDir: config.cdnDir,
   catalog,
   tasks,
-  planner: new QwenRoutePlanner(llmConfig)
+  planner: new QwenRoutePlanner(llmConfig),
+  plannerFactory: (llmKey) => new QwenRoutePlanner({ ...llmConfig, apiKey: llmKey })
 });
 
 async function shutdown(signal: string): Promise<void> {

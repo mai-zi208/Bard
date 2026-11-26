@@ -3,10 +3,11 @@
  * 生产端尚未接入时，可用 server/ 的本地服务提供任务接口。
  */
 const config = require('../config');
+const settings = require('./settings');
 
 function request(method, url, data) {
   return new Promise((resolve, reject) => {
-    const headers = {};
+    const headers = Object.assign({}, settings.keyHeaders());
     if (config.API_TOKEN) headers['x-api-token'] = config.API_TOKEN;
 
     wx.request({
@@ -32,8 +33,8 @@ function request(method, url, data) {
   });
 }
 
-function submit(topic, persona) {
-  return request('POST', '/tasks', { topic: topic, persona: persona || '' });
+function submit(topic, persona, city) {
+  return request('POST', '/tasks', { topic: topic, persona: persona || '', city: city || '' });
 }
 
 function poll(taskId) {

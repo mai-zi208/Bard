@@ -11,6 +11,7 @@ function record(partial: Partial<TaskRecord>): TaskRecord {
     id: 't1',
     topic: '',
     persona: '',
+    city: '',
     kind: 'generate',
     status: 'done',
     stage: '',

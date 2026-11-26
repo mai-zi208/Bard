@@ -31,7 +31,7 @@ function planPrompt(wish: string): string {
 愿望：${wish}
 
 规则：
-1. 从愿望中推断城市；无法确定时默认洛阳；
+1. 从愿望中推断城市；无法确定时默认洛阳；city 输出城市裸名（如「洛阳」，不带「市」与省份前缀）；
 2. 若愿望只点名了一个具体景点（如「想看白马寺」「带我去龙门石窟」）且没有多日/顺路/路线类诉求，stops 只输出该景点 1 站，绝对不要补充其他景点；否则挑选该城市 ${STOPS_MIN}–${STOPS_MAX} 个真实存在的景点，按顺路可执行的游览顺序排列（同片区相邻、不走回头路），名称用通用全称；
 3. 坐标必须是 GCJ-02（火星坐标，小程序地图 gcj02 用），保留 4–6 位小数；
 4. tags 为 2–4 个短标签，覆盖天数/城市/主题/节奏这类意图，例如 ["2 天","洛阳","人文古迹","节奏舒缓"]；
@@ -40,6 +40,7 @@ function planPrompt(wish: string): string {
 只输出 JSON，不要解释，不要 Markdown 代码块。格式：
 {
   "tags": ["……", "……"],
+  "city": "洛阳",
   "persona": "武则天",
   "stops": [
     {"name": "白马寺", "lat": 34.7216, "lng": 112.6021}
@@ -92,8 +93,10 @@ export function parsePlan(content: string): PlanResult {
   }
 
   const persona = text(record.persona).slice(0, 12);
+  // 城市裸名：剥「省/市」后缀，供提交任务时按「城市+景点」检索景点库
+  const city = text(record.city).replace(/(?:省|市)$/, '').slice(0, 12);
 
-  return { tags, persona, stops: stops.slice(0, STOPS_MAX) };
+  return { tags, city, persona, stops: stops.slice(0, STOPS_MAX) };
 }
 
 /** 通义千问（OpenAI 兼容）路线规划：单次调用，输出交给 parsePlan 严格把关 */

@@ -11,8 +11,9 @@ __pycache__/
 # 原始数据集下载（体积大，仅本地保留）
 /data/
 
-# IDE 分享包产物
+# IDE 分享包产物与本地配置
 .trae-html-share-packages/
+.trae/
 
 # 运行期数据与日志（全国景点候选集是入库数据，单独放行）
 server/data/*

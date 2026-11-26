@@ -3,6 +3,7 @@
   "backgroundColor": "#FBFDFF",
   "backgroundTextStyle": "dark",
   "usingComponents": {
-    "tab-bar": "/components/tab-bar/tab-bar"
+    "tab-bar": "/components/tab-bar/tab-bar",
+    "settings": "/components/settings/settings"
   }
 }

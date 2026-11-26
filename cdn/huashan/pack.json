@@ -1,0 +1,79 @@
+{
+  "id": "huashan",
+  "schemaVersion": 2,
+  "version": 1,
+  "defaultLocale": "zh-CN",
+  "locales": [
+    "zh-CN"
+  ],
+  "title": "华山",
+  "subtitle": "奇险天下第一山与华夏之根",
+  "cover": "cover.jpg",
+  "refreshedAt": "2026-11-26T03:31:06.192Z",
+  "summary": "位于陕西华阴，由整块花岗岩构成，扼守西北门户。作为五岳西岳，既是道教发祥地，也是中华文明命名源头。",
+  "author": "行迹",
+  "generated": true,
+  "tags": [
+    "五岳西岳",
+    "花岗岩地貌",
+    "道教圣地",
+    "华夏之根"
+  ],
+  "theme": {
+    "bg": "#16130F",
+    "text": "#F2EBDD",
+    "accent": "#C9A227"
+  },
+  "scenes": [
+    {
+      "id": "ming-cheng-yuan-liu",
+      "title": "华山得名",
+      "subtitle": "远望若花状故称华山",
+      "image": "01-ming-cheng-yuan-liu.jpg",
+      "imageAlt": "华山全景，远处山峰轮廓清晰，呈现花瓣状形态",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/01-ming-cheng-yuan-liu.md"
+    },
+    {
+      "id": "yu-quan-yuan",
+      "title": "玉泉院",
+      "subtitle": "陈抟隐居修道之地",
+      "image": "02-yu-quan-yuan.jpg",
+      "imageAlt": "玉泉院全景，道观建筑掩映在绿树中，院内可见清泉流过",
+      "transition": "rise",
+      "holdMs": 9000,
+      "body": "body/02-yu-quan-yuan.md"
+    },
+    {
+      "id": "qian-chi-zhuang",
+      "title": "千尺幢",
+      "subtitle": "自古华山一条路险关",
+      "image": "03-qian-chi-zhuang.jpg",
+      "imageAlt": "华山千尺幢陡峭石阶与岩壁上的铁索",
+      "transition": "slide",
+      "holdMs": 9000,
+      "body": "body/03-qian-chi-zhuang.md"
+    },
+    {
+      "id": "chang-kong-zhan-dao",
+      "title": "长空栈道",
+      "subtitle": "南峰绝壁上的惊险步道",
+      "image": "04-chang-kong-zhan-dao.jpg",
+      "imageAlt": "华山南峰长空栈道，游客系安全绳行走在悬崖木板上",
+      "transition": "fade",
+      "holdMs": 9000,
+      "body": "body/04-chang-kong-zhan-dao.md"
+    },
+    {
+      "id": "xi-yue-miao",
+      "title": "西岳庙",
+      "subtitle": "历代帝王祭祀华山场所",
+      "image": "05-xi-yue-miao.jpg",
+      "imageAlt": "西岳庙正殿全景，红墙黄瓦的皇家建筑群",
+      "transition": "zoom-out",
+      "holdMs": 9000,
+      "body": "body/05-xi-yue-miao.md"
+    }
+  ]
+}
